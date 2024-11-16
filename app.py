@@ -1,10 +1,3 @@
-
-from calendar import month
-from cgitb import reset
-#For auth
-
-from os import environ as env
-#For mail
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -12,32 +5,24 @@ from email.header import Header
 from unidecode import unidecode
 from enum import Enum
 import datetime
-from fileinput import filename
-from lib2to3.pgen2.token import INDENT
 import os
-from pickle import GET, TRUE
-from re import I, S
-from textwrap import indent
+
+
 from unicodedata import decimal
-from unittest import result
 #from urllib import request
-from xml.dom import UserDataHandler
 from flask import Flask, jsonify, request_started, request_tearing_down, send_file, session
 from flask import render_template
-from markupsafe import escape
 from flask import request, url_for,redirect
 from flask_mysql_connector import MySQL
 #import simplejson as js
 import json as json
 import magic
 import decimal
-from decimal import Decimal
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
 #import geopy
 #from geopy import distance
 #from geopy.geocoders import Nominatim
-import re
 import csv
 
 

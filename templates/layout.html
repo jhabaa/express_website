@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Express Dry Clean | {% block title %}{% endblock %}</title>
+    <meta name="description" content="Express-Dry clean est une entreprise de nettoyage à sec localisée à Bruxelles. Nos services sont accessible à travers la Belgique via divers magasins situés à Etterbeek, Zaventem, Saint-Josse, Molenbeek et Auderghem. Notre Application reste accessible pour toutes les commandes pour livraisons au bureau et à domicile, aux prix les plus bas.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-app-title" content="Ex-press Dry Clean">
+    <meta name="appstore:bundle-id" content="Alpha.ExpressDryClean">
+    <meta name="contact" content="Zaventem: +3224204130  'Leuvensesteenweg 526, 1930, Zaventem'">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Flask-Python App">
+    <meta name="author" content="REMOVEDLab">
+    <meta name="keywords" content="Express Dry Clean, Nettoyage à sec, Bruxelles, Belgique, Etterbeek, Zaventem, Saint-Josse, Molenbeek, Auderghem, Application, Livraison, Bureau, Domicile, Prix, Bas">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="googlebot" content="index, follow">
+    <meta name="web_author" content="J-Hubert ABA'A | REMOVEDlab">
+    <meta name="geo.country" content="be">
+    <meta name="version" content="0.1.0+1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="/static/css/css.css">
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    
+    
+    <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->    
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
+</head>
+
+<body id="body">
+    {% set current_page = request.path.split('/')[-2] %}
+   <!--  <video id="ADS" autoplay muted loop playsinline preload="auto">
+        <source src="/static/imagesweb/1.mp4" type="video/mp4" />
+    </video> -->
+    <div class="background" id="background"></div>
+    <div class="burger" id="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <header class="" id="header" data-opacity="90">
+        <div class="logos">
+            <a href="{{url_for('home', lang=lang)}}"><img src="/static/imagesweb/logo.png" alt="" class="logo"></a>
+            <span class="page_name">{% block page_name %}{% endblock %} </span>
+        </div>
+        <nav  id="navigation">
+            <ul id="nav_links">
+                <li><a href="{{ url_for('home', lang = lang)}}">{{ dictionary['Home'] }}</a></li>
+                <li>
+                    <a href="{{ url_for('pricing' , lang = lang) }}">{{ dictionary['Pricing'] }}</a>
+                    <div class="categories_pricing">
+                        {% for category in categories %}
+                            <a href="{{url_for('pricing', lang = lang, subpage = category.name)}}">{{ category.name }}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+                <li><a href="{{ url_for('about', lang = lang)}}">{{ dictionary['About'] }}</a></li>
+                <li><a href="{{ url_for('contact', lang = lang)}}">{{ dictionary['Contact'] }}</a></li>
+            </ul>
+        </nav>
+
+        <!-- languages -->
+        <div class="lang" id="lang">
+           <!-- <span>{{ dictionary[current_page.capitalize()] }} </span> -->
+            <div class="active" id="active_lang">
+                <img src="/static/imagesweb/{{lang}}.svg" alt="">
+                <span>{{ lang }}</span>
+            </div>
+            <a href="{{ url_for(current_page, lang='fr')}}" class="{% if lang == 'fr' %} hide {% endif %}">
+               FR
+            </a>
+            <a href="{{ url_for(current_page, lang='en')}}" class="{% if lang == 'en' %} hide {% endif %}">EN</a>
+            <a href="{{ url_for(current_page, lang='nl')}}" class="{% if lang == 'nl' %} hide {% endif %}">NL</a>
+            <a href="{{ url_for(current_page, lang='it')}}" class="{% if lang == 'it' %} hide {% endif %}">IT</a>
+        </div>
+    </header>
+    <main id="main" class="">
+        {% block page %}{% endblock %}
+    </main>
+    
+
+    <footer id="footer" class="">
+        <div class="left">
+            <img src="/static/imagesweb/logo.png" alt="" class="logo">
+            <span class="logoText">Express Dry Clean</span>
+            <p>© BE0460.715.554</p>
+            <a href="tel:+3224204130"> +32 (0)24 20 41 30</a>
+
+            <span class="title1">{{ dictionary['title6'] }}</span>
+            <div class="subtitle">{{ dictionary['text6-1'] }} <a href="{{url_for('contact', lang = lang)}}">{{ dictionary['text6-2'] }}</a> <br></br>{{ dictionary['text6-3'] }} </div>
+
+            <a href="mailto:info@REMOVED" class="mailto">contact@REMOVED</a>
+        </div>
+        <div class="right">
+            <div class="links">
+                <a href="{{ url_for('home', lang=lang)}}">{{ dictionary['Home'] }}</a>
+                <a href="{{ url_for('pricing', lang = lang)}}">{{ dictionary['Pricing'] }}</a>
+                <a href="{{ url_for('about', lang = lang)}}">{{ dictionary['About'] }}</a>
+                <a href="{{ url_for('contact', lang = lang)}}">{{ dictionary['Contact'] }}</a>
+            </div>
+            <div class="socials">
+                <a href="https://www.facebook.com/expressdryclean" target="_blank">
+                    <img src="/static/imagesweb/facebook-svgrepo-com-2.svg" alt="" class="icon-link">
+                </a>
+                <a href="https://www.instagram.com/expressdryclean" target="_blank">
+                    <img src="/static/imagesweb/instagram-svgrepo-com-2.svg" alt="" class="icon-link">
+                </a>
+            </div>
+            
+        </div>
+    </footer>
+    <script src="/static/javascripts/anime.min.js"></script>
+    <script src="/static/javascripts/js.js" async defer></script>
+    
+</body>

@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ dictionary['Contact'] }}{% endblock %}
+
+{% block page %}
+<section class="page2" id="contact">
+    <!-- Description -->
+    <div class="description">
+        <div class="divider_vertical"></div>
+        <div class="header">
+            <span class="title1"> {{ dictionary['talk'] }}</span>
+        </div>
+        <div class="divider_vertical"></div>
+        <div class="subtitle flex">
+    
+        <p> Need a silk blouse rescued from stubborn stains?</p>
+        <p> Getting your duvets or blankets winter-ready?</p>
+        <p> Want to refresh a well-loved rug before it takes center stage again?</p>
+        <p>Looking for a trusted laundry service near Brussels or in northern Brabant-Wallon for all your family’s household linens?</p>
+        <p>Discover Ex-Press Dry Clean—your fabric care experts in Etterbeek, St-Josse, Zaventem, and Moortebeek. For over 20 years, we've been at your service, providing dedicated care for both personal and professional needs. Got questions? Ask away—let’s bring your linens back to life!</p>
+       
+        </div>
+
+        <div class="divider_vertical"></div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="contacts-btn">
+        <a href="tel:+3224204130" class="btn">
+            <img src="/static/imagesweb/telephone-fill.svg" alt="" class="apple">
+            <span> Make a call</span>
+        </a>
+           
+        <a href="https://testflight.apple.com/join/r5vANLZh" target="_blank">
+            <img src="/static/imagesweb/apple-2.svg" alt="" class="icon-link">
+            <span> Go to Apple Store</span>
+        </a>
+        <a href="mailto:info@REMOVED" target="_blank">
+            <img src="/static/imagesweb/envelope-fill.svg" alt="" class="icon-link">
+            <span> Email Us</span>
+        </a>     
+    </div>
+
+
+        <!--Photos Wall -->
+        <div class="photowall">
+            <div class="scroller_in">
+                <img src="/static/imagesweb/team1.jpeg" alt="" class="photo">
+                <img src="/static/imagesweb/team2.jpeg" alt="" class="photo">
+                <img src="/static/imagesweb/team3.jpeg" alt="" class="photo">
+                <img src="/static/imagesweb/team4.jpeg" alt="" class="photo">
+                <img src="/static/imagesweb/team5.jpeg" alt="" class="photo">
+                <img src="/static/imagesweb/team6.jpeg" alt="" class="photo">
+                <img src="/static/imagesweb/team1.jpeg" alt="" class="photo">
+                <img src="/static/imagesweb/team2.jpeg" alt="" class="photo">
+                <img src="/static/imagesweb/team3.jpeg" alt="" class="photo">
+                <img src="/static/imagesweb/team4.jpeg" alt="" class="photo">
+                <img src="/static/imagesweb/team5.jpeg" alt="" class="photo">
+                <img src="/static/imagesweb/team6.jpeg" alt="" class="photo">
+            </div>
+        </div>
+    <!-- <img src=".REMOVEDweb/back.png" alt="" class="back" id="ADS"> -->
+    <div class="contact">
+        
+        <div class="contact-form">
+            <form action="" method="post" class="form">
+                <span class="entry">{{ dictionary['name'] }}</span>
+                <input type="text" name="name" id="name" placeholder="Name" class="input">
+                <span class="entry">{{ dictionary['mail'] }}</span>
+                <input type="email" name="email" id="email" placeholder="Email" class="input">
+                
+                <textarea name="message" id="message" cols="20" rows="10" placeholder="Message" class="input"></textarea>
+                <input type="submit" value="Send" class="submit-btn">
+            </form>
+        </div>
+    </div> 
+</section>
+{% endblock %}

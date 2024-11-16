@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% block title %} Home {% endblock %}
+
+{% block page %}
+<section class="page1">
+
+        <!-- <div class="backblur">
+            <img src="/images/back.png" alt="" class="back2">
+        </div> -->
+        
+        <div class="presentationBloc">
+            <h1 class="ExpressTitle">Express Dry Clean</h1>
+            <p class="ExpressTitle">{{ dictionary['title1'] }}</p>
+            <a href="https://testflight.apple.com/join/r5vANLZh" class="">
+                <img src="/static/imagesweb/apple.svg" alt="" class="apple">
+            </a>
+        </div>
+         <img src="/static/imagesweb/back2.png" alt="" class="phone" id="phone1">
+        <img src="/static/imagesweb/back3.png" alt="" class="phone" id="phone2">
+</section>
+
+<!-- Page 4 -->
+<section class="page2 large" id="services">
+    <div class="title1">{{ dictionary['title4'] }}</div>
+    <div class="subtitle">{{ dictionary['subtitle4'] }}</div>
+    <div class="list">
+        {% for cat in categories %}
+            <div class="service">
+                <img src="http://express.REMOVED/getimage?name={{ cat.image }}" alt="" class="s-img">
+
+                <h2>{{ cat.name}}</h2>
+                <p>{{ cat.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+<!-- Page 2 -->
+<section class="page2" id="delivery">
+    <div class="title1">{{ dictionary['title2'] }}</div>
+    <div class="subtitle">{{ dictionary['subtitle1'] }}</div>
+    <div class="presentation">
+        <!--Image on left -->
+        <img src="/static/imagesweb/iphoneExpress2.png" alt="" class="img1">
+        <div class="desc">
+            
+            {{ dictionary['text1'] }}
+            <img src="/static/imagesweb/transport.jpeg" alt="" class="img1">
+            {{ dictionary['text2'] }}       
+        </div>
+        <video src="/static/imagesweb/ea1.mp4" class="vid1" autoplay muted preload playsinline></video>
+    </div>
+    
+</section>
+
+<!-- Page 3 -->
+<section class="page2 invert large" id="offers">
+    <div class="title1 invert">
+        {{ dictionary['title3'] }}
+    </div>
+    
+    <ul class="backgrid">
+        {% for card in dictionary['strengths'] %}
+            <li><img src="/static/imagesweb/{{card.illustration}}" alt="" class="img-back"></li>
+            <li>
+                <!-- <img src="/static/imagesweb/checkmark-seal-svgrepo-com.svg" alt="" class="img-round"> -->
+                <div class="text">
+                    <h2>{{card.title}}</h2>
+                    <p>{{card.description}}</p>
+                </div>
+           </li>
+        {% endfor %}
+    </ul>
+</section>
+
+
+<!-- Page 5 -->
+ <section class="page2" id="locations">
+    <div class="title1">{{ dictionary['title5'] }}</div>
+    <div class="subtitle flex">
+        {{ dictionary['subtitle5-1'] }} <br>
+        <div class="divider_vertical"></div>
+        {{ dictionary['subtitle5-2'] }} <br>
+        <div class="divider_vertical"></div>
+        {{ dictionary['subtitle5-3'] }}
+        <div class="divider_vertical"></div>
+        {{ dictionary['subtitle5-4'] }}
+    </div>
+    <div class="store_locations">
+        {% for store in stores %}
+    <div class="location">
+        
+        <span class="bigTitle">{{ store.name }}</span>
+        {% if store.name != "App" %}
+            <span class="smallTitle">{{ store.adress }}</span>
+        {% endif %}
+        <div class="loc-illustration">
+            <img src="http://express.REMOVED/getimage?name={{ store.image }}" alt="" class="loc-img">
+            <div class="informations">
+                <span>{{ store.desc }}</span>
+                <!-- Button goto -->
+                <a href="https://goo.gl/maps/7Z8Z9Z9Z9Z9Z9Z9Z9" class="button right">{{ dictionary['goto'] }}</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    
+ </section>
+
+{% endblock %}

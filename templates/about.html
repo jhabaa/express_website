@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block title %} {{ dictionary['About'] }} {% endblock %}
+
+{% block page %}
+<section class="page2 invert" id="about">
+   
+    <div class="section">
+        <img src="/static/imagesweb/express1.jpg" alt="" class="picture">
+        <div class="text">
+            <div class="title1">
+                {{ dictionary['About'] }}
+            </div>
+            {% for text in dictionary['about-text1'] %}
+            <p>{{ text }}</p>
+            {% endfor %}
+        </div>
+        
+    </div>
+  
+    <div class="section">
+        <img src="/static/imagesweb/express3.jpg" alt="" class="picture">
+        <div class="text">
+            <span class="title2">EX-PRESS DRY CLEAN</span>
+            <span class="subtitle2">{{ dictionary['title1'] }}</span>
+            {% for text in dictionary['about-text2'] %}
+                <p>{{ text }}</p>
+            {% endfor %}
+        </div>
+        
+    </div>
+
+    <div class="section">
+        <img src="/static/imagesweb/express2.jpg" alt="" class="picture">
+        <div class="text">
+            {% for text in dictionary['about-text3'] %}
+            <p>{{ text }}</p>
+            {% endfor %}
+        </div>
+       
+    </div>
+
+    <div class="section">
+        <img src="/static/imagesweb/express4.jpg" alt="" class="picture">
+        <div class="text">
+            {% for text in dictionary['about-text4'] %}
+            <p>{{ text }}</p>
+            {% endfor %}
+        </div>
+       
+    </div>
+
+
+</section>
+{% endblock %}

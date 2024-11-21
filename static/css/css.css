@@ -204,7 +204,8 @@ header .logo{
     transition: all 0.5s linear; 
     position: relative;
     height: 100%;
-    max-height: 200px;
+    max-height: 100px;
+    background-color: #000;
 }
 
 header nav.hide{
@@ -433,15 +434,12 @@ header.extended .lang a{
     padding: 0;
     width: 100vw;
     overflow: hidden;
-    /* padding-top: 2vmin; */
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    /* padding-top: 100px; */
     display:flex;
     flex-direction:column;
     justify-items:center;
     align-content:center;
     align-items:center;
+    background-color: var(--pure-white);
 }
 
 #main.hide{
@@ -661,6 +659,7 @@ header.extended .lang a{
     z-index: 1;
     overflow: hidden;
     justify-content: center;
+    font-family: "Inter", sans-serif;
 }
 .page2 .backgrid ::after{
     content: "";
@@ -675,13 +674,12 @@ header.extended .lang a{
     max-width: 300px;
     height: 300px;
     flex-grow: 1;
-    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: #3838382e;
+    background-color: var(--background-gray);
     -webkit-backdrop-filter: blur(2rem);
     backdrop-filter: blur(2rem);
     border-radius: 1rem;
@@ -696,19 +694,24 @@ header.extended .lang a{
 }
 .page2 .backgrid li .text{
     position: relative;
-    color: gray;
+    color: var(--header-text);
     font-size: 1.1rem;
     z-index:221;
     width: 100%;
     height: 100%;
-    
     display: flex;
     flex-direction: column;
     
 }
 .page2 .backgrid li .text h2{
-    text-align: start;
-    color: #eee;
+    text-align: center;
+    color: var(--header-text);
+    margin-bottom: 10px;
+}
+
+.page2 .backgrid li .text p{
+    opacity: .6;
+    font-weight: 100;
 }
 .page2 .backgrid li .img-round{
     position: absolute;
@@ -751,12 +754,12 @@ header.extended .lang a{
 .page2 .list .service{
     width: 90%;
     max-width: 400px;
-    max-height: 120px;
+    max-height: 250px;
     flex-grow: 1;
     position: relative;
     overflow: hidden;
     background-color: var(--background-gray);
-    border-radius: 1.2rem;
+    border-radius: 1rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     font-family: "Inter", sans-serif;
     padding: 10px;
@@ -781,6 +784,8 @@ header.extended .lang a{
     font-weight: 100;
     line-height: 1.4;
     text-overflow: ellipsis;
+    margin-bottom: 10px;
+    opacity: .6;
 }
 .page2 .contact {
     display: none;
@@ -1418,11 +1423,33 @@ header.extended .lang a{
 #locations{
     height: fit-content;
     background-color: var(--header);
-    color: var(--white-cosmic);
+    color: var(--header-text);
 }
 #delivery{
-    background-color: white;
+    background-color: var(--background-gray);
     height: fit-content;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#delivery .delivery-bloc{
+    width: 40%;
+    min-width: 310px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-items: start;
+ 
+    
+}
+#delivery .delivery-bloc img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 #about{
@@ -1476,6 +1503,10 @@ header.extended .lang a{
     backdrop-filter: blur(2rem);
     -webkit-backdrop-filter: blur(2rem);
     padding-top: 10vmax;
+}
+
+#offers{
+    color: var(--header-text);
 }
 
 .contacts-btn{

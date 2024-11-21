@@ -26,7 +26,7 @@
     <div class="list">
         {% for cat in categories %}
             <div class="service">
-                <img src="http://express.REMOVED/getimage?name={{ cat.image }}" alt="" class="s-img">
+                <img src="http://express.REMOVED/getimage?name={{cat.image}}" alt="" class="s-img">
 
                 <h2>{{ cat.name}}</h2>
                 <p>{{ cat.description }}</p>
@@ -38,25 +38,29 @@
 
 <!-- Page 2 -->
 <section class="page2" id="delivery">
-    <div class="title1">{{ dictionary['title2'] }}</div>
-    <div class="subtitle">{{ dictionary['subtitle1'] }}</div>
-    <div class="presentation">
-        <!--Image on left -->
-        <img src="/static/imagesweb/iphoneExpress2.png" alt="" class="img1">
-        <div class="desc">
-            
-            {{ dictionary['text1'] }}
-            <img src="/static/imagesweb/transport.jpeg" alt="" class="img1">
-            {{ dictionary['text2'] }}       
-        </div>
-        <video src="/static/imagesweb/ea1.mp4" class="vid1" autoplay muted preload playsinline></video>
+    <div class="delivery-bloc">
+        <div class="title1">{{ dictionary['title2'] }}</div>
+        <div class="subtitle">{{ dictionary['subtitle1'] }}</div>
+    </div>
+
+    <div class="delivery-bloc">
+        <div class="title1"> The Problems </div>
+        <div class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quis, iusto quos est ratione natus quam, aspernatur officiis illo vel enim nulla reprehenderit et! Vitae in dolor.</div>
+    </div>
+
+    <div class="delivery-bloc">
+        <div class="title1"> Solutions </div>
+        <div class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quis, iusto quos est ratione natus quam, aspernatur officiis illo vel enim nulla reprehenderit et! Vitae in dolor.</div>
+    </div>
+    <div class="delivery-bloc">
+        <img src="/static/imagesweb/transport.jpeg" alt="" class="delivery-img">
     </div>
     
 </section>
 
 <!-- Page 3 -->
-<section class="page2 invert large" id="offers">
-    <div class="title1 invert">
+<section class="page2" id="offers">
+    <div class="title1">
         {{ dictionary['title3'] }}
     </div>
     

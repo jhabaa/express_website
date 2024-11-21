@@ -54,10 +54,9 @@
     </div>
 
     <header class="" id="header" data-opacity="90">
-        <div class="logos">
-            <a href="{{url_for('home', lang=lang)}}"><img src="/static/imagesweb/logo.png" alt="" class="logo"></a>
-            <span class="page_name">{% block page_name %}{% endblock %} </span>
-        </div>
+        
+        <a href="{{url_for('home', lang=lang)}}"><img src="/static/imagesweb/logo.png" alt="" class="logo"></a>
+        
         <nav  id="navigation">
             <ul id="nav_links">
                 <li><a href="{{ url_for('home', lang = lang)}}">{{ dictionary['Home'] }}</a></li>
@@ -98,7 +97,7 @@
         <div class="left">
             <img src="/static/imagesweb/logo.png" alt="" class="logo">
             <span class="logoText">Express Dry Clean</span>
-            <p>© BE0460.715.554</p>
+            <p>© BE0460.715.554 </p>
             <a href="tel:+3224204130"> +32 (0)24 20 41 30</a>
 
             <span class="title1">{{ dictionary['title6'] }}</span>

@@ -875,7 +875,7 @@ def get_current_time():
 INSERT INTO `appexpress`.`client` (`ID_CLIENT`, `NAME_CLIENT`, `surname_CLIENT`, `EMAIL_CLIENT`, `ADDRESS_CLIENT`, `PHONE_CLIENT`, `PASSWORD_CLIENT`) VALUES ('hean_client20', 'REMOVED', 'client', 'REMOVED', 'Rue des Allies 93', '486650303', 'hean2000');
 """
 path = os.path.abspath('/var/www/express/static/images')
-path = os.path.abspath('static/images')
+#path = os.path.abspath('static/images/')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 
@@ -1203,12 +1203,12 @@ dictionary = {'fr':{
     ]
 }}
 
-@app.after_request
+""" @app.after_request
 def add_header(response):
     response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
     response.headers['Pragma'] = 'no-cache'
     response.headers['Expires'] = '-1'
     return response
-
+ """
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=7001,debug=True)
+    app.run(host="0.0.0.0", port=7001)

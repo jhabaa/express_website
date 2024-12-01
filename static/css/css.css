@@ -787,7 +787,7 @@ header.extended .lang a{
     flex-grow: 1;
     position: relative;
     overflow: hidden;
-    background-color: var(--background-gray);
+    background-color: var(--pure-white);
     border-radius: 1rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     font-family: "Inter", sans-serif;
@@ -973,7 +973,7 @@ header.extended .lang a{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: #fff;
+        color: var(--header-text);
         max-width: 500px;
 
     }
@@ -1223,7 +1223,7 @@ header.extended .lang a{
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
-    color: #fff;
+    color: var(--dark-background);
 }
 
 .description .header .illustration{
@@ -1242,7 +1242,7 @@ header.extended .lang a{
     top: 100px;
     font-size: calc(1rem + 1vw);
     font-weight: 700;
-    color: #fff;
+    color: var(--header-text);
     text-align: center;
     padding: 10px;
     z-index: 1000;
@@ -1302,17 +1302,17 @@ header.extended .lang a{
     height: 100%;
     text-overflow: ellipsis;
     z-index: 60;
-    background-color: #191919;
+    background-color: var(--white-cosmic);
 }
 
 #pricing .services .service .infos p{
     font-size: 0.8rem;
     margin-bottom: 2px;
-    color: gray;
+    color: var(--large-subtitle-text)
 }
 
 #pricing .services .service .infos h2{
-	color:var(--transparent_white);
+	color:var(--large-title-text);
     font-size: 1.2rem;
     font-weight: 700;
 	text-align: left;
@@ -1508,8 +1508,8 @@ header.extended .lang a{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #eee;
-    background-color: rgba(15, 15, 15, 0.87);
+    color: var(--header-text);
+    background-color: var(--pure-white);
 }
 #about p{
     padding: 10px;

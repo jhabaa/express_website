@@ -430,8 +430,10 @@ def pricing(lang = 'fr', subpage = None):
 
     others_categories = [ x for x in categories if x['name'] != subpage]
     available_services = [ x for x in services if x['category_name'] == subpage]
+
+    selected_category = [ x for x in categories if x['name'] == subpage][0] if subpage else None
     
-    return render_template('pricing.html', lang = session['lang'], categories = categories, services_in_store = services_in_store, dictionary = dictionary[lang], category = subpage, other_categories = others_categories, services = None if len(available_services) <= 0 else available_services)
+    return render_template('pricing.html', lang = session['lang'], categories = categories, services_in_store = services_in_store, dictionary = dictionary[lang], category = subpage, other_categories = others_categories, services = None if len(available_services) <= 0 else available_services, selected_category = selected_category)
     
 @app.route('/<lang>/about/')
 @app.route('/<lang>/about/<subpage>')
@@ -875,7 +877,7 @@ def get_current_time():
 INSERT INTO `appexpress`.`client` (`ID_CLIENT`, `NAME_CLIENT`, `surname_CLIENT`, `EMAIL_CLIENT`, `ADDRESS_CLIENT`, `PHONE_CLIENT`, `PASSWORD_CLIENT`) VALUES ('hean_client20', 'REMOVED', 'client', 'REMOVED', 'Rue des Allies 93', '486650303', 'hean2000');
 """
 path = os.path.abspath('/var/www/express/static/images')
-#path = os.path.abspath('static/images/')
+path = os.path.abspath('static/images/')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 

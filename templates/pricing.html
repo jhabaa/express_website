@@ -16,10 +16,13 @@
         <div class="header">
             {% if services %}
                 <img src="/static/images/{{services[1].illustration}}" alt="" class="illustration">
+                <span class="subtitle">{{ selected_category.informations | safe }}</span>
             {% else %}
                 <img src="/static/images/signature.jpg" alt="" class="illustration">
+                <span class="title"> Landry in Etterbeek, St-Josse, Moortebeek and Zaventem</span>
             {% endif %}
-            <span class="title"> Landry in Etterbeek, St-Josse, Moortebeek and Zaventem</span>
+            
+            
         </div>
     </div>
 
@@ -67,7 +70,7 @@
        
         {% for category in other_categories  %}
             <a href="{{url_for('pricing', lang = lang, subpage = category.name)}}" class="category-card">
-                <img src="/static/images/{{category.image}}" alt="" class="illustration">
+                <img src="http://express.REMOVED/getimage?name={{category.image}}" alt="" class="illustration">
                 <span class="title">{{category.name}}</span>
             </a>
         {% endfor %}

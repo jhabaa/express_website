@@ -450,6 +450,13 @@ def contact(lang = 'fr', subpage = None):
     return render_template('contact.html', lang = session['lang'], dictionary = dictionary[lang])
 
 
+@app.route('/<lang>/gallery/')
+@app.route('/<lang>/gallery/<subpage>')
+def gallery(lang = 'fr', subpage = None ):
+    session['lang'] = lang
+    return render_template('gallery.html', lang = session['lang'], dictionary = dictionary[lang])
+
+
 @app.route('/getservices')
 def show_sewing():
     cur = mysql.new_cursor(dictionary = True)

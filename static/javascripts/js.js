@@ -21,6 +21,13 @@ let scroller_in = document.querySelector('.scroller_in');
     // gsap code here!
 });
 
+(function() {
+    Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/themes/classic/galleria.classic.min.js');
+    Galleria.run('.galleria');
+}());
+
+
+if (Galleria) { console.log("Galleria properly run") }
 
 /* let navigation_extension = gsap.fromTo(navigation_links, {
 

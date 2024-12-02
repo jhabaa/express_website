@@ -14,6 +14,11 @@ var logo = document.querySelector('.logos');
 var photowall = document.querySelector('.photowall');
 let photos = document.querySelectorAll('.photo');
 let scroller_in = document.querySelector('.scroller_in');
+
+let navigationBtns = document.querySelectorAll('li');
+let header_bar_subBlocks = document.querySelector('#header_bar_subBlock');
+let blur_overlay = document.querySelector('.blurOverlay');
+
 // GSAP
  // use a script tag or an external JS file
  document.addEventListener("DOMContentLoaded", (event) => {
@@ -28,6 +33,24 @@ let scroller_in = document.querySelector('.scroller_in');
 
 
 if (Galleria) { console.log("Galleria properly run") }
+
+
+
+navigationBtns.forEach(function(btn) {
+    console.log(btn);
+    btn.addEventListener('mouseover', function() {
+        // We'll remove it when we quit the header
+        header_bar_subBlocks.classList.add('extended');
+        // Blur the background
+        blur_overlay.classList.remove('hidden');
+    })
+});
+
+header.addEventListener('mouseleave', function() {
+    header_bar_subBlocks.classList.remove('extended');
+    blur_overlay.classList.add('hidden');
+}
+);
 
 /* let navigation_extension = gsap.fromTo(navigation_links, {
 

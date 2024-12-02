@@ -55,40 +55,47 @@
     </div>
 
     <header class="" id="header" data-opacity="90">
-        
-        <a href="{{url_for('home', lang=lang)}}"><img src="/static/imagesweb/logo.png" alt="" class="logo"></a>
-        
-        <nav  id="navigation">
-            <ul id="nav_links">
-                <li><a href="{{ url_for('home', lang = lang)}}">{{ dictionary['Home'] }}</a></li>
-                <li>
-                    <a href="{{ url_for('pricing' , lang = lang) }}">{{ dictionary['Pricing'] }}</a>
-                    <div class="categories_pricing">
-                        {% for category in categories %}
-                            <a href="{{url_for('pricing', lang = lang, subpage = category.name)}}">{{ category.name }}</a>
-                        {% endfor %}
-                    </div>
-                </li>
-                <li><a href="{{ url_for('about', lang = lang)}}">{{ dictionary['About'] }}</a></li>
-                <li><a href="{{ url_for('gallery', lang = lang)}}"> Gallery</a></li>
-                <li><a href="{{ url_for('contact', lang = lang)}}">{{ dictionary['Contact'] }}</a></li>
-            </ul>
-        </nav>
+        <div class="up">
+            <a href="{{url_for('home', lang=lang)}}"><img src="/static/imagesweb/logo.png" alt="" class="logo"></a>
 
-        <!-- languages -->
-        <div class="lang" id="lang">
-           <!-- <span>{{ dictionary[current_page.capitalize()] }} </span> -->
-            <div class="active" id="active_lang">
-                <img src="/static/imagesweb/{{lang}}.svg" alt="">
-                <span>{{ lang }}</span>
+            <nav  id="navigation">
+                <ul id="nav_links">
+                    <li><a href="{{ url_for('home', lang = lang)}}">{{ dictionary['Home'] }}</a></li>
+                    <li>
+                        <a href="{{ url_for('pricing' , lang = lang) }}">{{ dictionary['Pricing'] }}</a>
+                        
+                    </li>
+                    <li><a href="{{ url_for('about', lang = lang)}}">{{ dictionary['About'] }}</a></li>
+                    <li><a href="{{ url_for('gallery', lang = lang)}}"> Gallery</a></li>
+                    <li><a href="{{ url_for('contact', lang = lang)}}">{{ dictionary['Contact'] }}</a></li>
+                </ul>
+            </nav>
+    
+            <!-- languages -->
+            <div class="lang" id="lang">
+               <!-- <span>{{ dictionary[current_page.capitalize()] }} </span> -->
+                <div class="active" id="active_lang">
+                    <img src="/static/imagesweb/{{lang}}.svg" alt="">
+                    <span>{{ lang }}</span>
+                </div>
+                <a href="{{ url_for(current_page, lang='fr')}}" class="{% if lang == 'fr' %} hide {% endif %}">
+                   FR
+                </a>
+                <a href="{{ url_for(current_page, lang='en')}}" class="{% if lang == 'en' %} hide {% endif %}">EN</a>
+                <a href="{{ url_for(current_page, lang='nl')}}" class="{% if lang == 'nl' %} hide {% endif %}">NL</a>
+                <a href="{{ url_for(current_page, lang='it')}}" class="{% if lang == 'it' %} hide {% endif %}">IT</a>
             </div>
-            <a href="{{ url_for(current_page, lang='fr')}}" class="{% if lang == 'fr' %} hide {% endif %}">
-               FR
-            </a>
-            <a href="{{ url_for(current_page, lang='en')}}" class="{% if lang == 'en' %} hide {% endif %}">EN</a>
-            <a href="{{ url_for(current_page, lang='nl')}}" class="{% if lang == 'nl' %} hide {% endif %}">NL</a>
-            <a href="{{ url_for(current_page, lang='it')}}" class="{% if lang == 'it' %} hide {% endif %}">IT</a>
         </div>
+        
+        <div class="down" id="header_bar_subBlock">
+            {% for category in categories %}
+                <a href="{{url_for('pricing', lang = lang, subpage = category.name)}}">{{ category.name }}</a>
+            {% endfor %}
+        </div>
+
+      
+        
+       
     </header>
     <main id="main" class="">
         {% block page %}{% endblock %}
@@ -126,6 +133,10 @@
             
         </div>
     </footer>
+
+    <div class="blurOverlay hidden">
+
+    </div>
     <script src="/static/javascripts/anime.min.js"></script>
     <script src="/static/javascripts/js.js" async defer></script>
     

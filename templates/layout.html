@@ -56,18 +56,40 @@
 
     <header class="" id="header" data-opacity="90">
         <div class="up">
-            <a href="{{url_for('home', lang=lang)}}"><img src="/static/imagesweb/logo.png" alt="" class="logo"></a>
+            <a href="{{url_for('home', lang=lang)}}"><img src="/static/imagesweb/logo_vitrine_EXPRESS.svg" alt="" class="logo"></a>
 
             <nav  id="navigation">
                 <ul id="nav_links">
-                    <li><a href="{{ url_for('home', lang = lang)}}">{{ dictionary['Home'] }}</a></li>
-                    <li>
+                    <li class="nav_link hidden"><a href="{{ url_for('home', lang = lang)}}">{{ dictionary['Home'] }}</a></li>
+                    <li class="nav_link hidden">
                         <a href="{{ url_for('pricing' , lang = lang) }}">{{ dictionary['Pricing'] }}</a>
-                        
+                        <ul class="sublinks">
+                            {% for category in categories %}
+                                <li>
+                                    <a href="{{url_for('pricing', lang = lang, subpage = category.name)}}">{{ category.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
                     </li>
-                    <li><a href="{{ url_for('about', lang = lang)}}">{{ dictionary['About'] }}</a></li>
-                    <li><a href="{{ url_for('gallery', lang = lang)}}"> Gallery</a></li>
-                    <li><a href="{{ url_for('contact', lang = lang)}}">{{ dictionary['Contact'] }}</a></li>
+                    <li class="nav_link hidden"><a href="{{ url_for('about', lang = lang)}}">{{ dictionary['About'] }}</a></li>
+                    <li class="nav_link hidden"><a href="{{ url_for('delivery', lang = lang)}}"> Delivery</a></li>
+                    <li class="nav_link hidden"><a href="{{ url_for('contact', lang = lang)}}">{{ dictionary['Contact'] }}</a></li>
+                    <li class="nav_link">
+                        <a href="{{ url_for('localization', lang = lang)}}"> Localization </a>
+                        <ul class="sublinks">
+                            {% for store in stores %}
+                            <li>
+                                <a>
+                                    <span class="bigTitle">{{ store.name }}</span>
+                                    {% if store.name != "App" %}
+                                        <span class="smallTitle">{{ store.adress }}</span>
+                                    {% endif %}
+                                </a>
+                               
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
                 </ul>
             </nav>
     
@@ -119,7 +141,7 @@
                 <a href="{{ url_for('home', lang=lang)}}">{{ dictionary['Home'] }}</a>
                 <a href="{{ url_for('pricing', lang = lang)}}">{{ dictionary['Pricing'] }}</a>
                 <a href="{{ url_for('about', lang = lang)}}">{{ dictionary['About'] }}</a>
-                <a href="{{ url_for('gallery', lang = lang)}}"> Gallery</a>
+                <a href="{{ url_for('delivery', lang = lang)}}"> Delivery</a>
                 <a href="{{ url_for('contact', lang = lang)}}">{{ dictionary['Contact'] }}</a>
             </div>
             <div class="socials">

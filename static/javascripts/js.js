@@ -15,7 +15,7 @@ var photowall = document.querySelector('.photowall');
 let photos = document.querySelectorAll('.photo');
 let scroller_in = document.querySelector('.scroller_in');
 
-let navigationBtns = document.querySelectorAll('li');
+let navigationBtns = document.querySelectorAll('.nav_link');
 let header_bar_subBlocks = document.querySelector('#header_bar_subBlock');
 let blur_overlay = document.querySelector('.blurOverlay');
 
@@ -26,28 +26,28 @@ let blur_overlay = document.querySelector('.blurOverlay');
     // gsap code here!
 });
 
-(function() {
-    Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/themes/classic/galleria.classic.min.js');
-    Galleria.run('.galleria');
-}());
-
-
-if (Galleria) { console.log("Galleria properly run") }
-
 
 
 navigationBtns.forEach(function(btn) {
     console.log(btn);
     btn.addEventListener('mouseover', function() {
+        // Get the second child of the btn
         // We'll remove it when we quit the header
-        header_bar_subBlocks.classList.add('extended');
+        btn.classList.remove('hidden');
         // Blur the background
         blur_overlay.classList.remove('hidden');
     })
+    btn.addEventListener('mouseleave', function() {
+        // Get the second child of the btn
+        // We'll remove it when we quit the header
+        btn.classList.add('hidden');
+        // Blur the background
+        blur_overlay.classList.add('hidden');
+    });
 });
 
 header.addEventListener('mouseleave', function() {
-    header_bar_subBlocks.classList.remove('extended');
+
     blur_overlay.classList.add('hidden');
 }
 );

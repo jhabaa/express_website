@@ -450,11 +450,17 @@ def contact(lang = 'fr', subpage = None):
     return render_template('contact.html', lang = session['lang'], dictionary = dictionary[lang])
 
 
-@app.route('/<lang>/gallery/')
-@app.route('/<lang>/gallery/<subpage>')
-def gallery(lang = 'fr', subpage = None ):
+@app.route('/<lang>/delivery/')
+@app.route('/<lang>/delivery/<subpage>')
+def delivery(lang = 'fr', subpage = None ):
     session['lang'] = lang
-    return render_template('gallery.html', lang = session['lang'], dictionary = dictionary[lang])
+    return render_template('delivery.html', lang = session['lang'], dictionary = dictionary[lang])
+
+@app.route('/<lang>/localization/')
+@app.route('/<lang>/localization/<subpage>')
+def localization(lang = 'fr', subpage = None ):
+    session['lang'] = lang
+    return render_template('localization.html', lang = session['lang'], dictionary = dictionary[lang])
 
 
 @app.route('/getservices')

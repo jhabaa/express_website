@@ -460,7 +460,9 @@ def delivery(lang = 'fr', subpage = None ):
 @app.route('/<lang>/localization/<subpage>')
 def localization(lang = 'fr', subpage = None ):
     session['lang'] = lang
-    return render_template('localization.html', lang = session['lang'], dictionary = dictionary[lang])
+    stores = GetData('full','store')
+    available_store = [ x for x in stores if x['name'] == subpage][-1] if subpage else None
+    return render_template('localization.html', lang = session['lang'], dictionary = dictionary[lang], stores = stores, selected_store = available_store)
 
 
 @app.route('/getservices')
@@ -971,6 +973,7 @@ def fill_database():
 ## Services are missing
 dictionary = {'fr':{
     'title1': 'Découvrez notre pressing écologique',
+    'days' : ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
     'title2': 'Livraison',
     'subtitle1': "Nous collectons, nettoyons et livrons vos vêtements à domicile ou au bureau selon vos disponibilités.",
     'text1': "Vous ne pouvez pas vous déplacer pour venir récupérer votre linge de maison nettoyé ? Vous souhaitez vous faire livrer votre linge? Vous n’êtes pas disponible durant les heures d’ouverture de notre magasin ou vous ne pouvez pas vous déplacer pour des raisons diverses ?",
@@ -1032,6 +1035,7 @@ dictionary = {'fr':{
     ]
 }, 'en':{
     'title1': 'Discover our ecological dry cleaning',
+    'days' : ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     'title2': 'Delivery',
     'subtitle1': "We collect, clean and deliver your clothes to your home or office according to your availability.",
     'text1': "You can't move to pick up your cleaned household linen? Do you want to have your clothes delivered? You are not available during the opening hours of our store or you cannot move for various reasons?",
@@ -1096,6 +1100,7 @@ dictionary = {'fr':{
 'nl':{
     'title1': 'Ontdek onze ecologische droogkuis',
     'title2': 'Levering',
+    'days' : ['Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag'],
     'subtitle1': "Wij halen, reinigen en leveren uw kleding aan huis of op kantoor volgens uw beschikbaarheid.",
     'text1': "Kunt u niet verplaatsen om uw schoongemaakte huishoudlinnen op te halen? Wilt u uw kleding laten bezorgen? Bent u niet beschikbaar tijdens de openingstijden van onze winkel of kunt u om verschill",
     'text2': "Als u gebruik wilt maken van onze wasservice, neem dan nu contact met ons op. Wij bieden u een op maat gemaakte bezorgservice op het door u gekozen adres in heel België.",
@@ -1158,6 +1163,7 @@ dictionary = {'fr':{
 }, 'it':{
     'title1': 'Scopri il nostro lavaggio a secco ecologico',
     'title2': 'Consegna',
+    'days' : ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato', 'Domenica'],
     'subtitle1': "Ritiriamo, puliamo e consegniamo i tuoi vestiti a casa o in ufficio secondo la tua disponibilità.",
     'text1': "Non puoi spostarti per ritirare il tuo bucato pulito? Vuoi farti consegnare i tuoi vestiti? Non sei disponibile durante l'orario di apertura del nostro negozio o non puoi spostarti per vari motivi?",
     'text2': "Se desideri usufruire del nostro servizio di lavanderia a domicilio, contattaci ora. Ti offriamo un servizio di consegna su misura all'indirizzo da te scelto in tutta Belgio.",

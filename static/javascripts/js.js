@@ -35,6 +35,8 @@ navigationBtns.forEach(function(btn) {
         // We'll remove it when we quit the header
         btn.classList.remove('hidden');
         // Blur the background
+        // Only if the node has more than one child
+        if (btn.childElementCount <= 1){return}
         blur_overlay.classList.remove('hidden');
     })
     btn.addEventListener('mouseleave', function() {

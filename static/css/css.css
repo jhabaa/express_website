@@ -177,7 +177,7 @@ header.hide{
 }
 
 header .up nav{
-    margin-left: 10rem;
+    margin-left: 5rem;
 }
 
 header .up nav ul{
@@ -186,10 +186,8 @@ header .up nav ul{
     flex-direction: row;
     width: 100%;
     margin: 0%;
- 
-    gap: 20px;
     list-style: none;
-    font-size: 7vh;
+    font-size: 6vh;
     display: none;
     filter: blur(10px);
     -webkit-filter: blur(10px);
@@ -283,9 +281,24 @@ header .up nav ul li :nth-child(2){
 
 header .up nav ul li .sublinks{
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+}
+
+header .up nav ul li .sublinks .mainlinks{
+    display: flex;
+    flex-direction: column;
+
     gap: 0px;
     font-weight: 500;
     color: var(--header-text);
+}
+header .up nav ul li .sublinks .secondarylinks{
+    color: gray;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -405,12 +418,11 @@ header.extended .lang a{
         display: flex;
         position: relative;
         flex-wrap: nowrap;
-        justify-content: start;
-        align-items: baseline;
-        gap: 25px;
+        flex-direction: row;
+        gap: 20px;
         list-style: none;
-        font-size: calc(1.1rem + 1vh);
-        font-weight: 300;
+        font-size: calc(0.9rem + 1vh);
+        font-weight: 200;
         filter: unset;
         -webkit-filter: unset;
     }
@@ -432,9 +444,12 @@ header.extended .lang a{
         position: fixed;
         padding-top: 20px;
         left: 0px;
-        flex-direction: column;
+        flex-direction: row;
         background-color: var(--pure-white);
-        align-items: center;
+        align-items: left;
+        justify-content: center;
+        gap: 20px;
+
 
     }
     header .up nav ul li a:hover{
@@ -444,7 +459,7 @@ header.extended .lang a{
 
      header .up .lang{
         top: 0px;
-        right: 100px;
+        right: 1rem;
         min-height: 60px;
         height: fit-content;
         max-height: unset;
@@ -1080,6 +1095,7 @@ header.extended .lang a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-block: 20px;
 }
 .subtitle a{
     text-decoration: underline;
@@ -1403,7 +1419,7 @@ header.extended .lang a{
     padding: 10px;
     width: 90% ;
 }
-.page2 .location{
+.location{
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -1412,12 +1428,13 @@ header.extended .lang a{
     margin: 0 auto;
     overflow: hidden;
 }
+
 .bigTitle{
     display: flex;
     font-size: 2rem;
     font-weight: 700;
     z-index: 100;
-    justify-content: center;
+    justify-content: left;
 }
 .smallTitle{
     font-size: 0.8rem;
@@ -1427,7 +1444,7 @@ header.extended .lang a{
     z-index: 100;
 }
 
-.page2 .location .loc-illustration{
+.location .loc-illustration{
     position: relative;
     width: 100%;
     height: 100vw;
@@ -1439,7 +1456,7 @@ header.extended .lang a{
 }
 
 
-.page2 .location .loc-illustration .loc-img{
+.location .loc-illustration .loc-img{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1447,7 +1464,7 @@ header.extended .lang a{
     z-index: 2;
 }
 
-.page2 .location .loc-illustration .informations{
+.location .loc-illustration .informations{
     z-index: 1000;
     position: absolute;
     display: flex;
@@ -1479,9 +1496,25 @@ header.extended .lang a{
     font-size: 0.8rem;
     font-style: italic;
 }
-.page2 .location .loc-illustration span{
+.location .loc-illustration span{
     padding: 10px;
     font-weight: 400;
+}
+
+#localization{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+#localization .localization_all{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
 }
 
 #locations{
@@ -1491,7 +1524,7 @@ header.extended .lang a{
 }
 #delivery{
     background-color: var(--background-gray);
-    height: fit-content;
+    padding-block: 20px;
     max-width: 1200px;
     display: flex;
     flex-direction: row;
@@ -1509,6 +1542,7 @@ header.extended .lang a{
     align-items: self-start;
     text-align: start;
 }
+
 
 #delivery .delivery-bloc .subtitle{
     display: flex;
@@ -1791,4 +1825,113 @@ footer .right .icon-link{
 .blurOverlay.hidden{
     top: -100%;
     transition: all 0.5s ease-in-out;
+}
+
+#delivery_page{
+    max-width:1400px;
+    max-height: unset;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--header-text);
+    background-color: var(--pure-white);
+}
+
+#delivery_page .description{
+    width: 95%;
+}
+
+#delivery_page .description .header .subtitle{
+    width: 90%;
+    max-width: fit-content;
+    margin-block: 20px;
+}
+#delivery_page .description .header .subtitle ul{
+    text-align: left;
+    font-weight: 400;
+}
+
+#delivery_page .description .header .subtitle h2{
+    padding-block: 40px;
+}
+
+
+.contact_card{
+    width: 310px;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--white-cosmic);
+    border-radius: 1rem;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+    gap: 20px;
+    float: right;
+}
+
+.contact_card .contact_img{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: 0%;
+}
+
+
+.contact_card .contact_infos{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+}
+.contact_card .contact_infos .contact_name{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.contact_card a {
+    background-color: var(--pure-white);
+    padding-inline: 20px;
+    padding-block: 10px;
+    border-radius: 1rem;
+    text-decoration: none;
+}
+
+.openPanel{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white-cosmic);
+    padding: 20px;
+    border-radius: 1rem;
+    margin: 10px;
+    gap: 10px;
+}
+
+.day{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.day :nth-child(1){
+    color: var(--large-title-text);
+    font-weight: 700;
+    width: 100px;
+    text-align: left;
+}
+.day :nth-child(2){
+    color: var(--header-text);
+}
+
+.map iframe {
+    position: relative;
+    width: 400px;
+    max-height: 400px;
 }

@@ -64,11 +64,17 @@
                     <li class="nav_link hidden">
                         <a href="{{ url_for('pricing' , lang = lang) }}">{{ dictionary['Pricing'] }}</a>
                         <ul class="sublinks">
-                            {% for category in categories %}
-                                <li>
-                                    <a href="{{url_for('pricing', lang = lang, subpage = category.name)}}">{{ category.name }}</a>
-                                </li>
-                            {% endfor %}
+                            <div class="mainlinks">
+                                {% for category in categories %}
+                                    <li>
+                                        <a href="{{url_for('pricing', lang = lang, subpage = category.name)}}">{{ category.name }}</a>
+                                    </li>
+                                {% endfor %}
+                            </div>
+                            <div class="secondarylinks">
+                                <li> <a href="{{url_for('pricing', lang = lang)}}">All</a></li>
+                            </div>
+                            
                         </ul>
                     </li>
                     <li class="nav_link hidden"><a href="{{ url_for('about', lang = lang)}}">{{ dictionary['About'] }}</a></li>
@@ -77,19 +83,25 @@
                     <li class="nav_link">
                         <a href="{{ url_for('localization', lang = lang)}}"> Localization </a>
                         <ul class="sublinks">
-                            {% for store in stores %}
-                            <li>
-                                <a>
-                                    <span class="bigTitle">{{ store.name }}</span>
-                                    {% if store.name != "App" %}
-                                        <span class="smallTitle">{{ store.adress }}</span>
-                                    {% endif %}
-                                </a>
-                               
-                            </li>
-                            {% endfor %}
+                            <div class="mainlinks">
+                                {% for store in stores %}
+                                <li>
+                                    <a href="{{ url_for('localization', lang = lang, subpage = store.name )}}">
+                                        <span class="bigTitle">{{ store.name }}</span>
+                                        {% if store.name != "App" %}
+                                            <span class="smallTitle">{{ store.adress }}</span>
+                                        {% endif %}
+                                    </a>
+                                
+                                </li>
+                                {% endfor %}
+                            </div>
+                            <div class="secondarylinks">
+                                <li> <a href="#">See on Maps</a></li>
+                            </div>
                         </ul>
                     </li>
+                    
                 </ul>
             </nav>
     

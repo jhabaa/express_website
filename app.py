@@ -410,7 +410,8 @@ def index():
 
 @app.route('/<lang>/home/')
 @app.route('/<lang>/home/<subpage>')
-def home(lang = 'fr', subpage = None):
+@app.route('/<lang>/home/<subpage>/<store>')
+def home(lang = 'fr', subpage = None, store = None):
     #fill_database()
     #set language
     session['lang'] = lang
@@ -421,7 +422,8 @@ def home(lang = 'fr', subpage = None):
 
 @app.route('/<lang>/pricing/')
 @app.route('/<lang>/pricing/<subpage>')
-def pricing(lang = 'fr', subpage = None):
+@app.route('/<lang>/pricing/<subpage>/<store>')
+def pricing(lang = 'fr', subpage = None, store = None):
     #set language
     session['lang'] = lang
     services = GetData('full','service') # Get all services
@@ -432,8 +434,9 @@ def pricing(lang = 'fr', subpage = None):
     available_services = [ x for x in services if x['category_name'] == subpage]
 
     selected_category = [ x for x in categories if x['name'] == subpage][0] if subpage else None
-    
-    return render_template('pricing.html', lang = session['lang'], categories = categories, services_in_store = services_in_store, dictionary = dictionary[lang], category = subpage, other_categories = others_categories, services = None if len(available_services) <= 0 else available_services, selected_category = selected_category)
+    stores = GetData('full','store')
+    selected_store = [ x for x in stores if x['name'] == store][-1] if store else None
+    return render_template('pricing.html', lang = session['lang'], categories = categories, services_in_store = services_in_store, dictionary = dictionary[lang], category = subpage, other_categories = others_categories, services = None if len(available_services) <= 0 else available_services, selected_category = selected_category, stores = stores, selected_store = selected_store)
     
 @app.route('/<lang>/about/')
 @app.route('/<lang>/about/<subpage>')

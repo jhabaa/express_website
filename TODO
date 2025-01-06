@@ -1,4 +1,19 @@
 02.12.2024
 - For prices & About, setof availables catagories. For each click, go to a single page, with details
 - Delete localizations from home page, and add them to the header tab. 
-- Delevery page. Add this page in the header
+- Delivery page. Add this page in the header
+
+16.12.2024
+- Ajust header in views with the new signature PNG
+- Left content headbar keeps in screen sometimes [Bug]
+- Bigger logo in the header
+- Localization name in front of the extended headbar
+- Must remove description on Store card [refactor]
+- Set cliquable store card in index view [feature]
+- Header doesnt hide when we clic on a store name [feature]
+- Refactor Contact Page 
+- Update index page for languages and some texts
+- Adapt header to mobile 
+- Prepare integration of facebook pictures in contact page
+- Auderghem & Moortbeek have the same prices ...
+- Intermediate page. Pricing -> Select a service -> Select Store -> Prices for the specific store 

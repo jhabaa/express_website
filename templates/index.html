@@ -26,10 +26,23 @@
     <div class="list">
         {% for cat in categories %}
             <div class="service">
-                <img src="http://express.REMOVED/getimage?name={{cat.image}}" alt="" class="s-img">
-
-                <h2>{{ cat.name}}</h2>
-                <p>{{ cat.description }}</p>
+                <img src="/static/images/{{ cat.illustrations }}" alt="" class="cat_bg_img">
+                <div class="description1">
+                    <h2>{{ cat.name}}</h2>
+                </div>
+                <div class="description2">
+                    <div class="up">
+                        <h2> {{ cat.name }} </h2>  
+                        <div class="counter">
+                            <span class="count"> 100 </span>
+                            <span class="unit">Services</span>
+                        </div>
+                    </div>
+                    <div class="down">
+                        {{ cat.description}}
+                    </div>
+                    
+                </div>
             </div>
         {% endfor %}
     </div>
@@ -82,7 +95,9 @@
         <div class="loc-illustration">
             <img src="http://express.REMOVED/getimage?name={{ store.image }}" alt="" class="loc-img">
             <div class="informations">
-                <span>{{ store.desc }}</span>
+                {% if store.subtitle %}
+                    <span>{{ store.subtitle }}</span>
+                {% endif %}
                 <!-- Button goto -->
                 <a href="https://goo.gl/maps/7Z8Z9Z9Z9Z9Z9Z9Z9" class="button right">{{ dictionary['goto'] }}</a>
             </div>

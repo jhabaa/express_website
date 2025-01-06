@@ -19,6 +19,10 @@ let navigationBtns = document.querySelectorAll('.nav_link');
 let header_bar_subBlocks = document.querySelector('#header_bar_subBlock');
 let blur_overlay = document.querySelector('.blurOverlay');
 
+let services = document.querySelectorAll('.service');
+let store_cards = document.querySelectorAll('.store_card');
+let sublinks = document.querySelectorAll('.sublink');
+let pricing_links = document.getElementById('pricing_links');
 // GSAP
  // use a script tag or an external JS file
  document.addEventListener("DOMContentLoaded", (event) => {
@@ -26,7 +30,45 @@ let blur_overlay = document.querySelector('.blurOverlay');
     // gsap code here!
 });
 
+// First, if we have services, activat the first one 
+if (services.length > 0) {
+    services.item(0).classList.add('active');
+    // Now set the query when we hover the rest 
+    services.forEach(function(service) {
+        service.addEventListener('mouseover', function() {
+            services.forEach(function(service) {
+                service.classList.remove('active');
+            });
+            this.classList.add('active');
+        });
+    });
+}
+// Set action when we over the services cards 
 
+// Now for store cards
+if (store_cards.length > 0) {
+    store_cards.forEach(function(card) {
+        card.addEventListener('mouseover', function() {
+            store_cards.forEach(function(card) {
+                card.classList.remove('active');
+            });
+            this.classList.add('active');
+        });
+    });
+}
+
+
+if (sublinks.length > 0) {
+    sublinks.forEach(function(sublink) {
+        // When we hover a link, we'll add it to sublinks links
+        sublink.addEventListener('mouseover', function() {
+            if (pricing_links){
+                sublinks_links.innerHTML = this.innerHTML;
+            }
+            
+        });
+    });
+}
 
 navigationBtns.forEach(function(btn) {
     console.log(btn);

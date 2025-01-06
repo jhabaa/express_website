@@ -127,7 +127,7 @@ header{
     position: fixed;
     width: 100%;
     max-width: 100vw;
-    z-index: 1000;
+    z-index: 2000;
     max-height: 700px;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s all !important;
     color: gray;
@@ -140,6 +140,7 @@ header .up{
     height: 100%;
     width: 100%;
     overflow: hidden;
+    align-items: center;
 }
 header .down{
     display: none;
@@ -231,6 +232,7 @@ header .up .logos .page_name{
     font-weight: 700;
     margin-left: 10px;
     visibility: visible;
+    align-items: center;
 }
 header .up .logos .logoText.hide{
     display: none;
@@ -239,7 +241,10 @@ header .up  .logo{
     transition: all 0.5s linear; 
     position: relative;
     height: 100%;
-    max-height: 60px;
+    width: 10vw;
+    min-width: 30px;
+    max-width: 80px;
+    z-index: 100;
 }
 
 header nav.hide{
@@ -814,30 +819,163 @@ header.extended .lang a{
 }
 .page2 .list{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-flow:  row nowrap;
+    align-items: stretch;
+    justify-content: space-around;
     padding: 2vw;
     z-index: 100;
     padding-top: 50px;
     gap: 40px;
     overflow-x: hidden;
     padding-bottom: 100px;
+    max-width: 1000px;
 }
 
 .page2 .list .service{
-    width: 90%;
-    max-width: 400px;
-    max-height: 250px;
-    flex-grow: 1;
+    max-width: 350px;
+    height: 400px;
+    flex-shrink: 1;
     position: relative;
     overflow: hidden;
     background-color: var(--pure-white);
     border-radius: 1rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     font-family: "Inter", sans-serif;
-    padding: 10px;
     text-overflow: ellipsis;
+    transition: all 0.5s ease-in-out;
 }
+/* .page2 .list .service:hover{
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    flex-grow: 1;
+    transition: all 0.5s ease-in-out;
+} */
+.page2 .list .service.active{
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    flex-grow: 1;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+} 
+.page2 .list .service .cat_bg_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    z-index: 0;
+}
+.page2 .list .service::before{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    content: "";
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0) 100%);
+}
+.page2 .list .service.active::before{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: "";
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0,0,0,0.4) 60%, rgba(0, 0, 0, 0) 100%);
+    z-index: 2;
+}
+
+.page2 .list .service .description1{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    display: flex;
+    flex-flow: column-reverse nowrap;
+}
+
+.page2 .list .service.active .description1{
+    display: none;
+}
+.page2 .list .service.active .description2{
+    display: flex;
+    position: absolute;
+    justify-items: end;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    z-index: 3;
+    flex-flow: column-reverse nowrap;
+    transition-delay: .3s;
+    transition: all 0.5s ease-in-out;
+}
+
+.page2 .list .service .description1 h2{
+    color: var(--pure-white);
+    font-weight: 700;
+    width: 100%;
+    writing-mode: vertical-lr;
+    font-size: xx-large;
+    text-align: start;
+    padding: 10px;
+    z-index: 3;
+}
+.page2 .list .service .description2 h2{
+    color: var(--pure-white);
+    font-weight: 700;
+    width: 100%;
+    font-size: xx-large;
+    text-align: start;
+    padding: 10px;
+    z-index: 3;
+}
+
+.page2 .list .service .description2 .up{
+    display: flex;
+    flex-flow: row nowrap;
+    color: var(--pure-white);
+    z-index: 3;
+}
+.page2 .list .service .description2 .up .counter :first-child{
+    font-weight: 700;
+    font-size: 2rem;
+}
+.page2 .list .service .description2 .up .counter :last-child{
+    font-weight: 100;
+    font-size: smaller;
+    opacity: .7;
+}
+.page2 .list .service .description2 .down{
+    max-height: 100px;
+    overflow: hidden;
+    color: var(--pure-white);
+    font-size: 1rem;
+    font-weight: 100;
+    opacity: .7;
+    padding: 10px;
+    text-align: left;
+}
+
+.page2 .list .service .description2 .down.infinite{
+    max-height: unset;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.down .toStores_links{
+    display: flex;
+    flex-flow: column nowrap;
+    z-index: 200;
+    gap: 15px;
+    height: 100%;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.down .toStores_links a:hover {
+    color: var(--pure-white);
+    text-decoration: underline;
+
+}
+
 .page2 .list .service .s-img{
     width: 100px;
     height: 100px;
@@ -1170,32 +1308,8 @@ header.extended .lang a{
     background:inherit;
     
 }
-.page2 .category{
-    display: none;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    background:inherit;
-    height: fit-content;
-    max-height: none;
-    transition: all 0.5s ease-in-out ;
-}
 
-.page2 .categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    width: 100%;
-    height: fit-content;
-    max-height: none;
-    background:inherit;
-    cursor: pointer;
-}
+
 
 .page2 .categories .cat_btn{
     padding: 10px;
@@ -1273,13 +1387,13 @@ header.extended .lang a{
 
 .description .header .illustration{
     position: relative;
-    object-fit: cover;
+    object-fit: contain;
     align-self: center;
     contain: layout;
-    height: 100%;
     width: 100%;
+    max-width: 1000px;
     z-index: 10;
-    max-height: 20vh;
+    max-height: 30vh;
 }
 
 .description .header .title{
@@ -1296,24 +1410,21 @@ header.extended .lang a{
 #pricing .categories {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    padding: 5px;
     width: 100%;
     font-weight: bold;
 }
 
 #pricing .categories .category-card{
     display: flex;
-    flex-direction: column;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    height: 120px;
-    width: 160px;
-    background-color: var(--pure-white);
     color: var(--header-text);
     margin: 10px;
+    gap: 10px;
     border-radius: 1rem;
     transition: all 0.5s ease-in-out;
 }
@@ -1325,8 +1436,8 @@ header.extended .lang a{
 }
 
 #pricing .categories .category-card .illustration{
-    width: 80px;
-    height: 80px;
+    width: 20px;
+    height: 20px;
     object-fit: cover;
     border-radius: 1rem;
 }
@@ -1934,4 +2045,141 @@ footer .right .icon-link{
     position: relative;
     width: 400px;
     max-height: 400px;
+}
+
+.store_selector{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    max-width: 1000px;
+}
+.store_selector .active_store{
+    display: flex;
+    align-items: center;
+    background-color: var(--pure-white);
+    padding-inline: 20px;
+    padding-block: 10px;
+    border-radius: 1rem;
+    box-shadow: var(--dark-back) 0 0 10px;
+}
+
+.store_selector .store_card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: unset;
+    background-color: var(--transparent_white);
+    border-radius: 20px;
+    padding: 10px;
+    gap: 10px;
+    overflow: hidden;
+    perspective: 1000px;
+    perspective-origin: left;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.store_selector .store_card_content{
+    width: 100%;
+    height: 310px;
+    top: 0px;
+    left: 0px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.store_card.active{
+    background-color: var(--main-bg-color);
+}
+.store_card.active .store_card_content img{
+    opacity: 0;
+}
+.store_card.active .store_card_content .store_card_categories{
+    opacity: 1;
+}
+
+
+.store_card_content .store_card_categories{
+    position: relative;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.store_card_content .store_card_categories::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.store_card.hidden .categories{
+    background-color: #0099ff;
+    max-height: 0px;
+    overflow: hidden;
+}
+
+.store_selector .content :first-child{
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+}
+.store_selector a {
+    overflow: hidden;
+    position: relative;
+    padding-block: 10px;
+}
+
+.store_selector .store_card .category-card{
+    display: flex;
+    flex-flow: row nowrap;
+    padding-left: 20px;
+    width: 100%;
+    height: 40px;
+}
+
+.store_card_content > img{
+    position: absolute;
+    opacity: 1;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.store_card_header > img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.category-card > .category_illustration{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    background-color: var(--express_blue);
+}
+.category-card > span{
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--header-text);
+}
+.store_selector a span{
+    z-index: 500;
 }

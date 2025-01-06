@@ -43,7 +43,7 @@
 </head>
 
 <body id="body">
-    {% set current_page = request.path.split('/')[-2] %}
+    {% set current_page = request.path.split('/')[2] %}
    <!--  <video id="ADS" autoplay muted loop playsinline preload="auto">
         <source src="/static/imagesweb/1.mp4" type="video/mp4" />
     </video> -->
@@ -57,7 +57,6 @@
     <header class="" id="header" data-opacity="90">
         <div class="up">
             <a href="{{url_for('home', lang=lang)}}"><img src="/static/imagesweb/logo_vitrine_EXPRESS.svg" alt="" class="logo"></a>
-
             <nav  id="navigation">
                 <ul id="nav_links">
                     <li class="nav_link hidden"><a href="{{ url_for('home', lang = lang)}}">{{ dictionary['Home'] }}</a></li>
@@ -65,6 +64,7 @@
                         <a href="{{ url_for('pricing' , lang = lang) }}">{{ dictionary['Pricing'] }}</a>
                         <ul class="sublinks">
                             <div class="mainlinks">
+                                
                                 {% for category in categories %}
                                     <li>
                                         <a href="{{url_for('pricing', lang = lang, subpage = category.name)}}">{{ category.name }}</a>

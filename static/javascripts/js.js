@@ -73,7 +73,9 @@ var callback = function(entries, observer){
     });
 }
 var oberserver = new IntersectionObserver(callback, options);
-oberserver.observe(exp_years);
+if (exp_years && partners){
+    oberserver.observe(exp_years);
+}
 
 //Init AOS
 AOS.init();

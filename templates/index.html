@@ -15,27 +15,28 @@
                 <img src="/static/imagesweb/apple.svg" alt="" class="apple">
             </a>
         </div>
-         <img src="/static/imagesweb/back2.png" alt="" class="phone" id="phone1">
+         <img src="/static/imagesweb/back2.png" alt="" class="phone" id="phone1" data-aos="zoom-out" data-aos-duration="3000">
         <img src="/static/imagesweb/back3.png" alt="" class="phone" id="phone2">
 </section>
 
 <!-- Page 4 -->
-<section class="page2 large" id="services">
+<section class="page2 large" id="services" data-aos="zoom-in">
     <div class="title1">{{ dictionary['title4'] }}</div>
     <div class="subtitle">{{ dictionary['subtitle4'] }}</div>
     <div class="list">
         {% for cat in categories %}
-            <div class="service">
+            <div class="service" data-aos="fade-down" data-aos-delay="{{ loop.index * 100 }}">
                 <img src="/static/images/{{ cat.illustrations }}" alt="" class="cat_bg_img">
                 <div class="description1">
                     <h2>{{ cat.name}}</h2>
                 </div>
-                <div class="description2">
+                <div class="description2" >
                     <div class="up">
-                        <h2> {{ cat.name }} </h2>  
+                        <h2 data-aos="fade-up" data-aos-delay="300"> {{ cat.name }} </h2>  
                         <div class="counter">
-                            <span class="count"> 100 </span>
-                            <span class="unit">Services</span>
+                            {% set numberOfServices = services | selectattr ( 'category_name', '==', cat.name ) | list%}
+                            <span class="count" data-aos="fade-up" data-aos-delay="300"> {{ numberOfServices | length}} </span>
+                            <span class="unit" data-aos="fade-up" data-aos-delay="300">Services</span>
                         </div>
                     </div>
                     <div class="down">
@@ -53,7 +54,9 @@
 
 <!-- Page 3 -->
 <section class="page2" id="offers">
-    <div class="title1">
+    <div class="title1" data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500">
         {{ dictionary['title3'] }}
     </div>
     
@@ -74,19 +77,23 @@
 
 <!-- Page 5 -->
  <section class="page2" id="locations">
-    <div class="title1">{{ dictionary['title5'] }}</div>
+    <div class="title1" data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500">{{ dictionary['title5'] }}</div>
     <div class="subtitle flex">
-        {{ dictionary['subtitle5-1'] }} <br>
+        <span data-aos="fade-up" data-aos-duration="">{{ dictionary['subtitle5-1'] }} <br></span>
         <div class="divider_vertical"></div>
-        {{ dictionary['subtitle5-2'] }} <br>
+        <span data-aos="fade-up" data-aos-duration=""> {{ dictionary['subtitle5-2'] }} <br></span>
         <div class="divider_vertical"></div>
-        {{ dictionary['subtitle5-3'] }}
+        <span data-aos="fade-up" data-aos-duration=""> {{ dictionary['subtitle5-3'] }}</span>
         <div class="divider_vertical"></div>
-        {{ dictionary['subtitle5-4'] }}
+        <span data-aos="fade-up" data-aos-duration=""> {{ dictionary['subtitle5-4'] }}</span>
+       
     </div>
     <div class="store_locations">
         {% for store in stores %}
-    <div class="location">
+
+    <div class="location" data-aos="fade-up-left" data-aos-delay="{{ loop.index * 150 }}">
         
         <span class="bigTitle">{{ store.name }}</span>
         {% if store.name != "App" %}

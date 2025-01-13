@@ -27,6 +27,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="/static/css/css.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <!-- GSAP -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
@@ -36,7 +37,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
-    
+    <!--AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->    
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
@@ -58,21 +60,43 @@
         <div class="up">
             <a href="{{url_for('home', lang=lang)}}"><img src="/static/imagesweb/logo_vitrine_EXPRESS.svg" alt="" class="logo"></a>
             <nav  id="navigation">
-                <ul id="nav_links">
-                    <li class="nav_link hidden"><a href="{{ url_for('home', lang = lang)}}">{{ dictionary['Home'] }}</a></li>
-                    <li class="nav_link hidden">
+                <ul id="nav_links hidden">
+                    <li class="nav_link">
                         <a href="{{ url_for('pricing' , lang = lang) }}">{{ dictionary['Pricing'] }}</a>
                         <ul class="sublinks">
                             <div class="mainlinks">
-                                
+                                <span class="links_title">Explorez nos services</span>
                                 {% for category in categories %}
-                                    <li>
-                                        <a href="{{url_for('pricing', lang = lang, subpage = category.name)}}">{{ category.name }}</a>
+                                    <li date-aos="fade-down" data-aos-delay="{{ loop.index * 100 }}">
+                                        <a href="{{url_for('pricing', lang = lang, subpage = category.name)}}">
+                                            {{ category.name }}
+                                           
+                                        </a>
+
                                     </li>
                                 {% endfor %}
                             </div>
-                            <div class="secondarylinks">
-                                <li> <a href="{{url_for('pricing', lang = lang)}}">All</a></li>
+                            <div class="mainlinks tiny">
+                                <span class="links_title">Quick links</span>
+                                <li>
+                                    <a href="{{url_for('pricing', lang = lang, subpage = 'Special Plans')}}">
+                                        Clean Process
+                                    </a>
+                                    <a href="{{url_for('pricing', lang = lang, subpage = 'Special Plans')}}">
+                                        Assistance
+                                    </a>
+                                </li>
+                            </div>
+                            <div class="mainlinks tiny">
+                                <span class="links_title">Offers</span>
+                                <li>
+                                    <a href="{{url_for('pricing', lang = lang, subpage = 'Special Plans')}}">
+                                        For Education
+                                    </a>
+                                    <a href="{{url_for('pricing', lang = lang, subpage = 'Special Plans')}}">
+                                        For small businesses
+                                    </a>
+                                </li>
                             </div>
                             
                         </ul>
@@ -150,7 +174,6 @@
         </div>
         <div class="right">
             <div class="links">
-                <a href="{{ url_for('home', lang=lang)}}">{{ dictionary['Home'] }}</a>
                 <a href="{{ url_for('pricing', lang = lang)}}">{{ dictionary['Pricing'] }}</a>
                 <a href="{{ url_for('about', lang = lang)}}">{{ dictionary['About'] }}</a>
                 <a href="{{ url_for('delivery', lang = lang)}}"> Delivery</a>
@@ -174,6 +197,9 @@
     <div class="blurOverlay hidden">
 
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="/static/javascripts/vanilla-tilt.js"></script>
     <script src="/static/javascripts/anime.min.js"></script>
     <script src="/static/javascripts/js.js" async defer></script>
     

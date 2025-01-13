@@ -23,12 +23,95 @@ let services = document.querySelectorAll('.service');
 let store_cards = document.querySelectorAll('.store_card');
 let sublinks = document.querySelectorAll('.sublink');
 let pricing_links = document.getElementById('pricing_links');
+
+
+//Numbers 
+let exp_years = document.querySelector('#years_exp');
+let partners = document.querySelector('#partners');
+var numbers_values = {years:0,
+    partners:0,
+}
+//engagement cards 
+let engagement_card = document.querySelector('#engagement-card');
+if (engagement_card) { 
+    console.log(engagement_card);
+    VanillaTilt.init(engagement_card, {
+        max: 25,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.5,
+    });
+}
+
+//let animate this 
+var options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5
+}
+
+let numbers_animation = anime ({
+    targets : numbers_values,
+    years: 15,
+    partners: "300+",
+    direction: 'forwards',
+    round: 1,
+    easing: 'easeInOutExpo',
+    autoplay:false,
+    update: function(){
+        exp_years.innerHTML = numbers_values.years;
+        partners.innerHTML = numbers_values.partners;
+    }
+});
+var callback = function(entries, observer){
+    entries.forEach(entry => {
+        if (entry.isIntersecting){
+            numbers_animation.play();
+        }else {
+            numbers_animation.pause();
+        }
+    });
+}
+var oberserver = new IntersectionObserver(callback, options);
+oberserver.observe(exp_years);
+
+//Init AOS
+AOS.init();
+
 // GSAP
  // use a script tag or an external JS file
  document.addEventListener("DOMContentLoaded", (event) => {
-    gsap.registerPlugin(Flip,ScrollTrigger,Observer,ScrollToPlugin,TextPlugin,RoughEase,ExpoScaleEase,SlowMo)
+    gsap.registerPlugin(Flip,ScrollTrigger,Observer,ScrollToPlugin,TextPlugin,RoughEase,ExpoScaleEase,SlowMo, ScrambleTextPlugin)
     // gsap code here!
+
+    // load splide 
+
+    
 });
+
+if (document.querySelector('.splide')){
+    var splide = new Splide( '.splide', {
+        type: 'loop',
+        rewind: true,
+        direction: 'btt',
+        pagination : false,
+        autoplay: true,
+        interval: 5000,
+        arrows: false,
+        align: 'center',
+        focus: 'center',
+        autowidth: true,
+
+        breakpoints: {
+            650: {
+                perPage: 1,
+            },
+            1200: {
+                perPage: 2,
+            }
+        }
+    } ).mount();
+}
 
 // First, if we have services, activat the first one 
 if (services.length > 0) {
@@ -137,11 +220,9 @@ let logo_extension = gsap.to(logo, {
 });
 
 
-gsap.from('#phone2', {
-    duration: 5,
-    opacity: 0,
-    ease: 'ease-in'
-});
+if (exp_years){
+    gsap.to(exp_years, {duration: 2, scrambleText:{text:"10", chars:"0123456789", speed:0.3}});
+}
 
 
 /*

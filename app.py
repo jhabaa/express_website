@@ -83,6 +83,10 @@ def send_email(to_addr, subject, user_name: str = "", email_type: str = "", comm
     #Signature as image
     html_text3 = f'<p>Cordialement,</p><img src="http://express.REMOVED/getimage?name=signature" alt="" style="margin:0px; padding:0px; border-radius:0rem 0rem 2rem 2rem;"/>'
     
+    if email_type == "contact_touser":
+        html_text1 = f'<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Montserrat:wght@200;300&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet"></head><body style="background:#dfe9f0;display: flex;align-items:center;justify-items:center;justify-content: center;align-content: center;font-family: Montserrat, sans-serif;"><section style="position: relative; min-height: 500px;background-color: aliceblue;border-radius: 2rem; display: flex; flex-direction: column; margin: 5px;"><h1>Bonjour {user_name},</h1><p>Nous avons bien reçu votre message. Nous vous recontacterons dans les plus brefs délais.</p>{html_text3}</section></body></html>'
+    if email_type == "contact_toadmin":
+        html_text1 = f'<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Montserrat:wght@200;300&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet"></head><body style="background:#dfe9f0;display: flex;align-items:center;justify-items:center;justify-content: center;align-content: center;font-family: Montserrat, sans-serif;"><section style="position: relative; min-height: 500px;background-color: aliceblue;border-radius: 2rem; display: flex; flex-direction: column; margin: 5px;"><h1>Bonjour,</h1><p>Vous avez reçu un message de {user_name}.</p><p>Voici le contenu du message : {command_recap}</p>{html_text3}</section></body></html>'
     if email_type == "inscription":
         html_text1 = f'<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Montserrat:wght@200;300&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet"></head><body style="background:#dfe9f0;display: flex;align-items:center;justify-items:center;justify-content: center;align-content: center;font-family: Montserrat, sans-serif;"><section style="position: relative; min-height: 500px;background-color: aliceblue;border-radius: 2rem; display: flex; flex-direction: column; margin: 5px;"><h1>Bonjour {user_name},</h1><p>Félicitations, vous venez de créer un nouveau compte sur notre application. Nous espérons que vous prendrez du plaisir dans son utilisation. Vous pouvez contacter le support concernant tout problème. </p>{html_text3}</section></body></html>'
     if email_type == "command_validation":
@@ -418,7 +422,8 @@ def home(lang = 'fr', subpage = None, store = None):
     #return str((GetCostDelevery("Rue Saint-germain 92 1410 Waterloo")*price_by_km).quantize(decimal.Decimal('.01')))
     categories = GetData('full','category')
     stores = GetData('full','store')
-    return render_template('index.html', categories=categories, stores=stores, lang = session['lang'], dictionary = dictionary[lang])
+    services = GetData('full','service')
+    return render_template('index.html', services = services, categories=categories, stores=stores, lang = session['lang'], dictionary = dictionary[lang])
 
 @app.route('/<lang>/pricing/')
 @app.route('/<lang>/pricing/<subpage>')
@@ -447,15 +452,15 @@ def about(lang = 'fr', subpage = None):
 
 @app.route('/<lang>/contact/')
 @app.route('/<lang>/contact/<subpage>')
-def contact(lang = 'fr', subpage = None):
+def contact(lang = 'fr', subpage = None, message = None):
     #set language
     session['lang'] = lang
-    return render_template('contact.html', lang = session['lang'], dictionary = dictionary[lang])
+    return render_template('contact.html', lang = session['lang'], dictionary = dictionary[lang], message = message)
 
 
 @app.route('/<lang>/delivery/')
 @app.route('/<lang>/delivery/<subpage>')
-def delivery(lang = 'fr', subpage = None ):
+def delivery(lang = 'fr', subpage = None , message = None):
     session['lang'] = lang
     return render_template('delivery.html', lang = session['lang'], dictionary = dictionary[lang])
 
@@ -467,6 +472,16 @@ def localization(lang = 'fr', subpage = None ):
     available_store = [ x for x in stores if x['name'] == subpage][-1] if subpage else None
     return render_template('localization.html', lang = session['lang'], dictionary = dictionary[lang], stores = stores, selected_store = available_store)
 
+
+@app.route('/chatwithus', methods=['POST'])
+def chatwithus():
+    data = request.form
+    print(data)
+    #send mail to admin to inform him about the message
+    send_email(to_addr="nicola.REMOVED@REMOVED", subject="Message de "+data['first_name'] + data['last_name'], user_name=data['first_name'], email_type="contact_toadmin", command_recap=data['subject'])
+    #send mail to user to inform him that his message has been sent
+    send_email(to_addr=data['email'], subject="Message envoyé", user_name=data['first_name'], email_type="contact_touser") 
+    return redirect(url_for('contact', lang = session['lang'], message = "Message envoyé"))
 
 @app.route('/getservices')
 def show_sewing():

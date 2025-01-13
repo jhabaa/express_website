@@ -1,5 +1,9 @@
-{% extends "layout.html" %} {% block title %} {{ dictionary['Pricing'] }}{%
-endblock %} {% block page %}
+{% extends "layout.html" %} 
+
+{% block title %} {{ dictionary['Pricing'] }}
+{% endblock %} 
+
+{% block page %}
 
 <section id="pricing" class="page2">
   <!--     <div>
@@ -11,43 +15,74 @@ endblock %} {% block page %}
   <div class="description">
     <!-- Header -->
     <div class="header">
+      <div class="signature">
+        <img src="/static/imagesweb/signature_back.jpg" alt=""/>
+        <div class="custom-signature" data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000">
+          <div class="signature-card">
+            <img src="/static/images/signature.jpeg" alt="">
+          </div>
+        </div>
+      </div>
       {% if services %}
-      <img src="/static/images/signature.jpg" alt="" class="illustration" />
-      <span class="subtitle">{{ selected_category.informations | safe }}</span>
-      {% else %}
-      <img src="/static/images/signature.jpg" alt="" class="illustration" />
+        {% if not selected_store %}
+        <div class="divider horizontal"></div>
+          <span class="title1">Select a Store</span>
+          <div class="list">
+            {% for store in stores %}
+          <div class="service">
+              <img src="/static/images/{{ store.image }}" alt="" class="cat_bg_img">
+              <div class="description1">
+                  <h2>{{ store.name}}</h2>
+              </div>
+              <div class="description2">
+                  <div class="up">
+                      <h2> {{ store.name }} </h2>  
+                  </div>
+                  <div class="down infinite">
+                      <!-- For princing, show the list of stores -->
+                       <div class="toStores_links">
+                        <div class="gotolink">
+                          <a href="{{url_for('pricing', lang = lang, subpage = selected_category.name, store = store.name)}}">Go to store</a>
+                        </div>
+                       </div>
+                  </div>
+                  
+              </div>
+          </div>
+          {% endfor %}
+          </div>
+          
+        {% endif %}
+        <span class="subtitle">{{ selected_category.informations | safe }}</span>
       {% endif %}
     </div>
   </div>
 
-
+    <span class="title1">Nos services</span>
     <!-- Services -->
     {% if services %}
     <div class="services">
       {% for service in services %}
-      <div class="service">
-        <div class="infos">
-          <h2>{{service.name}}</h2>
-          <p>{{service.description}}</p>
-        </div>
-        <div class="costs">
-          {% set a = services_in_store | selectattr ( 'service_name', '==',
-          service.name ) | list %} {% set price1 = a | selectattr
-          ('store_name','==','App') | list %} {% set price2 = a | selectattr
-          ('store_name','==','Moortebeek') | list %} {% if price1 %}
-          <div class="price">
-            <span class="title">Tarif</span>
-            <span class="value"> {{ price1[0].cost }}€</span>
+        {% set a = services_in_store | selectattr ( 'service_name', '==', service.name ) | list %} 
+        {% set price = a | selectattr('store_name','==', selected_store.name ) | list %} 
+        {% if price %}
+        <div class="service" data-aos="fade-down">
+
+          <div class="infos">
+            <h2>{{service.name}}</h2>
+            <p>{{service.description}}</p>
           </div>
-          {% endif %} {% if price2 %}
-          <div class="price">
-            <span class="title">Moortebeek</span>
-            <span class="value"> {{ price2[0].cost }}€</span>
+          <div class="costs">
+            <div class="price">
+              <span class="value"> {{ price[0].cost }}€</span>
+            </div>
           </div>
-          {% endif %}
+          <span>{{service.price}}</span>
         </div>
-        <span>{{service.price}}</span>
-      </div>
+        {% endif %}
+
       {% endfor %}
     </div>
     {% else %}

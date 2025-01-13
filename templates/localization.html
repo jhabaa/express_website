@@ -9,7 +9,7 @@
     <div class="description">
         <div class="header">
             <img src="http://express.REMOVED/getimage?name={{ selected_store.image }}" alt="" class="illustration">
-            <span class="title">{{ selected_store.name }}</span>
+            <span class="title">EX-PRESS Dry Clean {{ selected_store.name }}</span>
             
             <div class="subtitle">
                 <div class="openPanel">
@@ -50,48 +50,53 @@
                     {% endfor %}
                 </div>
                 {{ selected_store.desc | safe }} 
-                <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5038.022865348227!2d4.37272REMOVED6909939!3d50.84947255855292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c377f997b349%3A0xb876288e1a7786b8!2sEx-Press%20Dry%20Clean%20Saint-Josse!5e0!3m2!1sfr!2sbe!4v1734309762424!5m2!1sfr!2sbe"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
             </div>
         </div>
     </div>
 
-    {% else %}
-    <div class="localization_all">
-        <div class="title1">{{ dictionary['title5'] }}</div>
-        <div class="subtitle flex">
-            {{ dictionary['subtitle5-1'] }} <br>
-            <div class="divider_vertical"></div>
-            {{ dictionary['subtitle5-2'] }} <br>
-            <div class="divider_vertical"></div>
-            {{ dictionary['subtitle5-3'] }}
-            <div class="divider_vertical"></div>
-            {{ dictionary['subtitle5-4'] }}
-        </div>
-        <div class="store_locations">
-            {% for store in stores %}
-        <div class="location">
-            
-            <span class="bigTitle">{{ store.name }}</span>
-            {% if store.name != "App" %}
-                <span class="smallTitle">{{ store.adress }}</span>
-            {% endif %}
-            <div class="loc-illustration">
-                <img src="http://express.REMOVED/getimage?name={{ store.image }}" alt="" class="loc-img">
-                <div class="informations">
-                    <span>{{ store.subtitle }}</span>
-                    <!-- Button goto -->
-                    <a href="https://goo.gl/maps/7Z8Z9Z9Z9Z9Z9Z9Z9" class="button right">{{ dictionary['goto'] }}</a>
+    {% endif %}
+    <div class="description">
+        <br>
+        <h1>Nos localisations </h1>
+        <div class="header">
+            <div class="localization_all">
+                <div class="title1">{{ dictionary['title5'] }}</div>
+                <div class="subtitle flex">
+                    {{ dictionary['subtitle5-1'] }} <br>
+                    <div class="divider_vertical"></div>
+                    {{ dictionary['subtitle5-2'] }} <br>
+                    <div class="divider_vertical"></div>
+                    {{ dictionary['subtitle5-3'] }}
+                    <div class="divider_vertical"></div>
+                    {{ dictionary['subtitle5-4'] }}
                 </div>
+                <div class="store_locations">
+                    {% for store in stores %}
+                <div class="location" data-aos = "fade-up" data-aos-delay = {{loop.index * 300}} data-aos-duration = 1000>
+                    
+                    <span class="bigTitle">{{ store.name }}</span>
+                    {% if store.name != "App" %}
+                        <span class="smallTitle">{{ store.adress }}</span>
+                    {% endif %}
+                    <div class="loc-illustration">
+                        {% if store.map %}
+                        <div class="map-img">
+                            <iframe src={{ store.map}}  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        {% else %}
+                        <img src="http://express.REMOVED/getimage?name={{ store.image }}" alt="" class="loc-illustration">
+                        {% endif %}
+                        <div class="informations">
+                            <span>{{ store.subtitle }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+                
             </div>
         </div>
-        {% endfor %}
-        </div>
-        
     </div>
-
-    {% endif %} 
 
 </section>
 {% endblock %}

@@ -3,52 +3,169 @@
 
 {% block page %}
 <section class="page2 invert" id="about">
-   
-    <div class="section">
-        <img src="/static/imagesweb/express1.jpg" alt="" class="picture">
-        <div class="text">
-            <div class="title1">
-                {{ dictionary['About'] }}
+    <div class="about-header">
+        <div class="content">
+            <div class="presentationBloc">
+                <h1 class="ExpressTitle">Nous combinons le meilleur pour entretenir votre linge</h1>
+                <p>Maximiser votre potentiel avec nos solutions <br>de nettoyage innovantes et respectueuses de l'environnement. <br>Votre linge en reviendra éclatant </p>
             </div>
-            {% for text in dictionary['about-text1'] %}
-            <p>{{ text }}</p>
-            {% endfor %}
         </div>
+    </div>
+    <div class="about-content">
         
-    </div>
-  
-    <div class="section">
-        <img src="/static/imagesweb/express3.jpg" alt="" class="picture">
-        <div class="text">
-            <span class="title2">EX-PRESS DRY CLEAN</span>
-            <span class="subtitle2">{{ dictionary['title1'] }}</span>
-            {% for text in dictionary['about-text2'] %}
-                <p>{{ text }}</p>
-            {% endfor %}
+        <div class="reviews" data-aos="fade-down" data-aos-duration="1500">
+            <div class="splide" role="group" aria-label="Splide test">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="review">
+                                <img src="/static/images/Anorak.jpg" alt="user picture">
+                                <div class="review-text">
+                                    <p>Je suis très satisfaite de la qualité de service et de la rapidité de livraison. Je recommande vivement Ex-Press Dry Clean.</p>
+                                    <div class="review-author">Anna Smith</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="review">
+                                <img src="/static/images/back.png" alt="user picture">
+                                <div class="review-text">
+                                    <p>Je suis très satisfait de la qualité de service et de la rapidité de livraison. Je recommande vivement Ex-Press Dry Clean.</p>
+                                    <div class="review-author">John Doe</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="review">
+                                <img src="/static/images/blanchisserie.jpg" alt="user picture">
+                                <div class="review-text">
+                                    <p>Je suis très satisfait de la qualité de service et de la rapidité de livraison. Je recommande vivement Ex-Press Dry Clean.</p>
+                                    <div class="review-author">Jean Arts</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        
-    </div>
-
-    <div class="section">
-        <img src="/static/imagesweb/express2.jpg" alt="" class="picture">
-        <div class="text">
-            {% for text in dictionary['about-text3'] %}
-            <p>{{ text }}</p>
-            {% endfor %}
+        <div class="divider horizontal"></div>
+        <div class="numbers" id="numbers">
+            <div class="title1" data-aos="fade-up">Plus de 1000 clients satisfaits et une expertise qui fait la différence </div>
+            <div class="subtitle"data-aos="fade-up" data-aos-delay="100">Nous travaillons avec soin et précision pour offrir des services adaptés à vos besoins, qu'il s'agisse de vêtements, linge de maison ou textiles professionnels. Découvrez notre équipe engagée qui place la satisfaction client au cœur de ses priorités.</div>
+            <div class="values" data-aos="fade-up" data-aos-delay="200">
+                <div class="number">
+                    <span class="number-value" id="years_exp">15</span>
+                    <span class="number-text">années d'expérience</span>
+                </div>
+                <div class="number">
+                    <span class="number-value" id="partners">300+</span>
+                    <span class="number-text">collaboration avec des entreprises locales</span>
+                </div>
+            </div>
+            <img src="/static/imagesweb/img1.jpeg" alt="" data-aos="zoom-out" data-aos-delay="500">
         </div>
-       
-    </div>
-
-    <div class="section">
-        <img src="/static/imagesweb/express4.jpg" alt="" class="picture">
-        <div class="text">
-            {% for text in dictionary['about-text4'] %}
-            <p>{{ text }}</p>
-            {% endfor %}
+        <span class="title1" data-aos="fade-down">They all likes our working path</span>
+        <div class="strengths">
+            <div class="strength" data-aos="zoom-in-left" data-aos-delay="100">
+                <img src="/static/imagesweb/checkmark-seal-svgrepo-com.svg" alt="quality">
+                <div class="strength-text">
+                    <span>Service rapide et flexible</span>
+                    <span>Votre temps est précieux : nous proposons des délais adaptés à votre emploi du temps, avec des options de livraison à domicile ou en entreprise. </span>
+                </div>
+                
+            </div>
+            <div class="strength" data-aos="zoom-in-right" data-aos-delay="300">
+                <img src="/static/imagesweb/clock-circle-svgrepo-com.svg" alt="eco">
+                <div class="strength-text">
+                    <span>Qualité irréprochable</span>
+                <span>Nos experts utilisent des technologies modernes et des produits écoresponsables pour préserver vos textiles et prolonger leur durée de vie.</span>
+                </div>
+            </div>
+            <div class="strength" data-aos="zoom-in-left" data-aos-delay="500">
+                <img src="/static/imagesweb/smile-circle-svgrepo-com.svg" alt="speed">
+                <div class="strength-text">
+                    <span>Ecologie et durable</span>
+                    <span>Engagés pour l’environnement, nous privilégions des pratiques respectueuses, notamment en réduisant l’usage d’eau et de produits chimiques.</span>
+                </div>
+            </div>
+            <div class="strength" data-aos="zoom-in-right" data-aos-delay="700">
+                <img src="/static/imagesweb/checkmark-seal-svgrepo-com.svg" alt="quality">
+                <div class="strength-text">
+                    <span>Expérience client personnalisée</span>
+                    <span>Notre équipe est à l’écoute pour répondre à vos besoins spécifiques et vous garantir une expérience sans souci, chaque fois.</span>
+                </div>
+                
+            </div>
         </div>
-       
+
+        <div class="engagements">
+            <div class="title1" data-aos="fade-up">Nous concevons des solutions de blanchisserie sur mesure pour simplifier votre quotidien</div>
+            <div class="subtitle"data-aos="fade-down" data-aos-delay="200">Avec Express Dry Clean, transformez votre expérience de blanchisserie grâce à des services modernes, efficaces et personnalisés, adaptés à vos besoins spécifiques.</div>
+            <a href="#" class="button">Découvrez nos services</a>
+
+            <div class="title1" data-aos="fade-up">Nos valeurs fondamentales et engagements</div>
+            <div class="values">
+                <div class="block">
+                    <div class="empty-card-up"></div>
+                    <div class="engagement alone" data-aos="fade-left" data-aos-duration="1000">
+                        <span class="title">Une expertise reconnue à Bruxelles</span>
+                        <span class="value">Depuis plus de 15 ans, nous collaborons avec des particuliers et des entreprises locales pour offrir des solutions innovantes et fiables.</span>
+                    </div>
+                    <div class="empty-card-down"></div>
+                </div>
+                
+                <div class="block">
+                    <div class="empty-card-up"></div>
+                    <div class="engagement" data-aos="fade-up" data-aos-duration="1000">
+                        <span class="title">Une équipe dédiée</span>
+                        <span class="value">Nos experts s’engagent à vous fournir un service de qualité exceptionnelle, que ce soit pour vos vêtements délicats ou textiles professionnels.</span>
+                    </div>
+                    <div class="card" id="engagement-card" data-aos="flip-right" data-aos-delay="100">
+                        <span class="title">Envie d'en savoir plus sur notre approche ? </span>
+                        <a href="#"> Consultez nos réuissites </a>
+                    </div>
+                    <div class="engagement" data-aos="fade-down" data-aos-duration="1000">
+                        <span class="title">Des outils modernes et durables </span>
+                        <span class="value">Nous investissons continuellement dans des technologies écoresponsables pour garantir des résultats optimaux tout en respectant l’environnement.</span>
+                    </div>
+                    <div class="empty-card-down"></div>
+                </div>
+                <div class="block">
+                    <div class="empty-card-up"></div>
+                    <div class="engagement alone" data-aos="fade-right" data-aos-duration="1000">
+                        <span class="title">Une communication sans faille </span>
+                        <span class="value">Un suivi transparent et une disponibilité constante pour répondre à vos demandes dans les meilleurs délais.</span>
+                    </div>
+                    <div class="empty-card-down"></div>
+                </div>
+            </div>
+            <div class="empty-space"></div>
+            <div class="values">
+                <div class="block spacer">
+                    <div class="engagement dark" data-aos="fade-down">
+                        <img src="/static/images/pub3.jpg" alt="nettoyage haut de gamme" class="engagement-image">
+                        <span class="title">Nettoyage et repassage haut de gamme</span>
+                        <span class="value">Propreté et soin inégalés pour vos textiles, avec une attention particulière aux matières délicates.</span>
+                    </div>
+                    <div class="engagement dark" data-aos="fade-left">
+                        <img src="/static/imagesweb/transport.jpeg" alt="collecte" class="engagement-image">
+                        <span class="title">Collecte et livraison flexibles</span>
+                        <span class="value">Choisissez le créneau qui vous convient, et nous nous occupons du reste.</span>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="engagement" data-aos="fade-up">
+                        <span class="title">Des solutions pour les entreprises</span>
+                        <span class="value">Propreté et soin inégalés pour vos textiles, avec une attention particulière aux matières délicates.</span>
+                    </div>
+                    <div class="engagement" data-aos="fade-right">
+                        <span class="title">Traitement écoresponsable</span>
+                        <span class="value">Des processus optimisés pour réduire l'impact environnemental tout en garantissant un résultat impeccable.</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="button">Explorez nos services</a>
+        </div>
     </div>
-
-
 </section>
 {% endblock %}

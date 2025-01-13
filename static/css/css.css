@@ -51,7 +51,7 @@ body{
     font-family: 'Open Sans', sans-serif;
     height: 100vh;
     overflow-x: hidden;
-    background:#0F0F0F;
+    background:var(--pure-white);
     width: 100vw;
     transition: 0.5s;
 }
@@ -497,6 +497,7 @@ header.extended .lang a{
     align-content:center;
     align-items:center;
     background-color: var(--pure-white);
+    z-index: 1;
 }
 
 #main.hide{
@@ -2183,3 +2184,19 @@ footer .right .icon-link{
 .store_selector a span{
     z-index: 500;
 }
+
+.legal{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.legal a {
+    opacity: 0.5;
+    font-weight: 100;
+}
+.legal a:hover{
+    opacity: .9;
+    text-decoration: underline;
+    transition: all 0.5s ease-in-out;
+}
+

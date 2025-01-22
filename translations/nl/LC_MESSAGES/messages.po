@@ -902,3 +902,11 @@ msgstr "Titel prijzen 2"
 msgid "Pricing_title_3"
 msgstr "Titel prijzen 3"
 
+#, fuzzy
+msgid "policy_content"
+msgstr "Inhoud werk 4"
+
+#, fuzzy
+msgid "terms_content"
+msgstr "Inhoud werk 4"
+

@@ -863,3 +863,11 @@ msgstr "Titolo prezzi 2"
 msgid "Pricing_title_3"
 msgstr "Titolo prezzi 3"
 
+#, fuzzy
+msgid "policy_content"
+msgstr "Contenuto lavoro 4"
+
+#, fuzzy
+msgid "terms_content"
+msgstr "Contenuto lavoro 4"
+

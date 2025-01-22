@@ -2815,3 +2815,53 @@ iframe {
 .disabled{
     color: #003d1f;
 }
+
+.conditions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--white-cosmic);
+    padding-block: 10vh;
+    padding-left: 2vw;
+    max-width: 1200px;
+}
+.conditions h1{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--express_blue);
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.conditions h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--express_blue);
+    padding: 10px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.conditions p{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--header-text);
+    padding: 10px;
+    text-align: justify;
+    margin-bottom: 10px;
+    text-indent: 1vw;
+}
+
+.conditions p::first-letter{
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: var(--express_blue);
+}
+
+.conditions li{
+    list-style: none;
+}
+.conditions a {
+    color: var(--express_blue);
+    text-decoration: underline;
+}

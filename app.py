@@ -436,7 +436,27 @@ def home(lang = 'fr', subpage = None, store = None):
     categories = GetData('full','category')
     stores = GetData('full','store')
     services = GetData('full','service')
-    return render_template('index.html', services = services, categories=categories, stores=stores, lang = session['lang'], dictionary = dictionary[lang])
+    return render_template('index.html', dictionary = dictionary[lang] , services = services, categories=categories, stores=stores, lang = session['lang'])
+
+@app.route('/<lang>/policy/')
+def policy(lang = 'fr'):
+    #set language
+    session['lang'] = lang
+    #Usefull for the header, since Flask ask fot it
+    categories = GetData('full','category')
+    stores = GetData('full','store')
+    services = GetData('full','service')
+    return render_template('policy.html', lang = session['lang'], categories = categories, stores = stores, services = services)
+
+@app.route('/<lang>/terms/')
+def terms(lang = 'fr'):
+    #set language
+    session['lang'] = lang
+    #Usefull for the header, since Flask ask fot it
+    categories = GetData('full','category')
+    stores = GetData('full','store')
+    services = GetData('full','service')
+    return render_template('terms.html', lang = session['lang'], categories = categories, stores = stores, services = services)
 
 @app.route('/<lang>/pricing/')
 @app.route('/<lang>/pricing/<subpage>')
@@ -466,6 +486,8 @@ def about(lang = 'fr', subpage = None):
     #set language
     session['lang'] = lang
     return render_template('about.html', lang = session['lang'], dictionary = dictionary[lang])
+
+
 
 @app.route('/<lang>/contact/')
 @app.route('/<lang>/contact/<subpage>')

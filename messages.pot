@@ -777,3 +777,9 @@ msgstr ""
 
 msgid "Our Locations"
 msgstr ""
+
+msgid "policy_content"
+msgstr ""
+
+msgid "terms_content"
+msgstr ""

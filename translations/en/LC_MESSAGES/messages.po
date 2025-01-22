@@ -890,3 +890,11 @@ msgstr "Pricing title 2"
 msgid "Pricing_title_3"
 msgstr "Pricing title 3"
 
+#, fuzzy
+msgid "policy_content"
+msgstr "Work content 4"
+
+#, fuzzy
+msgid "terms_content"
+msgstr "Work content 4"
+

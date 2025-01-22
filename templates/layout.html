@@ -45,6 +45,8 @@
 </head>
 
 <body id="body">
+
+
     {% set current_page = request.path.split('/')[2] %}
    <!--  <video id="ADS" autoplay muted loop playsinline preload="auto">
         <source src="/static/imagesweb/1.mp4" type="video/mp4" />
@@ -57,6 +59,18 @@
     </div>
 
     <header class="" id="header" data-opacity="90">
+            <!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->
+<script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js" charset="UTF-8"></script>
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","palette":"light","language":"fr","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"Ex-Press Dry Clean","website_privacy_policy_url":"http://express.REMOVED/fr/policy"});
+});
+</script>
+
+<noscript>Free cookie consent management tool by <a href="https://www.termsfeed.com/">TermsFeed</a></noscript>
+<!-- End Cookie Consent by TermsFeed https://www.TermsFeed.com -->
+
+
         <div class="up">
             <a href="{{url_for('home', lang=lang)}}"><img src="/static/imagesweb/logo_vitrine_EXPRESS.svg" alt="" class="logo"></a>
             <nav  id="navigation">
@@ -118,7 +132,6 @@
     
             <!-- languages -->
             <div class="lang" id="lang">
-               <!-- <span>{{ dictionary[current_page.capitalize()] }} </span> -->
                 <div class="active" id="active_lang">
                     <img src="/static/imagesweb/{{lang}}.svg" alt="">
                     <span>{{ lang }}</span>
@@ -175,8 +188,8 @@
                 </a>
             </div>
             <div class="legal">
-                <a href="https://REMOVED/politique-de-confidentialite/">{{_('Privacy policy')}}</a>
-                <a href="https://REMOVED/conditions-generales-de-vente/">{{_('General terms')}}</a>
+                <a href="{{ url_for('policy', lang = lang)}}">{{_('Privacy policy')}}</a>
+                <a href="{{ url_for('terms', lang = lang)}}">{{_('General terms')}}</a>
             </div>
         </div>
     </footer>

@@ -25,6 +25,7 @@ section{
     --dark-back:rgba(15,15,15,0.6);
     --white-cosmic: #eee;
     --express_blue:rgb(0, 56, 130);
+    --footer-blue:rgba(0, 56, 130, 0.8);
     --header:rgba(255, 255, 255, 0.85);
     --transparent_white:rgba(255, 255, 255, 0.87);
     --large-subtitle-text: #8C91A3;
@@ -590,7 +591,11 @@ header.extended .lang a{
     color: var(--large-subtitle-text);
     text-align: left;
     white-space: pre-wrap;
-}   
+}
+.presentationBloc p, .presentationBloc h1{
+    padding: 10px;
+    padding-left: 2vw;
+}
 .page1 .phone{
     object-fit:cover;
 	z-index:20
@@ -2349,15 +2354,20 @@ footer{
    width: 100vw;
    margin: 0;
    padding-block: 20px;
-   background-color: rgba(0, 0, 0, 0.87);
-    backdrop-filter: saturate(0.1) blur(5px);
-    -webkit-backdrop-filter: saturate(0.1) blur(5px);
+   background-color:var(--footer-blue);
+    backdrop-filter: saturate(0.1) blur(10px);
+    -webkit-backdrop-filter: saturate(0.1) blur(10px);
    color: #fff;
 
 }
+footer .title1{
+    color: var(--white-cosmic);
+}
 #footer.hide{
     display: none;
-
+}
+#footer a:hover{
+    color: var(--pure-white);
 }
  footer::after{
     content: '';
@@ -2392,6 +2402,10 @@ footer .left .mailto{
     border-radius: 1rem;
     color: #000;
     box-shadow: #0000008a 0 0 10px;
+}
+footer .left .mailto:hover{
+    background-color: #000;
+    color: #fff;
 }
 footer .right .links{
     padding-top: 80px;

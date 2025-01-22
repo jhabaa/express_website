@@ -1,0 +1,904 @@
+# Dutch translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-01-20 02:01+0100\n"
+"PO-Revision-Date: 2025-01-22 13:24+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: nl\n"
+"Language-Team: nl <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: app.py:466
+msgid "Bonjour"
+msgstr "Goedendag"
+
+#: templates/about.html:2 templates/layout.html:104 templates/layout.html:178
+msgid "About"
+msgstr "Over ons"
+
+#: templates/about.html:9
+msgid "about_title"
+msgstr "Wij combineren het beste om voor uw wasgoed te zorgen"
+
+#: templates/about.html:10
+msgid "about_sub"
+msgstr ""
+"Ontdek onze innovatieve en milieuvriendelijke schoonmaakoplossingen.\n"
+"Geef uw wasgoed een ongeëvenaarde glans terwijl u het milieu respecteert."
+
+#: templates/about.html:53
+msgid "numbers_title"
+msgstr "Veel tevreden klanten en expertise die het verschil maakt"
+
+#: templates/about.html:54
+msgid "numbers_subtitle"
+msgstr ""
+"Met zorg en precisie bieden wij op maat gemaakte diensten, aangepast aan "
+"uw kleding, huishoudlinnen of professionele textiel.\n"
+"Ons toegewijde team plaatst uw tevredenheid centraal, en garandeert "
+"onberispelijke resultaten."
+
+#: templates/about.html:58
+msgid "number1_text"
+msgstr "Jarenlange ervaring"
+
+#: templates/about.html:62
+msgid "number2_text"
+msgstr "Samenwerkingen met lokale bedrijven"
+
+#: templates/about.html:67
+msgid "strengths_title"
+msgstr ""
+"Al onze klanten waarderen onze manier van werken. Dankzij onze snelle, "
+"flexibele en kwaliteitsservice voldoen wij altijd aan hun verwachtingen "
+"met zorg en efficiëntie."
+
+#: templates/about.html:72
+msgid "strength1_title"
+msgstr "Snelle en flexibele service"
+
+#: templates/about.html:73
+msgid "strength1_sub"
+msgstr ""
+"Bij Ex-Press Dry Clean zetten wij ons in om een snelle service te bieden "
+"zonder ooit in te boeten op kwaliteit. Dankzij onze expertise en moderne "
+"apparatuur garanderen wij een onberispelijke verzorging van uw kleding, "
+"zelfs binnen de kortste termijnen.\n"
+"Onze flexibiliteit staat centraal in onze service: wij passen ons aan uw "
+"schema aan, met ophaal- en bezorgopties die aan uw eisen voldoen. Elk "
+"item wordt zorgvuldig geïnspecteerd om een perfect resultaat te "
+"garanderen, of het nu gaat om noodreiniging of reguliere routine.\n"
+"Met Ex-Press Dry Clean geniet u van een snelle, betrouwbare en "
+"hoogwaardige service die is ontworpen om uw dagelijks leven te "
+"vereenvoudigen."
+
+#: templates/about.html:80
+msgid "strength2_title"
+msgstr "Continue verbetering en kwaliteitsrigor"
+
+#: templates/about.html:81
+msgid "strength2_sub"
+msgstr ""
+"We implementeren strikte procedures en continue verbetering om hoge "
+"kwaliteitsnormen te garanderen. Elke stap van ons proces wordt zorgvuldig"
+" gecontroleerd om een onberispelijke service te garanderen, die voldoet "
+"aan de meest veeleisende criteria. Onze prioriteit: vlekkeloze was. We "
+"aarzelen niet om meerdere reinigingen uit te voeren indien nodig om elke "
+"keer een perfect resultaat te garanderen."
+
+#: templates/about.html:87
+msgid "strength3_title"
+msgstr "Ecologie en duurzaamheid"
+
+#: templates/about.html:88
+msgid "strength3_sub"
+msgstr ""
+"Toegewijd aan het milieu, implementeren wij verantwoorde praktijken die "
+"het water- en chemische gebruik verminderen. Door te kiezen voor "
+"milieuvriendelijke oplossingen, minimaliseren wij onze ecologische "
+"voetafdruk terwijl wij een kwaliteitsservice bieden. Ons doel is om de "
+"planeet te behouden terwijl wij onberispelijke resultaten voor uw kleding"
+" garanderen."
+
+#: templates/about.html:94
+msgid "strength4_title"
+msgstr "Gepersonaliseerde klantervaring"
+
+#: templates/about.html:95
+msgid "strength4_sub"
+msgstr ""
+"In de winkel luisteren wij actief om de behoeften van elke klant te "
+"begrijpen en hierop in te spelen.\n"
+"Of het nu gaat om specifiek strijken, uw lakens al dan niet stijf maken, "
+"of een andere specifieke verzoek, wij passen onze diensten aan om aan uw "
+"eisen te voldoen."
+
+#: templates/about.html:102
+msgid "engagements_title"
+msgstr ""
+"Wij ontwerpen op maat gemaakte wasservices om uw dagelijks leven te "
+"vereenvoudigen"
+
+#: templates/about.html:103
+msgid "engagements_sub"
+msgstr ""
+"Met <b>Express Dry Clean</b> transformeert u uw waservaring met moderne, "
+"efficiënte en gepersonaliseerde diensten, aangepast aan uw specifieke "
+"behoeften."
+
+#: templates/about.html:104
+msgid "engagements_btn1"
+msgstr "Ontdek onze diensten"
+
+#: templates/about.html:106
+msgid "engagements_title_2"
+msgstr "Onze kernwaarden en verplichtingen"
+
+#: templates/about.html:111
+msgid "engagement1_title"
+msgstr "Erkende expertise in Brussel"
+
+#: templates/about.html:112
+msgid "engagement1_text"
+msgstr ""
+"Al meer dan 15 jaar werken wij samen met particulieren en bedrijven om "
+"innovatieve en betrouwbare oplossingen te bieden."
+
+#: templates/about.html:120
+msgid "engagement2_title"
+msgstr "Een toegewijd team"
+
+#: templates/about.html:121
+msgid "engagement2_text"
+msgstr ""
+"Onze experts zetten zich in om u een uitzonderlijke kwaliteitsservice te "
+"bieden, of het nu gaat om uw delicate kleding of professionele textiel."
+
+#: templates/about.html:124
+msgid "engagement_card_title"
+msgstr "Wilt u meer weten over onze aanpak?"
+
+#: templates/about.html:125
+msgid "engagement_card_btn"
+msgstr "Bekijk onze successen"
+
+#: templates/about.html:128
+msgid "engagement3_title"
+msgstr "Moderne en duurzame hulpmiddelen"
+
+#: templates/about.html:129
+msgid "engagement3_text"
+msgstr ""
+"We investeren continu in milieuvriendelijke technologieën om optimale "
+"resultaten te garanderen met respect voor het milieu."
+
+#: templates/about.html:136
+msgid "engagement4_title"
+msgstr "Naadloze communicatie"
+
+#: templates/about.html:137
+msgid "engagement4_text"
+msgstr ""
+"Transparante opvolging en constante beschikbaarheid om zo snel mogelijk "
+"op uw verzoeken te reageren."
+
+#: templates/about.html:147
+msgid "engagement5_title"
+msgstr "Hoogwaardige reiniging en strijken"
+
+#: templates/about.html:148
+msgid "engagement5_text"
+msgstr ""
+"Ongenaakbare netheid en zorg voor uw textiel, met bijzondere aandacht "
+"voor delicate materialen."
+
+#: templates/about.html:152
+msgid "engagement6_title"
+msgstr "Flexibele ophaal- en bezorgservice"
+
+#: templates/about.html:153
+msgid "engagement6_text"
+msgstr "Kies het tijdslot dat u uitkomt, en wij zorgen voor de rest."
+
+#: templates/about.html:158
+msgid "engagement7_title"
+msgstr "Oplossingen voor bedrijven"
+
+#: templates/about.html:159
+msgid "engagement7_text"
+msgstr ""
+"Ongenaakbare netheid en zorg voor uw textiel, met bijzondere aandacht "
+"voor delicate materialen."
+
+#: templates/about.html:162
+msgid "engagement8_title"
+msgstr "Milieuvriendelijke behandelingen"
+
+#: templates/about.html:163
+msgid "engagement8_text"
+msgstr ""
+"Geoptimaliseerde processen om de ecologische voetafdruk te verkleinen en "
+"tegelijkertijd onberispelijke resultaten te garanderen."
+
+#: templates/about.html:167
+msgid "engagements_btn2"
+msgstr "Ontdek onze winkels"
+
+#: templates/contact.html:3 templates/layout.html:106 templates/layout.html:180
+msgid "Contact"
+msgstr "Contact"
+
+#: templates/contact.html:11
+msgid "contact_title"
+msgstr "Een toegewijd team"
+
+#: templates/contact.html:14
+msgid "contact_sub"
+msgstr ""
+"Ons team is hier om u te helpen. U kunt ons uw vragen stellen als u die "
+"heeft. Wij zijn 24/7 beschikbaar."
+
+#: templates/contact.html:19 templates/contact.html:58
+msgid "call_btn"
+msgstr "Bel"
+
+#: templates/contact.html:24
+msgid "email_btn"
+msgstr "E-mail"
+
+#: templates/contact.html:54
+msgid "contact_right_1"
+msgstr "Neem contact met ons op"
+
+#: templates/contact.html:55
+msgid "contact_right_2"
+msgstr "Ons team blijft beschikbaar voor assistentie"
+
+#: templates/contact.html:61
+msgid "contact_right_3"
+msgstr "Praat met ons"
+
+#: templates/contact.html:62
+msgid "contact_right_4"
+msgstr "Praat met onze agenten via chat"
+
+#: templates/contact.html:66
+msgid "contact_right_5"
+msgstr "Stuur een e-mail"
+
+#: templates/contact.html:72
+msgid "contact_right_6"
+msgstr "Bericht op Facebook"
+
+#: templates/contact.html:76
+msgid "contact_right_7"
+msgstr "Bezoek ons"
+
+#: templates/contact.html:78
+msgid "contact_right_8"
+msgstr "Praat met ons persoonlijk in onze winkels of hoofdkantoor"
+
+#: templates/contact.html:83
+msgid "contact_right_9"
+msgstr "Chaussée de Louvain 526, 1930 Zaventem"
+
+#: templates/contact.html:92
+msgid "firstname"
+msgstr "Voornaam"
+
+#: templates/contact.html:96
+msgid "lastname"
+msgstr "Achternaam"
+
+#: templates/contact.html:102
+msgid "phone_number"
+msgstr "Telefoonnummer"
+
+#: templates/contact.html:108 templates/delivery.html:28
+msgid "email"
+msgstr "E-mailadres"
+
+#: templates/contact.html:115
+msgid "subject"
+msgstr "Bericht"
+
+#: templates/delivery.html:3 templates/layout.html:105
+#: templates/layout.html:179
+msgid "Delivery"
+msgstr ""
+
+#: templates/delivery.html:11
+msgid "delivery_title"
+msgstr "Reiniging die naar u toe komt"
+
+#: templates/delivery.html:14
+msgid "delivery_subtitle_1"
+msgstr ""
+"Kunt u niet verplaatsen om uw wasgoed af te geven of op te halen? Ex-"
+"Press Dry Clean zorgt voor alles!"
+
+#: templates/delivery.html:15
+msgid "delivery_subtitle_2"
+msgstr ""
+"Of het nu gaat om het ophalen van uw vuile was of het bezorgen van uw "
+"schone kleding, wij bieden een op maat gemaakte bezorgservice naar het "
+"adres van uw keuze, overal in België."
+
+#: templates/delivery.html:19
+msgid "delivery_subtitle_3"
+msgstr ""
+"Neem vandaag nog contact met ons op om de ophaling of levering van uw "
+"wasgoed te regelen. Met Ex-Press Dry Clean geniet u van professionele "
+"kwaliteit direct aan uw deur!"
+
+#: templates/delivery.html:36
+msgid "delivery_citation"
+msgstr "«Ex-Press Dry Clean, direct bij u thuis»"
+
+#: templates/delivery.html:42
+msgid "delivery_text_1"
+msgstr ""
+"Bij Ex-Press Dry Clean bieden wij een thuisbezorgservice die is afgestemd"
+" op uw behoeften, met bezorgkosten op basis van uw geografische gebied:"
+
+#: templates/delivery.html:45
+msgid "delivery_zone_1"
+msgstr "Brussel: 5€"
+
+#: templates/delivery.html:46
+msgid "delivery_zone_2"
+msgstr "Waals en Vlaams-Brabant: 10€"
+
+#: templates/delivery.html:47
+msgid "delivery_zone_3"
+msgstr "Buiten deze gebieden, kilometerprijs op aanvraag."
+
+#: templates/delivery.html:50
+msgid "delivery_text_2"
+msgstr ""
+"Aarzel niet om contact met ons op te nemen voor meer details over de "
+"specifieke tarieven voor uw adres. Wij zetten ons in om uw ervaring zo "
+"gemakkelijk en toegankelijk mogelijk te maken!"
+
+#: templates/delivery.html:63
+msgid "delivery_bloc_1_title"
+msgstr "Afspraak maken"
+
+#: templates/delivery.html:64
+msgid "delivery_bloc_1_sub"
+msgstr ""
+"Communiceer data en tijdslots die u uitkomen voor de ophaling. U kunt "
+"eenvoudig boeken via e-mail of telefoon."
+
+#: templates/delivery.html:68
+msgid "delivery_bloc_2_title"
+msgstr "Ophalen aan huis"
+
+#: templates/delivery.html:69
+msgid "delivery_bloc_2_sub"
+msgstr ""
+"Ons bezorgpersoneel komt direct bij u thuis om uw kleding op te halen. U "
+"hoeft ze alleen maar klaar te maken, en wij zorgen voor de rest."
+
+#: templates/delivery.html:73
+msgid "delivery_bloc_3_title"
+msgstr "Reiniging en verzorging"
+
+#: templates/delivery.html:74
+msgid "delivery_bloc_3_sub"
+msgstr ""
+"Zodra uw kleding bij ons aankomt, wordt deze met de grootste zorg "
+"behandeld. Ons team van experts zorgt ervoor dat elk item zorgvuldig "
+"wordt gereinigd en gestreken."
+
+#: templates/delivery.html:77
+msgid "delivery_bloc_4_title"
+msgstr "Terugkeer van schone kleding"
+
+#: templates/delivery.html:78
+msgid "delivery_bloc_4_sub"
+msgstr ""
+"Zodra uw kleding klaar is, leveren wij deze op het afgesproken tijdstip "
+"bij u af. U hoeft alleen maar te genieten van de frisheid en netheid van "
+"uw kleding."
+
+#: templates/index.html:13
+msgid "title_sub"
+msgstr "Onberispelijke stomerij, een duurzame toekomst."
+
+#: templates/index.html:24
+msgid "title4"
+msgstr "ontdek onze milieuvriendelijke stomerij"
+
+#: templates/index.html:25
+msgid "subtitle4"
+msgstr ""
+"Wij bieden een volledig assortiment wasservices, van stomerij tot "
+"strijken, om aan al uw behoeften te voldoen."
+
+#: templates/index.html:55
+msgid "title3"
+msgstr "stomerij"
+
+#: templates/index.html:77 templates/localization.html:63
+msgid "title5"
+msgstr "onze diensten"
+
+#: templates/index.html:79 templates/localization.html:65
+msgid "subtitle5-1"
+msgstr "Wassen en strijken"
+
+#: templates/index.html:81 templates/localization.html:67
+msgid "subtitle5-2"
+msgstr "Stomerij"
+
+#: templates/index.html:83 templates/localization.html:69
+msgid "subtitle5-3"
+msgstr "Reparaties en aanpassingen"
+
+#: templates/index.html:85 templates/localization.html:71
+msgid "subtitle5-4"
+msgstr "Bezorgdiensten"
+
+#: templates/index.html:104
+msgid "goto"
+msgstr "ga naar"
+
+#: templates/layout.html:65 templates/layout.html:177 templates/pricing.html:3
+msgid "Pricing"
+msgstr "Prijzen"
+
+#: templates/layout.html:68
+msgid "3"
+msgstr ""
+
+#: templates/layout.html:108 templates/localization.html:3
+msgid "Localization"
+msgstr "Lokalisatie"
+
+#: templates/layout.html:124
+msgid "See on Maps"
+msgstr "Bekijk op Maps"
+
+#: templates/layout.html:170
+msgid "title6"
+msgstr "Titel 6"
+
+#: templates/layout.html:171
+msgid "text6-1"
+msgstr "Tekst 6-1"
+
+#: templates/layout.html:171
+msgid "text6-2"
+msgstr "Tekst 6-2"
+
+#: templates/layout.html:171
+msgid "text6-3"
+msgstr "Tekst 6-3"
+
+#: templates/layout.html:191
+msgid "Privacy policy"
+msgstr "Privacybeleid"
+
+#: templates/layout.html:192
+msgid "General terms"
+msgstr "Algemene voorwaarden"
+
+#: templates/localization.html:60
+msgid "Our Locations"
+msgstr "Onze locaties"
+
+#: templates/pricing.html:31
+msgid "Select a Store"
+msgstr "Selecteer een winkel"
+
+#: templates/pricing.html:47
+msgid "Go to store"
+msgstr "Ga naar winkel"
+
+#: templates/pricing.html:63
+msgid "Our Services"
+msgstr "Onze diensten"
+
+msgid "Blanchisserie"
+msgstr "Wasserij"
+
+msgid "Couture"
+msgstr "Kledingreparatie"
+
+msgid "Nettoyage"
+msgstr "Stomerij"
+
+msgid "Description Blanchisserie"
+msgstr ""
+"Ontdek onze moderne wasserijdienst, waar elk stuk met zorg wordt "
+"behandeld voor een onberispelijk resultaat.\n"
+"Geef uw wasgoed een stralende reinheid en deskundige verzorging."
+
+msgid "Description Couture"
+msgstr ""
+"“Perfecte aanpassingen voor kleding die bij u past.”\n"
+"“Een zoom die opnieuw moet worden gedaan of een knoop die niet blijft "
+"zitten? Wij zijn hier om uw kleding nieuw leven in te blazen!”"
+
+msgid "Description Nettoyage"
+msgstr "“Uw wasgoed zorgvuldig behandeld in goede handen.”"
+
+msgid "Informations Blanchisserie"
+msgstr ""
+"<h1>Welkom bij Ex-Press Dry Clean</h1>\n"
+"\n"
+"<h2>Een wasserijdienst bij u in de buurt</h2>\n"
+"<p>Op zoek naar een wasserijdienst in de buurt van Molenbeek, Jette, "
+"Ixelles of Auderghem voor de verzorging van uw huishoudlinnen? Wilt u uw "
+"dagelijkse wasgoed toevertrouwen aan professionals? Ontdek de diensten "
+"van onze wasserij <strong>Ex-Press Dry Clean</strong>!</p>\n"
+"\n"
+"<p>Wij zorgen met expertise voor uw wasgoed en bieden diensten op maat "
+"aan uw behoeften. Met onze nieuwe kalander garanderen wij perfect "
+"gestreken wasgoed en onberispelijke verzorging voor al uw huishoudelijke "
+"artikelen.</p>\n"
+"\n"
+"<h2>Professionele zorg voor uw wasgoed</h2>\n"
+"<p>Het wasgoed dat aan ons team wordt toevertrouwd, wordt zorgvuldig "
+"behandeld, vlekvrij gemaakt, vervolgens gewassen en gedroogd in 100% "
+"professionele machines, ontworpen om een onberispelijk resultaat te "
+"garanderen. Wij gebruiken gespecialiseerde detergenten voor perfecte "
+"vlekverwijdering en wassen, ongeacht het type textiel. Voor elke wasbeurt"
+" controleren onze experts zorgvuldig de labels van elk artikel om de "
+"behandeling aan te passen en elk risico op fouten te vermijden.</p>\n"
+"<p><strong>Verzorgingstip:</strong> voor optimale verzorging raden wij "
+"aan de kleine labels op uw kleding en textiel te bewaren. Ze bevatten "
+"essentiële informatie voor de juiste verzorging!</p>\n"
+"\n"
+"<h2>Ex-Press Dry Clean: Uw wasgoed in goede handen</h2>\n"
+"<p>Bij Ex-Press Dry Clean voldoen wij aan alle verzoeken, of ze nu van "
+"particulieren of professionals komen. Heeft u een tapijt dat gereinigd "
+"moet worden, gordijnen die gewassen moeten worden na stofophoping, of "
+"dekbedden die opgefrist moeten worden voordat u ze weer op uw bed legt? "
+"Vertrouw ze toe aan onze experts!</p>\n"
+"<p>Wij zorgen voor al uw wasgoed, inclusief de meest delicate artikelen, "
+"in onze speciaal ingerichte wasserij- en stomerijruimtes. Verspil geen "
+"tijd meer aan het wassen van uw huishoudlinnen of dat van uw gezin! "
+"Bezoek een van onze vijf winkels. Wij zijn er om u te adviseren en de "
+"best passende oplossing te vinden voor de verzorging van uw wasgoed.</p>"
+
+msgid "Informations Couture"
+msgstr ""
+
+msgid "Informations Nettoyage"
+msgstr ""
+
+msgid "Anorak en duvet"
+msgstr "Donsanorak"
+
+msgid "description_Anorak_en_duvet"
+msgstr "Beschrijving Donsanorak"
+
+msgid "Blouse en soie"
+msgstr "Zijden blouse"
+
+msgid "description_Blouse_en_soie"
+msgstr "Beschrijving Zijden blouse"
+
+msgid "Bonnet"
+msgstr "Muts"
+
+msgid "description_Bonnet"
+msgstr "Beschrijving Muts"
+
+msgid "Châle"
+msgstr "Sjaal"
+
+msgid "description_Châle"
+msgstr "Beschrijving Sjaal"
+
+msgid "Chemise"
+msgstr "Overhemd"
+
+msgid "description_Chemise"
+msgstr "Beschrijving Overhemd"
+
+msgid "Chemisier"
+msgstr "Blouse"
+
+msgid "description_Chemisier"
+msgstr "Beschrijving Blouse"
+
+msgid "Combi"
+msgstr "Overall"
+
+msgid "description_Combi"
+msgstr "Beschrijving Overall"
+
+msgid "Costume (2 pièces)"
+msgstr "Kostuum (2-delig)"
+
+msgid "description_Costume_2_pièces"
+msgstr "Beschrijving Kostuum (2-delig)"
+
+msgid "Costume (3 pièces)"
+msgstr "Kostuum (3-delig)"
+
+msgid "description_Costume_3_pièces"
+msgstr "Beschrijving Kostuum (3-delig)"
+
+msgid "Couette"
+msgstr "Dekbed"
+
+msgid "description_Couette"
+msgstr "Beschrijving Dekbed"
+
+msgid "Couverture 1 personne"
+msgstr "Dekentje voor 1 persoon"
+
+msgid "description_Couverture_1_personne"
+msgstr "Beschrijving Dekentje voor 1 persoon"
+
+msgid "Couverture 2 personnes"
+msgstr "Dekentje voor 2 personen"
+
+msgid "description_Couverture_2_personnes"
+msgstr "Beschrijving Dekentje voor 2 personen"
+
+msgid "Couvre-lit"
+msgstr "Bedsprei"
+
+msgid "description_Couvre_lit"
+msgstr "Beschrijving Bedsprei"
+
+msgid "Cravate"
+msgstr "Stropdas"
+
+msgid "description_Cravate"
+msgstr "Beschrijving Stropdas"
+
+msgid "Djélaba"
+msgstr "Djellaba"
+
+msgid "description_Djélaba"
+msgstr "Beschrijving Djellaba"
+
+msgid "Drap"
+msgstr "Laken"
+
+msgid "description_Drap"
+msgstr "Beschrijving Laken"
+
+msgid "Echarpe"
+msgstr "Sjaal"
+
+msgid "description_Echarpe"
+msgstr "Beschrijving Sjaal"
+
+msgid "fermeture éclair - Tirette"
+msgstr "ritssluiting - Trekkertje"
+
+msgid "description_fermeture_éclair_Tirette"
+msgstr "Beschrijving ritssluiting - Trekkertje"
+
+msgid "Foulard"
+msgstr "Sjaaltje"
+
+msgid "description_Foulard"
+msgstr "Beschrijving Sjaaltje"
+
+msgid "Gant (non cuir)"
+msgstr "Handschoen (niet van leer)"
+
+msgid "description_Gant_non_cuir"
+msgstr "Beschrijving Handschoen (niet van leer)"
+
+msgid "Gilet"
+msgstr "Vest"
+
+msgid "description_Gilet"
+msgstr "Beschrijving Vest"
+
+msgid "Imperméable"
+msgstr "Regenjas"
+
+msgid "description_Imperméable"
+msgstr "Beschrijving Regenjas"
+
+msgid "Imperméable fourré"
+msgstr "Gewatteerde regenjas"
+
+msgid "description_Imperméable_fourré"
+msgstr "Beschrijving Gewatteerde regenjas"
+
+msgid "Jupe longue"
+msgstr "Lange rok"
+
+msgid "description_Jupe_longue"
+msgstr "Beschrijving Lange rok"
+
+msgid "Jupe plissée"
+msgstr "Plissérok"
+
+msgid "description_Jupe_plissée"
+msgstr "Beschrijving Plissérok"
+
+msgid "Jupe simple"
+msgstr "Eenvoudige rok"
+
+msgid "description_Jupe_simple"
+msgstr "Beschrijving Eenvoudige rok"
+
+msgid "Linge au kilo"
+msgstr "Prijs per kilo."
+
+msgid "description_Linge_au_kilo"
+msgstr "Beschrijving Prijs per kilo"
+
+msgid "Manteau"
+msgstr "Wij onderhouden uw jeans"
+
+msgid "description_Manteau"
+msgstr "Beschrijving Mantel"
+
+msgid "Nappe 0-2.5m"
+msgstr "Tafelkleed 0-2.5m"
+
+msgid "description_Nappe_0_2_5m"
+msgstr "Beschrijving Tafelkleed 0-2.5m"
+
+msgid "Nappe 2.5 - 3.5m"
+msgstr "Tafelkleed 2.5 - 3.5m"
+
+msgid "description_Nappe_2_5_3_5m"
+msgstr "Beschrijving Tafelkleed 2.5 - 3.5m"
+
+msgid "Nappe 3.5 - 5m"
+msgstr "Tafelkleed 3.5 - 5m"
+
+msgid "description_Nappe_3_5_5m"
+msgstr "Beschrijving Tafelkleed 3.5 - 5m"
+
+msgid "Ourlet avec doublure"
+msgstr "Zoom met voering"
+
+msgid "description_Ourlet_avec_doublure"
+msgstr "Beschrijving Zoom met voering"
+
+msgid "Ourlet Machine"
+msgstr "Machinezoom"
+
+msgid "description_Ourlet_Machine"
+msgstr "Beschrijving Machinezoom"
+
+msgid "Pantalon"
+msgstr "Wij onderhouden uw jeans"
+
+msgid "description_Pantalon"
+msgstr "Beschrijving Broek"
+
+msgid "Rideau"
+msgstr "Prijs per vierkante meter."
+
+msgid "description_Rideau"
+msgstr "Beschrijving Prijs per vierkante meter"
+
+msgid "Robe de mariée"
+msgstr "Startprijs."
+
+msgid "description_Robe_de_mariée"
+msgstr "Beschrijving Bruidsjurk"
+
+msgid "Tapis"
+msgstr "Prijs per vierkante meter."
+
+msgid "description_Tapis"
+msgstr "Beschrijving Tapijt"
+
+msgid "Tenture / Rideaux"
+msgstr ""
+"Confectie van uw gordijnen en gordijnen. Stoffen te leveren. Prijs per "
+"vierkante meter."
+
+msgid "description_Tenture_Rideaux"
+msgstr "Beschrijving Gordijnen / Gordijnen"
+
+msgid "Veste"
+msgstr "Een schone jas is beter"
+
+msgid "description_Veste"
+msgstr "Beschrijving Jas"
+
+msgid "Auderghem"
+msgstr "Auderghem"
+
+msgid "Jourdan"
+msgstr "Jourdan"
+
+msgid "Moortebeek"
+msgstr "Moortebeek"
+
+msgid "Saint-Josse"
+msgstr "Saint-Josse"
+
+msgid "Zaventem"
+msgstr "Zaventem"
+
+msgid "Description_Auderghem"
+msgstr "Beschrijving Auderghem"
+
+msgid "Description_Jourdan"
+msgstr "Beschrijving Jourdan"
+
+msgid "Description_Moortebeek"
+msgstr "Beschrijving Moortebeek"
+
+msgid "Description_Saint-Josse"
+msgstr "Beschrijving Saint-Josse"
+
+msgid "Description_Zaventem"
+msgstr "Beschrijving Zaventem"
+
+msgid "Subtitle_Auderghem"
+msgstr "Ondertitel Auderghem"
+
+msgid "Subtitle_Jourdan"
+msgstr "Ondertitel Jourdan"
+
+msgid "Subtitle_Moortebeek"
+msgstr "Ondertitel Moortebeek"
+
+msgid "Subtitle_Saint-Josse"
+msgstr "Ondertitel Saint-Josse"
+
+msgid "Subtitle_Zaventem"
+msgstr "Ondertitel Zaventem"
+
+msgid "Nos_services"
+msgstr "Onze diensten"
+
+msgid "Nos_service_subtitle"
+msgstr "Ondertitel van onze diensten"
+
+msgid "Notre travail"
+msgstr "Ons werk"
+
+msgid "work1_title"
+msgstr "Titel werk 1"
+
+msgid "work1_content"
+msgstr "Inhoud werk 1"
+
+msgid "work2_title"
+msgstr "Titel werk 2"
+
+msgid "work2_content"
+msgstr "Inhoud werk 2"
+
+msgid "work3_title"
+msgstr "Titel werk 3"
+
+msgid "work3_content"
+msgstr "Inhoud werk 3"
+
+msgid "work4_title"
+msgstr "Titel werk 4"
+
+msgid "work4_content"
+msgstr "Inhoud werk 4"
+
+msgid "Pricing_title_1"
+msgstr "Titel prijzen 1"
+
+msgid "Pricing_title_2"
+msgstr "Titel prijzen 2"
+
+msgid "Pricing_title_3"
+msgstr "Titel prijzen 3"
+

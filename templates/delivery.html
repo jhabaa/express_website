@@ -1,22 +1,23 @@
 {% extends "layout.html" %}
 
-{% block title %} Gallery {% endblock %}
+{% block title %} {{_('Delivery') }} {% endblock %}
 
 {% block page %}
 <section class="page2" id="delivery_page">
     <div class="description">
         <!-- Header -->
         <div class="header">
-            <img src="/static/images/signature.jpg" alt="" class="illustration">
-            <span class="title"> Le nettoyage qui vient à vous</span>
+            <img src="/static/imagesweb/delivery.jpeg" alt="" class="illustration">
+            <span class="title">{{_('delivery_title')}}</span>
             <div class="subtitle">
                 <p>
-                    <strong>Vous ne pouvez pas vous déplacer pour déposer ou récupérer votre linge ? Ex-Press Dry Clean s'occupe de tout !</strong>
-                    Que ce soit pour la collecte de votre linge sale ou la livraison de vos vêtements propres, nous vous proposons un service de livraison sur-mesure à l’adresse de votre choix, partout en Belgique.<br>
+                    <strong>{{_('delivery_subtitle_1')}}</strong>
+                    {{_('delivery_subtitle_2')}}<br>
                     
                 </p>
                 <p>
-                    <b>Contactez-nous dès aujourd'hui</b> pour organiser la collecte ou la livraison de votre linge. Avec Ex-Press Dry Clean, profitez de la qualité professionnelle directement à votre porte !
+                    {{_('delivery_subtitle_3')}}
+
                 </p>
 
                 <div class="contact_card">
@@ -24,7 +25,7 @@
                     
                     <div class="contact_infos">
                         <span class="contact_name">Jean Arts</span>
-                        <a href="mail-to:delivery@REMOVED" class="contact_btn">Email</a>
+                        <a href="mail-to:delivery@REMOVED" class="contact_btn">{{_('email')}}</a>
                         <a href="tel:+32475528451" class="contact_btn">(32)0475528451</a>
                     </div>
                 </div>
@@ -32,21 +33,21 @@
                 <p>
                     <a href="http://express.REMOVED/">
                         <h1>
-                            <i>«Ex-Press Dry Clean, directement chez vous» </i>
+                            <i>{{_('delivery_citation')}}</i>
                         </h1>
                     </a>
                 </p>
 
                 <p>
-                    Chez Ex-Press Dry Clean, nous proposons un service de livraison à domicile adapté à vos besoins, avec des frais de livraison en fonction de votre zone géographique :
+                    {{_('delivery_text_1')}}
                     <br></br>
                     <ul>
-                        <li>Zone Bruxelles : 5 €</li>
-                        <li>Zone Brabant Wallon et Brabant Flamand : 10 €</li>
-                        <li>En dehors de ces zones : Tarification kilométrique sur demande.</li>
+                        <li>{{_('delivery_zone_1')}}</li>
+                        <li>{{_('delivery_zone_2')}}</li>
+                        <li>{{_('delivery_zone_3')}}</li>
                     </ul>
                     <br></br>
-                    N'hésitez pas à nous contacter pour plus de détails sur les tarifs spécifiques à votre adresse. Nous nous engageons à rendre votre expérience aussi pratique et accessible que possible !
+                    {{_('delivery_text_2')}}
                 </p>
             </div>
 
@@ -58,22 +59,22 @@
         <!-- Page 2 -->
     <div  id="delivery">
         <div class="delivery-bloc">
-            <div class="title1"> 1. Prise de Rendez-vous </div>
-            <div class="subtitle">Communiquez nous des dates et des créneaux horaires qui vous conviennent pour la collecte. Vous pouvez réserver facilement par mail ou par téléphone.</div>
+            <div class="title1">{{_('delivery_bloc_1_title')}}</div>
+            <div class="subtitle">{{_('delivery_bloc_1_sub')}}</div>
         </div>
 
         <div class="delivery-bloc">
-            <div class="title1"> 2. Collecte à domicile </div>
-            <div class="subtitle"> Nos livreurs viennent directement chez vous pour récupérer vos vêtements. Vous n’avez qu’à les préparer, et nous nous chargeons du reste. </div>
+            <div class="title1">{{_('delivery_bloc_2_title')}}</div>
+            <div class="subtitle">{{_('delivery_bloc_2_sub')}} </div>
         </div>
 
         <div class="delivery-bloc">
-            <div class="title1"> 3. Nettoyage et Soins </div>
-            <div class="subtitle">Une fois vos vêtements arrivés dans nos locaux, ils sont traités avec le plus grand soin. Notre équipe d’experts s’assure que chaque article est nettoyé et repassé avec précision. </div>
+            <div class="title1">{{_('delivery_bloc_3_title')}}</div>
+            <div class="subtitle">{{_('delivery_bloc_3_sub')}}</div>
         </div>
         <div class="delivery-bloc">
-            <div class="title1"> 4. Retour des Vêtements Propres </div>
-            <div class="subtitle"> Dès que vos vêtements sont prêts, nous les livrons chez vous, à l’heure convenue. Profitez de vêtements impeccables, sans aucun effort. </div>
+            <div class="title1">{{_('delivery_bloc_4_title')}}</div>
+            <div class="subtitle">{{_('delivery_bloc_4_sub')}} </div>
         </div>
         <div class="delivery-bloc">
             <img src="/static/imagesweb/transport.jpeg" alt="" class="delivery-img">

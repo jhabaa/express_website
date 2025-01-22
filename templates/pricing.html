@@ -1,6 +1,6 @@
 {% extends "layout.html" %} 
 
-{% block title %} {{ dictionary['Pricing'] }}
+{% block title %} {{_('Pricing') }}
 {% endblock %} 
 
 {% block page %}
@@ -28,41 +28,37 @@
       {% if services %}
         {% if not selected_store %}
         <div class="divider horizontal"></div>
-          <span class="title1">Select a Store</span>
+          <span class="title1">{{_('Select a Store')}}</span>
           <div class="list">
             {% for store in stores %}
-          <div class="service">
+          <a href="{{url_for('pricing', lang = lang, subpage = selected_category.name, store = store.name)}}" class="service">
               <img src="/static/images/{{ store.image }}" alt="" class="cat_bg_img">
               <div class="description1">
-                  <h2>{{ store.name}}</h2>
+                  <h2>{{ _(store.name) }}</h2>
               </div>
               <div class="description2">
                   <div class="up">
-                      <h2> {{ store.name }} </h2>  
+                      <h2> {{ _(store.name) }} </h2>  
                   </div>
-                  <div class="down infinite">
-                      <!-- For princing, show the list of stores -->
-                       <div class="toStores_links">
-                        <div class="gotolink">
-                          <a href="{{url_for('pricing', lang = lang, subpage = selected_category.name, store = store.name)}}">Go to store</a>
-                        </div>
-                       </div>
+                  <div class="down">
+                    {{_('Go to store')}}
                   </div>
                   
               </div>
-          </div>
+            </a>
           {% endfor %}
           </div>
           
         {% endif %}
-        <span class="subtitle">{{ selected_category.informations | safe }}</span>
+        <span class="subtitle"> {{ _(selected_category.informations) | safe}}</span>
       {% endif %}
     </div>
   </div>
 
-    <span class="title1">Nos services</span>
+    
     <!-- Services -->
     {% if services %}
+    <span class="title1">{{ _('Our Services') }}</span>
     <div class="services">
       {% for service in services %}
         {% set a = services_in_store | selectattr ( 'service_name', '==', service.name ) | list %} 
@@ -71,8 +67,8 @@
         <div class="service" data-aos="fade-down">
 
           <div class="infos">
-            <h2>{{service.name}}</h2>
-            <p>{{service.description}}</p>
+            <h2>{{ _(service.name) }}</h2>
+            <p>{{ _(service.description) }}</p>
           </div>
           <div class="costs">
             <div class="price">
@@ -92,21 +88,17 @@
         <div class="service">
             <img src="/static/images/{{ cat.illustrations }}" alt="" class="cat_bg_img">
             <div class="description1">
-                <h2>{{ cat.name}}</h2>
+                <h2>{{ _(cat.name) }}</h2>
             </div>
             <div class="description2">
                 <div class="up">
-                    <h2> {{ cat.name }} </h2>  
-                    <div class="counter">
-                        <span class="count"> 100 </span>
-                        <span class="unit">Services</span>
-                    </div>
+                    <h2> {{ _(cat.name) }} </h2>
                 </div>
                 <div class="down infinite">
                     <!-- For princing, show the list of stores -->
                      <div class="toStores_links">
                         {% for store in stores %}
-                            <a href="{{url_for('pricing', lang = lang, subpage = cat.name, store = store.name)}}">{{ store.name }}</a>
+                            <a href="{{url_for('pricing', lang = lang, subpage = cat.name, store = store.name)}}">{{ _(store.name) }}</a>
                         {% endfor %}
                      </div>
                 </div>

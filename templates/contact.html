@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block title %}{{ dictionary['Contact'] }}{% endblock %}
+{% block title %}{{ _('Contact') }}{% endblock %}
 
 {% block page %}
 <section class="page2" id="contact">
@@ -8,23 +8,20 @@
     <div class="description">
         <div class="header">
             <div class="subtitle">
-                <h1> We've got an entire team dedicated to supporting you and your business <h1>
+                <h1> {{_('contact_title')}}<h1>
             </div>
             <br>
-            <p>Our team is here to help you with any questions or concerns you may have. We are available 24/7 to assist you with any issues you may have. </p>
+            <p> {{_('contact_sub')}}</p>
                 <!-- Buttons -->
             <div class="contacts-btn">
                 <a href="tel:+3224204130" class="btn">
                     <img src="/static/imagesweb/telephone-fill.svg" alt="" class="apple">
-                    <span> Make a call</span>
+                    <span> {{_('call_btn')}}</span>
                 </a>
-                
-                <a href="https://testflight.apple.com/join/r5vANLZh" target="_blank" class="disabled">
-                    <span>Download our app</span>
-                </a>
+
                 <a href="mailto:info@REMOVED" target="_blank">
                     <img src="/static/imagesweb/envelope-fill.svg" alt="" class="icon-link">
-                    <span> Email Us</span>
+                    <span> {{_('email_btn')}}</span>
                 </a>     
             </div>
 
@@ -54,36 +51,36 @@
     <!-- <img src=".REMOVEDweb/back.png" alt="" class="back" id="ADS"> -->
     <div class="contact">
         <div class="right">
-            <h3> Call Us</h3>
-            <p>Our team is available 24/7 to assist you with any issues you may have. </p>
+            <h3> {{_('contact_right_1')}}</h3>
+            <p>{{_('contact_right_2')}}</p>
             <a href="tel:+3224204130" class="btn">
                 <img src="/static/imagesweb/telephone-fill.svg" alt="" class="apple">
-                <span> Make a call</span>
+                <span> {{_('call_btn')}}</span>
             </a>
             <br>
-            <h3>Chat with us</h3>
-            <p>Speak to our friendly team via chat</p>
+            <h3>{{_('contact_right_3')}}</h3>
+            <p>{{_('contact_right_4')}}</p>
             <div class="chat-buttons">
                 <a href="mailto:info@REMOVED" target="_blank">
                     <img src="/static/imagesweb/envelope-fill.svg" alt="" class="icon-link">
-                    <span>Shoot us an email</span>
+                    <span>{{_('contact_right_5')}}</span>
                 </a>
                 <a href="mailto:info@REMOVED" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
                         <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
                       </svg>
-                    <span>Message us on X</span>
+                    <span>{{_('contact_right_6')}}</span>
                 </a>
             </div>
             <div class="visit">
-                <h3>Visit Us</h3>
+                <h3>{{_('contact_right_7')}}</h3>
                 <a href="https://goo.gl/maps/7Z3Q7Q7Q7Q7Q7Q7Q7" target="_blank">
-                    <p>Chat to us in person at our Brussels HQ</p>
+                    <p>{{_('contact_right_8')}}</p>
                     <div class="link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
                           </svg>
-                        <span>Rue du Sud 102, 1030 Schaerbeek</span>
+                        <span>{{_('contact_right_9')}}</span>
                     </div>
                 </a>
             </div>
@@ -92,36 +89,36 @@
             <form action="{{ url_for('chatwithus')}}" method="post" class="form">
                 <div class="entry">
                     <div class="block">
-                        <span>First name</span>
+                        <span>{{_('firstname')}}</span>
                         <input type="text" required name="first_name" id="first_name" placeholder="First name" class="input">
                     </div>
                     <div class="block">
-                        <span>Last name</span>
+                        <span>{{_('lastname')}}</span>
                         <input type="text" name="last_name" id="last_name" placeholder="Last name" class="input">
                     </div>
                 </div>
                 <div class="entry">
                     <div class="block">
-                        <span>Phone number</span>
+                        <span>{{_('phone_number')}}</span>
                         <input type="tel" required name="phone" id="phone" placeholder="Phone number" class="input">
                     </div>
                 </div>
                 <div class="entry">
                     <div class="block">
-                        <span>Email</span>
+                        <span>{{_('email')}}</span>
                         <input type="email" required name="email" id="email" placeholder="Email" class="input">
                     </div>
                 </div>
 
                 <div class="entry">
                     <div class="block">
-                        <span>Subject</span>
+                        <span>{{_('subject')}}</span>
                         <textarea name="subject" required rows="5" id="subject" placeholder="Subject" class="input"></textarea>
                     </div>
                 </div>
                 {% if message %}
                 <div class="alert" role="alert">
-                    {{ message }}
+                    {{ _(message) }}
                 </div>
                 {% endif %}
                 <input type="submit" value="Send message" class="submit-btn">

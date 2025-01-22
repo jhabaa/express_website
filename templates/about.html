@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
-{% block title %} {{ dictionary['About'] }} {% endblock %}
+{% block title %} {{ _('About') }} {% endblock %}
 
 {% block page %}
 <section class="page2 invert" id="about">
     <div class="about-header">
         <div class="content">
             <div class="presentationBloc">
-                <h1 class="ExpressTitle">Nous combinons le meilleur pour entretenir votre linge</h1>
-                <p>Maximiser votre potentiel avec nos solutions <br>de nettoyage innovantes et respectueuses de l'environnement. <br>Votre linge en reviendra éclatant </p>
+                <h1 class="ExpressTitle">{{_('about_title')}}</h1>
+                <p>{{_('about_sub')}}</p>
             </div>
         </div>
     </div>
@@ -50,66 +50,66 @@
         </div>
         <div class="divider horizontal"></div>
         <div class="numbers" id="numbers">
-            <div class="title1" data-aos="fade-up">Plus de 1000 clients satisfaits et une expertise qui fait la différence </div>
-            <div class="subtitle"data-aos="fade-up" data-aos-delay="100">Nous travaillons avec soin et précision pour offrir des services adaptés à vos besoins, qu'il s'agisse de vêtements, linge de maison ou textiles professionnels. Découvrez notre équipe engagée qui place la satisfaction client au cœur de ses priorités.</div>
+            <div class="title1" data-aos="fade-up">{{_('numbers_title')}}</div>
+            <div class="subtitle"data-aos="fade-up" data-aos-delay="100">{{_('numbers_subtitle')}}</div>
             <div class="values" data-aos="fade-up" data-aos-delay="200">
                 <div class="number">
                     <span class="number-value" id="years_exp">15</span>
-                    <span class="number-text">années d'expérience</span>
+                    <span class="number-text">{{_('number1_text')}}</span>
                 </div>
                 <div class="number">
                     <span class="number-value" id="partners">300+</span>
-                    <span class="number-text">collaboration avec des entreprises locales</span>
+                    <span class="number-text">{{_('number2_text')}}</span>
                 </div>
             </div>
-            <img src="/static/imagesweb/img1.jpeg" alt="" data-aos="zoom-out" data-aos-delay="500">
+            <img src="/static/imagesweb/share_img.jpeg" alt="" data-aos="zoom-out" data-aos-delay="500">
         </div>
-        <span class="title1" data-aos="fade-down">They all likes our working path</span>
+        <span class="title1" data-aos="fade-down">{{_('strengths_title')}}</span>
         <div class="strengths">
             <div class="strength" data-aos="zoom-in-left" data-aos-delay="100">
                 <img src="/static/imagesweb/checkmark-seal-svgrepo-com.svg" alt="quality">
                 <div class="strength-text">
-                    <span>Service rapide et flexible</span>
-                    <span>Votre temps est précieux : nous proposons des délais adaptés à votre emploi du temps, avec des options de livraison à domicile ou en entreprise. </span>
+                    <span>{{_('strength1_title')}}</span>
+                    <span>{{_('strength1_sub')}}</span>
                 </div>
                 
             </div>
             <div class="strength" data-aos="zoom-in-right" data-aos-delay="300">
                 <img src="/static/imagesweb/clock-circle-svgrepo-com.svg" alt="eco">
                 <div class="strength-text">
-                    <span>Qualité irréprochable</span>
-                <span>Nos experts utilisent des technologies modernes et des produits écoresponsables pour préserver vos textiles et prolonger leur durée de vie.</span>
+                    <span>{{_('strength2_title')}}</span>
+                <span>{{_('strength2_sub')}}</span>
                 </div>
             </div>
             <div class="strength" data-aos="zoom-in-left" data-aos-delay="500">
                 <img src="/static/imagesweb/smile-circle-svgrepo-com.svg" alt="speed">
                 <div class="strength-text">
-                    <span>Ecologie et durable</span>
-                    <span>Engagés pour l’environnement, nous privilégions des pratiques respectueuses, notamment en réduisant l’usage d’eau et de produits chimiques.</span>
+                    <span> {{_('strength3_title')}}</span>
+                    <span>{{_('strength3_sub')}}</span>
                 </div>
             </div>
             <div class="strength" data-aos="zoom-in-right" data-aos-delay="700">
                 <img src="/static/imagesweb/checkmark-seal-svgrepo-com.svg" alt="quality">
                 <div class="strength-text">
-                    <span>Expérience client personnalisée</span>
-                    <span>Notre équipe est à l’écoute pour répondre à vos besoins spécifiques et vous garantir une expérience sans souci, chaque fois.</span>
+                    <span>{{_('strength4_title')}}</span>
+                    <span>{{_('strength4_sub')}}</span>
                 </div>
                 
             </div>
         </div>
 
         <div class="engagements">
-            <div class="title1" data-aos="fade-up">Nous concevons des solutions de blanchisserie sur mesure pour simplifier votre quotidien</div>
-            <div class="subtitle"data-aos="fade-down" data-aos-delay="200">Avec Express Dry Clean, transformez votre expérience de blanchisserie grâce à des services modernes, efficaces et personnalisés, adaptés à vos besoins spécifiques.</div>
-            <a href="#" class="button">Découvrez nos services</a>
+            <div class="title1" data-aos="fade-up">{{_('engagements_title')}}</div>
+            <div class="subtitle"data-aos="fade-down" data-aos-delay="200"> {{_('engagements_sub')}}</div>
+            <a href="#" class="button">{{_('engagements_btn1')}}</a>
 
-            <div class="title1" data-aos="fade-up">Nos valeurs fondamentales et engagements</div>
+            <div class="title1" data-aos="fade-up">{{_('engagements_title_2')}}</div>
             <div class="values">
                 <div class="block">
                     <div class="empty-card-up"></div>
                     <div class="engagement alone" data-aos="fade-left" data-aos-duration="1000">
-                        <span class="title">Une expertise reconnue à Bruxelles</span>
-                        <span class="value">Depuis plus de 15 ans, nous collaborons avec des particuliers et des entreprises locales pour offrir des solutions innovantes et fiables.</span>
+                        <span class="title">{{_('engagement1_title')}}</span>
+                        <span class="value">{{_('engagement1_text')}}</span>
                     </div>
                     <div class="empty-card-down"></div>
                 </div>
@@ -117,24 +117,24 @@
                 <div class="block">
                     <div class="empty-card-up"></div>
                     <div class="engagement" data-aos="fade-up" data-aos-duration="1000">
-                        <span class="title">Une équipe dédiée</span>
-                        <span class="value">Nos experts s’engagent à vous fournir un service de qualité exceptionnelle, que ce soit pour vos vêtements délicats ou textiles professionnels.</span>
+                        <span class="title">{{_('engagement2_title')}}</span>
+                        <span class="value">{{_('engagement2_text')}}</span>
                     </div>
                     <div class="card" id="engagement-card" data-aos="flip-right" data-aos-delay="100">
-                        <span class="title">Envie d'en savoir plus sur notre approche ? </span>
-                        <a href="#"> Consultez nos réuissites </a>
+                        <span class="title">{{_('engagement_card_title')}}</span>
+                        <a href="#"> {{_('engagement_card_btn')}}</a>
                     </div>
                     <div class="engagement" data-aos="fade-down" data-aos-duration="1000">
-                        <span class="title">Des outils modernes et durables </span>
-                        <span class="value">Nous investissons continuellement dans des technologies écoresponsables pour garantir des résultats optimaux tout en respectant l’environnement.</span>
+                        <span class="title">{{_('engagement3_title')}}</span>
+                        <span class="value">{{_('engagement3_text')}}</span>
                     </div>
                     <div class="empty-card-down"></div>
                 </div>
                 <div class="block">
                     <div class="empty-card-up"></div>
                     <div class="engagement alone" data-aos="fade-right" data-aos-duration="1000">
-                        <span class="title">Une communication sans faille </span>
-                        <span class="value">Un suivi transparent et une disponibilité constante pour répondre à vos demandes dans les meilleurs délais.</span>
+                        <span class="title">{{_('engagement4_title')}}</span>
+                        <span class="value">{{_('engagement4_text')}}</span>
                     </div>
                     <div class="empty-card-down"></div>
                 </div>
@@ -144,27 +144,27 @@
                 <div class="block spacer">
                     <div class="engagement dark" data-aos="fade-down">
                         <img src="/static/images/pub3.jpg" alt="nettoyage haut de gamme" class="engagement-image">
-                        <span class="title">Nettoyage et repassage haut de gamme</span>
-                        <span class="value">Propreté et soin inégalés pour vos textiles, avec une attention particulière aux matières délicates.</span>
+                        <span class="title">{{_('engagement5_title')}}</span>
+                        <span class="value">{{_('engagement5_text')}}</span>
                     </div>
                     <div class="engagement dark" data-aos="fade-left">
                         <img src="/static/imagesweb/transport.jpeg" alt="collecte" class="engagement-image">
-                        <span class="title">Collecte et livraison flexibles</span>
-                        <span class="value">Choisissez le créneau qui vous convient, et nous nous occupons du reste.</span>
+                        <span class="title">{{_('engagement6_title')}}</span>
+                        <span class="value">{{_('engagement6_text')}}</span>
                     </div>
                 </div>
                 <div class="block">
                     <div class="engagement" data-aos="fade-up">
-                        <span class="title">Des solutions pour les entreprises</span>
-                        <span class="value">Propreté et soin inégalés pour vos textiles, avec une attention particulière aux matières délicates.</span>
+                        <span class="title">{{_('engagement7_title')}}</span>
+                        <span class="value">{{_('engagement7_text')}}</span>
                     </div>
                     <div class="engagement" data-aos="fade-right">
-                        <span class="title">Traitement écoresponsable</span>
-                        <span class="value">Des processus optimisés pour réduire l'impact environnemental tout en garantissant un résultat impeccable.</span>
+                        <span class="title">{{_('engagement8_title')}}</span>
+                        <span class="value">{{_('engagement8_text')}}</span>
                     </div>
                 </div>
             </div>
-            <a href="#" class="button">Explorez nos services</a>
+            <a href="#" class="button">{{_('engagements_btn2')}}</a>
         </div>
     </div>
 </section>

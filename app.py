@@ -7,11 +7,13 @@ from enum import Enum
 import datetime
 import os
 
+#languages management
+from flask_babel import Babel, gettext, _
 
 from unicodedata import decimal
 #from urllib import request
 from flask import Flask, jsonify, request_started, request_tearing_down, send_file, session
-from flask import render_template
+from flask import render_template, g
 from flask import request, url_for,redirect
 from flask_mysql_connector import MySQL
 #import simplejson as js
@@ -27,6 +29,9 @@ import csv
 
 
 os.path.abspath(os.path.dirname(__file__))
+#Detect langage in the request
+def get_locale():
+    return session.get('lang', 'fr')   
 
 
 """ 
@@ -43,8 +48,10 @@ app.config['MYSQL_USER'] = 'REMOVED'
 app.config['MYSQL_PASSWORD'] = 'REMOVED'
 app.config['MYSQL_DB'] = 'REMOVED'
 app.config['UPLOAD_FOLDER'] = '/var/www/express/static/images'
+app.config['BABEL_DEFAULT_LOCALE'] = 'fr'
 app.secret_key = 'REMOVED'
 mysql = MySQL(app)
+babel = Babel(app, locale_selector=get_locale)
 
 class fakefloat(float):
     def __init__(self, value):
@@ -201,7 +208,8 @@ def FormatTextToMysql(a,sep):
 #Function to get datas. To fecth where, set where = attribute#value
 @app.route('/getalldatas/<filetype>/<name>/')
 @app.route('/getalldatas/<filetype>/<name>/<where>/')
-def GetData(filetype:str  ,name: str, where = None):
+@app.route('/getalldatas/<filetype>/<name>/<where>/<lang>/')
+def GetData(filetype:str  ,name: str, where = None, lang = None):
     cur = mysql.new_cursor(dictionary = True)
     # My plan here is to use RegEx with the where here to easily fetch commands for a specific month for example
     if where:
@@ -213,6 +221,7 @@ def GetData(filetype:str  ,name: str, where = None):
         cur.execute(com)
 
     else:
+        translation_table = f"{name}_translation"
         cur.execute(f"SELECT * FROM {app.config['MYSQL_DB']}.{name}")
     a = cur.fetchall()
     if filetype == 'json':
@@ -407,7 +416,8 @@ def ResetPassword():
     print("La réponse est" + str(response["name"] + str(response["password"])))
     send_email(to_addr=mail, subject="Mot de passe Ex-press Dry Clean", user_name=(response["name"]), email_type="passwordReset", user_recap=response["password"])
     return "Mot de passe envoyé"
-    
+
+
 @app.route('/')
 def index():
     return redirect(url_for('home', lang = 'fr'))
@@ -419,6 +429,9 @@ def home(lang = 'fr', subpage = None, store = None):
     #fill_database()
     #set language
     session['lang'] = lang
+    user = getattr(g, 'user', None)
+    
+    print(getattr(g, 'user', None))
     #return str((GetCostDelevery("Rue Saint-germain 92 1410 Waterloo")*price_by_km).quantize(decimal.Decimal('.01')))
     categories = GetData('full','category')
     stores = GetData('full','store')
@@ -439,6 +452,10 @@ def pricing(lang = 'fr', subpage = None, store = None):
     available_services = [ x for x in services if x['category_name'] == subpage]
 
     selected_category = [ x for x in categories if x['name'] == subpage][0] if subpage else None
+    #if selected_category:
+    #   selected_category = { k.encode('utf-8'): v.encode('utf-8') for k, v in selected_category.items()}
+    # Convert all informations in selectedCategory to utf-8
+
     stores = GetData('full','store')
     selected_store = [ x for x in stores if x['name'] == store][-1] if store else None
     return render_template('pricing.html', lang = session['lang'], categories = categories, services_in_store = services_in_store, dictionary = dictionary[lang], category = subpage, other_categories = others_categories, services = None if len(available_services) <= 0 else available_services, selected_category = selected_category, stores = stores, selected_store = selected_store)
@@ -453,6 +470,7 @@ def about(lang = 'fr', subpage = None):
 @app.route('/<lang>/contact/')
 @app.route('/<lang>/contact/<subpage>')
 def contact(lang = 'fr', subpage = None, message = None):
+    greatings = _("Bonjour")
     #set language
     session['lang'] = lang
     return render_template('contact.html', lang = session['lang'], dictionary = dictionary[lang], message = message)
@@ -904,6 +922,11 @@ def get_current_time():
     now = datetime.datetime.now()
     return json.dumps({'time': now.strftime("%Y-%m-%d %H:%M:%S")})
 
+
+# Function to convert a text to utf-8
+def unidecode(text):
+    return unidecode.unidecode(text)
+
 "DELETE FROM `appexpress`.`service` WHERE (`id` = '5');"
 
 """ Client ADD 
@@ -1026,28 +1049,23 @@ dictionary = {'fr':{
     'about-text4': ["Nous sommes fiers de vous proposer des services professionnels de blanchisserie, de nettoyage à sec et de couture à Etterbeek, St-Josse, Moortebeek et Zaventem. Trois adresses différentes sous une même enseigne pour être chaque jour un peu plus près de nos clients !"],
     'strengths': [
         {
-            'title': 'Soins de qualité exceptionnels',
-            'description':"Notre entreprise de blanchisserie s’engage à fournir des soins de qualité exceptionnels pour chaque vêtement. Nous utilisons des équipements de pointe et des détergents écologiques qui garantissent un nettoyage en profondeur de vos vêtements tout en préservant leur texture et leur couleur d’origine. Chaque article est inspecté et traité par nos professionnels qualifiés pour éliminer les taches et protéger les tissus délicats, vous offrant ainsi un linge parfaitement propre et frais à chaque fois.",
+            'title': 'work1_title',
+            'description':"work1_content",
             'illustration':"img1.jpeg"
         },
         {
-            'title': 'Service de ramassage et de livraison pratique',
-            'description':"Nous comprenons que votre temps est précieux, c’est pourquoi nous proposons un service de ramassage et de livraison pratique. Il vous suffit de planifier un horaire de ramassage qui vous convient, et notre équipe fiable viendra récupérer votre linge à votre porte. Une fois nettoyé et soigneusement emballé, nous vous le restituerons à l’heure de votre choix. Ce service sans tracas est conçu pour s’intégrer parfaitement à votre mode de vie bien rempli, faisant du jour de la lessive un lointain souvenir.",
+            'title': 'work2_title', 
+            'description':"work2_content",
             'illustration':"express1.jpg"
         },
         {
-            'title': 'Plans de blanchisserie personnalisables',
-            'description':"Nos plans de blanchisserie personnalisables sont conçus pour répondre à vos besoins spécifiques. Que vous ayez besoin d’un service de nettoyage régulier ou occasionnel, nous avons une solution adaptée à votre emploi du temps et à votre budget. Nos forfaits flexibles vous permettent de choisir les services dont vous avez besoin, quand vous en avez besoin, vous offrant ainsi une solution de blanchisserie sur mesure qui répond à vos attentes.",
+            'title': 'work3_title',
+            'description':"work3_content",
             'illustration':"express2.jpg"
         },
         {
-            'title': "Tarifs compétitifs",
-            'description':"Nous proposons des tarifs compétitifs pour nos services de blanchisserie et de nettoyage à sec. Nos tarifs abordables sont conçus pour répondre à vos besoins de nettoyage tout en respectant votre budget. Nous offrons des forfaits de blanchisserie flexibles qui vous permettent de choisir les services dont vous avez besoin, quand vous en avez besoin, vous offrant ainsi une solution de nettoyage sur mesure qui répond à vos attentes.",
-            'illustration':"express4.jpg"
-        },
-        {
-            'title': 'Service de nettoyage à sec écologique',
-            'description':"Notre service de nettoyage à sec écologique est respectueux de l’environnement et de votre santé. Nous utilisons des produits de nettoyage écologiques pour prendre soin de vos vêtements et de votre linge de maison, tout en préservant la planète. Notre processus de nettoyage à sec est conçu pour éliminer les taches et les odeurs, tout en préservant la texture et la couleur de vos vêtements, vous offrant ainsi un linge propre et frais à chaque fois.",
+            'title': "work4_title",
+            'description':"work4_content",
             'illustration':"express4.jpg"
         }
     ]
@@ -1105,11 +1123,6 @@ dictionary = {'fr':{
         {
             'title': 'Affordable Pricing',
             'description':"Quality laundry services don't have to come with a hefty price tag. Our competitive pricing structure is designed to offer exceptional value without compromising on quality. We provide clear and transparent pricing with no hidden fees, so you always know what to expect. Plus, we offer special discounts and loyalty programs to make our services even more affordable for our regular customers.",
-            'illustration':"express4.jpg"
-        },
-        {
-            'title': 'Sustainable Practices',
-            'description':"We are committed to environmental sustainability and strive to minimize our ecological footprint. Our laundry process utilizes energy-efficient machines and biodegradable detergents that are safe for the planet. We also implement water-saving techniques and recycle whenever possible. By choosing our laundry service, you are supporting a company that prioritizes sustainability and contributes to a healthier environment.",
             'illustration':"express4.jpg"
         }
     ]
@@ -1170,11 +1183,6 @@ dictionary = {'fr':{
             'title': 'Betaalbare prijzen',
             'description':"Kwaliteitsvolle wasservices hoeven niet duur te zijn. Onze concurrerende prijsstructuur is ontworpen om uitzonderlijke waarde te bieden zonder in te boeten aan kwaliteit. We bieden duidelijke en transparante prijzen zonder verborgen kosten, zodat u altijd weet wat u kunt verwachten. Bovendien bieden we speciale kortingen en loyaliteitsprogramma's om onze diensten nog betaalbaarder te maken voor onze vaste klanten.",
             'illustration':"express4.jpg"
-        },
-        {
-            'title': 'Duurzame praktijken',
-            'description':"We zijn toegewijd aan milieuvriendelijkheid en streven ernaar onze ecologische voetafdruk te minimaliseren. Ons wasproces maakt gebruik van energiezuinige machines en biologisch afbreekbare wasmiddelen die veilig zijn voor de planeet. We passen ook waterbesparende technieken toe en recyclen waar mogelijk. Door voor onze wasservice te kiezen, ondersteunt u een bedrijf dat duurzaamheid prioriteit geeft en bijdraagt aan een gezonder milieu.",
-            'illustration':"express4.jpg"
         }
     ]
 
@@ -1232,11 +1240,6 @@ dictionary = {'fr':{
         {
             'title': 'Prezzi competitivi',
             'description':"Offriamo prezzi competitivi per i nostri servizi di lavanderia e lavaggio a secco. I nostri prezzi convenienti sono progettati per soddisfare le tue esigenze di pulizia senza compromettere il tuo budget. Offriamo pacchetti di lavanderia flessibili che ti consentono di scegliere i servizi di cui hai bisogno, quando ne hai bisogno, offrendoti così una soluzione di pulizia su misura che soddisfa le tue aspettative.",    
-            'illustration':"express4.jpg"
-        },
-        {
-            'title': 'Pratiche sostenibili',
-            'description':"Siamo impegnati nella sostenibilità ambientale e cerchiamo di ridurre al minimo la nostra impronta ecologica. Il nostro processo di lavanderia utilizza macchine a basso consumo energetico e detergenti biodegradabili che sono sicuri per il pianeta. Applichiamo anche tecniche di risparmio idrico e ricicliamo quando possibile. Scegliendo il nostro servizio di lavanderia, sostieni un'azienda che dà priorità alla sostenibilità e contribuisce a un ambiente più sano.",
             'illustration':"express4.jpg"
         }
     ]

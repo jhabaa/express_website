@@ -1,0 +1,865 @@
+# Italian translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-01-20 02:01+0100\n"
+"PO-Revision-Date: 2025-01-22 11:53+0100\n"
+"Last-Translator: \n"
+"Language: it\n"
+"Language-Team: it <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: app.py:466
+msgid "Bonjour"
+msgstr "Buongiorno"
+
+#: templates/about.html:2 templates/layout.html:104 templates/layout.html:178
+msgid "About"
+msgstr "Informazioni"
+
+#: templates/about.html:9
+msgid "about_title"
+msgstr "Combiniamo il meglio per prenderci cura del tuo bucato"
+
+#: templates/about.html:10
+msgid "about_sub"
+msgstr ""
+"Scopri le nostre soluzioni di pulizia innovative ed ecologiche.\n"
+"Offri al tuo bucato una brillantezza senza pari rispettando l'ambiente."
+
+#: templates/about.html:53
+msgid "numbers_title"
+msgstr "Molti clienti soddisfatti e competenza che fa la differenza"
+
+#: templates/about.html:54
+msgid "numbers_subtitle"
+msgstr ""
+"Con cura e precisione, offriamo servizi su misura, adattati ai tuoi "
+"vestiti, biancheria per la casa o tessuti professionali.\n"
+"Il nostro team dedicato pone la tua soddisfazione al centro delle sue "
+"priorità, garantendo risultati impeccabili."
+
+#: templates/about.html:58
+msgid "number1_text"
+msgstr "Anni di esperienza"
+
+#: templates/about.html:62
+msgid "number2_text"
+msgstr "Collaborazioni con aziende locali"
+
+#: templates/about.html:67
+msgid "strengths_title"
+msgstr ""
+"Tutti i nostri clienti apprezzano il nostro modo di lavorare. Grazie al "
+"nostro servizio rapido, flessibile e di qualità, soddisfiamo sempre le "
+"loro aspettative con cura ed efficienza."
+
+#: templates/about.html:72
+msgid "strength1_title"
+msgstr "Servizio rapido e flessibile"
+
+#: templates/about.html:73
+msgid "strength1_sub"
+msgstr ""
+"Da Ex-Press Dry Clean, ci impegniamo a fornire un servizio rapido senza "
+"mai compromettere la qualità. Grazie alla nostra esperienza e alle "
+"attrezzature moderne, garantiamo una cura impeccabile per i tuoi vestiti,"
+" anche nei tempi più brevi.\n"
+"La nostra flessibilità è al centro del nostro servizio: ci adattiamo al "
+"tuo programma, con opzioni di ritiro e consegna che soddisfano le tue "
+"esigenze. Ogni capo è meticolosamente ispezionato per garantire un "
+"risultato perfetto, sia per la pulizia d'emergenza che per la routine "
+"regolare.\n"
+"Con Ex-Press Dry Clean, goditi un servizio rapido, affidabile e di alta "
+"qualità progettato per semplificare la tua vita quotidiana."
+
+#: templates/about.html:80
+msgid "strength2_title"
+msgstr "Miglioramento continuo e rigore di qualità"
+
+#: templates/about.html:81
+msgid "strength2_sub"
+msgstr ""
+"Implementiamo procedure rigorose e miglioramento continuo per garantire "
+"standard di alta qualità. Ogni fase del nostro processo è attentamente "
+"controllata per garantire un servizio impeccabile, soddisfacendo i "
+"criteri più esigenti. La nostra priorità: bucato impeccabile. Non "
+"esitiamo a eseguire più pulizie se necessario per garantire un risultato "
+"perfetto ogni volta."
+
+#: templates/about.html:87
+msgid "strength3_title"
+msgstr "Ecologia e sostenibilità"
+
+#: templates/about.html:88
+msgid "strength3_sub"
+msgstr ""
+"Impegnati per l'ambiente, implementiamo pratiche responsabili che "
+"riducono l'uso di acqua e prodotti chimici. Scegliendo soluzioni "
+"ecologiche, minimizziamo il nostro impatto ambientale offrendo al "
+"contempo un servizio di qualità. Il nostro obiettivo è preservare il "
+"pianeta garantendo risultati impeccabili per i tuoi vestiti."
+
+#: templates/about.html:94
+msgid "strength4_title"
+msgstr "Esperienza cliente personalizzata"
+
+#: templates/about.html:95
+msgid "strength4_sub"
+msgstr ""
+"In negozio, pratichiamo un ascolto attivo per comprendere e soddisfare al"
+" meglio le esigenze di ogni cliente.\n"
+"Che si tratti di stiratura specifica, inamidare o meno le tue lenzuola, o"
+" qualsiasi altra richiesta particolare, adattiamo i nostri servizi per "
+"soddisfare le tue esigenze."
+
+#: templates/about.html:102
+msgid "engagements_title"
+msgstr ""
+"Progettiamo soluzioni di lavanderia su misura per semplificare la tua "
+"vita quotidiana"
+
+#: templates/about.html:103
+msgid "engagements_sub"
+msgstr ""
+"Con <b>Express Dry Clean</b>, trasforma la tua esperienza di lavanderia "
+"con servizi moderni, efficienti e personalizzati, adattati alle tue "
+"esigenze specifiche."
+
+#: templates/about.html:104
+msgid "engagements_btn1"
+msgstr "Esplora i nostri servizi"
+
+#: templates/about.html:106
+msgid "engagements_title_2"
+msgstr "I nostri valori fondamentali e impegni"
+
+#: templates/about.html:111
+msgid "engagement1_title"
+msgstr "Competenza riconosciuta a Bruxelles"
+
+#: templates/about.html:112
+msgid "engagement1_text"
+msgstr ""
+"Da oltre 15 anni, collaboriamo con privati e aziende per offrire "
+"soluzioni innovative e affidabili."
+
+#: templates/about.html:120
+msgid "engagement2_title"
+msgstr "Un team dedicato"
+
+#: templates/about.html:121
+msgid "engagement2_text"
+msgstr ""
+"I nostri esperti si impegnano a fornirti un servizio di qualità "
+"eccezionale, sia per i tuoi vestiti delicati che per i tessuti "
+"professionali."
+
+#: templates/about.html:124
+msgid "engagement_card_title"
+msgstr "Vuoi saperne di più sul nostro approccio?"
+
+#: templates/about.html:125
+msgid "engagement_card_btn"
+msgstr "Scopri i nostri successi"
+
+#: templates/about.html:128
+msgid "engagement3_title"
+msgstr "Strumenti moderni e sostenibili"
+
+#: templates/about.html:129
+msgid "engagement3_text"
+msgstr ""
+"Investiamo continuamente in tecnologie ecologiche per garantire risultati"
+" ottimali rispettando l'ambiente."
+
+#: templates/about.html:136
+msgid "engagement4_title"
+msgstr "Comunicazione senza soluzione di continuità"
+
+#: templates/about.html:137
+msgid "engagement4_text"
+msgstr ""
+"Follow-up trasparente e disponibilità costante per rispondere alle tue "
+"richieste nel minor tempo possibile."
+
+#: templates/about.html:147
+msgid "engagement5_title"
+msgstr "Pulizia e stiratura di alta gamma"
+
+#: templates/about.html:148
+msgid "engagement5_text"
+msgstr ""
+"Pulizia e cura ineguagliabili per i tuoi tessuti, con particolare "
+"attenzione ai materiali delicati."
+
+#: templates/about.html:152
+msgid "engagement6_title"
+msgstr "Ritiro e consegna flessibili"
+
+#: templates/about.html:153
+msgid "engagement6_text"
+msgstr "Scegli la fascia oraria che ti si addice, e noi ci occupiamo del resto."
+
+#: templates/about.html:158
+msgid "engagement7_title"
+msgstr "Soluzioni per le aziende"
+
+#: templates/about.html:159
+msgid "engagement7_text"
+msgstr ""
+"Pulizia e cura ineguagliabili per i tuoi tessuti, con particolare "
+"attenzione ai materiali delicati."
+
+#: templates/about.html:162
+msgid "engagement8_title"
+msgstr "Trattamenti ecologici"
+
+#: templates/about.html:163
+msgid "engagement8_text"
+msgstr ""
+"Processi ottimizzati per ridurre l'impatto ambientale garantendo al "
+"contempo risultati impeccabili."
+
+#: templates/about.html:167
+msgid "engagements_btn2"
+msgstr "Esplora i nostri negozi"
+
+#: templates/contact.html:3 templates/layout.html:106 templates/layout.html:180
+msgid "Contact"
+msgstr "Contatto"
+
+#: templates/contact.html:11
+msgid "contact_title"
+msgstr "Un team dedicato"
+
+#: templates/contact.html:14
+msgid "contact_sub"
+msgstr ""
+"Il nostro team è qui per aiutarti. Puoi farci le tue domande se ne hai. "
+"Siamo disponibili 24/7."
+
+#: templates/contact.html:19 templates/contact.html:58
+msgid "call_btn"
+msgstr "Chiama"
+
+#: templates/contact.html:24
+msgid "email_btn"
+msgstr "Email"
+
+#: templates/contact.html:54
+msgid "contact_right_1"
+msgstr "Contattaci"
+
+#: templates/contact.html:55
+msgid "contact_right_2"
+msgstr "Il nostro team rimane disponibile per assistenza"
+
+#: templates/contact.html:61
+msgid "contact_right_3"
+msgstr "Parla con noi"
+
+#: templates/contact.html:62
+msgid "contact_right_4"
+msgstr "Parla con i nostri agenti via chat"
+
+#: templates/contact.html:66
+msgid "contact_right_5"
+msgstr "Invia un'email"
+
+#: templates/contact.html:72
+msgid "contact_right_6"
+msgstr "Messaggio su Facebook"
+
+#: templates/contact.html:76
+msgid "contact_right_7"
+msgstr "Visita noi"
+
+#: templates/contact.html:78
+msgid "contact_right_8"
+msgstr "Parla con noi di persona nei nostri negozi o nella nostra sede"
+
+#: templates/contact.html:83
+msgid "contact_right_9"
+msgstr "Chaussée de Louvain 526, 1930 Zaventem"
+
+#: templates/contact.html:92
+msgid "firstname"
+msgstr "Nome"
+
+#: templates/contact.html:96
+msgid "lastname"
+msgstr "Cognome"
+
+#: templates/contact.html:102
+msgid "phone_number"
+msgstr "Numero di telefono"
+
+#: templates/contact.html:108 templates/delivery.html:28
+msgid "email"
+msgstr "Indirizzo email"
+
+#: templates/contact.html:115
+msgid "subject"
+msgstr "Messaggio"
+
+#: templates/delivery.html:3 templates/layout.html:105
+#: templates/layout.html:179
+msgid "Delivery"
+msgstr "Consegna"
+
+#: templates/delivery.html:11
+msgid "delivery_title"
+msgstr "Pulizia che viene da te"
+
+#: templates/delivery.html:14
+msgid "delivery_subtitle_1"
+msgstr ""
+"Non puoi muoverti per consegnare o ritirare il tuo bucato? Ex-Press Dry "
+"Clean si occupa di tutto!"
+
+#: templates/delivery.html:15
+msgid "delivery_subtitle_2"
+msgstr ""
+"Sia per la raccolta del tuo bucato sporco che per la consegna dei tuoi "
+"vestiti puliti, offriamo un servizio di consegna su misura all'indirizzo "
+"di tua scelta, ovunque in Belgio."
+
+#: templates/delivery.html:19
+msgid "delivery_subtitle_3"
+msgstr ""
+"Contattaci oggi per organizzare la raccolta o la consegna del tuo bucato."
+" Con Ex-Press Dry Clean, goditi la qualità professionale direttamente a "
+"casa tua!"
+
+#: templates/delivery.html:36
+msgid "delivery_citation"
+msgstr "«Ex-Press Dry Clean, direttamente a casa tua»"
+
+#: templates/delivery.html:42
+msgid "delivery_text_1"
+msgstr ""
+"Da Ex-Press Dry Clean, offriamo un servizio di consegna a domicilio su "
+"misura per le tue esigenze, con tariffe di consegna basate sulla tua area"
+" geografica:"
+
+#: templates/delivery.html:45
+msgid "delivery_zone_1"
+msgstr "Bruxelles: 5€"
+
+#: templates/delivery.html:46
+msgid "delivery_zone_2"
+msgstr "Brabante Vallone e Fiammingo: 10€"
+
+#: templates/delivery.html:47
+msgid "delivery_zone_3"
+msgstr "Fuori da queste aree, tariffazione chilometrica su richiesta."
+
+#: templates/delivery.html:50
+msgid "delivery_text_2"
+msgstr ""
+"Non esitare a contattarci per maggiori dettagli sulle tariffe specifiche "
+"per il tuo indirizzo. Ci impegniamo a rendere la tua esperienza il più "
+"conveniente e accessibile possibile!"
+
+#: templates/delivery.html:63
+msgid "delivery_bloc_1_title"
+msgstr "Pianificazione degli appuntamenti"
+
+#: templates/delivery.html:64
+msgid "delivery_bloc_1_sub"
+msgstr ""
+"Comunica date e fasce orarie che ti si addicono per la raccolta. Puoi "
+"facilmente prenotare via email o telefono."
+
+#: templates/delivery.html:68
+msgid "delivery_bloc_2_title"
+msgstr "Raccolta a domicilio"
+
+#: templates/delivery.html:69
+msgid "delivery_bloc_2_sub"
+msgstr ""
+"Il nostro personale di consegna viene direttamente a casa tua per "
+"raccogliere i tuoi vestiti. Devi solo prepararli, e noi ci occupiamo del "
+"resto."
+
+#: templates/delivery.html:73
+msgid "delivery_bloc_3_title"
+msgstr "Pulizia e cura"
+
+#: templates/delivery.html:74
+msgid "delivery_bloc_3_sub"
+msgstr ""
+"Una volta che i tuoi vestiti arrivano nei nostri locali, vengono trattati"
+" con la massima cura. Il nostro team di esperti garantisce che ogni capo "
+"sia pulito e stirato con precisione."
+
+#: templates/delivery.html:77
+msgid "delivery_bloc_4_title"
+msgstr "Ritorno dei vestiti puliti"
+
+#: templates/delivery.html:78
+msgid "delivery_bloc_4_sub"
+msgstr ""
+"Non appena i tuoi vestiti sono pronti, li consegniamo direttamente a casa"
+" tua, piegati e pronti per essere indossati. Goditi la comodità di un "
+"servizio di lavanderia professionale senza dover uscire di casa."
+
+#: templates/index.html:13
+msgid "title_sub"
+msgstr "Servizi di lavanderia e pulizia a secco di alta qualità"
+
+#: templates/index.html:24
+msgid "title4"
+msgstr "Servizi di lavanderia"
+
+#: templates/index.html:25
+msgid "subtitle4"
+msgstr ""
+"Offriamo una gamma completa di servizi di lavanderia, dalla pulizia a "
+"secco alla stiratura, per soddisfare tutte le tue esigenze."
+
+#: templates/index.html:55
+msgid "title3"
+msgstr "Pulizia a secco"
+
+#: templates/index.html:77 templates/localization.html:63
+msgid "title5"
+msgstr "I nostri servizi"
+
+#: templates/index.html:79 templates/localization.html:65
+msgid "subtitle5-1"
+msgstr "Lavaggio e stiratura"
+
+#: templates/index.html:81 templates/localization.html:67
+msgid "subtitle5-2"
+msgstr "Pulizia a secco"
+
+#: templates/index.html:83 templates/localization.html:69
+msgid "subtitle5-3"
+msgstr "Riparazioni e modifiche"
+
+#: templates/index.html:85 templates/localization.html:71
+msgid "subtitle5-4"
+msgstr "Servizi di consegna"
+
+#: templates/index.html:104
+msgid "goto"
+msgstr "Vai a"
+
+#: templates/layout.html:65 templates/layout.html:177 templates/pricing.html:3
+msgid "Pricing"
+msgstr "Prezzi"
+
+#: templates/layout.html:68
+msgid "3"
+msgstr "3"
+
+#: templates/layout.html:108 templates/localization.html:3
+msgid "Localization"
+msgstr "Localizzazione"
+
+#: templates/layout.html:124
+msgid "See on Maps"
+msgstr "Vedi su Maps"
+
+#: templates/layout.html:170
+msgid "title6"
+msgstr "Titolo 6"
+
+#: templates/layout.html:171
+msgid "text6-1"
+msgstr "Testo 6-1"
+
+#: templates/layout.html:171
+msgid "text6-2"
+msgstr "Testo 6-2"
+
+#: templates/layout.html:171
+msgid "text6-3"
+msgstr "Testo 6-3"
+
+#: templates/layout.html:191
+msgid "Privacy policy"
+msgstr "Politica sulla privacy"
+
+#: templates/layout.html:192
+msgid "General terms"
+msgstr "Termini generali"
+
+#: templates/localization.html:60
+msgid "Our Locations"
+msgstr "Le nostre sedi"
+
+#: templates/pricing.html:31
+msgid "Select a Store"
+msgstr "Seleziona un negozio"
+
+#: templates/pricing.html:47
+msgid "Go to store"
+msgstr "Vai al negozio"
+
+#: templates/pricing.html:63
+msgid "Our Services"
+msgstr "I nostri servizi"
+
+msgid "Blanchisserie"
+msgstr "Lavanderia"
+
+msgid "Couture"
+msgstr "Cucito"
+
+msgid "Nettoyage"
+msgstr "Pulizia"
+
+msgid "Description Blanchisserie"
+msgstr "Descrizione Lavanderia"
+
+msgid "Description Couture"
+msgstr "Descrizione Cucito"
+
+msgid "Description Nettoyage"
+msgstr "Descrizione Pulizia"
+
+msgid "Informations Blanchisserie"
+msgstr "Informazioni Lavanderia"
+
+msgid "Informations Couture"
+msgstr "Informazioni Cucito"
+
+msgid "Informations Nettoyage"
+msgstr "Informazioni Pulizia"
+
+msgid "Anorak en duvet"
+msgstr "Anorak in piuma"
+
+msgid "description_Anorak_en_duvet"
+msgstr "Descrizione Anorak in piuma"
+
+msgid "Blouse en soie"
+msgstr "Blusa in seta"
+
+msgid "description_Blouse_en_soie"
+msgstr "Descrizione Blusa in seta"
+
+msgid "Bonnet"
+msgstr "Berretto"
+
+msgid "description_Bonnet"
+msgstr "Descrizione Berretto"
+
+msgid "Châle"
+msgstr "Scialle"
+
+msgid "description_Châle"
+msgstr "Descrizione Scialle"
+
+msgid "Chemise"
+msgstr "Camicia"
+
+msgid "description_Chemise"
+msgstr "Descrizione Camicia"
+
+msgid "Chemisier"
+msgstr "Camicetta"
+
+msgid "description_Chemisier"
+msgstr "Descrizione Camicetta"
+
+msgid "Combi"
+msgstr "Tuta"
+
+msgid "description_Combi"
+msgstr "Descrizione Tuta"
+
+msgid "Costume (2 pièces)"
+msgstr "Completo (2 pezzi)"
+
+msgid "description_Costume_2_pièces"
+msgstr "Descrizione Completo (2 pezzi)"
+
+msgid "Costume (3 pièces)"
+msgstr "Completo (3 pezzi)"
+
+msgid "description_Costume_3_pièces"
+msgstr "Descrizione Completo (3 pezzi)"
+
+msgid "Couette"
+msgstr "Piumone"
+
+msgid "description_Couette"
+msgstr "Descrizione Piumone"
+
+msgid "Couverture 1 personne"
+msgstr "Coperta 1 persona"
+
+msgid "description_Couverture_1_personne"
+msgstr "Descrizione Coperta 1 persona"
+
+msgid "Couverture 2 personnes"
+msgstr "Coperta 2 persone"
+
+msgid "description_Couverture_2_personnes"
+msgstr "Descrizione Coperta 2 persone"
+
+msgid "Couvre-lit"
+msgstr "Copri letto"
+
+msgid "description_Couvre_lit"
+msgstr "Descrizione Copri letto"
+
+msgid "Cravate"
+msgstr "Cravatta"
+
+msgid "description_Cravate"
+msgstr "Descrizione Cravatta"
+
+msgid "Djélaba"
+msgstr "Djellaba"
+
+msgid "description_Djélaba"
+msgstr "Descrizione Djellaba"
+
+msgid "Drap"
+msgstr "Lenzuolo"
+
+msgid "description_Drap"
+msgstr "Descrizione Lenzuolo"
+
+msgid "Echarpe"
+msgstr "Sciarpa"
+
+msgid "description_Echarpe"
+msgstr "Descrizione Sciarpa"
+
+msgid "fermeture éclair - Tirette"
+msgstr "cerniera - Tirette"
+
+msgid "description_fermeture_éclair_Tirette"
+msgstr "Descrizione cerniera - Tirette"
+
+msgid "Foulard"
+msgstr "Foulard"
+
+msgid "description_Foulard"
+msgstr "Descrizione Foulard"
+
+msgid "Gant (non cuir)"
+msgstr "Guanto (non in pelle)"
+
+msgid "description_Gant_non_cuir"
+msgstr "Descrizione Guanto (non in pelle)"
+
+msgid "Gilet"
+msgstr "Gilet"
+
+msgid "description_Gilet"
+msgstr "Descrizione Gilet"
+
+msgid "Imperméable"
+msgstr "Impermeabile"
+
+msgid "description_Imperméable"
+msgstr "Descrizione Impermeabile"
+
+msgid "Imperméable fourré"
+msgstr "Impermeabile foderato"
+
+msgid "description_Imperméable_fourré"
+msgstr "Descrizione Impermeabile foderato"
+
+msgid "Jupe longue"
+msgstr "Gonna lunga"
+
+msgid "description_Jupe_longue"
+msgstr "Descrizione Gonna lunga"
+
+msgid "Jupe plissée"
+msgstr "Gonna plissettata"
+
+msgid "description_Jupe_plissée"
+msgstr "Descrizione Gonna plissettata"
+
+msgid "Jupe simple"
+msgstr "Gonna semplice"
+
+msgid "description_Jupe_simple"
+msgstr "Descrizione Gonna semplice"
+
+msgid "Linge au kilo"
+msgstr "Prezzo al chilo."
+
+msgid "description_Linge_au_kilo"
+msgstr "Descrizione Linge al chilo"
+
+msgid "Manteau"
+msgstr "Ci prendiamo cura del tuo jeans"
+
+msgid "description_Manteau"
+msgstr "Descrizione Manteau"
+
+msgid "Nappe 0-2.5m"
+msgstr "Tovaglia 0-2.5m"
+
+msgid "description_Nappe_0_2_5m"
+msgstr "Descrizione Tovaglia 0-2.5m"
+
+msgid "Nappe 2.5 - 3.5m"
+msgstr "Tovaglia 2.5 - 3.5m"
+
+msgid "description_Nappe_2_5_3_5m"
+msgstr "Descrizione Tovaglia 2.5 - 3.5m"
+
+msgid "Nappe 3.5 - 5m"
+msgstr "Tovaglia 3.5 - 5m"
+
+msgid "description_Nappe_3_5_5m"
+msgstr "Descrizione Tovaglia 3.5 - 5m"
+
+msgid "Ourlet avec doublure"
+msgstr "Orlo con fodera"
+
+msgid "description_Ourlet_avec_doublure"
+msgstr "Descrizione Orlo con fodera"
+
+msgid "Ourlet Machine"
+msgstr "Orlo a macchina"
+
+msgid "description_Ourlet_Machine"
+msgstr "Descrizione Orlo a macchina"
+
+msgid "Pantalon"
+msgstr "Ci prendiamo cura del tuo jeans"
+
+msgid "description_Pantalon"
+msgstr "Descrizione Pantalon"
+
+msgid "Rideau"
+msgstr "Prezzo al metro quadrato."
+
+msgid "description_Rideau"
+msgstr "Descrizione Rideau"
+
+msgid "Robe de mariée"
+msgstr "Prezzo di partenza."
+
+msgid "description_Robe_de_mariée"
+msgstr "Descrizione Robe de mariée"
+
+msgid "Tapis"
+msgstr "Prezzo al metro quadrato."
+
+msgid "description_Tapis"
+msgstr "Descrizione Tapis"
+
+msgid "Tenture / Rideaux"
+msgstr ""
+"Confezione delle tue tende e tendaggi. Tessuti da fornire. Prezzo al "
+"metro quadrato."
+
+msgid "description_Tenture_Rideaux"
+msgstr "Descrizione Tenture / Rideaux"
+
+msgid "Veste"
+msgstr "Una giacca pulita è meglio"
+
+msgid "description_Veste"
+msgstr "Descrizione Veste"
+
+msgid "Auderghem"
+msgstr "Auderghem"
+
+msgid "Jourdan"
+msgstr "Jourdan"
+
+msgid "Moortebeek"
+msgstr "Moortebeek"
+
+msgid "Saint-Josse"
+msgstr "Saint-Josse"
+
+msgid "Zaventem"
+msgstr "Zaventem"
+
+msgid "Description_Auderghem"
+msgstr "Descrizione Auderghem"
+
+msgid "Description_Jourdan"
+msgstr "Descrizione Jourdan"
+
+msgid "Description_Moortebeek"
+msgstr "Descrizione Moortebeek"
+
+msgid "Description_Saint-Josse"
+msgstr "Descrizione Saint-Josse"
+
+msgid "Description_Zaventem"
+msgstr "Descrizione Zaventem"
+
+msgid "Subtitle_Auderghem"
+msgstr "Sottotitolo Auderghem"
+
+msgid "Subtitle_Jourdan"
+msgstr "Sottotitolo Jourdan"
+
+msgid "Subtitle_Moortebeek"
+msgstr "Sottotitolo Moortebeek"
+
+msgid "Subtitle_Saint-Josse"
+msgstr "Sottotitolo Saint-Josse"
+
+msgid "Subtitle_Zaventem"
+msgstr "Sottotitolo Zaventem"
+
+msgid "Nos_services"
+msgstr "I nostri servizi"
+
+msgid "Nos_service_subtitle"
+msgstr "Sottotitolo dei nostri servizi"
+
+#, fuzzy
+msgid "Notre travail"
+msgstr "Il nostro lavoro"
+
+msgid "work1_title"
+msgstr "Titolo lavoro 1"
+
+msgid "work1_content"
+msgstr "Contenuto lavoro 1"
+
+msgid "work2_title"
+msgstr "Titolo lavoro 2"
+
+msgid "work2_content"
+msgstr "Contenuto lavoro 2"
+
+msgid "work3_title"
+msgstr "Titolo lavoro 3"
+
+msgid "work3_content"
+msgstr "Contenuto lavoro 3"
+
+msgid "work4_title"
+msgstr "Titolo lavoro 4"
+
+msgid "work4_content"
+msgstr "Contenuto lavoro 4"
+
+msgid "Pricing_title_1"
+msgstr "Titolo prezzi 1"
+
+msgid "Pricing_title_2"
+msgstr "Titolo prezzi 2"
+
+msgid "Pricing_title_3"
+msgstr "Titolo prezzi 3"
+

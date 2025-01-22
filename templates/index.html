@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block title %} Home {% endblock %}
+{% block title %} {{_(1)}} {% endblock %}
 
 {% block page %}
 <section class="page1">
@@ -9,8 +9,8 @@
         </div> -->
         
         <div class="presentationBloc">
-            <h1 class="ExpressTitle">Ex-Press Dry Clean</h1>
-            <p class="ExpressTitle">{{ dictionary['title1'] }}</p>
+            <h1 class="ExpressTitle">EX-PRESS Dry Clean</h1>
+            <p class="ExpressTitle">{{ _('title_sub') }}</p>
             <a href="https://testflight.apple.com/join/r5vANLZh" class="">
                 <img src="/static/imagesweb/apple.svg" alt="" class="apple">
             </a>
@@ -21,30 +21,25 @@
 
 <!-- Page 4 -->
 <section class="page2 large" id="services" data-aos="zoom-in">
-    <div class="title1">{{ dictionary['title4'] }}</div>
-    <div class="subtitle">{{ dictionary['subtitle4'] }}</div>
+    <div class="title1">{{ _('Nos_services') }}</div>
+    <div class="subtitle">{{ _('Nos_service_subtitle') }}</div>
     <div class="list">
         {% for cat in categories %}
-            <div class="service" data-aos="fade-down" data-aos-delay="{{ loop.index * 100 }}">
+            <a href="{{url_for('pricing', lang = lang, subpage = cat.name)}}" class="service" data-aos="fade-down" data-aos-delay="{{ loop.index * 100 }}">
                 <img src="/static/images/{{ cat.illustrations }}" alt="" class="cat_bg_img">
                 <div class="description1">
-                    <h2>{{ cat.name}}</h2>
+                    <h2>{{ _(cat.name) }}</h2>
                 </div>
                 <div class="description2" >
                     <div class="up">
-                        <h2 data-aos="fade-up" data-aos-delay="300"> {{ cat.name }} </h2>  
-                        <div class="counter">
-                            {% set numberOfServices = services | selectattr ( 'category_name', '==', cat.name ) | list%}
-                            <span class="count" data-aos="fade-up" data-aos-delay="300"> {{ numberOfServices | length}} </span>
-                            <span class="unit" data-aos="fade-up" data-aos-delay="300">Services</span>
-                        </div>
+                        <h2 data-aos="fade-up"> {{ _(cat.name) }} </h2>  
                     </div>
                     <div class="down">
-                        {{ cat.description}}
+                        {{ _(cat.description) }}
                     </div>
                     
                 </div>
-            </div>
+            </a>
         {% endfor %}
     </div>
 </section>
@@ -57,7 +52,7 @@
     <div class="title1" data-aos="fade-down"
     data-aos-easing="linear"
     data-aos-duration="1500">
-        {{ dictionary['title3'] }}
+        {{ _("Notre travail") }}
     </div>
     
     <ul class="backgrid">
@@ -66,8 +61,8 @@
             <li>
                 <!-- <img src="/static/imagesweb/checkmark-seal-svgrepo-com.svg" alt="" class="img-round"> -->
                 <div class="text">
-                    <h2>{{card.title}}</h2>
-                    <p>{{card.description}}</p>
+                    <h2>{{ _(card.title) }}</h2>
+                    <p>{{ _(card.description) }}</p>
                 </div>
            </li>
         {% endfor %}
@@ -79,15 +74,15 @@
  <section class="page2" id="locations">
     <div class="title1" data-aos="fade-down"
     data-aos-easing="linear"
-    data-aos-duration="1500">{{ dictionary['title5'] }}</div>
+    data-aos-duration="1500">{{ _('title5') }}</div>
     <div class="subtitle flex">
-        <span data-aos="fade-up" data-aos-duration="">{{ dictionary['subtitle5-1'] }} <br></span>
+        <span data-aos="fade-up" data-aos-duration="">{{ _('subtitle5-1') }} <br></span>
         <div class="divider_vertical"></div>
-        <span data-aos="fade-up" data-aos-duration=""> {{ dictionary['subtitle5-2'] }} <br></span>
+        <span data-aos="fade-up" data-aos-duration=""> {{ _('subtitle5-2') }} <br></span>
         <div class="divider_vertical"></div>
-        <span data-aos="fade-up" data-aos-duration=""> {{ dictionary['subtitle5-3'] }}</span>
+        <span data-aos="fade-up" data-aos-duration=""> {{ _('subtitle5-3') }}</span>
         <div class="divider_vertical"></div>
-        <span data-aos="fade-up" data-aos-duration=""> {{ dictionary['subtitle5-4'] }}</span>
+        <span data-aos="fade-up" data-aos-duration=""> {{ _('subtitle5-4') }}</span>
        
     </div>
     <div class="store_locations">
@@ -95,18 +90,18 @@
 
     <div class="location" data-aos="fade-up-left" data-aos-delay="{{ loop.index * 150 }}">
         
-        <span class="bigTitle">{{ store.name }}</span>
+        <span class="bigTitle">{{ _(store.name) }}</span>
         {% if store.name != "App" %}
-            <span class="smallTitle">{{ store.adress }}</span>
+            <span class="smallTitle">{{ _(store.adress) }}</span>
         {% endif %}
         <div class="loc-illustration">
             <img src="http://express.REMOVED/getimage?name={{ store.image }}" alt="" class="loc-img">
             <div class="informations">
                 {% if store.subtitle %}
-                    <span>{{ store.subtitle }}</span>
+                    <span>{{ _(store.subtitle) }}</span>
                 {% endif %}
                 <!-- Button goto -->
-                <a href="https://goo.gl/maps/7Z8Z9Z9Z9Z9Z9Z9Z9" class="button right">{{ dictionary['goto'] }}</a>
+                <a href="https://goo.gl/maps/7Z8Z9Z9Z9Z9Z9Z9Z9" class="button right">{{ _('goto') }}</a>
             </div>
         </div>
     </div>

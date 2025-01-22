@@ -1,0 +1,941 @@
+# French translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-01-20 02:01+0100\n"
+"PO-Revision-Date: 2025-01-22 15:01+0100\n"
+"Last-Translator: \n"
+"Language-Team: fr <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 2.16.0\n"
+"X-Generator: Poedit 3.5\n"
+
+#: app.py:466
+msgid "Bonjour"
+msgstr ""
+
+#: templates/about.html:2 templates/layout.html:104 templates/layout.html:178
+msgid "About"
+msgstr "A Propos"
+
+#: templates/about.html:9
+msgid "about_title"
+msgstr "Nous combinons le meilleur pour entretenir votre linge"
+
+#: templates/about.html:10
+msgid "about_sub"
+msgstr ""
+"Découvrez nos solutions de nettoyage innovantes et respectueuses de "
+"l’environnement.\n"
+"Offrez à votre linge un éclat incomparable tout en respectant la planète."
+
+#: templates/about.html:53
+msgid "numbers_title"
+msgstr "De nombreux clients satisfaits et une expertise qui fait la différence"
+
+#: templates/about.html:54
+msgid "numbers_subtitle"
+msgstr ""
+"Avec soin et précision, nous offrons des services sur mesure, adaptés à vos "
+"vêtements, votre linge de maison ou vos textiles professionnels.\n"
+"Notre équipe dévouée place votre satisfaction au cœur de ses priorités, en "
+"vous garantissant des résultats impeccables."
+
+#: templates/about.html:58
+msgid "number1_text"
+msgstr "Années d’expérience"
+
+#: templates/about.html:62
+msgid "number2_text"
+msgstr "Collaborations avec des entreprises locales"
+
+#: templates/about.html:67
+msgid "strengths_title"
+msgstr ""
+"Tous nos clients apprécient notre façon de travailler. Grâce à notre service "
+"rapide, flexible et de qualité, nous répondons toujours à leurs attentes avec "
+"soin et efficacité."
+
+#: templates/about.html:72
+msgid "strength1_title"
+msgstr "Service rapide et flexible"
+
+#: templates/about.html:73
+msgid "strength1_sub"
+msgstr ""
+"Chez Ex-Press Dry Clean, nous nous engageons à offrir un service rapide sans "
+"jamais compromettre la qualité. Grâce à notre expertise et à nos équipements "
+"modernes, nous garantissons un soin impeccable pour vos vêtements, même dans "
+"les délais les plus courts.\n"
+"Notre flexibilité est au cœur de notre service : nous nous adaptons à votre "
+"emploi du temps, avec des options de ramassage et de livraison qui répondent à "
+"vos contraintes. Chaque article est inspecté minutieusement pour garantir un "
+"résultat parfait, que ce soit pour un nettoyage d’urgence ou une routine "
+"régulière.\n"
+"Avec Ex-Press Dry Clean, profitez d’un service rapide, fiable et de haute "
+"qualité, conçu pour simplifier votre quotidien."
+
+#: templates/about.html:80
+msgid "strength2_title"
+msgstr "Amélioration continue et rigueur de qualité"
+
+#: templates/about.html:81
+msgid "strength2_sub"
+msgstr ""
+"Nous mettons en place des procédures strictes et une amélioration continue "
+"pour garantir des standards de qualité élevés. Chaque étape de notre processus "
+"est soigneusement contrôlée pour assurer un service irréprochable, en "
+"répondant aux critères les plus exigeants. Notre priorité : un linge sans "
+"tache. Nous n’hésitons pas à effectuer plusieurs nettoyages si nécessaire pour "
+"garantir un résultat parfait à chaque fois."
+
+#: templates/about.html:87
+msgid "strength3_title"
+msgstr "Ecologie et durabilité"
+
+#: templates/about.html:88
+msgid "strength3_sub"
+msgstr ""
+"Engagés pour l’environnement, nous mettons en œuvre des pratiques responsables "
+"qui réduisent l’usage d’eau et de produits chimiques. En choisissant des "
+"solutions écologiques, nous minimisons notre impact environnemental tout en "
+"offrant un service de qualité. Notre objectif est de préserver la planète tout "
+"en garantissant des résultats impeccables pour vos vêtements."
+
+#: templates/about.html:94
+msgid "strength4_title"
+msgstr "Expérience client personnalisée"
+
+#: templates/about.html:95
+msgid "strength4_sub"
+msgstr ""
+"En magasin, nous pratiquons une écoute active pour comprendre et répondre au "
+"mieux aux besoins de chaque client.\n"
+"Qu’il s’agisse d’un repassage spécifique, d’amidonner ou non vos draps, ou de "
+"toute autre demande particulière, nous adaptons nos services pour satisfaire "
+"vos exigences."
+
+#: templates/about.html:102
+msgid "engagements_title"
+msgstr ""
+"Nous concevons des solutions de blanchisserie sur mesure pour simplifier votre "
+"quotidien"
+
+#: templates/about.html:103
+msgid "engagements_sub"
+msgstr ""
+"Avec <b>Express Dry Clean</b>, transformez votre expérience de blanchisserie "
+"grâce à des services modernes, efficaces et personnalisés, adaptés à vos "
+"besoins spécifiques. "
+
+#: templates/about.html:104
+msgid "engagements_btn1"
+msgstr "Explorez nos services"
+
+#: templates/about.html:106
+msgid "engagements_title_2"
+msgstr "Nos valeurs fondamentales et engagements"
+
+#: templates/about.html:111
+msgid "engagement1_title"
+msgstr "Une expertise reconnu à Bruxelles"
+
+#: templates/about.html:112
+msgid "engagement1_text"
+msgstr ""
+"Depuis plus de 15ans, nous collaborons avec des particuliers et des "
+"entreprises pour offrir des solutions innovantes et fiables."
+
+#: templates/about.html:120
+msgid "engagement2_title"
+msgstr "Une équipe dédiée"
+
+#: templates/about.html:121
+msgid "engagement2_text"
+msgstr ""
+"Nos experts s’engagent à vous fournir un service de qualité exceptionnelle, "
+"que ce soit pour vos vêtements délicats ou textiles professionnels."
+
+#: templates/about.html:124
+msgid "engagement_card_title"
+msgstr "Envie d’en savoir plus sur notre approche ?"
+
+#: templates/about.html:125
+msgid "engagement_card_btn"
+msgstr "Consultez nos réussites"
+
+#: templates/about.html:128
+msgid "engagement3_title"
+msgstr "Des outils modernes et durables"
+
+#: templates/about.html:129
+msgid "engagement3_text"
+msgstr ""
+"Nous investissons continuellement dans des technologies écoresponsables pour "
+"garantir des résultats optimaux tout en respectant l’environnement."
+
+#: templates/about.html:136
+msgid "engagement4_title"
+msgstr "Une communication sans faille"
+
+#: templates/about.html:137
+msgid "engagement4_text"
+msgstr ""
+"Un suivi transparent et une disponibilité constante pour répondre à vos "
+"demandes dans les meilleurs délais."
+
+#: templates/about.html:147
+msgid "engagement5_title"
+msgstr "Nettoyage et repassage haute de gamme"
+
+#: templates/about.html:148
+msgid "engagement5_text"
+msgstr ""
+"Propreté et soin inégalés pour vos textiles, avec une attention particulière "
+"aux matières délicates."
+
+#: templates/about.html:152
+msgid "engagement6_title"
+msgstr "Collecte et livraison fléxibles"
+
+#: templates/about.html:153
+msgid "engagement6_text"
+msgstr "Choisissez le créneau qui vous convient, et nous nous occupons du reste."
+
+#: templates/about.html:158
+msgid "engagement7_title"
+msgstr "Des solutions pour les entreprises"
+
+#: templates/about.html:159
+msgid "engagement7_text"
+msgstr ""
+"Propreté et soin inégalés pour vos textiles, avec une attention particulière "
+"aux matières délicates."
+
+#: templates/about.html:162
+msgid "engagement8_title"
+msgstr "Traitements écoresponsables"
+
+#: templates/about.html:163
+msgid "engagement8_text"
+msgstr ""
+"Des processus optimisés pour réduire l’impact environnemental tout en "
+"garantissant un résultat impeccable."
+
+#: templates/about.html:167
+msgid "engagements_btn2"
+msgstr "Explorez nos magasins"
+
+#: templates/contact.html:3 templates/layout.html:106 templates/layout.html:180
+msgid "Contact"
+msgstr "Contact"
+
+#: templates/contact.html:11
+msgid "contact_title"
+msgstr "Une équipe dévouée"
+
+#: templates/contact.html:14
+msgid "contact_sub"
+msgstr ""
+"Notre équipe est ici pour vous aider. Vous pouvez nous poser vos questions si "
+"vous en avez. Nous sommes disponibles 24h/24 et 7j/7."
+
+#: templates/contact.html:19 templates/contact.html:58
+msgid "call_btn"
+msgstr "Appeler"
+
+#: templates/contact.html:24
+msgid "email_btn"
+msgstr "Email"
+
+#: templates/contact.html:54
+msgid "contact_right_1"
+msgstr "Contactez-nous"
+
+#: templates/contact.html:55
+msgid "contact_right_2"
+msgstr "Nos équipe reste disponible pour assistance"
+
+#: templates/contact.html:61
+msgid "contact_right_3"
+msgstr "Parlez avec nous"
+
+#: templates/contact.html:62
+msgid "contact_right_4"
+msgstr "Parlez à nos agents via chat"
+
+#: templates/contact.html:66
+msgid "contact_right_5"
+msgstr "Envoyer un mail"
+
+#: templates/contact.html:72
+msgid "contact_right_6"
+msgstr "Message sur Facebook"
+
+#: templates/contact.html:76
+msgid "contact_right_7"
+msgstr "Nous rendre visite"
+
+#: templates/contact.html:78
+msgid "contact_right_8"
+msgstr "Parlez nous en personne dans nos magasins ou dans notre quartier général"
+
+#: templates/contact.html:83
+msgid "contact_right_9"
+msgstr "Chaussée de Louvain 526, 1930 Zaventem"
+
+#: templates/contact.html:92
+msgid "firstname"
+msgstr "Prénom"
+
+#: templates/contact.html:96
+msgid "lastname"
+msgstr "Nom"
+
+#: templates/contact.html:102
+msgid "phone_number"
+msgstr "Numéro de GSM"
+
+#: templates/contact.html:108 templates/delivery.html:28
+msgid "email"
+msgstr "Adresse e-mail"
+
+#: templates/contact.html:115
+msgid "subject"
+msgstr "Message"
+
+#: templates/delivery.html:3 templates/layout.html:105 templates/layout.html:179
+msgid "Delivery"
+msgstr "Livraisons"
+
+#: templates/delivery.html:11
+msgid "delivery_title"
+msgstr "Le nettoyage qui vient à vous"
+
+#: templates/delivery.html:14
+msgid "delivery_subtitle_1"
+msgstr ""
+"Vous ne pouvez pas vous déplacer pour déposer ou récupérer votre linge ? Ex-"
+"Press Dry Clean s’occupe de tout !"
+
+#: templates/delivery.html:15
+msgid "delivery_subtitle_2"
+msgstr ""
+"Que ce soit pour la collecte de votre linge sale ou la livraison de vos "
+"vêtements propres, nous vous proposons un service de livraison sur-mesure à "
+"l’adresse de votre choix, partout en Belgique."
+
+#: templates/delivery.html:19
+msgid "delivery_subtitle_3"
+msgstr ""
+"Contactez-nous dès aujourd’hui pour organiser la collecte ou la livraison de "
+"votre linge. Avec Ex-Press Dry Clean, profitez de la qualité professionnelle "
+"directement à votre porte !"
+
+#: templates/delivery.html:36
+msgid "delivery_citation"
+msgstr "«Ex-Press Dry Clean, directement chez vous»"
+
+#: templates/delivery.html:42
+msgid "delivery_text_1"
+msgstr ""
+"Chez Ex-Press Dry Clean, nous proposons un service de livraison à domicile "
+"adapté à vos besoins, avec des frais de livraison en fonction de votre zone "
+"géographique :"
+
+#: templates/delivery.html:45
+msgid "delivery_zone_1"
+msgstr "Bruxelles: 5€"
+
+#: templates/delivery.html:46
+msgid "delivery_zone_2"
+msgstr "Brabants wallon et flamand: 10€"
+
+#: templates/delivery.html:47
+msgid "delivery_zone_3"
+msgstr "En dehors de ces zones, tarification kilométrique sur demande."
+
+#: templates/delivery.html:50
+msgid "delivery_text_2"
+msgstr ""
+"N’hésitez pas à nous contacter pour plus de détails sur les tarifs spécifiques "
+"à votre adresse. Nous nous engageons à rendre votre expérience aussi pratique "
+"et accessible que possible!"
+
+#: templates/delivery.html:63
+msgid "delivery_bloc_1_title"
+msgstr "Prise de rendez-vous"
+
+#: templates/delivery.html:64
+msgid "delivery_bloc_1_sub"
+msgstr ""
+"Communiquez nous des dates et des créneaux horaires qui vous conviennent pour "
+"la collecte. Vous pouvez réserver facilement par mail ou par téléphone."
+
+#: templates/delivery.html:68
+msgid "delivery_bloc_2_title"
+msgstr "Collecte à domicile"
+
+#: templates/delivery.html:69
+msgid "delivery_bloc_2_sub"
+msgstr ""
+"Nos livreurs viennent directement chez vous pour récupérer vos vêtements. Vous "
+"n’avez qu’à les préparer, et nous nous chargeons du reste."
+
+#: templates/delivery.html:73
+msgid "delivery_bloc_3_title"
+msgstr "Nettoyage et soins"
+
+#: templates/delivery.html:74
+msgid "delivery_bloc_3_sub"
+msgstr ""
+"Une fois vos vêtements arrivés dans nos locaux, ils sont traités avec le plus "
+"grand soin. Notre équipe d’experts s’assure que chaque article est nettoyé et "
+"repassé avec précision."
+
+#: templates/delivery.html:77
+msgid "delivery_bloc_4_title"
+msgstr "Retour de vêtements propres"
+
+#: templates/delivery.html:78
+msgid "delivery_bloc_4_sub"
+msgstr ""
+"Dès que vos vêtements sont prêts, nous les livrons chez vous, à l’heure "
+"convenue. Profitez de vêtements impeccables, sans aucun effort."
+
+#: templates/index.html:13
+msgid "title_sub"
+msgstr "Un pressing impeccable, un avenir durable."
+
+#: templates/index.html:24
+#, fuzzy
+msgid "title4"
+msgstr "découvrez notre pressing écologique"
+
+#: templates/index.html:25
+msgid "subtitle4"
+msgstr ""
+
+#: templates/index.html:55
+#, fuzzy
+msgid "title3"
+msgstr "découvrez notre pressing écologique"
+
+#: templates/index.html:77 templates/localization.html:63
+msgid "title5"
+msgstr "où nous trouver ?"
+
+#: templates/index.html:79 templates/localization.html:65
+msgid "subtitle5-1"
+msgstr "Vous recherchez une blanchisserie fiable en Belgique ?"
+
+#: templates/index.html:81 templates/localization.html:67
+msgid "subtitle5-2"
+msgstr "Besoin d’un pressing à domicile pour un entretien rapide et efficace ?"
+
+#: templates/index.html:83 templates/localization.html:69
+msgid "subtitle5-3"
+msgstr ""
+"Vous souhaitez confier votre linge de maison à des experts pour un soin "
+"impeccable ?"
+
+#: templates/index.html:85 templates/localization.html:71
+msgid "subtitle5-4"
+msgstr "Découvrez nos services de pressing écologique."
+
+#: templates/index.html:104
+msgid "goto"
+msgstr "y aller"
+
+#: templates/layout.html:65 templates/layout.html:177 templates/pricing.html:3
+msgid "Pricing"
+msgstr "Tarifs"
+
+#: templates/layout.html:68
+msgid "3"
+msgstr ""
+
+#: templates/layout.html:108 templates/localization.html:3
+msgid "Localization"
+msgstr "Nous Trouver"
+
+#: templates/layout.html:124
+msgid "See on Maps"
+msgstr "Voir sur la carte"
+
+#: templates/layout.html:170
+msgid "title6"
+msgstr "contactez-nous"
+
+#: templates/layout.html:171
+msgid "text6-1"
+msgstr ""
+"pour obtenir un renseignement sur l’un ou l’autre prestation, n’hésitez pas"
+
+#: templates/layout.html:171
+msgid "text6-2"
+msgstr "Contactez-nous"
+
+#: templates/layout.html:171
+msgid "text6-3"
+msgstr "mieux? Passez nous voir directement dans nos magasins ou écrivez nous"
+
+#: templates/layout.html:191
+msgid "Privacy policy"
+msgstr "Politique de confidentialité"
+
+#: templates/layout.html:192
+msgid "General terms"
+msgstr "Nos conditions générales"
+
+#: templates/localization.html:60
+msgid "Our Locations"
+msgstr ""
+
+#: templates/pricing.html:31
+msgid "Select a Store"
+msgstr "Sélectionner une localité"
+
+#: templates/pricing.html:47
+msgid "Go to store"
+msgstr "Voir les prix de ce magasin"
+
+#: templates/pricing.html:63
+msgid "Our Services"
+msgstr "Nos services de nettoyage"
+
+msgid "Blanchisserie"
+msgstr ""
+
+msgid "Couture"
+msgstr ""
+
+msgid "Nettoyage"
+msgstr "Nettoyage à sec"
+
+msgid "Description Blanchisserie"
+msgstr ""
+"Découvrez notre service de blanchisserie moderne, où chaque pièce est traitée "
+"avec soin pour un résultat impeccable.\n"
+"Offrez à votre linge une propreté éclatante et un soin expert."
+
+msgid "Description Couture"
+msgstr ""
+"“Des retouches parfaites pour des vêtements qui vous ressemblent.”\n"
+"“Un ourlet à refaire ou un bouton qui ne tient plus ? Nous sommes là pour "
+"redonner vie à vos vêtements !”"
+
+msgid "Description Nettoyage"
+msgstr "“Votre linge soigneusement traité entre de bonnes mains.”"
+
+msgid "Informations Blanchisserie"
+msgstr ""
+"<h1>Bienvenue chez Ex-Press Dry Clean</h1>\n"
+"<h2>Un service de blanchisserie près de chez vous</h2>\n"
+"<p>Vous cherchez une blanchisserie près de Molenbeek, Jette, Ixelles ou "
+"Auderghem pour l’entretien de votre linge de maison ? Vous souhaitez confier "
+"votre linge quotidien à des professionnels ? Découvrez les services de notre "
+"blanchisserie <strong>Ex-Press Dry Clean</strong> !</p>\n"
+"<p>Nous prenons soin de votre linge avec expertise et proposons des "
+"prestations adaptées à vos besoins. Avec notre nouvelle calandreuse, nous vous "
+"garantissons un linge parfaitement repassé et un soin irréprochable pour "
+"toutes vos pièces de maison.</p>\n"
+"<img src=/static/images/Bonnet.jpg>\n"
+"<h2>Un soin professionnel pour votre linge</h2>\n"
+"Le linge confié à notre équipe est soigneusement traité, détaché, puis lavé et "
+"séché dans des machines 100%% professionnelles, conçues pour garantir un "
+"résultat impeccable. Nous utilisons des détergents spécialisés pour un "
+"détachage et un lavage parfait, quel que soit le type de textile. Avant tout "
+"lavage, nos experts vérifient attentivement les étiquettes de chaque article "
+"afin d’adapter le traitement et d’éviter tout risque d’erreur.\n"
+"<strong>Astuce d’entretien :</strong> pour un soin optimal, nous vous "
+"recommandons de conserver les petites étiquettes présentes sur vos vêtements "
+"et textiles. Elles contiennent des informations essentielles pour un entretien "
+"adapté !\n"
+"\n"
+"<h2>Ex-Press Dry Clean : Votre linge entre de bonnes mains</h2>\n"
+"Chez Ex-Press Dry Clean, nous répondons à toutes les demandes, qu’elles "
+"viennent de particuliers ou de professionnels. Vous avez un tapis à nettoyer, "
+"des tentures à laver après accumulation de poussière, ou encore des couettes à "
+"rafraîchir avant de les remettre sur vos lits ? Confiez-les à nos experts !\n"
+"Nous prenons en charge tout votre linge, y compris les articles les plus "
+"délicats, dans nos espaces dédiés à la blanchisserie et au pressing – "
+"nettoyage à sec. Ne perdez plus de temps à laver votre linge de maison ou "
+"celui de votre famille ! Rendez-vous dans l’un de nos cinq magasins. Nous "
+"sommes là pour vous conseiller et trouver la solution la mieux adaptée à "
+"l’entretien de votre linge."
+
+msgid "Informations Couture"
+msgstr ""
+
+msgid "Informations Nettoyage"
+msgstr ""
+
+msgid "Anorak en duvet"
+msgstr ""
+
+msgid "description_Anorak_en_duvet"
+msgstr ""
+
+msgid "Blouse en soie"
+msgstr ""
+
+msgid "description_Blouse_en_soie"
+msgstr ""
+
+msgid "Bonnet"
+msgstr ""
+
+msgid "description_Bonnet"
+msgstr ""
+
+msgid "Châle"
+msgstr ""
+
+msgid "description_Châle"
+msgstr ""
+
+msgid "Chemise"
+msgstr ""
+
+msgid "description_Chemise"
+msgstr ""
+
+msgid "Chemisier"
+msgstr ""
+
+msgid "description_Chemisier"
+msgstr ""
+
+msgid "Combi"
+msgstr ""
+
+msgid "description_Combi"
+msgstr ""
+
+msgid "Costume (2 pièces)"
+msgstr ""
+
+msgid "description_Costume_2_pièces"
+msgstr ""
+
+msgid "Costume (3 pièces)"
+msgstr ""
+
+msgid "description_Costume_3_pièces"
+msgstr ""
+
+msgid "Couette"
+msgstr ""
+
+msgid "description_Couette"
+msgstr ""
+
+msgid "Couverture 1 personne"
+msgstr ""
+
+msgid "description_Couverture_1_personne"
+msgstr ""
+
+msgid "Couverture 2 personnes"
+msgstr ""
+
+msgid "description_Couverture_2_personnes"
+msgstr ""
+
+msgid "Couvre-lit"
+msgstr ""
+
+msgid "description_Couvre_lit"
+msgstr ""
+
+msgid "Cravate"
+msgstr ""
+
+msgid "description_Cravate"
+msgstr ""
+
+msgid "Djélaba"
+msgstr ""
+
+msgid "description_Djélaba"
+msgstr ""
+
+msgid "Drap"
+msgstr ""
+
+msgid "description_Drap"
+msgstr ""
+
+msgid "Echarpe"
+msgstr ""
+
+msgid "description_Echarpe"
+msgstr ""
+
+msgid "fermeture éclair - Tirette"
+msgstr ""
+
+msgid "description_fermeture_éclair_Tirette"
+msgstr ""
+
+msgid "Foulard"
+msgstr ""
+
+msgid "description_Foulard"
+msgstr ""
+
+msgid "Gant (non cuir)"
+msgstr ""
+
+msgid "description_Gant_non_cuir"
+msgstr ""
+
+msgid "Gilet"
+msgstr ""
+
+msgid "description_Gilet"
+msgstr ""
+
+msgid "Imperméable"
+msgstr ""
+
+msgid "description_Imperméable"
+msgstr ""
+
+msgid "Imperméable fourré"
+msgstr ""
+
+msgid "description_Imperméable_fourré"
+msgstr ""
+
+msgid "Jupe longue"
+msgstr ""
+
+msgid "description_Jupe_longue"
+msgstr ""
+
+msgid "Jupe plissée"
+msgstr ""
+
+msgid "description_Jupe_plissée"
+msgstr ""
+
+msgid "Jupe simple"
+msgstr ""
+
+msgid "description_Jupe_simple"
+msgstr ""
+
+msgid "Linge au kilo"
+msgstr "Prix au kilo."
+
+msgid "description_Linge_au_kilo"
+msgstr ""
+
+msgid "Manteau"
+msgstr ""
+
+msgid "description_Manteau"
+msgstr ""
+
+msgid "Nappe 0-2.5m"
+msgstr ""
+
+msgid "description_Nappe_0_2_5m"
+msgstr ""
+
+msgid "Nappe 2.5 - 3.5m"
+msgstr ""
+
+msgid "description_Nappe_2_5_3_5m"
+msgstr ""
+
+msgid "Nappe 3.5 - 5m"
+msgstr ""
+
+msgid "description_Nappe_3_5_5m"
+msgstr ""
+
+msgid "Ourlet avec doublure"
+msgstr ""
+
+msgid "description_Ourlet_avec_doublure"
+msgstr ""
+
+msgid "Ourlet Machine"
+msgstr ""
+
+msgid "description_Ourlet_Machine"
+msgstr ""
+
+msgid "Pantalon"
+msgstr "Nous entretenons votre jean"
+
+msgid "description_Pantalon"
+msgstr ""
+
+msgid "Rideau"
+msgstr "Prix au mètre carré."
+
+msgid "description_Rideau"
+msgstr ""
+
+msgid "Robe de mariée"
+msgstr "Prix de départ."
+
+msgid "description_Robe_de_mariée"
+msgstr ""
+
+msgid "Tapis"
+msgstr "Prix au mètre carré."
+
+msgid "description_Tapis"
+msgstr ""
+
+msgid "Tenture / Rideaux"
+msgstr ""
+"Confection de vos tentures et rideaux. Tissus à fournir. Pris au mètre carré."
+
+msgid "description_Tenture_Rideaux"
+msgstr ""
+
+msgid "Veste"
+msgstr "Une veste propre c'est mieux"
+
+msgid "description_Veste"
+msgstr ""
+
+msgid "Auderghem"
+msgstr ""
+
+msgid "Jourdan"
+msgstr ""
+
+msgid "Moortebeek"
+msgstr ""
+
+msgid "Saint-Josse"
+msgstr ""
+
+msgid "Zaventem"
+msgstr ""
+
+msgid "Description_Auderghem"
+msgstr ""
+
+msgid "Description_Jourdan"
+msgstr ""
+
+msgid "Description_Moortebeek"
+msgstr ""
+"<h1>Votre pressing de confiance à Moortebeek</h1>\n"
+"\n"
+"<h2>Un service de nettoyage à sec idéalement situé</h2>\n"
+"<p><strong>Ex-Press Dry Clean</strong> vous accueille au cœur de Moortebeek, "
+"dans un quartier facilement accessible et proche de toutes les commodités. "
+"Notre emplacement stratégique vous permet de déposer et de récupérer votre "
+"linge rapidement, sans détour.</p>\n"
+"\n"
+"<p>Que vous habitiez à proximité, travailliez dans le secteur, ou soyez "
+"simplement de passage, notre équipe de professionnels est à votre disposition "
+"pour assurer un entretien impeccable de vos vêtements et textiles. Grâce à "
+"notre situation privilégiée, profiter d’un service de nettoyage à sec de "
+"qualité n’a jamais été aussi simple et pratique.</p>\n"
+"\n"
+"<p>Faites confiance à <strong>Ex-Press Dry Clean</strong> pour préserver la "
+"qualité de vos pièces les plus délicates, tout en bénéficiant d’un accès "
+"facile et rapide depuis Moortebeek et ses environs.</p>"
+
+msgid "Description_Saint-Josse"
+msgstr ""
+
+msgid "Description_Zaventem"
+msgstr ""
+
+msgid "Subtitle_Auderghem"
+msgstr ""
+
+msgid "Subtitle_Jourdan"
+msgstr ""
+
+msgid "Subtitle_Moortebeek"
+msgstr ""
+
+msgid "Subtitle_Saint-Josse"
+msgstr ""
+
+msgid "Subtitle_Zaventem"
+msgstr ""
+
+msgid "Nos_services"
+msgstr "Nos Services"
+
+msgid "Nos_service_subtitle"
+msgstr ""
+"Nous vous proposons un pressing fiable et soigné, pour un quotidien sans souci."
+
+msgid "Notre travail"
+msgstr ""
+"Grâce à notre rigueur et notre engagement, nous vous offrons un service de "
+"pressing de qualité pour un linge impeccable."
+
+msgid "work1_title"
+msgstr "Soins de qualité exceptionnels"
+
+msgid "work1_content"
+msgstr ""
+"Nous garantissons un nettoyage en profondeur de vos vêtements grâce à des "
+"équipements de pointe et des détergents écologiques.\n"
+"Chaque article est soigneusement inspecté et traité pour préserver sa texture, "
+"sa couleur et éliminer les taches, vous offrant ainsi un linge toujours propre "
+"et frais."
+
+msgid "work2_title"
+msgstr "service de ramassage et de livraison pratique"
+
+msgid "work2_content"
+msgstr ""
+"Parce que votre temps est précieux, nous vous offrons un service de ramassage "
+"et de livraison adapté à votre emploi du temps. Notre équipe vient récupérer "
+"votre linge à votre porte et vous le restitue propre, soigneusement emballé et "
+"à l’heure qui vous convient. Simplifiez votre quotidien avec ce service pensé "
+"pour s’intégrer parfaitement à votre rythme de vie."
+
+msgid "work3_title"
+msgstr "plans de blanchisserie personnalisables"
+
+msgid "work3_content"
+msgstr ""
+"Nos forfaits flexibles s’adaptent à vos besoins, qu’il s’agisse d’un nettoyage "
+"régulier ou occasionnel. Choisissez les services qui vous conviennent, quand "
+"vous en avez besoin, pour une solution de blanchisserie sur mesure, "
+"parfaitement adaptée à votre emploi du temps et à votre budget."
+
+msgid "work4_title"
+msgstr "Tarifs compétitifs"
+
+msgid "work4_content"
+msgstr ""
+"Nous offrons des services de blanchisserie et de nettoyage à sec à des tarifs "
+"abordables, pensés pour respecter votre budget. Avec nos forfaits flexibles, "
+"choisissez les services qui vous conviennent, quand vous en avez besoin, et "
+"profitez d’une solution sur mesure adaptée à vos attentes."
+
+msgid "Pricing_title_1"
+msgstr "Explorez nos services"
+
+msgid "Pricing_title_2"
+msgstr "Liens rapides"
+
+msgid "Pricing_title_3"
+msgstr "Nos plans"

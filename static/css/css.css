@@ -584,10 +584,12 @@ header.extended .lang a{
     font-size: calc(1rem + 1vw);
     text-wrap: wrap;
     font-weight: 300;
-    max-width: 300px;
+    max-width: 600px;
+    overflow: hidden;
     font-family: "Open Sans", sans-serif;
     color: var(--large-subtitle-text);
     text-align: left;
+    white-space: pre-wrap;
 }   
 .page1 .phone{
     object-fit:cover;
@@ -639,11 +641,6 @@ header.extended .lang a{
         background: linear-gradient(180deg, white 0%, var(--header) 21%, transparent 60%);
     }
 
-   .presentationBloc p , .presentationBloc h1{
-        padding-left: 50px;
-        max-width: 500px;
-        text-wrap: wrap;
-    }
 
     #phone1{
         display: block;
@@ -1845,7 +1842,7 @@ form .submit-btn:hover{
     margin-inline: 20px;
 }
 
-#about p{
+#about>p{
     padding: 10px;
     font-size: 1.2rem;
     font-weight: 300;
@@ -1949,7 +1946,8 @@ form .submit-btn:hover{
 .numbers > img{
     width: 100%;
     object-fit: cover;
-    max-height: 350px;
+    object-position: top;
+    max-height: 400px;
     clip-path: polygon(90.5% 0%, 100% 44%, 100% 100%, 0% 100%, 0% 0%);
     box-shadow: gray 0 0 10px 5px;
 }

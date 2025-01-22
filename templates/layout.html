@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Express Dry Clean | {% block title %}{% endblock %}</title>
+    <title>EX-PRESS Dry Clean | {% block title %}{% endblock %}</title>
     <meta name="description" content="Express-Dry clean est une entreprise de nettoyage à sec localisée à Bruxelles. Nos services sont accessible à travers la Belgique via divers magasins situés à Etterbeek, Zaventem, Saint-Josse, Molenbeek et Auderghem. Notre Application reste accessible pour toutes les commandes pour livraisons au bureau et à domicile, aux prix les plus bas.">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -62,14 +62,14 @@
             <nav  id="navigation">
                 <ul id="nav_link">
                     <li class="nav_link hidden">
-                        <a href="{{ url_for('pricing' , lang = lang) }}">{{ dictionary['Pricing'] }}</a>
+                        <a href="{{ url_for('pricing' , lang = lang) }}"> {{_("Pricing")}}</a>
                         <ul class="sublinks">
                             <div class="mainlinks">
-                                <span class="links_title">Explorez nos services</span>
+                                <span class="links_title">{{_("Pricing_title_1")}}</span>
                                 {% for category in categories %}
                                     <li date-aos="fade-down" data-aos-delay="{{ loop.index * 100 }}">
                                         <a href="{{url_for('pricing', lang = lang, subpage = category.name)}}">
-                                            {{ category.name }}
+                                            {{ _(category.name) }}
                                            
                                         </a>
 
@@ -77,7 +77,7 @@
                                 {% endfor %}
                             </div>
                             <div class="mainlinks tiny">
-                                <span class="links_title">Quick links</span>
+                                <span class="links_title">{{_("Pricing_title_2")}}</span>
                                 <li>
                                     <a href="{{url_for('pricing', lang = lang, subpage = 'Special Plans')}}">
                                         Clean Process
@@ -88,7 +88,7 @@
                                 </li>
                             </div>
                             <div class="mainlinks tiny">
-                                <span class="links_title">Offers</span>
+                                <span class="links_title">{{_("Pricing_title_3")}}</span>
                                 <li>
                                     <a href="{{url_for('pricing', lang = lang, subpage = 'Special Plans')}}">
                                         For Education
@@ -101,19 +101,19 @@
                             
                         </ul>
                     </li>
-                    <li class="nav_link hidden"><a href="{{ url_for('about', lang = lang)}}">{{ dictionary['About'] }}</a></li>
-                    <li class="nav_link hidden"><a href="{{ url_for('delivery', lang = lang)}}"> Delivery</a></li>
-                    <li class="nav_link hidden"><a href="{{ url_for('contact', lang = lang)}}">{{ dictionary['Contact'] }}</a></li>
+                    <li class="nav_link hidden"><a href="{{ url_for('about', lang = lang)}}">{{ _('About') }}</a></li>
+                    <li class="nav_link hidden"><a href="{{ url_for('delivery', lang = lang)}}"> {{_('Delivery')}}</a></li>
+                    <li class="nav_link hidden"><a href="{{ url_for('contact', lang = lang)}}">{{ _('Contact') }}</a></li>
                     <li class="nav_link hidden">
-                        <a href="{{ url_for('localization', lang = lang)}}"> Localization </a>
+                        <a href="{{ url_for('localization', lang = lang)}}"> {{_('Localization')}} </a>
                         <ul class="sublinks">
                             <div class="mainlinks">
                                 {% for store in stores %}
                                 <li>
                                     <a href="{{ url_for('localization', lang = lang, subpage = store.name )}}">
-                                        <span class="bigTitle">{{ store.name }}</span>
+                                        <span class="bigTitle">{{ _(store.name) }}</span>
                                         {% if store.name != "App" %}
-                                            <span class="smallTitle">{{ store.adress }}</span>
+                                            <span class="smallTitle">{{ _(store.adress) }}</span>
                                         {% endif %}
                                     </a>
                                 
@@ -121,7 +121,7 @@
                                 {% endfor %}
                             </div>
                             <div class="secondarylinks">
-                                <li> <a href="#">See on Maps</a></li>
+                                <li> <a href="#">{{_('See on Maps')}}</a></li>
                             </div>
                         </ul>
                     </li>
@@ -147,7 +147,7 @@
         
         <div class="down" id="header_bar_subBlock">
             {% for category in categories %}
-                <a href="{{url_for('pricing', lang = lang, subpage = category.name)}}">{{ category.name }}</a>
+                <a href="{{url_for('pricing', lang = lang, subpage = category.name)}}">{{ _(category.name) }}</a>
             {% endfor %}
         </div>
 
@@ -167,17 +167,17 @@
             <p>© BE1007763286 </p>
             <a href="tel:+3224204130"> +32 (0)24 20 41 30</a>
 
-            <span class="title1">{{ dictionary['title6'] }}</span>
-            <div class="subtitle">{{ dictionary['text6-1'] }} <a href="{{url_for('contact', lang = lang)}}">{{ dictionary['text6-2'] }}</a> <br></br>{{ dictionary['text6-3'] }} </div>
+            <span class="title1">{{ _('title6') }}</span>
+            <div class="subtitle">{{ _('text6-1') }} <a href="{{url_for('contact', lang = lang)}}">{{ _('text6-2') }}</a> <br></br>{{ _('text6-3') }} </div>
 
             <a href="mailto:info@REMOVED" class="mailto">contact@REMOVED</a>
         </div>
         <div class="right">
             <div class="links">
-                <a href="{{ url_for('pricing', lang = lang)}}">{{ dictionary['Pricing'] }}</a>
-                <a href="{{ url_for('about', lang = lang)}}">{{ dictionary['About'] }}</a>
-                <a href="{{ url_for('delivery', lang = lang)}}"> Delivery</a>
-                <a href="{{ url_for('contact', lang = lang)}}">{{ dictionary['Contact'] }}</a>
+                <a href="{{ url_for('pricing', lang = lang)}}">{{ _('Pricing') }}</a>
+                <a href="{{ url_for('about', lang = lang)}}">{{ _('About') }}</a>
+                <a href="{{ url_for('delivery', lang = lang)}}"> {{_('Delivery')}}</a>
+                <a href="{{ url_for('contact', lang = lang)}}">{{ _('Contact') }}</a>
             </div>
             <div class="socials">
                 <a href="https://www.facebook.com/expressdryclean" target="_blank">
@@ -188,8 +188,8 @@
                 </a>
             </div>
             <div class="legal">
-                <a href="https://REMOVED/politique-de-confidentialite/">Privacy policy</a>
-                <a href="https://REMOVED/conditions-generales-de-vente/">General terms</a>
+                <a href="https://REMOVED/politique-de-confidentialite/">{{_('Privacy policy')}}</a>
+                <a href="https://REMOVED/conditions-generales-de-vente/">{{_('General terms')}}</a>
             </div>
         </div>
     </footer>

@@ -1,0 +1,779 @@
+# Translations template for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-01-20 02:01+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: app.py:466
+msgid "Bonjour"
+msgstr ""
+
+#: templates/about.html:2 templates/layout.html:104 templates/layout.html:178
+msgid "About"
+msgstr ""
+
+#: templates/about.html:9
+msgid "about_title"
+msgstr ""
+
+#: templates/about.html:10
+msgid "about_sub"
+msgstr ""
+
+#: templates/about.html:53
+msgid "numbers_title"
+msgstr ""
+
+#: templates/about.html:54
+msgid "numbers_subtitle"
+msgstr ""
+
+#: templates/about.html:58
+msgid "number1_text"
+msgstr ""
+
+#: templates/about.html:62
+msgid "number2_text"
+msgstr ""
+
+#: templates/about.html:67
+msgid "strengths_title"
+msgstr ""
+
+#: templates/about.html:72
+msgid "strength1_title"
+msgstr ""
+
+#: templates/about.html:73
+msgid "strength1_sub"
+msgstr ""
+
+#: templates/about.html:80
+msgid "strength2_title"
+msgstr ""
+
+#: templates/about.html:81
+msgid "strength2_sub"
+msgstr ""
+
+#: templates/about.html:87
+msgid "strength3_title"
+msgstr ""
+
+#: templates/about.html:88
+msgid "strength3_sub"
+msgstr ""
+
+#: templates/about.html:94
+msgid "strength4_title"
+msgstr ""
+
+#: templates/about.html:95
+msgid "strength4_sub"
+msgstr ""
+
+#: templates/about.html:102
+msgid "engagements_title"
+msgstr ""
+
+#: templates/about.html:103
+msgid "engagements_sub"
+msgstr ""
+
+#: templates/about.html:104
+msgid "engagements_btn1"
+msgstr ""
+
+#: templates/about.html:106
+msgid "engagements_title_2"
+msgstr ""
+
+#: templates/about.html:111
+msgid "engagement1_title"
+msgstr ""
+
+#: templates/about.html:112
+msgid "engagement1_text"
+msgstr ""
+
+#: templates/about.html:120
+msgid "engagement2_title"
+msgstr ""
+
+#: templates/about.html:121
+msgid "engagement2_text"
+msgstr ""
+
+#: templates/about.html:124
+msgid "engagement_card_title"
+msgstr ""
+
+#: templates/about.html:125
+msgid "engagement_card_btn"
+msgstr ""
+
+#: templates/about.html:128
+msgid "engagement3_title"
+msgstr ""
+
+#: templates/about.html:129
+msgid "engagement3_text"
+msgstr ""
+
+#: templates/about.html:136
+msgid "engagement4_title"
+msgstr ""
+
+#: templates/about.html:137
+msgid "engagement4_text"
+msgstr ""
+
+#: templates/about.html:147
+msgid "engagement5_title"
+msgstr ""
+
+#: templates/about.html:148
+msgid "engagement5_text"
+msgstr ""
+
+#: templates/about.html:152
+msgid "engagement6_title"
+msgstr ""
+
+#: templates/about.html:153
+msgid "engagement6_text"
+msgstr ""
+
+#: templates/about.html:158
+msgid "engagement7_title"
+msgstr ""
+
+#: templates/about.html:159
+msgid "engagement7_text"
+msgstr ""
+
+#: templates/about.html:162
+msgid "engagement8_title"
+msgstr ""
+
+#: templates/about.html:163
+msgid "engagement8_text"
+msgstr ""
+
+#: templates/about.html:167
+msgid "engagements_btn2"
+msgstr ""
+
+#: templates/contact.html:3 templates/layout.html:106 templates/layout.html:180
+msgid "Contact"
+msgstr ""
+
+#: templates/contact.html:11
+msgid "contact_title"
+msgstr ""
+
+#: templates/contact.html:14
+msgid "contact_sub"
+msgstr ""
+
+#: templates/contact.html:19 templates/contact.html:58
+msgid "call_btn"
+msgstr ""
+
+#: templates/contact.html:24
+msgid "email_btn"
+msgstr ""
+
+#: templates/contact.html:54
+msgid "contact_right_1"
+msgstr ""
+
+#: templates/contact.html:55
+msgid "contact_right_2"
+msgstr ""
+
+#: templates/contact.html:61
+msgid "contact_right_3"
+msgstr ""
+
+#: templates/contact.html:62
+msgid "contact_right_4"
+msgstr ""
+
+#: templates/contact.html:66
+msgid "contact_right_5"
+msgstr ""
+
+#: templates/contact.html:72
+msgid "contact_right_6"
+msgstr ""
+
+#: templates/contact.html:76
+msgid "contact_right_7"
+msgstr ""
+
+#: templates/contact.html:78
+msgid "contact_right_8"
+msgstr ""
+
+#: templates/contact.html:83
+msgid "contact_right_9"
+msgstr ""
+
+#: templates/contact.html:92
+msgid "firstname"
+msgstr ""
+
+#: templates/contact.html:96
+msgid "lastname"
+msgstr ""
+
+#: templates/contact.html:102
+msgid "phone_number"
+msgstr ""
+
+#: templates/contact.html:108 templates/delivery.html:28
+msgid "email"
+msgstr ""
+
+#: templates/contact.html:115
+msgid "subject"
+msgstr ""
+
+#: templates/delivery.html:3 templates/layout.html:105
+#: templates/layout.html:179
+msgid "Delivery"
+msgstr ""
+
+#: templates/delivery.html:11
+msgid "delivery_title"
+msgstr ""
+
+#: templates/delivery.html:14
+msgid "delivery_subtitle_1"
+msgstr ""
+
+#: templates/delivery.html:15
+msgid "delivery_subtitle_2"
+msgstr ""
+
+#: templates/delivery.html:19
+msgid "delivery_subtitle_3"
+msgstr ""
+
+#: templates/delivery.html:36
+msgid "delivery_citation"
+msgstr ""
+
+#: templates/delivery.html:42
+msgid "delivery_text_1"
+msgstr ""
+
+#: templates/delivery.html:45
+msgid "delivery_zone_1"
+msgstr ""
+
+#: templates/delivery.html:46
+msgid "delivery_zone_2"
+msgstr ""
+
+#: templates/delivery.html:47
+msgid "delivery_zone_3"
+msgstr ""
+
+#: templates/delivery.html:50
+msgid "delivery_text_2"
+msgstr ""
+
+#: templates/delivery.html:63
+msgid "delivery_bloc_1_title"
+msgstr ""
+
+#: templates/delivery.html:64
+msgid "delivery_bloc_1_sub"
+msgstr ""
+
+#: templates/delivery.html:68
+msgid "delivery_bloc_2_title"
+msgstr ""
+
+#: templates/delivery.html:69
+msgid "delivery_bloc_2_sub"
+msgstr ""
+
+#: templates/delivery.html:73
+msgid "delivery_bloc_3_title"
+msgstr ""
+
+#: templates/delivery.html:74
+msgid "delivery_bloc_3_sub"
+msgstr ""
+
+#: templates/delivery.html:77
+msgid "delivery_bloc_4_title"
+msgstr ""
+
+#: templates/delivery.html:78
+msgid "delivery_bloc_4_sub"
+msgstr ""
+
+#: templates/index.html:13
+msgid "title_sub"
+msgstr ""
+
+#: templates/index.html:24
+msgid "title4"
+msgstr ""
+
+#: templates/index.html:25
+msgid "subtitle4"
+msgstr ""
+
+#: templates/index.html:55
+msgid "title3"
+msgstr ""
+
+#: templates/index.html:77 templates/localization.html:63
+msgid "title5"
+msgstr ""
+
+#: templates/index.html:79 templates/localization.html:65
+msgid "subtitle5-1"
+msgstr ""
+
+#: templates/index.html:81 templates/localization.html:67
+msgid "subtitle5-2"
+msgstr ""
+
+#: templates/index.html:83 templates/localization.html:69
+msgid "subtitle5-3"
+msgstr ""
+
+#: templates/index.html:85 templates/localization.html:71
+msgid "subtitle5-4"
+msgstr ""
+
+#: templates/index.html:104
+msgid "goto"
+msgstr ""
+
+#: templates/layout.html:65 templates/layout.html:177 templates/pricing.html:3
+msgid "Pricing"
+msgstr ""
+
+#: templates/layout.html:68
+msgid "3"
+msgstr ""
+
+#: templates/layout.html:108 templates/localization.html:3
+msgid "Localization"
+msgstr ""
+
+#: templates/layout.html:124
+msgid "See on Maps"
+msgstr ""
+
+#: templates/layout.html:170
+msgid "title6"
+msgstr ""
+
+#: templates/layout.html:171
+msgid "text6-1"
+msgstr ""
+
+#: templates/layout.html:171
+msgid "text6-2"
+msgstr ""
+
+#: templates/layout.html:171
+msgid "text6-3"
+msgstr ""
+
+#: templates/layout.html:191
+msgid "Privacy policy"
+msgstr ""
+
+#: templates/layout.html:192
+msgid "General terms"
+msgstr ""
+
+#: templates/localization.html:60
+msgid "Our Locations"
+msgstr ""
+
+#: templates/pricing.html:31
+msgid "Select a Store"
+msgstr ""
+
+#: templates/pricing.html:47
+msgid "Go to store"
+msgstr ""
+
+#: templates/pricing.html:63
+msgid "Our Services"
+msgstr ""
+
+msgid "Blanchisserie"
+msgstr ""
+
+msgid "Couture"
+msgstr ""
+
+msgid "Nettoyage"
+msgstr ""
+
+msgid "Description Blanchisserie"
+msgstr ""
+
+msgid "Description Couture"
+msgstr ""
+
+msgid "Description Nettoyage"
+msgstr ""
+
+msgid "Informations Blanchisserie"
+msgstr ""
+
+msgid "Informations Couture"
+msgstr ""
+
+msgid "Informations Nettoyage"
+msgstr ""
+
+msgid "Anorak en duvet"
+msgstr ""
+
+msgid "description_Anorak_en_duvet"
+msgstr ""
+
+msgid "Blouse en soie"
+msgstr ""
+
+msgid "description_Blouse_en_soie"
+msgstr ""
+
+msgid "Bonnet"
+msgstr ""
+
+msgid "description_Bonnet"
+msgstr ""
+
+msgid "Châle"
+msgstr ""
+
+msgid "description_Châle"
+msgstr ""
+
+msgid "Chemise"
+msgstr ""
+
+msgid "description_Chemise"
+msgstr ""
+
+msgid "Chemisier"
+msgstr ""
+
+msgid "description_Chemisier"
+msgstr ""
+
+msgid "Combi"
+msgstr ""
+
+msgid "description_Combi"
+msgstr ""
+
+msgid "Costume (2 pièces)"
+msgstr ""
+
+msgid "description_Costume_2_pièces"
+msgstr ""
+
+msgid "Costume (3 pièces)"
+msgstr ""
+
+msgid "description_Costume_3_pièces"
+msgstr ""
+
+msgid "Couette"
+msgstr ""
+
+msgid "description_Couette"
+msgstr ""
+
+msgid "Couverture 1 personne"
+msgstr ""
+
+msgid "description_Couverture_1_personne"
+msgstr ""
+
+msgid "Couverture 2 personnes"
+msgstr ""
+
+msgid "description_Couverture_2_personnes"
+msgstr ""
+
+msgid "Couvre-lit"
+msgstr ""
+
+msgid "description_Couvre_lit"
+msgstr ""
+
+msgid "Cravate"
+msgstr ""
+
+msgid "description_Cravate"
+msgstr ""
+
+msgid "Djélaba"
+msgstr ""
+
+msgid "description_Djélaba"
+msgstr ""
+
+msgid "Drap"
+msgstr ""
+
+msgid "description_Drap"
+msgstr ""
+
+msgid "Echarpe"
+msgstr ""
+
+msgid "description_Echarpe"
+msgstr ""
+
+msgid "fermeture éclair - Tirette"
+msgstr ""
+
+msgid "description_fermeture_éclair_Tirette"
+msgstr ""
+
+msgid "Foulard"
+msgstr ""
+
+msgid "description_Foulard"
+msgstr ""
+
+msgid "Gant (non cuir)"
+msgstr ""
+
+msgid "description_Gant_non_cuir"
+msgstr ""
+
+msgid "Gilet"
+msgstr ""
+
+msgid "description_Gilet"
+msgstr ""
+
+msgid "Imperméable"
+msgstr ""
+
+msgid "description_Imperméable"
+msgstr ""
+
+msgid "Imperméable fourré"
+msgstr ""
+
+msgid "description_Imperméable_fourré"
+msgstr ""
+
+msgid "Jupe longue"
+msgstr ""
+
+msgid "description_Jupe_longue"
+msgstr ""
+
+msgid "Jupe plissée"
+msgstr ""
+
+msgid "description_Jupe_plissée"
+msgstr ""
+
+msgid "Jupe simple"
+msgstr ""
+
+msgid "description_Jupe_simple"
+msgstr ""
+
+msgid "Linge au kilo"
+msgstr "Prix au kilo."
+
+msgid "description_Linge_au_kilo"
+msgstr ""
+
+msgid "Manteau"
+msgstr ""
+
+msgid "description_Manteau"
+msgstr ""
+
+msgid "Nappe 0-2.5m"
+msgstr ""
+
+msgid "description_Nappe_0_2_5m"
+msgstr ""
+
+msgid "Nappe 2.5 - 3.5m"
+msgstr ""
+
+msgid "description_Nappe_2_5_3_5m"
+msgstr ""
+
+msgid "Nappe 3.5 - 5m"
+msgstr ""
+
+msgid "description_Nappe_3_5_5m"
+msgstr ""
+
+msgid "Ourlet avec doublure"
+msgstr ""
+
+msgid "description_Ourlet_avec_doublure"
+msgstr ""
+
+msgid "Ourlet Machine"
+msgstr ""
+
+msgid "description_Ourlet_Machine"
+msgstr ""
+
+msgid "Pantalon"
+msgstr "Nous entretenons votre jean"
+
+msgid "description_Pantalon"
+msgstr ""
+
+msgid "Rideau"
+msgstr "Prix au mètre carré."
+
+msgid "description_Rideau"
+msgstr ""
+
+msgid "Robe de mariée"
+msgstr "Prix de départ."
+
+msgid "description_Robe_de_mariée"
+msgstr ""
+
+msgid "Tapis"
+msgstr "Prix au mètre carré."
+
+msgid "description_Tapis"
+msgstr ""
+
+msgid "Tenture / Rideaux"
+msgstr "Confection de vos tentures et rideaux. Tissus à fournir. Pris au mètre carré."
+
+msgid "description_Tenture_Rideaux"
+msgstr ""
+
+msgid "Veste"
+msgstr "Une veste propre c'est mieux"
+
+msgid "description_Veste"
+msgstr ""
+
+msgid "Auderghem"
+msgstr ""
+
+msgid "Jourdan"
+msgstr ""
+
+msgid "Moortebeek"
+msgstr ""
+
+msgid "Saint-Josse"
+msgstr ""
+
+msgid "Zaventem"
+msgstr ""
+
+
+msgid "Description_Auderghem"
+msgstr ""
+
+msgid "Description_Jourdan"
+msgstr ""
+
+msgid "Description_Moortebeek"
+msgstr ""
+
+msgid "Description_Saint-Josse"
+msgstr ""
+
+msgid "Description_Zaventem"
+msgstr ""
+
+msgid "Subtitle_Auderghem"
+msgstr ""
+
+msgid "Subtitle_Jourdan"
+msgstr ""
+
+msgid "Subtitle_Moortebeek"
+msgstr ""
+
+msgid "Subtitle_Saint-Josse"
+msgstr ""
+
+msgid "Subtitle_Zaventem"
+msgstr ""
+
+msgid "Nos_services"
+msgstr ""
+
+msgid "Nos_service_subtitle"
+msgstr ""
+
+msgid "Notre travail"
+msgstr ""
+
+msgid "work1_title"
+msgstr ""
+
+msgid "work1_content"
+msgstr ""
+
+msgid "work2_title"
+msgstr ""
+
+msgid "work2_content"
+msgstr ""
+
+msgid "work3_title"
+msgstr ""
+
+msgid "work3_content"
+msgstr ""
+
+msgid "work4_title"
+msgstr ""
+
+msgid "work4_content"
+msgstr ""
+
+msgid "Pricing_title_1"
+msgstr ""
+
+msgid "Pricing_title_2"
+msgstr ""
+
+msgid "Pricing_title_3"
+msgstr ""
+
+msgid "Our Locations"
+msgstr ""

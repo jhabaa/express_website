@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-01-20 02:01+0100\n"
-"PO-Revision-Date: 2025-01-27 13:34+0100\n"
+"PO-Revision-Date: 2025-01-27 15:23+0100\n"
 "Last-Translator: \n"
 "Language-Team: fr <LL@li.org>\n"
 "Language: fr\n"
@@ -61,9 +61,8 @@ msgstr "Collaborations avec des entreprises locales"
 #: templates/about.html:67
 msgid "strengths_title"
 msgstr ""
-"Tous nos clients apprécient notre façon de travailler. Grâce à notre service rapide, "
-"flexible et de qualité, nous répondons toujours à leurs attentes avec soin et "
-"efficacité."
+"Grâce à notre service rapide, flexible et de qualité, nous répondons toujours à vos "
+"attentes avec soin et efficacité."
 
 #: templates/about.html:72
 msgid "strength1_title"
@@ -131,8 +130,8 @@ msgstr ""
 #: templates/about.html:103
 msgid "engagements_sub"
 msgstr ""
-"Avec <b>Express Dry Clean</b>, transformez votre expérience de blanchisserie grâce à "
-"des services modernes, efficaces et personnalisés, adaptés à vos besoins "
+"Avec <b>Ex-press Dry Clean</b>, transformez votre expérience de blanchisserie grâce "
+"à des services modernes, efficaces et personnalisés, adaptés à vos besoins "
 "spécifiques. "
 
 #: templates/about.html:104

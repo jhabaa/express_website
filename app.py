@@ -423,14 +423,15 @@ def index():
     return redirect(url_for('home', lang = 'fr'))
 
 # Error handler
-@app.errorhandler(500)
 @app.errorhandler(404)
+@app.errorhandler(500)
 def page_not_found(e):
     print(f"Error 404 : Page not found {e}")
     categories = GetData('full','category')
     stores = GetData('full','store')
     services = GetData('full','service')
-    return render_template('error.html', lang = session['lang'] if not None else "fr", services = services, categories = categories, stores = stores), 404
+    session['lang'] = 'fr' if not session.get('lang') else session['lang']
+    return render_template('error.html', lang = session['lang'], services = services, categories = categories, stores = stores, current_page = 'home')
 
 @app.route('/<lang>/home/')
 @app.route('/<lang>/home/<subpage>')
@@ -446,7 +447,7 @@ def home(lang = 'fr', subpage = None, store = None):
     categories = GetData('full','category')
     stores = GetData('full','store')
     services = GetData('full','service')
-    return render_template('index.html', dictionary = dictionary[lang] , services = services, categories=categories, stores=stores, lang = session['lang'])
+    return render_template('index.html', dictionary = dictionary[lang] , services = services, categories=categories, stores=stores, lang = session['lang'], current_page = 'home')
 
 @app.route('/<lang>/policy/')
 def policy(lang = 'fr'):
@@ -456,7 +457,7 @@ def policy(lang = 'fr'):
     categories = GetData('full','category')
     stores = GetData('full','store')
     services = GetData('full','service')
-    return render_template('policy.html', lang = session['lang'], categories = categories, stores = stores, services = services)
+    return render_template('policy.html', lang = session['lang'], categories = categories, stores = stores, services = services, current_page = 'policy')
 
 @app.route('/<lang>/terms/')
 def terms(lang = 'fr'):
@@ -466,7 +467,7 @@ def terms(lang = 'fr'):
     categories = GetData('full','category')
     stores = GetData('full','store')
     services = GetData('full','service')
-    return render_template('terms.html', lang = session['lang'], categories = categories, stores = stores, services = services)
+    return render_template('terms.html', lang = session['lang'], categories = categories, stores = stores, services = services, current_page = 'terms')
 
 @app.route('/<lang>/pricing/')
 @app.route('/<lang>/pricing/<subpage>')
@@ -488,14 +489,14 @@ def pricing(lang = 'fr', subpage = None, store = None):
 
     stores = GetData('full','store')
     selected_store = [ x for x in stores if x['name'] == store][-1] if store else None
-    return render_template('pricing.html', lang = session['lang'], categories = categories, services_in_store = services_in_store, dictionary = dictionary[lang], category = subpage, other_categories = others_categories, services = None if len(available_services) <= 0 else available_services, selected_category = selected_category, stores = stores, selected_store = selected_store)
+    return render_template('pricing.html', lang = session['lang'], categories = categories, services_in_store = services_in_store, dictionary = dictionary[lang], category = subpage, other_categories = others_categories, services = None if len(available_services) <= 0 else available_services, selected_category = selected_category, stores = stores, selected_store = selected_store, current_page = 'pricing')
     
 @app.route('/<lang>/about/')
 @app.route('/<lang>/about/<subpage>')
 def about(lang = 'fr', subpage = None):
     #set language
     session['lang'] = lang
-    return render_template('about.html', lang = session['lang'], dictionary = dictionary[lang])
+    return render_template('about.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'about')
 
 
 
@@ -505,14 +506,14 @@ def contact(lang = 'fr', subpage = None, message = None):
     greatings = _("Bonjour")
     #set language
     session['lang'] = lang
-    return render_template('contact.html', lang = session['lang'], dictionary = dictionary[lang], message = message)
+    return render_template('contact.html', lang = session['lang'], dictionary = dictionary[lang], message = message, current_page = 'contact')
 
 
 @app.route('/<lang>/delivery/')
 @app.route('/<lang>/delivery/<subpage>')
 def delivery(lang = 'fr', subpage = None , message = None):
     session['lang'] = lang
-    return render_template('delivery.html', lang = session['lang'], dictionary = dictionary[lang])
+    return render_template('delivery.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'delivery')   
 
 @app.route('/<lang>/localization/')
 @app.route('/<lang>/localization/<subpage>')
@@ -520,7 +521,7 @@ def localization(lang = 'fr', subpage = None ):
     session['lang'] = lang
     stores = GetData('full','store')
     available_store = [ x for x in stores if x['name'] == subpage][-1] if subpage else None
-    return render_template('localization.html', lang = session['lang'], dictionary = dictionary[lang], stores = stores, selected_store = available_store)
+    return render_template('localization.html', lang = session['lang'], dictionary = dictionary[lang], stores = stores, selected_store = available_store, current_page = 'localization')
 
 
 @app.route('/chatwithus', methods=['POST'])

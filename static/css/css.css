@@ -2487,7 +2487,9 @@ footer .right .icon-link{
     align-items: center;
     gap: 20px;
     z-index: 3;
-    color: #fff;
+    padding: 5px;
+    background-color: var(--background-gray);
+    border-radius: 50%;
 }
 /* ========= GENERAL =============*/
 .divider_vertical{

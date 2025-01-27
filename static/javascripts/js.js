@@ -49,10 +49,11 @@ var options = {
     rootMargin: '0px',
     threshold: 0.5
 }
-
+let creationDate =  new Date('Jan 01, 97 00:00:00')
+let today = new Date();
 let numbers_animation = anime ({
     targets : numbers_values,
-    years: 15,
+    years: today.getFullYear() - creationDate.getFullYear(),
     partners: "300+",
     direction: 'forwards',
     round: 1,

@@ -230,7 +230,7 @@ msgstr "Explore our stores"
 
 #: templates/contact.html:3 templates/layout.html:106 templates/layout.html:180
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 #: templates/contact.html:11
 msgid "contact_title"
@@ -897,4 +897,280 @@ msgstr "Work content 4"
 #, fuzzy
 msgid "terms_content"
 msgstr "Work content 4"
+
+msgid "Our services are available in Moortebeek"
+msgstr "Our services are available in Moortebeek"
+
+msgid "Our services are available in all our stores"
+msgstr "Our services are available in all our stores"
+
+msgid "Chemise homme"
+msgstr "Men's shirt"
+
+msgid "description_chemise_homme"
+msgstr "Description Men's shirt"
+
+msgid "Costume"
+msgstr "Suit"
+
+msgid "description_costume"
+msgstr "Description Suit"
+
+msgid "description_pantalon"
+msgstr "Description Pants"
+
+msgid "description_veste"
+msgstr "Description Jacket"
+
+msgid "description_jupe_simple"
+msgstr "Description Simple skirt"
+
+msgid "description_jupe_plissee"
+msgstr "Description Pleated skirt"
+
+msgid "Pull/Gilet"
+msgstr "Sweater/Vest"
+
+msgid "description_pull_gilet"
+msgstr "Description Sweater/Vest"
+
+msgid "description_cravate"
+msgstr "Description Tie"
+
+msgid "Salopette"
+msgstr "Overalls"
+
+msgid "description_salopette"
+msgstr "Description Overalls"
+
+msgid "Robe simple"
+msgstr "Simple dress"
+
+msgid "description_robe_simple"
+msgstr "Description Simple dress"
+
+msgid "Robe plissée"
+msgstr "Pleated dress"
+
+msgid "description_robe_plissee"
+msgstr "Description Pleated dress"
+
+msgid "Robe de soirée"
+msgstr "Evening dress"
+
+msgid "description_robe_de_soiree"
+msgstr "Description Evening dress"
+
+msgid "description_robe_de_mariee"
+msgstr "Description Wedding dress"
+
+msgid "description_impermeable"
+msgstr "Description Raincoat"
+
+msgid "description_manteau"
+msgstr "Description Coat"
+
+msgid "Couverture simple"
+msgstr "Single blanket"
+
+msgid "description_couverture_simple"
+msgstr "Description Single blanket"
+
+msgid "Couverture double"
+msgstr "Double blanket"
+
+msgid "description_couverture_double"
+msgstr "Description Double blanket"
+
+msgid "Couette simple ou double"
+msgstr "Single or double duvet"
+
+msgid "description_couette_simple_ou_double"
+msgstr "Description Single or double duvet"
+
+msgid "Rideaux (par m²)"
+msgstr "Curtains (per m²)"
+
+msgid "description_rideaux_par_m2"
+msgstr "Description Curtains (per m²)"
+
+msgid "Draperies (par m²)"
+msgstr "Draperies (per m²)"
+
+msgid "description_draperies_par_m2"
+msgstr "Description Draperies (per m²)"
+
+msgid "Tapis jusqu’à 9 m² (par m²)"
+msgstr "Carpet up to 9 m² (per m²)"
+
+msgid "description_tapis_jusqu_a_9_m2"
+msgstr "Description Carpet up to 9 m² (per m²)"
+
+msgid "Tapis plus de 9 m² (par m²)"
+msgstr "Carpet over 9 m² (per m²)"
+
+msgid "description_tapis_plus_de_9_m2"
+msgstr "Description Carpet over 9 m² (per m²)"
+
+msgid "Doudoune"
+msgstr "Down jacket"
+
+msgid "description_doudoune"
+msgstr "Description Down jacket"
+
+msgid "Manteau en laine"
+msgstr "Wool coat"
+
+msgid "description_manteau_en_laine"
+msgstr "Description Wool coat"
+
+msgid "Cuir (veste courte)"
+msgstr "Leather (short jacket)"
+
+msgid "description_cuir_veste_courte"
+msgstr "Description Leather (short jacket)"
+
+msgid "Cuir (manteau long)"
+msgstr "Leather (long coat)"
+
+msgid "description_cuir_manteau_long"
+msgstr "Description Leather (long coat)"
+
+msgid "Coussin"
+msgstr "Cushion"
+
+msgid "description_coussin"
+msgstr "Description Cushion"
+
+msgid "Housse de couette"
+msgstr "Duvet cover"
+
+msgid "description_housse_de_couette"
+msgstr "Description Duvet cover"
+
+msgid "Serviette"
+msgstr "Towel"
+
+msgid "description_serviette"
+msgstr "Description Towel"
+
+msgid "Peignoir"
+msgstr "Bathrobe"
+
+msgid "description_peignoir"
+msgstr "Description Bathrobe"
+
+msgid "Nappe"
+msgstr "Tablecloth"
+
+msgid "description_nappe"
+msgstr "Description Tablecloth"
+
+msgid "Taie d’oreiller"
+msgstr "Pillowcase"
+
+msgid "description_taie_d_oreiller"
+msgstr "Description Pillowcase"
+
+msgid "Blanchisserie / Linge au kilo"
+msgstr "Laundry / Price per kilo"
+
+msgid "description_blancheisserie_linge_au_kilo"
+msgstr "Description Laundry / Price per kilo"
+
+msgid "Nappe jusqu’à 2,5m de long"
+msgstr "Tablecloth up to 2.5m long"
+
+msgid "description_nappe_jusqu_a_2_5m_de_long"
+msgstr "Description Tablecloth up to 2.5m long"
+
+msgid "Nappe entre 2,5 et 3,5m de long"
+msgstr "Tablecloth between 2.5 and 3.5m long"
+
+msgid "description_nappe_entre_2_5_et_3_5m_de_long"
+msgstr "Description Tablecloth between 2.5 and 3.5m long"
+
+msgid "Nappe entre 3,5 et 5m de long"
+msgstr "Tablecloth between 3.5 and 5m long"
+
+msgid "description_nappe_entre_3_5_et_5m_de_long"
+msgstr "Description Tablecloth between 3.5 and 5m long"
+
+msgid "Nappe entre 5 et 8m de long"
+msgstr "Tablecloth between 5 and 8m long"
+
+msgid "description_nappe_entre_5_et_8m_de_long"
+msgstr "Description Tablecloth between 5 and 8m long"
+
+msgid "Raccourcir jupe simple sans doublure"
+msgstr "Shorten simple skirt without lining"
+
+msgid "description_raccourcir_jupe_simple_sans_doublure"
+msgstr "Description Shorten simple skirt without lining"
+
+msgid "Raccourcir jupe simple avec doublure"
+msgstr "Shorten simple skirt with lining"
+
+msgid "description_raccourcir_jupe_simple_avec_doublure"
+msgstr "Description Shorten simple skirt with lining"
+
+msgid "Raccourcir pantalon à la machine (type jeans)"
+msgstr "Shorten pants by machine (jeans type)"
+
+msgid "description_raccourcir_pantalon_a_la_machine_type_jeans"
+msgstr "Description Shorten pants by machine (jeans type)"
+
+msgid "Raccourcir pantalon avec bord original"
+msgstr "Shorten pants with original hem"
+
+msgid "description_raccourcir_pantalon_avec_bord_original"
+msgstr "Description Shorten pants with original hem"
+
+msgid "Raccourcir pantalon à la main (type pantalon de costume et classique)"
+msgstr "Shorten pants by hand (suit and classic type)"
+
+msgid "description_raccourcir_pantalon_a_la_main_type_pantalon_de_costume_et_classique"
+msgstr "Description Shorten pants by hand (suit and classic type)"
+
+msgid "Raccourcir pantalon + talonnières"
+msgstr "Shorten pants + heel guards"
+
+msgid "description_raccourcir_pantalon_plus_talonnières"
+msgstr "Description Shorten pants + heel guards"
+
+msgid "Transformation rideaux et tentures non doublés (par mètre courant)"
+msgstr "Transformation of unlined curtains and drapes (per linear meter)"
+
+msgid "description_transformation_rideaux_et_tentures_non_doublés_par_mètre_courant"
+msgstr "Description Transformation of unlined curtains and drapes (per linear meter)"
+
+msgid "Transformation tentures doublées (par mètre courant)"
+msgstr "Transformation of lined drapes (per linear meter)"
+
+msgid "description_transformation_tentures_doublées_par_mètre_courant"
+msgstr "Description Transformation of lined drapes (per linear meter)"
+
+msgid "Tirettes/fermetures éclair pour pantalons"
+msgstr "Zippers for pants"
+
+msgid "description_tirettes_fermetures_éclair_pour_pantalons"
+msgstr "Description Zippers for pants"
+
+msgid "Tirettes/fermetures éclair pour jupes simples"
+msgstr "Zippers for simple skirts"
+
+msgid "description_tirettes_fermetures_éclair_pour_jupes_simples"
+msgstr "Description Zippers for simple skirts"
+
+msgid "Tirettes/fermetures éclair pour blousons/anoraks (jusqu’à 65cm)"
+msgstr "Zippers for jackets/anoraks (up to 65cm)"
+
+msgid "description_tirettes_fermetures_éclair_pour_blousons_anoraks_jusqu_a_65cm"
+msgstr "Description Zippers for jackets/anoraks (up to 65cm)"
+
+msgid "Tirettes/fermetures éclair pour robes (jusqu’à 50 cm)"
+msgstr "Zippers for dresses (up to 50 cm)"
+
+msgid "description_tirettes_fermetures_éclair_pour_robes_jusqu_a_50_cm"
+msgstr "Description Zippers for dresses (up to 50 cm)"
 

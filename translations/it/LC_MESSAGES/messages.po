@@ -871,3 +871,334 @@ msgstr "Contenuto lavoro 4"
 msgid "terms_content"
 msgstr "Contenuto lavoro 4"
 
+msgid "Our services are available in Moortebeek"
+msgstr "I nostri servizi sono disponibili a Moortebeek"
+
+msgid "Our services are available in all our stores"
+msgstr "I nostri servizi sono disponibili in tutti i nostri negozi"
+
+#, fuzzy
+msgid "Chemise homme"
+msgstr "Camicia uomo"
+
+#, fuzzy
+msgid "description_chemise_homme"
+msgstr "Descrizione Camicia uomo"
+
+#, fuzzy
+msgid "Costume"
+msgstr "Completo"
+
+#, fuzzy
+msgid "description_costume"
+msgstr "Descrizione Completo"
+
+#, fuzzy
+msgid "description_pantalon"
+msgstr "Descrizione Pantalone"
+
+#, fuzzy
+msgid "description_veste"
+msgstr "Descrizione Giacca"
+
+#, fuzzy
+msgid "description_jupe_simple"
+msgstr "Descrizione Gonna semplice"
+
+#, fuzzy
+msgid "description_jupe_plissee"
+msgstr "Descrizione Gonna plissettata"
+
+#, fuzzy
+msgid "Pull/Gilet"
+msgstr "Maglione/Gilet"
+
+#, fuzzy
+msgid "description_pull_gilet"
+msgstr "Descrizione Maglione/Gilet"
+
+#, fuzzy
+msgid "description_cravate"
+msgstr "Descrizione Cravatta"
+
+#, fuzzy
+msgid "Salopette"
+msgstr "Salopette"
+
+#, fuzzy
+msgid "description_salopette"
+msgstr "Descrizione Salopette"
+
+#, fuzzy
+msgid "Robe simple"
+msgstr "Vestito semplice"
+
+#, fuzzy
+msgid "description_robe_simple"
+msgstr "Descrizione Vestito semplice"
+
+#, fuzzy
+msgid "Robe plissée"
+msgstr "Vestito plissettato"
+
+#, fuzzy
+msgid "description_robe_plissee"
+msgstr "Descrizione Vestito plissettato"
+
+#, fuzzy
+msgid "Robe de soirée"
+msgstr "Vestito da sera"
+
+#, fuzzy
+msgid "description_robe_de_soiree"
+msgstr "Descrizione Vestito da sera"
+
+#, fuzzy
+msgid "description_robe_de_mariee"
+msgstr "Descrizione Vestito da sposa"
+
+#, fuzzy
+msgid "description_impermeable"
+msgstr "Descrizione Impermeabile"
+
+#, fuzzy
+msgid "description_manteau"
+msgstr "Descrizione Cappotto"
+
+#, fuzzy
+msgid "Couverture simple"
+msgstr "Coperta semplice"
+
+#, fuzzy
+msgid "description_couverture_simple"
+msgstr "Descrizione Coperta semplice"
+
+#, fuzzy
+msgid "Couverture double"
+msgstr "Coperta doppia"
+
+#, fuzzy
+msgid "description_couverture_double"
+msgstr "Descrizione Coperta doppia"
+
+msgid "Couette simple ou double"
+msgstr "Piumone singolo o doppio"
+
+#, fuzzy
+msgid "description_couette_simple_ou_double"
+msgstr "Descrizione Piumone singolo o doppio"
+
+msgid "Rideaux (par m²)"
+msgstr "Tende (per m²)"
+
+#, fuzzy
+msgid "description_rideaux_par_m2"
+msgstr "Descrizione Tende (per m²)"
+
+msgid "Draperies (par m²)"
+msgstr "Tendaggi (per m²)"
+
+#, fuzzy
+msgid "description_draperies_par_m2"
+msgstr "Descrizione Tendaggi (per m²)"
+
+msgid "Tapis jusqu’à 9 m² (par m²)"
+msgstr "Tappeto fino a 9 m² (per m²)"
+
+#, fuzzy
+msgid "description_tapis_jusqu_a_9_m2"
+msgstr "Descrizione Tappeto fino a 9 m² (per m²)"
+
+msgid "Tapis plus de 9 m² (par m²)"
+msgstr "Tappeto oltre 9 m² (per m²)"
+
+#, fuzzy
+msgid "description_tapis_plus_de_9_m2"
+msgstr "Descrizione Tappeto oltre 9 m² (per m²)"
+
+msgid "Doudoune"
+msgstr "Piumino"
+
+#, fuzzy
+msgid "description_doudoune"
+msgstr "Descrizione Piumino"
+
+#, fuzzy
+msgid "Manteau en laine"
+msgstr "Cappotto in lana"
+
+#, fuzzy
+msgid "description_manteau_en_laine"
+msgstr "Descrizione Cappotto in lana"
+
+msgid "Cuir (veste courte)"
+msgstr "Pelle (giacca corta)"
+
+#, fuzzy
+msgid "description_cuir_veste_courte"
+msgstr "Descrizione Pelle (giacca corta)"
+
+msgid "Cuir (manteau long)"
+msgstr "Pelle (cappotto lungo)"
+
+#, fuzzy
+msgid "description_cuir_manteau_long"
+msgstr "Descrizione Pelle (cappotto lungo)"
+
+msgid "Coussin"
+msgstr "Cuscino"
+
+#, fuzzy
+msgid "description_coussin"
+msgstr "Descrizione Cuscino"
+
+msgid "Housse de couette"
+msgstr "Copri piumone"
+
+#, fuzzy
+msgid "description_housse_de_couette"
+msgstr "Descrizione Copri piumone"
+
+#, fuzzy
+msgid "Serviette"
+msgstr "Asciugamano"
+
+#, fuzzy
+msgid "description_serviette"
+msgstr "Descrizione Asciugamano"
+
+msgid "Peignoir"
+msgstr "Accappatoio"
+
+#, fuzzy
+msgid "description_peignoir"
+msgstr "Descrizione Accappatoio"
+
+msgid "Nappe"
+msgstr "Tovaglia"
+
+#, fuzzy
+msgid "description_nappe"
+msgstr "Descrizione Tovaglia"
+
+msgid "Taie d’oreiller"
+msgstr "Federa"
+
+#, fuzzy
+msgid "description_taie_d_oreiller"
+msgstr "Descrizione Federa"
+
+#, fuzzy
+msgid "Blanchisserie / Linge au kilo"
+msgstr "Lavanderia / Prezzo al chilo"
+
+#, fuzzy
+msgid "description_blancheisserie_linge_au_kilo"
+msgstr "Descrizione Lavanderia / Prezzo al chilo"
+
+msgid "Nappe jusqu’à 2,5m de long"
+msgstr "Tovaglia fino a 2,5m di lunghezza"
+
+#, fuzzy
+msgid "description_nappe_jusqu_a_2_5m_de_long"
+msgstr "Descrizione Tovaglia fino a 2,5m di lunghezza"
+
+msgid "Nappe entre 2,5 et 3,5m de long"
+msgstr "Tovaglia tra 2,5 e 3,5m di lunghezza"
+
+#, fuzzy
+msgid "description_nappe_entre_2_5_et_3_5m_de_long"
+msgstr "Descrizione Tovaglia tra 2,5 e 3,5m di lunghezza"
+
+msgid "Nappe entre 3,5 et 5m de long"
+msgstr "Tovaglia tra 3,5 e 5m di lunghezza"
+
+#, fuzzy
+msgid "description_nappe_entre_3_5_et_5m_de_long"
+msgstr "Descrizione Tovaglia tra 3,5 e 5m di lunghezza"
+
+msgid "Nappe entre 5 et 8m de long"
+msgstr "Tovaglia tra 5 e 8m di lunghezza"
+
+#, fuzzy
+msgid "description_nappe_entre_5_et_8m_de_long"
+msgstr "Descrizione Tovaglia tra 5 e 8m di lunghezza"
+
+msgid "Raccourcir jupe simple sans doublure"
+msgstr "Accorciare gonna semplice senza fodera"
+
+#, fuzzy
+msgid "description_raccourcir_jupe_simple_sans_doublure"
+msgstr "Descrizione accorciamento gonna semplice senza fodera"
+
+msgid "Raccourcir jupe simple avec doublure"
+msgstr "Accorciare gonna semplice con fodera"
+
+#, fuzzy
+msgid "description_raccourcir_jupe_simple_avec_doublure"
+msgstr "Descrizione accorciamento gonna semplice con fodera"
+
+msgid "Raccourcir pantalon à la machine (type jeans)"
+msgstr "Accorciare pantalone a macchina (tipo jeans)"
+
+msgid "description_raccourcir_pantalon_a_la_machine_type_jeans"
+msgstr "Descrizione accorciamento pantalone a macchina (tipo jeans)"
+
+msgid "Raccourcir pantalon avec bord original"
+msgstr "Accorciare pantalone con bordo originale"
+
+#, fuzzy
+msgid "description_raccourcir_pantalon_avec_bord_original"
+msgstr "Descrizione accorciamento pantalone con bordo originale"
+
+msgid "Raccourcir pantalon à la main (type pantalon de costume et classique)"
+msgstr "Accorciare pantalone a mano (tipo pantalone da completo e classico)"
+
+msgid "description_raccourcir_pantalon_a_la_main_type_pantalon_de_costume_et_classique"
+msgstr "Descrizione accorciamento pantalone a mano (tipo pantalone da completo e classico)"
+
+msgid "Raccourcir pantalon + talonnières"
+msgstr "Accorciare pantalone + talloniere"
+
+#, fuzzy
+msgid "description_raccourcir_pantalon_plus_talonnières"
+msgstr "Descrizione accorciamento pantalone + talloniere"
+
+msgid "Transformation rideaux et tentures non doublés (par mètre courant)"
+msgstr "Trasformazione tende e tendaggi non foderati (per metro lineare)"
+
+msgid "description_transformation_rideaux_et_tentures_non_doublés_par_mètre_courant"
+msgstr "Descrizione trasformazione tende e tendaggi non foderati"
+
+msgid "Transformation tentures doublées (par mètre courant)"
+msgstr "Trasformazione tendaggi foderati (per metro lineare)"
+
+msgid "description_transformation_tentures_doublées_par_mètre_courant"
+msgstr "Descrizione trasformazione tendaggi foderati"
+
+msgid "Tirettes/fermetures éclair pour pantalons"
+msgstr "Cerniere per pantaloni"
+
+#, fuzzy
+msgid "description_tirettes_fermetures_éclair_pour_pantalons"
+msgstr "Descrizione cerniere per pantaloni"
+
+msgid "Tirettes/fermetures éclair pour jupes simples"
+msgstr "Cerniere per gonne semplici"
+
+#, fuzzy
+msgid "description_tirettes_fermetures_éclair_pour_jupes_simples"
+msgstr "Descrizione cerniere per gonne semplici"
+
+msgid "Tirettes/fermetures éclair pour blousons/anoraks (jusqu’à 65cm)"
+msgstr "Cerniere per giacche/anorak (fino a 65cm)"
+
+msgid "description_tirettes_fermetures_éclair_pour_blousons_anoraks_jusqu_a_65cm"
+msgstr "Descrizione cerniere per giacche/anorak (fino a 65cm)"
+
+msgid "Tirettes/fermetures éclair pour robes (jusqu’à 50 cm)"
+msgstr "Cerniere per vestiti (fino a 50 cm)"
+
+msgid "description_tirettes_fermetures_éclair_pour_robes_jusqu_a_50_cm"
+msgstr "Descrizione cerniere per vestiti (fino a 50 cm)"
+

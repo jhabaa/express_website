@@ -24,7 +24,7 @@ section{
     --main-bg-color: #e1e1e1;
     --dark-back:rgba(15,15,15,0.6);
     --white-cosmic: #eee;
-    --express_blue:rgb(0, 56, 130);
+    --express_blue:#003882;
     --footer-blue:rgba(0, 56, 130, 0.8);
     --header:rgba(255, 255, 255, 0.85);
     --transparent_white:rgba(255, 255, 255, 0.87);
@@ -597,8 +597,14 @@ header.extended .lang a{
     padding-left: 2vw;
 }
 .page1 .phone{
+    filter: opacity(100%) grayscale(0%);
     object-fit:cover;
-	z-index:20
+	z-index:0;
+    transition: all 0.5s linear;
+}
+.page1 .phone.hidden{
+    filter: opacity(0%) grayscale(100%);
+    transition: all 0.5s linear;
 }
 
 #phone2{
@@ -649,13 +655,12 @@ header.extended .lang a{
 
     #phone1{
         display: block;
-        position: absolute;
+        position: fixed;
         width: 100%;
         height: 100%;
-        background: inherit;
     }
     #phone2{
-	display:none;	
+	    display:none;	
     }
     
 }
@@ -798,9 +803,6 @@ header.extended .lang a{
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: var(--background-gray);
-    -webkit-backdrop-filter: blur(2rem);
-    backdrop-filter: blur(2rem);
     border-radius: 1rem;
     padding: 10px;
 }
@@ -808,7 +810,6 @@ header.extended .lang a{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background:inherit;
     
 }
 .page2 .backgrid li .text{
@@ -824,13 +825,19 @@ header.extended .lang a{
 }
 .page2 .backgrid li .text h2{
     text-align: center;
-    color: var(--header-text);
+    color: var(--dark-green);
+    font-weight: 700;
+    opacity: .3;
     margin-bottom: 10px;
 }
 
 .page2 .backgrid li .text p{
     opacity: .6;
+    height: 100%;
     font-weight: 100;
+    padding-block: 10px;
+    padding-inline: 20px;
+    background-color: var(--background-gray);
 }
 .page2 .backgrid li .img-round{
     position: absolute;
@@ -1131,6 +1138,7 @@ header.extended .lang a{
 }
 .page2 .photowall{
     display: flex;
+    position: relative;
     width: 100%;
     max-width: 800px;
     margin-top: 100px;
@@ -1138,7 +1146,35 @@ header.extended .lang a{
     justify-content: left;
     align-items: start;
     transform-origin: left;
+    overflow: hidden;
 }
+.photowall::after{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100%;
+    z-index: 5;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(232,232,232,0.2091211484593838) 30% , rgba(255,255,255,0) 40%);
+}
+
+.photowall::before{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100%;
+    z-index: 5;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(232,232,232,0.2091211484593838) 30% , rgba(255,255,255,1) 40%);
+}
+
+
 .page2 .photowall .scroller_in:hover{
     animation-play-state: paused;
 }
@@ -1157,6 +1193,8 @@ header.extended .lang a{
     height: calc(100vw / 2);
     border: solid 1px gray;
     filter: grayscale(100%);
+    max-width: 200px;
+    max-height: 200px;
     -webkit-filter: grayscale(100%);
     opacity: .7;
     transition: all 0.5s ease-in-out;
@@ -1182,7 +1220,7 @@ header.extended .lang a{
     align-items: start;
     width: 100%;
     height: 100%;
-    max-width: 600px;
+    max-width: 500px;
     color: var(--header-text);
     font-weight: 700;
     font-size: 20px;
@@ -1582,6 +1620,11 @@ form .submit-btn:hover{
     padding: unset;
     margin: unset;
     padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    max-width: 400px;
 }
 #pricing .services .service .infos{
     position: relative;
@@ -1594,13 +1637,17 @@ form .submit-btn:hover{
     height: 100%;
     text-overflow: ellipsis;
     z-index: 60;
-    background-color: var(--white-cosmic);
+    max-width: 300px;
+    overflow: hidden;
 }
 
 #pricing .services .service .infos p{
-    font-size: 0.8rem;
+    font-size: 0.8em;
     margin-bottom: 2px;
-    color: var(--large-subtitle-text)
+    width: 100%;
+    max-width: 250px;
+    color: var(--large-subtitle-text);
+    text-overflow: ellipsis;
 }
 
 #pricing .services .service .infos h2{
@@ -2298,16 +2345,16 @@ form .submit-btn:hover{
     justify-content: center;
     gap: 10px;
     min-width: 200px;
-    padding-block: 5px;
+    padding-block: 10px;
     padding-inline: 8px;
     color: #000;
     border-radius: 2rem;
-    border: solid 1px #191919;
-    font-size: 1.2rem;  
+    font-size: 1.2rem;
+    box-shadow: #0000008a 0 0 3px;
 }
 .contacts-btn a:nth-child(2){
-    background-color: var(--express_blue);
-    color: var(--pure-white);
+    background-color: var(--background-gray);
+    color: var(--large-title-text);
     font-weight: 700;
 }
 
@@ -2434,6 +2481,7 @@ footer .right .icon-link{
     align-items: center;
     gap: 20px;
     z-index: 3;
+    color: #fff;
 }
 /* ========= GENERAL =============*/
 .divider_vertical{
@@ -2865,3 +2913,4 @@ iframe {
     color: var(--express_blue);
     text-decoration: underline;
 }
+

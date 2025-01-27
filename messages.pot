@@ -783,3 +783,303 @@ msgstr ""
 
 msgid "terms_content"
 msgstr ""
+
+msgid "Our services are available in Moortebeek"
+msgstr ""
+
+msgid "Our services are available in all our stores"
+msgstr ""
+
+msgid "Chemise homme"
+msgstr "Chemise homme"
+
+msgid "description_chemise_homme"
+msgstr "Description de la chemise homme"
+
+msgid "Costume"
+msgstr "Costume"
+
+msgid "description_costume"
+msgstr "Description du costume"
+
+msgid "Pantalon"
+msgstr "Pantalon"
+
+msgid "description_pantalon"
+msgstr "Description du pantalon"
+
+msgid "Veste"
+msgstr "Veste"
+
+msgid "description_veste"
+msgstr "Description de la veste"
+
+msgid "Jupe simple"
+msgstr "Jupe simple"
+
+msgid "description_jupe_simple"
+msgstr "Description de la jupe simple"
+
+msgid "Jupe plissée"
+msgstr "Jupe plissée"
+
+msgid "description_jupe_plissee"
+msgstr "Description de la jupe plissée"
+
+msgid "Pull/Gilet"
+msgstr "Pull/Gilet"
+
+msgid "description_pull_gilet"
+msgstr "Description du pull ou gilet"
+
+msgid "Cravate"
+msgstr "Cravate"
+
+msgid "description_cravate"
+msgstr "Description de la cravate"
+
+msgid "Salopette"
+msgstr "Salopette"
+
+msgid "description_salopette"
+msgstr "Description de la salopette"
+
+msgid "Robe simple"
+msgstr "Robe simple"
+
+msgid "description_robe_simple"
+msgstr "Description de la robe simple"
+
+msgid "Robe plissée"
+msgstr "Robe plissée"
+
+msgid "description_robe_plissee"
+msgstr "Description de la robe plissée"
+
+msgid "Robe de soirée"
+msgstr "Robe de soirée"
+
+msgid "description_robe_de_soiree"
+msgstr "Description de la robe de soirée"
+
+msgid "Robe de mariée"
+msgstr "Robe de mariée"
+
+msgid "description_robe_de_mariee"
+msgstr "Description de la robe de mariée"
+
+msgid "Imperméable"
+msgstr "Imperméable"
+
+msgid "description_impermeable"
+msgstr "Description de l'imperméable"
+
+msgid "Manteau"
+msgstr "Manteau"
+
+msgid "description_manteau"
+msgstr "Description du manteau"
+
+msgid "Couverture simple"
+msgstr "Couverture simple"
+
+msgid "description_couverture_simple"
+msgstr "Description de la couverture simple"
+
+msgid "Couverture double"
+msgstr "Couverture double"
+
+msgid "description_couverture_double"
+msgstr "Description de la couverture double"
+
+msgid "Couette simple ou double"
+msgstr "Couette simple ou double"
+
+msgid "description_couette_simple_ou_double"
+msgstr "Description de la couette simple ou double"
+
+msgid "Rideaux (par m²)"
+msgstr "Rideaux (par m²)"
+
+msgid "description_rideaux_par_m2"
+msgstr "Description des rideaux (par m²)"
+
+msgid "Draperies (par m²)"
+msgstr "Draperies (par m²)"
+
+msgid "description_draperies_par_m2"
+msgstr "Description des draperies (par m²)"
+
+msgid "Tapis jusqu’à 9 m² (par m²)"
+msgstr "Tapis jusqu’à 9 m² (par m²)"
+
+msgid "description_tapis_jusqu_a_9_m2"
+msgstr "Description du tapis jusqu’à 9 m² (par m²)"
+
+msgid "Tapis plus de 9 m² (par m²)"
+msgstr "Tapis plus de 9 m² (par m²)"
+
+msgid "description_tapis_plus_de_9_m2"
+msgstr "Description du tapis plus de 9 m² (par m²)"
+
+msgid "Doudoune"
+msgstr "Doudoune"
+
+msgid "description_doudoune"
+msgstr "Description de la doudoune"
+
+msgid "Manteau en laine"
+msgstr "Manteau en laine"
+
+msgid "description_manteau_en_laine"
+msgstr "Description du manteau en laine"
+
+msgid "Cuir (veste courte)"
+msgstr "Cuir (veste courte)"
+
+msgid "description_cuir_veste_courte"
+msgstr "Description du cuir (veste courte)"
+
+msgid "Cuir (manteau long)"
+msgstr "Cuir (manteau long)"
+
+msgid "description_cuir_manteau_long"
+msgstr "Description du cuir (manteau long)"
+
+msgid "Coussin"
+msgstr "Coussin"
+
+msgid "description_coussin"
+msgstr "Description du coussin"
+
+msgid "Housse de couette"
+msgstr "Housse de couette"
+
+msgid "description_housse_de_couette"
+msgstr "Description de la housse de couette"
+
+msgid "Serviette"
+msgstr "Serviette"
+
+msgid "description_serviette"
+msgstr "Description de la serviette"
+
+msgid "Peignoir"
+msgstr "Peignoir"
+
+msgid "description_peignoir"
+msgstr "Description du peignoir"
+
+msgid "Nappe"
+msgstr "Nappe"
+
+msgid "description_nappe"
+msgstr "Description de la nappe"
+
+msgid "Taie d’oreiller"
+msgstr "Taie d’oreiller"
+
+msgid "description_taie_d_oreiller"
+msgstr "Description de la taie d’oreiller"
+
+msgid "Blanchisserie / Linge au kilo"
+msgstr "Blanchisserie / Linge au kilo"
+
+msgid "description_blancheisserie_linge_au_kilo"
+msgstr "Description du service de blanchisserie au kilo"
+
+msgid "Nappe jusqu’à 2,5m de long"
+msgstr "Nappe jusqu’à 2,5m de long"
+
+msgid "description_nappe_jusqu_a_2_5m_de_long"
+msgstr "Description de la nappe jusqu’à 2,5m de long"
+
+msgid "Nappe entre 2,5 et 3,5m de long"
+msgstr "Nappe entre 2,5 et 3,5m de long"
+
+msgid "description_nappe_entre_2_5_et_3_5m_de_long"
+msgstr "Description de la nappe entre 2,5 et 3,5m de long"
+
+msgid "Nappe entre 3,5 et 5m de long"
+msgstr "Nappe entre 3,5 et 5m de long"
+
+msgid "description_nappe_entre_3_5_et_5m_de_long"
+msgstr "Description de la nappe entre 3,5 et 5m de long"
+
+msgid "Nappe entre 5 et 8m de long"
+msgstr "Nappe entre 5 et 8m de long"
+
+msgid "description_nappe_entre_5_et_8m_de_long"
+msgstr "Description de la nappe entre 5 et 8m de long"
+
+msgid "Raccourcir jupe simple sans doublure"
+msgstr "Raccourcir jupe simple sans doublure"
+
+msgid "description_raccourcir_jupe_simple_sans_doublure"
+msgstr "Description du raccourcissement de jupe simple sans doublure"
+
+msgid "Raccourcir jupe simple avec doublure"
+msgstr "Raccourcir jupe simple avec doublure"
+
+msgid "description_raccourcir_jupe_simple_avec_doublure"
+msgstr "Description du raccourcissement de jupe simple avec doublure"
+
+msgid "Raccourcir pantalon à la machine (type jeans)"
+msgstr "Raccourcir pantalon à la machine (type jeans)"
+
+msgid "description_raccourcir_pantalon_a_la_machine_type_jeans"
+msgstr "Description du raccourcissement de pantalon à la machine (type jeans)"
+
+msgid "Raccourcir pantalon avec bord original"
+msgstr "Raccourcir pantalon avec bord original"
+
+msgid "description_raccourcir_pantalon_avec_bord_original"
+msgstr "Description du raccourcissement de pantalon avec bord original"
+
+msgid "Raccourcir pantalon à la main (type pantalon de costume et classique)"
+msgstr "Raccourcir pantalon à la main (type pantalon de costume et classique)"
+
+msgid "description_raccourcir_pantalon_a_la_main_type_pantalon_de_costume_et_classique"
+msgstr "Description du raccourcissement de pantalon à la main (type costume et classique)"
+
+msgid "Raccourcir pantalon + talonnières"
+msgstr "Raccourcir pantalon + talonnières"
+
+msgid "description_raccourcir_pantalon_plus_talonnières"
+msgstr "Description du raccourcissement de pantalon avec talonnières"
+
+msgid "Transformation rideaux et tentures non doublés (par mètre courant)"
+msgstr "Transformation rideaux et tentures non doublés (par mètre courant)"
+
+msgid "description_transformation_rideaux_et_tentures_non_doublés_par_mètre_courant"
+msgstr "Description de la transformation de rideaux et tentures non doublés"
+
+msgid "Transformation tentures doublées (par mètre courant)"
+msgstr "Transformation tentures doublées (par mètre courant)"
+
+msgid "description_transformation_tentures_doublées_par_mètre_courant"
+msgstr "Description de la transformation de tentures doublées"
+
+msgid "Tirettes/fermetures éclair pour pantalons"
+msgstr "Tirettes/fermetures éclair pour pantalons"
+
+msgid "description_tirettes_fermetures_éclair_pour_pantalons"
+msgstr "Description des tirettes/fermetures éclair pour pantalons"
+
+msgid "Tirettes/fermetures éclair pour jupes simples"
+msgstr "Tirettes/fermetures éclair pour jupes simples"
+
+msgid "description_tirettes_fermetures_éclair_pour_jupes_simples"
+msgstr "Description des tirettes/fermetures éclair pour jupes simples"
+
+msgid "Tirettes/fermetures éclair pour blousons/anoraks (jusqu’à 65cm)"
+msgstr "Tirettes/fermetures éclair pour blousons/anoraks (jusqu’à 65cm)"
+
+msgid "description_tirettes_fermetures_éclair_pour_blousons_anoraks_jusqu_a_65cm"
+msgstr "Description des tirettes/fermetures éclair pour blousons/anoraks jusqu'à 65cm"
+
+msgid "Tirettes/fermetures éclair pour robes (jusqu’à 50 cm)"
+msgstr "Tirettes/fermetures éclair pour robes (jusqu’à 50 cm)"
+
+msgid "description_tirettes_fermetures_éclair_pour_robes_jusqu_a_50_cm"
+msgstr "Description des tirettes/fermetures éclair pour robes jusqu'à 50 cm"

@@ -25,6 +25,7 @@
           </div>
         </div>
       </div>
+
       {% if services %}
         {% if not selected_store %}
         <div class="divider horizontal"></div>
@@ -55,15 +56,18 @@
     </div>
   </div>
 
-    
     <!-- Services -->
     {% if services %}
     <span class="title1">{{ _('Our Services') }}</span>
+    <span class="subtitle">
+      {% if selected_store == "Moortebeek" %}
+      {{ _('Our services are available in Moortebeek') }}
+      {% else %}
+      {{ _('Our services are available in all our stores') }}
+      {% endif %}
+    </span>
     <div class="services">
-      {% for service in services %}
-        {% set a = services_in_store | selectattr ( 'service_name', '==', service.name ) | list %} 
-        {% set price = a | selectattr('store_name','==', selected_store.name ) | list %} 
-        {% if price %}
+      {% for service in services %} 
         <div class="service" data-aos="fade-down">
 
           <div class="infos">
@@ -72,12 +76,16 @@
           </div>
           <div class="costs">
             <div class="price">
-              <span class="value"> {{ price[0].cost }}€</span>
+              {% if selected_store == "Moortebeek" %}
+              <span class="value"> {{ service.price_2 }}€</span>
+              {% else %}
+              <span class="value"> {{ service.price_1 }}€</span>
+              {% endif %}
             </div>
           </div>
           <span>{{service.price}}</span>
         </div>
-        {% endif %}
+  
 
       {% endfor %}
     </div>

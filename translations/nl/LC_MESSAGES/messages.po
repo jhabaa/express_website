@@ -423,36 +423,34 @@ msgstr "ontdek onze milieuvriendelijke stomerij"
 #: templates/index.html:25
 msgid "subtitle4"
 msgstr ""
-"Wij bieden een volledig assortiment wasservices, van stomerij tot "
-"strijken, om aan al uw behoeften te voldoen."
 
 #: templates/index.html:55
 msgid "title3"
-msgstr "stomerij"
+msgstr "ontdek onze milieuvriendelijke stomerij"
 
 #: templates/index.html:77 templates/localization.html:63
 msgid "title5"
-msgstr "onze diensten"
+msgstr "waar ons te vinden?"
 
 #: templates/index.html:79 templates/localization.html:65
 msgid "subtitle5-1"
-msgstr "Wassen en strijken"
+msgstr "Op zoek naar een betrouwbare wasserij in België?"
 
 #: templates/index.html:81 templates/localization.html:67
 msgid "subtitle5-2"
-msgstr "Stomerij"
+msgstr "Heeft u een stomerij aan huis nodig voor snelle en efficiënte zorg?"
 
 #: templates/index.html:83 templates/localization.html:69
 msgid "subtitle5-3"
-msgstr "Reparaties en aanpassingen"
+msgstr "Wilt u uw huishoudlinnen toevertrouwen aan experts voor onberispelijke zorg?"
 
 #: templates/index.html:85 templates/localization.html:71
 msgid "subtitle5-4"
-msgstr "Bezorgdiensten"
+msgstr "Ontdek onze milieuvriendelijke stomerijdiensten."
 
 #: templates/index.html:104
 msgid "goto"
-msgstr "ga naar"
+msgstr "ga"
 
 #: templates/layout.html:65 templates/layout.html:177 templates/pricing.html:3
 msgid "Pricing"
@@ -472,19 +470,19 @@ msgstr "Bekijk op Maps"
 
 #: templates/layout.html:170
 msgid "title6"
-msgstr "Titel 6"
+msgstr "contacteer ons"
 
 #: templates/layout.html:171
 msgid "text6-1"
-msgstr "Tekst 6-1"
+msgstr "voor informatie over een dienst, aarzel niet"
 
 #: templates/layout.html:171
 msgid "text6-2"
-msgstr "Tekst 6-2"
+msgstr "Contacteer ons"
 
 #: templates/layout.html:171
 msgid "text6-3"
-msgstr "Tekst 6-3"
+msgstr "beter? Bezoek ons direct in onze winkels of schrijf ons"
 
 #: templates/layout.html:191
 msgid "Privacy policy"
@@ -909,4 +907,341 @@ msgstr "Inhoud werk 4"
 #, fuzzy
 msgid "terms_content"
 msgstr "Inhoud werk 4"
+
+msgid "Our services are available in Moortebeek"
+msgstr ""
+
+msgid "Our services are available in all our stores"
+msgstr ""
+
+#, fuzzy
+msgid "Chemise homme"
+msgstr "Overhemd"
+
+#, fuzzy
+msgid "description_chemise_homme"
+msgstr "Beschrijving Overhemd"
+
+#, fuzzy
+msgid "Costume"
+msgstr "Kledingreparatie"
+
+#, fuzzy
+msgid "description_costume"
+msgstr "Beschrijving Dekbed"
+
+#, fuzzy
+msgid "description_pantalon"
+msgstr "Beschrijving Broek"
+
+#, fuzzy
+msgid "description_veste"
+msgstr "Beschrijving Jas"
+
+#, fuzzy
+msgid "description_jupe_simple"
+msgstr "Beschrijving Eenvoudige rok"
+
+#, fuzzy
+msgid "description_jupe_plissee"
+msgstr "Beschrijving Plissérok"
+
+#, fuzzy
+msgid "Pull/Gilet"
+msgstr "Vest"
+
+#, fuzzy
+msgid "description_pull_gilet"
+msgstr "Beschrijving Vest"
+
+#, fuzzy
+msgid "description_cravate"
+msgstr "Beschrijving Stropdas"
+
+#, fuzzy
+msgid "Salopette"
+msgstr "Dekbed"
+
+#, fuzzy
+msgid "description_salopette"
+msgstr "Beschrijving Dekbed"
+
+#, fuzzy
+msgid "Robe simple"
+msgstr "Eenvoudige rok"
+
+#, fuzzy
+msgid "description_robe_simple"
+msgstr "Beschrijving Eenvoudige rok"
+
+#, fuzzy
+msgid "Robe plissée"
+msgstr "Plissérok"
+
+#, fuzzy
+msgid "description_robe_plissee"
+msgstr "Beschrijving Plissérok"
+
+#, fuzzy
+msgid "Robe de soirée"
+msgstr "Startprijs."
+
+#, fuzzy
+msgid "description_robe_de_soiree"
+msgstr "Beschrijving Bruidsjurk"
+
+#, fuzzy
+msgid "description_robe_de_mariee"
+msgstr "Beschrijving Bruidsjurk"
+
+#, fuzzy
+msgid "description_impermeable"
+msgstr "Beschrijving Regenjas"
+
+#, fuzzy
+msgid "description_manteau"
+msgstr "Beschrijving Mantel"
+
+#, fuzzy
+msgid "Couverture simple"
+msgstr "Dekentje voor 1 persoon"
+
+#, fuzzy
+msgid "description_couverture_simple"
+msgstr "Beschrijving Eenvoudige rok"
+
+#, fuzzy
+msgid "Couverture double"
+msgstr "Dekentje voor 1 persoon"
+
+#, fuzzy
+msgid "description_couverture_double"
+msgstr "Beschrijving Bedsprei"
+
+msgid "Couette simple ou double"
+msgstr "Couette simple ou double"
+
+#, fuzzy
+msgid "description_couette_simple_ou_double"
+msgstr "Beschrijving Eenvoudige rok"
+
+msgid "Rideaux (par m²)"
+msgstr "Rideaux (par m²)"
+
+#, fuzzy
+msgid "description_rideaux_par_m2"
+msgstr "Beschrijving Prijs per vierkante meter"
+
+msgid "Draperies (par m²)"
+msgstr "Draperies (par m²)"
+
+#, fuzzy
+msgid "description_draperies_par_m2"
+msgstr "Beschrijving Laken"
+
+msgid "Tapis jusqu’à 9 m² (par m²)"
+msgstr "Tapis jusqu’à 9 m² (par m²)"
+
+#, fuzzy
+msgid "description_tapis_jusqu_a_9_m2"
+msgstr "Beschrijving Tapijt"
+
+msgid "Tapis plus de 9 m² (par m²)"
+msgstr "Tapis plus de 9 m² (par m²)"
+
+#, fuzzy
+msgid "description_tapis_plus_de_9_m2"
+msgstr "Beschrijving Tapijt"
+
+msgid "Doudoune"
+msgstr "Doudoune"
+
+#, fuzzy
+msgid "description_doudoune"
+msgstr "Beschrijving Jourdan"
+
+#, fuzzy
+msgid "Manteau en laine"
+msgstr "Wij onderhouden uw jeans"
+
+#, fuzzy
+msgid "description_manteau_en_laine"
+msgstr "Beschrijving Mantel"
+
+msgid "Cuir (veste courte)"
+msgstr "Cuir (veste courte)"
+
+#, fuzzy
+msgid "description_cuir_veste_courte"
+msgstr "Beschrijving Jas"
+
+msgid "Cuir (manteau long)"
+msgstr "Cuir (manteau long)"
+
+#, fuzzy
+msgid "description_cuir_manteau_long"
+msgstr "Beschrijving Mantel"
+
+msgid "Coussin"
+msgstr "Coussin"
+
+#, fuzzy
+msgid "description_coussin"
+msgstr "Beschrijving Overall"
+
+msgid "Housse de couette"
+msgstr "Housse de couette"
+
+#, fuzzy
+msgid "description_housse_de_couette"
+msgstr "Beschrijving Dekbed"
+
+#, fuzzy
+msgid "Serviette"
+msgstr "Ondertitel van onze diensten"
+
+#, fuzzy
+msgid "description_serviette"
+msgstr "Beschrijving Jas"
+
+msgid "Peignoir"
+msgstr "Peignoir"
+
+#, fuzzy
+msgid "description_peignoir"
+msgstr "Beschrijving Blouse"
+
+msgid "Nappe"
+msgstr "Nappe"
+
+#, fuzzy
+msgid "description_nappe"
+msgstr "Beschrijving Laken"
+
+msgid "Taie d’oreiller"
+msgstr "Taie d’oreiller"
+
+#, fuzzy
+msgid "description_taie_d_oreiller"
+msgstr "Beschrijving Prijs per kilo"
+
+#, fuzzy
+msgid "Blanchisserie / Linge au kilo"
+msgstr "Prijs per kilo."
+
+#, fuzzy
+msgid "description_blancheisserie_linge_au_kilo"
+msgstr "Beschrijving Prijs per kilo"
+
+msgid "Nappe jusqu’à 2,5m de long"
+msgstr "Nappe jusqu’à 2,5m de long"
+
+#, fuzzy
+msgid "description_nappe_jusqu_a_2_5m_de_long"
+msgstr "Beschrijving Tafelkleed 0-2.5m"
+
+msgid "Nappe entre 2,5 et 3,5m de long"
+msgstr "Nappe entre 2,5 et 3,5m de long"
+
+#, fuzzy
+msgid "description_nappe_entre_2_5_et_3_5m_de_long"
+msgstr "Beschrijving Tafelkleed 2.5 - 3.5m"
+
+msgid "Nappe entre 3,5 et 5m de long"
+msgstr "Nappe entre 3,5 et 5m de long"
+
+#, fuzzy
+msgid "description_nappe_entre_3_5_et_5m_de_long"
+msgstr "Beschrijving Tafelkleed 3.5 - 5m"
+
+msgid "Nappe entre 5 et 8m de long"
+msgstr "Nappe entre 5 et 8m de long"
+
+#, fuzzy
+msgid "description_nappe_entre_5_et_8m_de_long"
+msgstr "Beschrijving Tafelkleed 2.5 - 3.5m"
+
+msgid "Raccourcir jupe simple sans doublure"
+msgstr "Raccourcir jupe simple sans doublure"
+
+#, fuzzy
+msgid "description_raccourcir_jupe_simple_sans_doublure"
+msgstr "Beschrijving Zoom met voering"
+
+#, fuzzy
+msgid "Raccourcir jupe simple avec doublure"
+msgstr "Zoom met voering"
+
+#, fuzzy
+msgid "description_raccourcir_jupe_simple_avec_doublure"
+msgstr "Beschrijving Zoom met voering"
+
+msgid "Raccourcir pantalon à la machine (type jeans)"
+msgstr "Raccourcir pantalon à la machine (type jeans)"
+
+msgid "description_raccourcir_pantalon_a_la_machine_type_jeans"
+msgstr "Description du raccourcissement de pantalon à la machine (type jeans)"
+
+msgid "Raccourcir pantalon avec bord original"
+msgstr "Raccourcir pantalon avec bord original"
+
+#, fuzzy
+msgid "description_raccourcir_pantalon_avec_bord_original"
+msgstr "Beschrijving Zoom met voering"
+
+msgid "Raccourcir pantalon à la main (type pantalon de costume et classique)"
+msgstr "Raccourcir pantalon à la main (type pantalon de costume et classique)"
+
+msgid "description_raccourcir_pantalon_a_la_main_type_pantalon_de_costume_et_classique"
+msgstr ""
+"Description du raccourcissement de pantalon à la main (type costume et "
+"classique)"
+
+msgid "Raccourcir pantalon + talonnières"
+msgstr "Raccourcir pantalon + talonnières"
+
+#, fuzzy
+msgid "description_raccourcir_pantalon_plus_talonnières"
+msgstr "Beschrijving Dekentje voor 2 personen"
+
+msgid "Transformation rideaux et tentures non doublés (par mètre courant)"
+msgstr "Transformation rideaux et tentures non doublés (par mètre courant)"
+
+msgid "description_transformation_rideaux_et_tentures_non_doublés_par_mètre_courant"
+msgstr "Description de la transformation de rideaux et tentures non doublés"
+
+msgid "Transformation tentures doublées (par mètre courant)"
+msgstr "Transformation tentures doublées (par mètre courant)"
+
+msgid "description_transformation_tentures_doublées_par_mètre_courant"
+msgstr "Description de la transformation de tentures doublées"
+
+msgid "Tirettes/fermetures éclair pour pantalons"
+msgstr "Tirettes/fermetures éclair pour pantalons"
+
+#, fuzzy
+msgid "description_tirettes_fermetures_éclair_pour_pantalons"
+msgstr "Beschrijving ritssluiting - Trekkertje"
+
+msgid "Tirettes/fermetures éclair pour jupes simples"
+msgstr "Tirettes/fermetures éclair pour jupes simples"
+
+#, fuzzy
+msgid "description_tirettes_fermetures_éclair_pour_jupes_simples"
+msgstr "Beschrijving ritssluiting - Trekkertje"
+
+msgid "Tirettes/fermetures éclair pour blousons/anoraks (jusqu’à 65cm)"
+msgstr "Tirettes/fermetures éclair pour blousons/anoraks (jusqu’à 65cm)"
+
+msgid "description_tirettes_fermetures_éclair_pour_blousons_anoraks_jusqu_a_65cm"
+msgstr ""
+"Description des tirettes/fermetures éclair pour blousons/anoraks jusqu'à "
+"65cm"
+
+msgid "Tirettes/fermetures éclair pour robes (jusqu’à 50 cm)"
+msgstr "Tirettes/fermetures éclair pour robes (jusqu’à 50 cm)"
+
+#, fuzzy
+msgid "description_tirettes_fermetures_éclair_pour_robes_jusqu_a_50_cm"
+msgstr "Beschrijving ritssluiting - Trekkertje"
 

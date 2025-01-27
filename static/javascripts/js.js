@@ -23,7 +23,7 @@ let services = document.querySelectorAll('.service');
 let store_cards = document.querySelectorAll('.store_card');
 let sublinks = document.querySelectorAll('.sublink');
 let pricing_links = document.getElementById('pricing_links');
-
+let phonesPictures = document.querySelectorAll('.phone');
 
 //Numbers 
 let exp_years = document.querySelector('#years_exp');
@@ -76,6 +76,17 @@ var oberserver = new IntersectionObserver(callback, options);
 if (exp_years && partners){
     oberserver.observe(exp_years);
 }
+
+// Hide phones image when we scroll a bit 
+phonesPictures.forEach(function(phone){
+    window.addEventListener('scroll', function(){
+        if (window.scrollY > 10){
+            phone.classList.add('hidden');
+        }else {
+            phone.classList.remove('hidden');
+        }
+    });
+});
 
 //Init AOS
 AOS.init();

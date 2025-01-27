@@ -422,6 +422,16 @@ def ResetPassword():
 def index():
     return redirect(url_for('home', lang = 'fr'))
 
+# Error handler
+@app.errorhandler(500)
+@app.errorhandler(404)
+def page_not_found(e):
+    print(f"Error 404 : Page not found {e}")
+    categories = GetData('full','category')
+    stores = GetData('full','store')
+    services = GetData('full','service')
+    return render_template('error.html', lang = session['lang'] if not None else "fr", services = services, categories = categories, stores = stores), 404
+
 @app.route('/<lang>/home/')
 @app.route('/<lang>/home/<subpage>')
 @app.route('/<lang>/home/<subpage>/<store>')

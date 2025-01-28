@@ -597,13 +597,13 @@ header.extended .lang a{
     padding-left: 2vw;
 }
 .page1 .phone{
-    filter:  grayscale(0%), opacity(100%);
+    filter:  opacity(100%);
     object-fit:cover;
 	z-index:0;
     transition: all 0.5s linear;
 }
 .page1 .phone.hidden{
-    filter:  grayscale(100%), opacity(0%);
+    filter: opacity(0%);
     transition: all 0.5s linear;
 }
 
@@ -1699,7 +1699,7 @@ form .submit-btn:hover{
 }
 
 #pricing .services .service .costs .price .value{
-    color: var(--dark-green);
+    color: var(--express_blue);
     font-weight: 700;
     width: 100%;
     height: 100%;
@@ -2386,12 +2386,12 @@ form .submit-btn:hover{
 	}
 	#contact .title1{
 		position:relative;
-		font-size:10vw;
+		font-size:4vw;
 		align-self:center;
 		justify-self:center;
 		width:100%;
 		opacity:0.6;
-		color:var(--transparent_white);
+		color:var(--express_blue);
 	}
 	#contact .contact{
 		z-index:100;
@@ -2471,6 +2471,19 @@ footer .right .links{
 
 }
 
+footer .right .socials a {
+    padding: 2px;
+    border-radius: 5px;
+    background-color: var(--pure-white);
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
 footer .right .socials{
     display: flex;
     justify-content: center;
@@ -2481,16 +2494,21 @@ footer .right .socials{
 }
 footer .right .icon-link{
     display: flex;
-    width: 40px;
-    height: 40px;
+    width: 70%;
+    height: 70%;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     z-index: 3;
-    padding: 5px;
-    background-color: var(--background-gray);
-    border-radius: 50%;
+    background-color: var(--transparent_white);
+    object-fit: cover;
 }
+footer .right .icon-link:hover{
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 /* ========= GENERAL =============*/
 .divider_vertical{
     width: 2px;
@@ -2932,18 +2950,47 @@ iframe {
     padding: 20px;
     background-color: var(--pure-white);
     width: 100vw;
-    height: 80vh;
-    background-color: red;
+    height: 100vh;
+    padding: unset;
+    margin: unset;
 }
-.error_content{
+#error_page img{
+    position: absolute;
+    top: 0px;
+    width: 200px;
+    height: 200px;
+}
+.error-content{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
     gap: 20px;
     padding: 20px;
     background-color: var(--pure-white);
-    width: 100vw;
-    height: 80vh;
-    background-color: red;
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+}
+.error-content h1{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--express_blue);
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.error-content a {
+    color: var(--background-gray);
+    padding-block: 10px;
+    padding-inline: 20px;
+    background-color: var(--express_blue);
+    border-radius: 1rem;
+}
+.error-content a:hover{
+    background-color: var(--background-gray);
+    color: var(--express_blue);
 }

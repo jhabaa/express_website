@@ -49,11 +49,12 @@ var options = {
     rootMargin: '0px',
     threshold: 0.5
 }
-let creationDate =  new Date('Jan 01, 97 00:00:00')
+let creationDate =  new Date('May 23, 97 08:00:00')
 let today = new Date();
+let dateToPrint = (today.getTime() - creationDate.getTime()) / (1000 * 60 * 60 * 24 * 365)
 let numbers_animation = anime ({
     targets : numbers_values,
-    years: today.getFullYear() - creationDate.getFullYear(),
+    years: dateToPrint,
     partners: "300+",
     direction: 'forwards',
     round: 1,
@@ -82,6 +83,7 @@ if (exp_years && partners){
 phonesPictures.forEach(function(phone){
     window.addEventListener('scroll', function(){
         if (window.scrollY > 10){
+            console.log(this.window.scrollY);
             phone.classList.add('hidden');
         }else {
             phone.classList.remove('hidden');

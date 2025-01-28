@@ -1,12 +1,69 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ _('Error') }}</title>
+    <meta name="description" content="Express-Dry clean est une entreprise de nettoyage à sec localisée à Bruxelles. Nos services sont accessible à travers la Belgique via divers magasins situés à Etterbeek, Zaventem, Saint-Josse, Molenbeek et Auderghem. Notre Application reste accessible pour toutes les commandes pour livraisons au bureau et à domicile, aux prix les plus bas.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-app-title" content="Ex-press Dry Clean">
+    <meta name="appstore:bundle-id" content="Alpha.ExpressDryClean">
+    <meta name="contact" content="Zaventem: +3224204130  'Leuvensesteenweg 526, 1930, Zaventem'">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Flask-Python App">
+    <meta name="author" content="REMOVEDLab">
+    <meta name="keywords" content="Express Dry Clean, Nettoyage à sec, Bruxelles, Belgique, Etterbeek, Zaventem, Saint-Josse, Molenbeek, Auderghem, Application, Livraison, Bureau, Domicile, Prix, Bas">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="googlebot" content="index, follow">
+    <meta name="web_author" content="J-Hubert ABA'A | REMOVEDlab">
+    <meta name="geo.country" content="be">
+    <meta name="version" content="0.1.0+1">
+    <!-- Favicon -->
 
-{% block title %} {{ _('Error') }} {% endblock %}
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/static/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#003882">
+    <link rel="stylesheet" href="/static/css/css.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/galleria.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <!--AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-{% block page %}
-<section class="error" id="error_page">
-    <div class="error-content">
-        <h1>{{ _('Error') }}</h1>
-        <p>{{ _('error_message') }}</p>
-    </div>
-</section>
-{% endblock %}
+    <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->    
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
+</head>
+<body>
+    <section class="error" id="error_page">
+        <img src="/static/imagesweb/logo_vitrine_EXPRESS.svg" alt="">
+        <div class="error-content">
+            <h1>{{ _('Error') }}</h1>
+            <p>{{ _('Error_message') }}</p>
+            <a href="{{ url_for('home', lang = lang) }}" class="btn">{{ _('Go back to home') }}</a>
+        </div>
+    </section>
+</body>
+</html>

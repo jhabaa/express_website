@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-01-20 02:01+0100\n"
-"PO-Revision-Date: 2025-01-27 15:23+0100\n"
+"PO-Revision-Date: 2025-01-28 13:14+0100\n"
 "Last-Translator: \n"
 "Language-Team: fr <LL@li.org>\n"
 "Language: fr\n"
@@ -256,11 +256,11 @@ msgstr "Email"
 
 #: templates/contact.html:54
 msgid "contact_right_1"
-msgstr "contactez-nous !"
+msgstr "Contactez-nous !"
 
 #: templates/contact.html:55
 msgid "contact_right_2"
-msgstr "Nos équipe reste disponible pour assistance"
+msgstr "Nos équipes restent à votre écoute"
 
 #: templates/contact.html:61
 msgid "contact_right_3"
@@ -268,7 +268,7 @@ msgstr "Parlez avec nous"
 
 #: templates/contact.html:62
 msgid "contact_right_4"
-msgstr "Parlez à nos agents via chat"
+msgstr "Parlez à nos agents"
 
 #: templates/contact.html:66
 msgid "contact_right_5"
@@ -505,7 +505,7 @@ msgstr "Voir les prix de ce magasin"
 
 #: templates/pricing.html:63
 msgid "Our Services"
-msgstr "Nos services de nettoyage"
+msgstr "Nos services de "
 
 msgid "Blanchisserie"
 msgstr ""

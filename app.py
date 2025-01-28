@@ -427,11 +427,8 @@ def index():
 @app.errorhandler(500)
 def page_not_found(e):
     print(f"Error 404 : Page not found {e}")
-    categories = GetData('full','category')
-    stores = GetData('full','store')
-    services = GetData('full','service')
     session['lang'] = 'fr' if not session.get('lang') else session['lang']
-    return render_template('error.html', lang = session['lang'], services = services, categories = categories, stores = stores, current_page = 'home')
+    return render_template('error.html', lang = session['lang'], current_page = 'home')
 
 @app.route('/<lang>/home/')
 @app.route('/<lang>/home/<subpage>')

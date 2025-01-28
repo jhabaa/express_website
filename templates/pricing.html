@@ -25,14 +25,45 @@
           </div>
         </div>
       </div>
+      <br><br>
 
       {% if services %}
+        <div class="title1">{{ _('Our Services') }} {{_(selected_category.name)}}</div>
+        <div class="divider_vertical"></div>
+        {% if not selected_store %}
+          <div class="subtitle">{{_('Auderghem')}} - {{_('Jourdan')}} - {{_('Saint-Josse')}} - {{_('Zaventem')}}</div>
+          {% else %}
+          <div class="subtitle">{{_(selected_store)}}</div>
+        {% endif %}
+      <div class="services">
+        {% for service in services %} 
+          <div class="service" data-aos="fade-down">
+  
+            <div class="infos">
+              <h2>{{ _(service.name) }}</h2>
+              <p>{{ _(service.description) }}</p>
+            </div>
+            <div class="costs">
+              <div class="price">
+                {% if selected_store == "Moortebeek" %}
+                <span class="value"> {{ service.price_2 }}€</span>
+                {% else %}
+                <span class="value"> {{ service.price_1 }}€</span>
+                {% endif %}
+              </div>
+            </div>
+            <span>{{service.price}}</span>
+          </div>
+    
+  
+        {% endfor %}
+      </div>
         {% if not selected_store %}
         <div class="divider horizontal"></div>
           <span class="title1">{{_('Select a Store')}}</span>
           <div class="list">
             {% for store in stores %}
-          <a href="{{url_for('pricing', lang = lang, subpage = selected_category.name, store = store.name)}}" class="service">
+              <a href="{{url_for('pricing', lang = lang, subpage = selected_category.name, store = store.name)}}" class="service">
               <img src="/static/images/{{ store.image }}" alt="" class="cat_bg_img">
               <div class="description1">
                   <h2>{{ _(store.name) }}</h2>
@@ -46,76 +77,43 @@
                   </div>
                   
               </div>
-            </a>
-          {% endfor %}
+              </a>
+           {% endfor %}
           </div>
           
         {% endif %}
-        <span class="subtitle"> {{ _(selected_category.informations) | safe}}</span>
+          <span class="subtitle"> {{ _(selected_category.informations) | safe}}</span>
+
+      {% else %}
+      <span class="title1">{{_('Select a Store')}}</span>
+      <div class="list">
+
+        {% for cat in categories %}
+            <div class="service">
+                <img src="/static/images/{{ cat.illustrations }}" alt="" class="cat_bg_img">
+                <div class="description1">
+                    <h2>{{ _(cat.name) }}</h2>
+                </div>
+                <div class="description2">
+                    <div class="up">
+                        <h2> {{ _(cat.name) }} </h2>
+                    </div>
+                    <div class="down infinite">
+                        <!-- For princing, show the list of stores -->
+                         <div class="toStores_links">
+                            {% for store in stores %}
+                                <a href="{{url_for('pricing', lang = lang, subpage = cat.name, store = store.name)}}">{{ _(store.name) }}</a>
+                            {% endfor %}
+                         </div>
+                    </div>
+                    
+                </div>
+            </div>
+        {% endfor %}
+    </div>
       {% endif %}
     </div>
   </div>
 
-    <!-- Services -->
-    {% if services %}
-    <span class="title1">{{ _('Our Services') }}</span>
-    <span class="subtitle">
-      {% if selected_store == "Moortebeek" %}
-      {{ _('Our services are available in Moortebeek') }}
-      {% else %}
-      {{ _('Our services are available in all our stores') }}
-      {% endif %}
-    </span>
-    <div class="services">
-      {% for service in services %} 
-        <div class="service" data-aos="fade-down">
-
-          <div class="infos">
-            <h2>{{ _(service.name) }}</h2>
-            <p>{{ _(service.description) }}</p>
-          </div>
-          <div class="costs">
-            <div class="price">
-              {% if selected_store == "Moortebeek" %}
-              <span class="value"> {{ service.price_2 }}€</span>
-              {% else %}
-              <span class="value"> {{ service.price_1 }}€</span>
-              {% endif %}
-            </div>
-          </div>
-          <span>{{service.price}}</span>
-        </div>
-  
-
-      {% endfor %}
-    </div>
-    {% else %}
-        <!-- New Services selector -->
-  <div class="list">
-    {% for cat in categories %}
-        <div class="service">
-            <img src="/static/images/{{ cat.illustrations }}" alt="" class="cat_bg_img">
-            <div class="description1">
-                <h2>{{ _(cat.name) }}</h2>
-            </div>
-            <div class="description2">
-                <div class="up">
-                    <h2> {{ _(cat.name) }} </h2>
-                </div>
-                <div class="down infinite">
-                    <!-- For princing, show the list of stores -->
-                     <div class="toStores_links">
-                        {% for store in stores %}
-                            <a href="{{url_for('pricing', lang = lang, subpage = cat.name, store = store.name)}}">{{ _(store.name) }}</a>
-                        {% endfor %}
-                     </div>
-                </div>
-                
-            </div>
-        </div>
-    {% endfor %}
-</div>
-
-    {% endif %}
 </section>
 {% endblock %}

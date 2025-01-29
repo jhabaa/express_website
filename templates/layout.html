@@ -124,20 +124,25 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
                         <a href="{{ url_for('localization', lang = lang)}}"> {{_('Localization')}} </a>
                         <ul class="sublinks">
                             <div class="mainlinks">
+                                <span class="links_title">{{_("Localization_title_1")}}</span>
                                 {% for store in stores %}
                                 <li>
                                     <a href="{{ url_for('localization', lang = lang, subpage = store.name )}}">
-                                        <span class="bigTitle">{{ _(store.name) }}</span>
-                                        {% if store.name != "App" %}
-                                            <span class="smallTitle">{{ _(store.adress) }}</span>
-                                        {% endif %}
+                                        <span>{{ _(store.name) }}</span>
                                     </a>
                                 
                                 </li>
                                 {% endfor %}
                             </div>
-                            <div class="secondarylinks">
-                                <li> <a href="#">{{_('See on Maps')}}</a></li>
+                            <div class="mainlinks tiny">
+                                <span class="links_title">{{_("See on Maps")}}</span>
+                                {% for store in stores %}
+                                    <li>
+                                        <a href="https://maps.google.com/?q={{store.lon}},{{store.lat}}" target="_blank" onclick="goToLocation({{ store.lon }},{{ store.lat }})">
+                                            <span>{{ _(store.name) }}</span>
+                                        </a>
+                                    </li>
+                                {% endfor %}
                             </div>
                         </ul>
                     </li>

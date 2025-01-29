@@ -1083,3 +1083,6 @@ msgstr "Tirettes/fermetures éclair pour robes (jusqu’à 50 cm)"
 
 msgid "description_tirettes_fermetures_éclair_pour_robes_jusqu_a_50_cm"
 msgstr "Description des tirettes/fermetures éclair pour robes jusqu'à 50 cm"
+
+msgid "Localization_title_1"
+msgstr ""

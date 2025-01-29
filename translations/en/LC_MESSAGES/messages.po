@@ -1142,7 +1142,9 @@ msgid "Transformation rideaux et tentures non doublés (par mètre courant)"
 msgstr "Transformation of unlined curtains and drapes (per linear meter)"
 
 msgid "description_transformation_rideaux_et_tentures_non_doublés_par_mètre_courant"
-msgstr "Description Transformation of unlined curtains and drapes (per linear meter)"
+msgstr ""
+"Description Transformation of unlined curtains and drapes (per linear "
+"meter)"
 
 msgid "Transformation tentures doublées (par mètre courant)"
 msgstr "Transformation of lined drapes (per linear meter)"
@@ -1173,4 +1175,8 @@ msgstr "Zippers for dresses (up to 50 cm)"
 
 msgid "description_tirettes_fermetures_éclair_pour_robes_jusqu_a_50_cm"
 msgstr "Description Zippers for dresses (up to 50 cm)"
+
+#, fuzzy
+msgid "Localization_title_1"
+msgstr "Find Us"
 

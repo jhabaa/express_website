@@ -378,5 +378,30 @@ function unselectCat(selectedCat) {
 }
 
 
+// Funtion to go to a location on maps or google maps 
 
-  
+function getDeviceType(){
+    let user_agent = navigator.userAgent;
+    let device_type = 'desktop';
+    if (user_agent.match(/Android/i)){
+        device_type = 'android';
+    }else if (user_agent.match(/iPhone|iPad|iPod/i)){
+        device_type = 'ios';
+    }
+    console.log(device_type);
+}
+
+function goToLocation(lon, lat){
+    let device  = getDeviceType();
+    if (device == 'desktop'){
+        window.open(`https://www.google.com/maps/@${lon},${lat},15z`);
+    }
+    if (device == 'android'){
+        window.open(`geo:${lon},${lat}`);
+    }
+    if (device == 'ios'){
+        window.open(`maps://maps.apple.com/?q=${lon},${lat}`);
+    }
+}
+
+getDeviceType();

@@ -503,7 +503,8 @@ def contact(lang = 'fr', subpage = None, message = None):
     greatings = _("Bonjour")
     #set language
     session['lang'] = lang
-    return render_template('contact.html', lang = session['lang'], dictionary = dictionary[lang], message = message, current_page = 'contact')
+    stores = GetData('full','store')
+    return render_template('contact.html', lang = session['lang'], dictionary = dictionary[lang], message = message, current_page = 'contact', stores = stores)
 
 
 @app.route('/<lang>/delivery/')

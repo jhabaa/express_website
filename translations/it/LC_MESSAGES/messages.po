@@ -1155,7 +1155,9 @@ msgid "Raccourcir pantalon à la main (type pantalon de costume et classique)"
 msgstr "Accorciare pantalone a mano (tipo pantalone da completo e classico)"
 
 msgid "description_raccourcir_pantalon_a_la_main_type_pantalon_de_costume_et_classique"
-msgstr "Descrizione accorciamento pantalone a mano (tipo pantalone da completo e classico)"
+msgstr ""
+"Descrizione accorciamento pantalone a mano (tipo pantalone da completo e "
+"classico)"
 
 msgid "Raccourcir pantalon + talonnières"
 msgstr "Accorciare pantalone + talloniere"
@@ -1201,4 +1203,8 @@ msgstr "Cerniere per vestiti (fino a 50 cm)"
 
 msgid "description_tirettes_fermetures_éclair_pour_robes_jusqu_a_50_cm"
 msgstr "Descrizione cerniere per vestiti (fino a 50 cm)"
+
+#, fuzzy
+msgid "Localization_title_1"
+msgstr "Localizzazione"
 

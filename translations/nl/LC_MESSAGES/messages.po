@@ -442,7 +442,9 @@ msgstr "Heeft u een stomerij aan huis nodig voor snelle en efficiënte zorg?"
 
 #: templates/index.html:83 templates/localization.html:69
 msgid "subtitle5-3"
-msgstr "Wilt u uw huishoudlinnen toevertrouwen aan experts voor onberispelijke zorg?"
+msgstr ""
+"Wilt u uw huishoudlinnen toevertrouwen aan experts voor onberispelijke "
+"zorg?"
 
 #: templates/index.html:85 templates/localization.html:71
 msgid "subtitle5-4"
@@ -1244,4 +1246,8 @@ msgstr "Tirettes/fermetures éclair pour robes (jusqu’à 50 cm)"
 #, fuzzy
 msgid "description_tirettes_fermetures_éclair_pour_robes_jusqu_a_50_cm"
 msgstr "Beschrijving ritssluiting - Trekkertje"
+
+#, fuzzy
+msgid "Localization_title_1"
+msgstr "Lokalisatie"
 

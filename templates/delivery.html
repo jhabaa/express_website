@@ -3,12 +3,21 @@
 {% block title %} {{_('Delivery') }} {% endblock %}
 
 {% block page %}
+<section class="page1">
+    <img src="/static/imagesweb/delivery.jpg" alt="" class="phone">
+    <div class="presentationBloc">
+        <h1 class="ExpressTitle">Ex-Press Dry Clean</h1>
+        <p class="ExpressTitle"> {{_('delivery_title')}} </p>
+        <a href="https://testflight.apple.com/join/r5vANLZh" class="">
+            <img src="/static/imagesweb/apple.svg" alt="" class="apple">
+        </a>
+    </div>
+</section>
 <section class="page2" id="delivery_page">
     <div class="description">
         <!-- Header -->
         <div class="header">
-            <img src="/static/imagesweb/delivery.jpeg" alt="" class="illustration">
-            <span class="title">{{_('delivery_title')}}</span>
+            <span class="title1" data-aos="fade-down">{{_('delivery_title')}}</span>
             <div class="subtitle">
                 <p>
                     <strong>{{_('delivery_subtitle_1')}}</strong>

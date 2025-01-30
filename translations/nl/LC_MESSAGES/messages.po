@@ -1251,3 +1251,9 @@ msgstr "Beschrijving ritssluiting - Trekkertje"
 msgid "Localization_title_1"
 msgstr "Lokalisatie"
 
+#, fuzzy
+msgid "about_sub2"
+msgstr ""
+"Ontdek onze innovatieve en milieuvriendelijke schoonmaakoplossingen.\n"
+"Geef uw wasgoed een ongeëvenaarde glans terwijl u het milieu respecteert."
+

@@ -59,6 +59,9 @@
     
     <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->    
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
+
+    <!-- Typed JS -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 
 <body id="body">
@@ -98,10 +101,8 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
                                 {% for category in categories %}
                                     <li date-aos="fade-down" data-aos-delay="{{ loop.index * 100 }}">
                                         <a href="{{url_for('pricing', lang = lang, subpage = category.name)}}">
-                                            {{ _(category.name) }}
-                                           
+                                            {{ _(category.name) }} 
                                         </a>
-
                                     </li>
                                 {% endfor %}
                             </div>

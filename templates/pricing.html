@@ -16,7 +16,7 @@
     <!-- Header -->
     <div class="header">
       <div class="signature">
-        <img src="/static/imagesweb/signature_back.jpg" alt=""/>
+        <img src="/static/imagesweb/No_image_horizontal.png" alt=""/>
         <div class="custom-signature" data-aos="flip-left"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000">
@@ -33,7 +33,7 @@
         {% if not selected_store %}
           <div class="subtitle">{{_('Auderghem')}} - {{_('Jourdan')}} - {{_('Saint-Josse')}} - {{_('Zaventem')}}</div>
           {% else %}
-          <div class="subtitle">{{_(selected_store)}}</div>
+          <div class="subtitle">{{_(selected_store.name )}}</div>
         {% endif %}
       <div class="services">
         {% for service in services %} 
@@ -41,7 +41,9 @@
   
             <div class="infos">
               <h2>{{ _(service.name) }}</h2>
-              <p>{{ _(service.description) }}</p>
+              {% if '_' not in _(service.description) %}
+                <p>{{ _(service.description) | safe}}</p>
+              {% endif %}
             </div>
             <div class="costs">
               <div class="price">

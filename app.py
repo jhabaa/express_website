@@ -441,7 +441,7 @@ def home(lang = 'fr', subpage = None, store = None):
     
     print(getattr(g, 'user', None))
     #return str((GetCostDelevery("Rue Saint-germain 92 1410 Waterloo")*price_by_km).quantize(decimal.Decimal('.01')))
-    categories = GetData('full','category')
+    categories = sorted(GetData('full','category'), key=lambda x: x['index'])
     stores = GetData('full','store')
     services = GetData('full','service')
     return render_template('index.html', dictionary = dictionary[lang] , services = services, categories=categories, stores=stores, lang = session['lang'], current_page = 'home')
@@ -451,7 +451,7 @@ def policy(lang = 'fr'):
     #set language
     session['lang'] = lang
     #Usefull for the header, since Flask ask fot it
-    categories = GetData('full','category')
+    categories = sorted(GetData('full','category'), key=lambda x: x['index'])
     stores = GetData('full','store')
     services = GetData('full','service')
     return render_template('policy.html', lang = session['lang'], categories = categories, stores = stores, services = services, current_page = 'policy')
@@ -461,7 +461,7 @@ def terms(lang = 'fr'):
     #set language
     session['lang'] = lang
     #Usefull for the header, since Flask ask fot it
-    categories = GetData('full','category')
+    categories = sorted(GetData('full','category'), key=lambda x: x['index'])
     stores = GetData('full','store')
     services = GetData('full','service')
     return render_template('terms.html', lang = session['lang'], categories = categories, stores = stores, services = services, current_page = 'terms')
@@ -473,7 +473,7 @@ def pricing(lang = 'fr', subpage = None, store = None):
     #set language
     session['lang'] = lang
     services = GetData('full','service') # Get all services
-    categories = GetData('full','category') # Get just the categories 
+    categories = sorted(GetData('full','category'), key=lambda x: x['index'])# Get just the categories 
     services_in_store = GetData('full','store_has_service') # Get all services associates to all stores
 
     others_categories = [ x for x in categories if x['name'] != subpage]
@@ -493,7 +493,10 @@ def pricing(lang = 'fr', subpage = None, store = None):
 def about(lang = 'fr', subpage = None):
     #set language
     session['lang'] = lang
-    return render_template('about.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'about')
+    stores = GetData('full','store')
+    services = GetData('full','service')
+    categories = sorted(GetData('full','category'), key=lambda x: x['index'])# Get just the categories 
+    return render_template('about.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'about', stores = stores, services = services, categories = categories)
 
 
 
@@ -504,22 +507,29 @@ def contact(lang = 'fr', subpage = None, message = None):
     #set language
     session['lang'] = lang
     stores = GetData('full','store')
-    return render_template('contact.html', lang = session['lang'], dictionary = dictionary[lang], message = message, current_page = 'contact', stores = stores)
+    services = GetData('full','service')
+    categories = sorted(GetData('full','category'), key=lambda x: x['index'])# Get just the categories 
+    return render_template('contact.html', lang = session['lang'], dictionary = dictionary[lang], message = message, current_page = 'contact', stores = stores, services = services, categories = categories)
 
 
 @app.route('/<lang>/delivery/')
 @app.route('/<lang>/delivery/<subpage>')
 def delivery(lang = 'fr', subpage = None , message = None):
     session['lang'] = lang
-    return render_template('delivery.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'delivery')   
+    stores = GetData('full','store')
+    services = GetData('full','service')
+    categories = sorted(GetData('full','category'), key=lambda x: x['index'])# Get just the categories 
+    return render_template('delivery.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'delivery', stores = stores, services = services, categories = categories)   
 
 @app.route('/<lang>/localization/')
 @app.route('/<lang>/localization/<subpage>')
 def localization(lang = 'fr', subpage = None ):
     session['lang'] = lang
     stores = GetData('full','store')
+    services = GetData('full','service')
+    categories = sorted(GetData('full','category'), key=lambda x: x['index'])# Get just the categories 
     available_store = [ x for x in stores if x['name'] == subpage][-1] if subpage else None
-    return render_template('localization.html', lang = session['lang'], dictionary = dictionary[lang], stores = stores, selected_store = available_store, current_page = 'localization')
+    return render_template('localization.html', lang = session['lang'], dictionary = dictionary[lang], stores = stores, selected_store = available_store, current_page = 'localization', services = services, categories = categories)
 
 
 @app.route('/chatwithus', methods=['POST'])
@@ -1082,22 +1092,22 @@ dictionary = {'fr':{
         {
             'title': 'work1_title',
             'description':"work1_content",
-            'illustration':"img1.jpeg"
+            'illustration':"no_image_vert_black.jpg"
         },
         {
             'title': 'work2_title', 
             'description':"work2_content",
-            'illustration':"express1.jpg"
+            'illustration':"no_image_vert_black.jpg"
         },
         {
             'title': 'work3_title',
             'description':"work3_content",
-            'illustration':"express2.jpg"
+            'illustration':"no_image_vert_black.jpg"
         },
         {
             'title': "work4_title",
             'description':"work4_content",
-            'illustration':"express4.jpg"
+            'illustration':"no_image_vert_black.jpg"
         }
     ]
 }, 'en':{
@@ -1139,22 +1149,22 @@ dictionary = {'fr':{
         {
             'title': 'Exceptional Quality Care',
             'description':"Our laundry company is dedicated to delivering exceptional quality care for every garment. We use state-of-the-art equipment and eco-friendly detergents that ensure your clothes are cleaned thoroughly while maintaining their original texture and color. Each item is inspected and treated by our skilled professionals to remove stains and protect delicate fabrics, providing you with perfectly clean and fresh-smelling laundry every time.",
-            'illustration':"img1.jpeg"
+            'illustration':"no_image_vert_black.jpg"
         },
         {
             'title': 'Convenient Pickup & Delivery Service',
             'description':"We understand that your time is valuable, which is why we offer a convenient pickup and delivery service. Simply schedule a pickup time that suits you, and our reliable team will collect your laundry from your doorstep. Once cleaned and carefully packaged, we will return it to you at a time of your choosing. This hassle-free service is designed to fit seamlessly into your busy lifestyle, making laundry day a thing of the past.",
-            'illustration':"express1.jpg"
+            'illustration':"no_image_vert_black.jpg"
         },
         {
             'title': 'Customizable Laundry Plans',
             'description':"Our customizable laundry plans are tailored to meet your unique needs. Whether you require weekly, bi-weekly, or monthly services, we offer flexible scheduling options that can be adjusted to suit your requirements. Additionally, our specialized plans for different types of laundry, such as business attire, casual wear, and household items, ensure that every piece of fabric receives the specific care it needs.",
-            'illustration':"express2.jpg"
+            'illustration':"no_image_vert_black.jpg"
         },
         {
             'title': 'Affordable Pricing',
             'description':"Quality laundry services don't have to come with a hefty price tag. Our competitive pricing structure is designed to offer exceptional value without compromising on quality. We provide clear and transparent pricing with no hidden fees, so you always know what to expect. Plus, we offer special discounts and loyalty programs to make our services even more affordable for our regular customers.",
-            'illustration':"express4.jpg"
+            'illustration':"no_image_vert_black.jpg"
         }
     ]
 
@@ -1198,22 +1208,22 @@ dictionary = {'fr':{
         {
             'title': 'Uitzonderlijke kwaliteitszorg',
             'description':"Ons wasserijbedrijf is toegewijd aan het leveren van uitzonderlijke kwaliteitszorg voor elk kledingstuk. We gebruiken geavanceerde apparatuur en milieuvriendelijke wasmiddelen die ervoor zorgen dat uw kleding grondig wordt gereinigd terwijl de oorspronkelijke textuur en kleur behouden blijven. Elk item wordt geïnspecteerd en behandeld door onze bekwame professionals om vlekken te verwijderen en delicate stoffen te beschermen, waardoor u elke keer perfect schone en fris ruikende was krijgt.",
-            'illustration':"img1.jpeg"
+            'illustration':"no_image_vertical.png"
         },
         {
             'title': 'Handige ophaal- en bezorgservice',
             'description':"We begrijpen dat uw tijd kostbaar is, daarom bieden we een handige ophaal- en bezorgservice aan. Plan eenvoudig een ophaaltijd die bij u past, en ons betrouwbare team haalt uw wasgoed op bij uw voordeur. Zodra het is gereinigd en zorgvuldig verpakt, zullen we het op een door u gekozen tijdstip aan u teruggeven. Deze moeiteloze service is ontworpen om naadloos aan te sluiten bij uw drukke levensstijl, waardoor de wasdag tot het verleden behoort.",
-            'illustration':"express1.jpg"
+            'illustration':"no_image_vertical.png"
         },
         {
             'title': 'Aanpasbare wasplannen',
             'description':"Onze aanpasbare wasplannen zijn ontworpen om aan uw unieke behoeften te voldoen. Of u nu wekelijkse, tweewekelijkse of maandelijkse diensten nodig heeft, wij bieden flexibele planningsopties die kunnen worden aangepast aan uw wensen. Bovendien zorgen onze gespecialiseerde plannen voor verschillende soorten was, zoals zakelijke kleding, vrijetijdskleding en huishoudelijke artikelen, ervoor dat elk stuk stof de specifieke zorg krijgt die het nodig heeft.",   
-            'illustration':"express2.jpg"
+            'illustration':"no_image_vertical.png"
         },
         {
             'title': 'Betaalbare prijzen',
             'description':"Kwaliteitsvolle wasservices hoeven niet duur te zijn. Onze concurrerende prijsstructuur is ontworpen om uitzonderlijke waarde te bieden zonder in te boeten aan kwaliteit. We bieden duidelijke en transparante prijzen zonder verborgen kosten, zodat u altijd weet wat u kunt verwachten. Bovendien bieden we speciale kortingen en loyaliteitsprogramma's om onze diensten nog betaalbaarder te maken voor onze vaste klanten.",
-            'illustration':"express4.jpg"
+            'illustration':"no_image_vertical.png"
         }
     ]
 
@@ -1256,22 +1266,22 @@ dictionary = {'fr':{
         {
             'title': 'Cura della qualità eccezionale',
             'description':"La nostra azienda di lavanderia si impegna a fornire una cura della qualità eccezionale per ogni capo. Utilizziamo attrezzature all'avanguardia e detergenti ecologici che garantiscono una pulizia profonda dei tuoi vestiti preservandone la texture e il colore originali. Ogni articolo viene ispezionato e trattato dai nostri professionisti qualificati per eliminare le macchie e proteggere i tessuti delicati, offrendoti così un bucato perfettamente pulito e fresco ogni volta.",
-            'illustration':"img1.jpeg"
+            'illustration':"no_image_vertical.png"
         },
         {
             'title': 'Servizio di ritiro e consegna comodo',
             'description':"Sappiamo che il tuo tempo è prezioso, ecco perché offriamo un servizio di ritiro e consegna comodo. Basta pianificare un orario di ritiro che ti convenga, e il nostro team affidabile verrà a ritirare il tuo bucato alla tua porta. Una volta pulito e accuratamente confezionato, te lo restituiremo all'ora che preferisci. Questo servizio senza stress è progettato per integrarsi perfettamente nel tuo stile di vita frenetico, facendo del giorno del bucato un lontano ricordo.",
-            'illustration':"express1.jpg"
+            'illustration':"no_image_vertical.png"
         },
         {
             'title': 'Piani di lavanderia personalizzabili',
             'description':"I nostri piani di lavanderia personalizzabili sono progettati per soddisfare le tue esigenze specifiche. Che tu abbia bisogno di un servizio di pulizia regolare o occasionale, abbiamo una soluzione adatta al tuo programma e al tuo budget. I nostri pacchetti flessibili ti consentono di scegliere i servizi di cui hai bisogno, quando ne hai bisogno, offrendoti così una soluzione di lavanderia su misura che soddisfa le tue aspettative.",
-            'illustration':"express2.jpg"
+            'illustration':"no_image_vertical.png"
         },
         {
             'title': 'Prezzi competitivi',
             'description':"Offriamo prezzi competitivi per i nostri servizi di lavanderia e lavaggio a secco. I nostri prezzi convenienti sono progettati per soddisfare le tue esigenze di pulizia senza compromettere il tuo budget. Offriamo pacchetti di lavanderia flessibili che ti consentono di scegliere i servizi di cui hai bisogno, quando ne hai bisogno, offrendoti così una soluzione di pulizia su misura che soddisfa le tue aspettative.",    
-            'illustration':"express4.jpg"
+            'illustration':"no_image_vertical.png"
         }
     ]
 }}

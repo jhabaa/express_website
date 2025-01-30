@@ -1180,3 +1180,9 @@ msgstr "Description Zippers for dresses (up to 50 cm)"
 msgid "Localization_title_1"
 msgstr "Find Us"
 
+#, fuzzy
+msgid "about_sub2"
+msgstr ""
+"Discover our innovative and eco-friendly cleaning solutions.\n"
+"Give your laundry an unparalleled shine while respecting the planet."
+

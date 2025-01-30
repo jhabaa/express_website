@@ -1086,3 +1086,6 @@ msgstr "Description des tirettes/fermetures éclair pour robes jusqu'à 50 cm"
 
 msgid "Localization_title_1"
 msgstr ""
+
+msgid "about_sub2"
+msgstr ""

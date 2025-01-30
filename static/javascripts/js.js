@@ -24,13 +24,15 @@ let store_cards = document.querySelectorAll('.store_card');
 let sublinks = document.querySelectorAll('.sublink');
 let pricing_links = document.getElementById('pricing_links');
 let phonesPictures = document.querySelectorAll('.phone');
-
+let about_subtitle = document.querySelector('#about_subtitle');
 //Numbers 
 let exp_years = document.querySelector('#years_exp');
 let partners = document.querySelector('#partners');
 var numbers_values = {years:0,
     partners:0,
 }
+
+
 //engagement cards 
 let engagement_card = document.querySelector('#engagement-card');
 if (engagement_card) { 

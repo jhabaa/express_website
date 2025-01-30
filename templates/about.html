@@ -2,15 +2,29 @@
 {% block title %} {{ _('About') }} {% endblock %}
 
 {% block page %}
-<section class="page2 invert" id="about">
-    <div class="about-header">
-        <div class="content">
-            <div class="presentationBloc">
-                <h1 class="ExpressTitle">{{_('about_title')}}</h1>
-                <p>{{_('about_sub')}}</p>
-            </div>
-        </div>
+<section class="page1">
+    <img src="/static/imagesweb/about.jpg" alt="" class="phone">
+    <div class="presentationBloc">
+        <h1 class="ExpressTitle">{{ _('about_title') }}</h1>
+        <p id="about_subtitle"></p>
+        <a href="https://testflight.apple.com/join/r5vANLZh" class="">
+            <img src="/static/imagesweb/apple.svg" alt="" class="apple">
+        </a>
     </div>
+</section>
+
+<script>;
+    var typed = new Typed('#about_subtitle', {
+        strings: [{{ _('about_sub') | tojson }}, {{ _('about_sub2') | tojson }}],
+        typeSpeed: 0,
+        backSpeed: 0,
+        fadeOut: true,
+        smartBackspace: true,
+        delay : 1000,
+        loop: true,
+    });
+</script>
+<section class="page2 invert" id="about">
     <div class="about-content">
         
         <div class="reviews" data-aos="fade-down" data-aos-duration="1500">

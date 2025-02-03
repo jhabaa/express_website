@@ -69,6 +69,7 @@ let numbers_animation = anime ({
     round: 1,
     easing: 'easeInOutExpo',
     autoplay:false,
+    duration:1000,
     update: function(){
         exp_years.innerHTML = numbers_values.years;
         partners.innerHTML = numbers_values.partners;
@@ -78,6 +79,7 @@ var callback = function(entries, observer){
     entries.forEach(entry => {
         if (entry.isIntersecting){
             numbers_animation.play();
+            
         }else {
             numbers_animation.pause();
         }
@@ -140,7 +142,7 @@ if (document.querySelector('.splide')){
 
 // First, if we have services, activat the first one 
 if (services.length > 0) {
-    services.item(0).classList.add('active');
+    services.item(1).classList.add('active');
     // Now set the query when we hover the rest 
     services.forEach(function(service) {
         service.addEventListener('mouseover', function() {

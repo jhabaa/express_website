@@ -118,9 +118,7 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
                             
                         </ul>
                     </li>
-                    <li class="nav_link hidden"><a href="{{ url_for('about', lang = lang)}}">{{ _('About') }}</a></li>
                     <li class="nav_link hidden"><a href="{{ url_for('delivery', lang = lang)}}"> {{_('Delivery')}}</a></li>
-                    <li class="nav_link hidden"><a href="{{ url_for('contact', lang = lang)}}">{{ _('Contact') }}</a></li>
                     <li class="nav_link hidden">
                         <a href="{{ url_for('localization', lang = lang)}}"> {{_('Localization')}} </a>
                         <ul class="sublinks">
@@ -147,6 +145,10 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
                             </div>
                         </ul>
                     </li>
+                    <li class="nav_link hidden"><a href="{{ url_for('about', lang = lang)}}">{{ _('About') }}</a></li>
+                    
+                    <li class="nav_link hidden"><a href="{{ url_for('contact', lang = lang)}}">{{ _('Contact') }}</a></li>
+                   
                     
                 </ul>
 
@@ -199,13 +201,21 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
 
             <a href="mailto:info@REMOVED" class="mailto">info@REMOVED</a>
         </div>
+        
         <div class="right">
+            <div class="btns">
+                <a href="#" id="collaboration_btn">{{_('collab')}}</a>
+                <a href="#" id="carrier_btn">{{_('carrier')}}</a>
+            </div>
+            
             <div class="links">
                 <a href="{{ url_for('pricing', lang = lang)}}">{{ _('Pricing') }}</a>
-                <a href="{{ url_for('about', lang = lang)}}">{{ _('About') }}</a>
                 <a href="{{ url_for('delivery', lang = lang)}}"> {{_('Delivery')}}</a>
-                <a href="{{ url_for('contact', lang = lang)}}">{{ _('Contact') }}</a>
                 <a href="{{ url_for('localization', lang = lang)}}"> {{_('Localization')}} </a>
+                <a href="{{ url_for('about', lang = lang)}}">{{ _('About') }}</a>
+                
+                <a href="{{ url_for('contact', lang = lang)}}">{{ _('Contact') }}</a>
+                
             </div>
             <div class="socials">
                 <a href="https://www.facebook.com/expressdryclean" target="_blank">

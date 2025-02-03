@@ -1217,3 +1217,13 @@ msgstr ""
 msgid "Languages"
 msgstr ""
 
+msgid "collab"
+msgstr ""
+
+msgid "carrier"
+msgstr ""
+
+#, fuzzy
+msgid "write_email"
+msgstr "Indirizzo email"
+

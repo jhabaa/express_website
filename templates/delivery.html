@@ -50,11 +50,39 @@
                 <p>
                     {{_('delivery_text_1')}}
                     <br></br>
-                    <ul>
-                        <li>{{_('delivery_zone_1')}}</li>
-                        <li>{{_('delivery_zone_2')}}</li>
-                        <li>{{_('delivery_zone_3')}}</li>
-                    </ul>
+                    <div id="prices_list"  data-title="{{_('Pricing')}}">
+                    
+                        <div class="price-card tilt_card" data-aos="fade-up">
+                            <div class="js-tilt-glare">
+                                <div class="js-tilt-glare-inner">
+                                    <img src="/static/imagesweb/logo.png" alt="" class="price-card-image">
+                                </div>
+                            </div>
+                            <h2>{{_('delivery_zone_1')}}</h2>
+                            <span class="value">
+                                {{ params.tarif_bruxelles }}€
+                            </span>
+                        </div>
+                        <div class="price-card tilt_card" data-aos="fade-left">
+                            <div class="js-tilt-glare">
+                                <div class="js-tilt-glare-inner">
+                                    <img src="/static/imagesweb/logo.png" alt="" class="price-card-image">
+                                </div>
+                            </div>
+                            <h2>{{_('delivery_zone_2')}}</h2>
+                            <span class="value">
+                                {{ params.tarif_brabant }}€
+                            </span>
+                        </div>
+                        <div class="price-card tilt_card" data-aos="fade-right">
+                            <div class="js-tilt-glare">
+                                <div class="js-tilt-glare-inner">
+                                    <img src="/static/imagesweb/logo.png" alt="" class="price-card-image">
+                                </div>
+                            </div>
+                            <h2>{{_('delivery_zone_3')}}</h2>
+                        </div>
+                    </div>
                     <br></br>
                     {{_('delivery_text_2')}}
                 </p>
@@ -65,30 +93,44 @@
         
         
     </div>
-        <!-- Page 2 -->
-    <div  id="delivery">
-        <div class="delivery-bloc">
-            <div class="title1">{{_('delivery_bloc_1_title')}}</div>
-            <div class="subtitle">{{_('delivery_bloc_1_sub')}}</div>
-        </div>
 
-        <div class="delivery-bloc">
-            <div class="title1">{{_('delivery_bloc_2_title')}}</div>
-            <div class="subtitle">{{_('delivery_bloc_2_sub')}} </div>
-        </div>
 
-        <div class="delivery-bloc">
-            <div class="title1">{{_('delivery_bloc_3_title')}}</div>
-            <div class="subtitle">{{_('delivery_bloc_3_sub')}}</div>
-        </div>
-        <div class="delivery-bloc">
-            <div class="title1">{{_('delivery_bloc_4_title')}}</div>
-            <div class="subtitle">{{_('delivery_bloc_4_sub')}} </div>
-        </div>
-        <div class="delivery-bloc">
-            <img src="/static/imagesweb/transport.jpeg" alt="" class="delivery-img">
-        </div>
+    <div class="about-content">
         
+        <div class="engagements">
+            
+            <div class="title1" data-aos="fade-up">{{_('engagements_title_2')}}</div>
+            <div class="subtitle"data-aos="fade-down" data-aos-delay="200"> {{_('engagements_sub')}}</div>
+            <a href="{{url_for("pricing", lang=lang)}}" class="button">{{_('engagements_btn1')}}</a>
+            <div class="empty-space"></div>
+            <div class="values">
+                <div class="block spacer">
+                    <div class="engagement dark" data-aos="fade-down">
+                        <img src="/static/images/pub3.jpg" alt="nettoyage haut de gamme" class="engagement-image">
+                        <span class="title">{{_('delivery_bloc_1_title')}}</span>
+                        <span class="value">{{_('delivery_bloc_1_sub')}}</span>
+                    </div>
+                    <div class="engagement dark" data-aos="fade-left">
+                        <img src="/static/imagesweb/transport.jpeg" alt="collecte" class="engagement-image">
+                        <span class="title">{{_('delivery_bloc_2_title')}}</span>
+                        <span class="value">{{_('delivery_bloc_2_sub')}}</span>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="engagement dark" data-aos="fade-up">
+                        <img src="/static/images/CintresLight.jpg" alt="nettoyage et soins" class="engagement-image">
+                        <span class="title">{{_('delivery_bloc_3_title')}}</span>
+                        <span class="value">{{_('delivery_bloc_3_sub')}}</span>
+                    </div>
+                    <div class="engagement dark" data-aos="fade-right">
+                        <img src="/static/imagesweb/share_img.jpeg" alt="retour de vetements" class="engagement-image">
+                        <span class="title">{{_('delivery_bloc_4_title')}}</span>
+                        <span class="value">{{_('delivery_bloc_4_sub')}}</span>
+                    </div>
+                </div>
+            </div>
+            <a href="{{url_for('localization', lang = lang )}}" class="button">{{_('engagements_btn2')}}</a>
+        </div>
     </div>
 
 </section>

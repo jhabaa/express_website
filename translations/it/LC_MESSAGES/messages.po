@@ -1214,3 +1214,6 @@ msgstr ""
 "Scopri le nostre soluzioni di pulizia innovative ed ecologiche.\n"
 "Offri al tuo bucato una brillantezza senza pari rispettando l'ambiente."
 
+msgid "Languages"
+msgstr ""
+

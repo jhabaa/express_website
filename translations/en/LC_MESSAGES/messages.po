@@ -1186,3 +1186,6 @@ msgstr ""
 "Discover our innovative and eco-friendly cleaning solutions.\n"
 "Give your laundry an unparalleled shine while respecting the planet."
 
+msgid "Languages"
+msgstr ""
+

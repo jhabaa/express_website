@@ -1257,3 +1257,6 @@ msgstr ""
 "Ontdek onze innovatieve en milieuvriendelijke schoonmaakoplossingen.\n"
 "Geef uw wasgoed een ongeëvenaarde glans terwijl u het milieu respecteert."
 
+msgid "Languages"
+msgstr ""
+

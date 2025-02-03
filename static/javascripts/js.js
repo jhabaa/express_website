@@ -25,6 +25,8 @@ let sublinks = document.querySelectorAll('.sublink');
 let pricing_links = document.getElementById('pricing_links');
 let phonesPictures = document.querySelectorAll('.phone');
 let about_subtitle = document.querySelector('#about_subtitle');
+// Vanilla tilt el
+let titl_cards = document.querySelectorAll('.tilt_card');
 //Numbers 
 let exp_years = document.querySelector('#years_exp');
 let partners = document.querySelector('#partners');
@@ -35,12 +37,17 @@ var numbers_values = {years:0,
 
 //engagement cards 
 let engagement_card = document.querySelector('#engagement-card');
-if (engagement_card) { 
-    console.log(engagement_card);
-    VanillaTilt.init(engagement_card, {
+if (titl_cards.length > 0) { 
+    VanillaTilt.init(titl_cards, {
         max: 25,
         speed: 400,
         glare: true,
+        transition: true,
+        perspective: 3000,
+        easing: "cubic-bezier(.03,.98,.52,.99)",
+        glarePrerender: true,
+        "full-page-listening": true,
+        gyroscope: true,
         "max-glare": 0.5,
     });
 }
@@ -363,10 +370,10 @@ burger.onclick = function() {
 
 }
 
-lang_btn.onclick = function() {
+/* lang_btn.onclick = function() {
     lang_btn.classList.toggle('extended');
 }
-
+ */
 
 function selectCat(selectedCat) {
    console.log(typeof(selectedCat));

@@ -95,7 +95,7 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
                 <ul id="nav_link">
                     <li class="nav_link hidden">
                         <a href="{{ url_for('pricing' , lang = lang) }}"> {{_("Pricing")}}</a>
-                        <ul class="sublinks">
+                        <ul class="sublinks" data-aos="fade-down">
                             <div class="mainlinks">
                                 <span class="links_title">{{_("Pricing_title_1")}}</span>
                                 {% for category in categories %}
@@ -149,21 +149,27 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
                     </li>
                     
                 </ul>
+
+                <ul id="lang_link">
+                    <li class="nav_link hidden">
+                        <a href="#" id="active_lang">
+                            <img src="/static/imagesweb/{{lang}}.svg" alt="">
+
+                        </a>
+                        <ul class="sublinks">
+                            <div class="mainlinks tiny">
+                                <span class="links_title">{{_("Languages")}}</span>
+                                    <a href="{{ url_for(current_page, lang='fr')}}" class="{% if lang == 'fr' %} hide {% endif %}">Français</a>
+                                    <a href="{{ url_for(current_page, lang='en')}}" class="{% if lang == 'en' %} hide {% endif %}">English</a>
+                                    <a href="{{ url_for(current_page, lang='nl')}}" class="{% if lang == 'nl' %} hide {% endif %}">Nederlands</a>
+                                    <a href="{{ url_for(current_page, lang='it')}}" class="{% if lang == 'it' %} hide {% endif %}">Italiano</a>
+                                
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
             </nav>
     
-            <!-- languages -->
-            <div class="lang" id="lang">
-                <div class="active" id="active_lang">
-                    <img src="/static/imagesweb/{{lang}}.svg" alt="">
-                    <span>{{ lang }}</span>
-                </div>
-                <a href="{{ url_for(current_page, lang='fr')}}" class="{% if lang == 'fr' %} hide {% endif %}">
-                   FR
-                </a>
-                <a href="{{ url_for(current_page, lang='en')}}" class="{% if lang == 'en' %} hide {% endif %}">EN</a>
-                <a href="{{ url_for(current_page, lang='nl')}}" class="{% if lang == 'nl' %} hide {% endif %}">NL</a>
-                <a href="{{ url_for(current_page, lang='it')}}" class="{% if lang == 'it' %} hide {% endif %}">IT</a>
-            </div>
         </div>
         
         <div class="down" id="header_bar_subBlock">
@@ -235,7 +241,7 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <script src="/static/javascripts/vanilla-tilt.js"></script>
+    <script src="/static/javascripts/vanilla-tilt.min.js"></script>
     <script src="/static/javascripts/anime.min.js"></script>
     <script src="/static/javascripts/js.js" async defer></script>
     

@@ -516,10 +516,12 @@ def contact(lang = 'fr', subpage = None, message = None):
 @app.route('/<lang>/delivery/<subpage>')
 def delivery(lang = 'fr', subpage = None , message = None):
     session['lang'] = lang
+    params = GetData('full','params')[-1]
+    print(params)
     stores = GetData('full','store')
     services = GetData('full','service')
     categories = sorted(GetData('full','category'), key=lambda x: x['index'])# Get just the categories 
-    return render_template('delivery.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'delivery', stores = stores, services = services, categories = categories)   
+    return render_template('delivery.html', params = params, lang = session['lang'], dictionary = dictionary[lang], current_page = 'delivery', stores = stores, services = services, categories = categories)   
 
 @app.route('/<lang>/localization/')
 @app.route('/<lang>/localization/<subpage>')
@@ -529,6 +531,7 @@ def localization(lang = 'fr', subpage = None ):
     services = GetData('full','service')
     categories = sorted(GetData('full','category'), key=lambda x: x['index'])# Get just the categories 
     available_store = [ x for x in stores if x['name'] == subpage][-1] if subpage else None
+
     return render_template('localization.html', lang = session['lang'], dictionary = dictionary[lang], stores = stores, selected_store = available_store, current_page = 'localization', services = services, categories = categories)
 
 

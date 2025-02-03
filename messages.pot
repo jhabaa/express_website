@@ -1089,3 +1089,6 @@ msgstr ""
 
 msgid "about_sub2"
 msgstr ""
+
+msgid "Languages"
+msgstr ""

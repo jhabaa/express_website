@@ -218,11 +218,23 @@ header.extended{
     height: 100%;
     max-height: none;
     width: 100vw;
+    margin: unset;
+    padding-left: unset;
     flex-flow: column nowrap !important;
     justify-content: baseline;
     align-items: baseline; 
     overflow: hidden;
     color: var(--header-text);
+}
+header.extended .down{
+    display: none;
+}
+header.extended .up{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0px;
+    overflow: hidden;
 }
 
 header .up .logos{
@@ -291,7 +303,7 @@ header .up .lang a{
     color: var(--header-text);
 }
 
-header .up nav ul li.hidden :nth-child(2){
+header .up nav ul li.hidden .sublinks{
     display: none;
 }
 
@@ -393,7 +405,10 @@ header .lang.extended a:hover{
 header.extended nav{
     display: flex;
     font-size: calc(8vw + 12px);
-    flex-wrap: nowrap;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    flex-flow: column nowrap;
 }
 
 header.extended .logo{
@@ -406,18 +421,21 @@ header.extended nav ul{
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    align-items: start;
     -webkit-filter: unset;
     filter: unset;
     padding-left: 10px;
     list-style: none;
+    width: 100%;
 }
 
 header.extended nav ul li{
+    position: relative;
     padding: 2vh 0;
     display: flex ;
+    width: 100%;
     flex-wrap: nowrap;
-    flex-direction: column;
+    flex-direction: row;
+    font-size: clamp(20px, 14vw, 80px);
 }
 
 header.extended nav ul li:hover{
@@ -591,6 +609,7 @@ header.extended .lang a{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     max-width: 600px;
     text-align: left;
+
 }
 .presentationBloc p{
     font-size: calc(1rem + 1vw);
@@ -1100,6 +1119,8 @@ header.extended .lang a{
     max-width: 1000px;
     gap: 5vw;
     color: var(--header-text);
+    flex-flow: column wrap;
+    
 }
 .contact .right {
     display: flex;
@@ -1186,7 +1207,7 @@ header.extended .lang a{
     display: flex;
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     margin-top: 100px;
     flex-wrap: nowrap;
     justify-content: left;
@@ -1242,7 +1263,6 @@ header.extended .lang a{
     max-width: 200px;
     max-height: 200px;
     -webkit-filter: grayscale(100%);
-    opacity: .7;
     transition: all 0.5s ease-in-out;
 }
 
@@ -1263,10 +1283,11 @@ header.extended .lang a{
     display: flex;
     flex-direction: column;
     justify-content: baseline;
+    flex-wrap: wrap;
     align-items: start;
     width: 100%;
     height: 100%;
-    max-width: 500px;
+    max-width: 700px;
     color: var(--header-text);
     font-weight: 700;
     font-size: 20px;
@@ -1278,13 +1299,14 @@ header.extended .lang a{
 .page2 .contact form .entry{
     align-self: first baseline;
     display: flex;
+    flex-flow: row wrap;
+    width: 100%;
     gap: 30px;
 }
 form .block{
     display: flex;
     flex-flow: column nowrap;
     gap: 5px;
-    width: fit-content;
     color: var(--large-title-text);
 }
 form .block input{
@@ -1293,6 +1315,7 @@ form .block input{
     border-radius: 10px;
     font-size: 20px;
     padding: 10px;
+    max-width: 200px;
     border: var(--main-bg-color) 1px solid;
 }
 form .block input:required{
@@ -1416,7 +1439,6 @@ form .submit-btn:hover{
     padding-bottom: 3vmin;
     font-size: 2rem;
     font-weight: 700;
-    padding-left: 10px;
     z-index: 100;
     max-width: 600px;
     text-align: center;
@@ -2188,7 +2210,6 @@ form .submit-btn:hover{
     width: 100%;
     object-fit: contain;
     animation: circularMotion 100s linear infinite;
-
 }
 
 
@@ -2214,6 +2235,7 @@ form .submit-btn:hover{
 
 
 .engagement .title{
+    width: 100%;
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--express_blue);
@@ -2222,6 +2244,8 @@ form .submit-btn:hover{
     opacity: .8;
     margin-top: 20px;
     z-index: 3;
+    white-space: pre-wrap;
+
 }
 .engagement.dark .title{
     color: var(--pure-white);
@@ -2459,6 +2483,17 @@ form .submit-btn:hover{
     backdrop-filter: blur(2rem);
     -webkit-backdrop-filter: blur(2rem);
     padding-top: 10vmax;
+    width: 100%;
+    max-width: 100vw;
+}
+#contact .subtitle{
+    overflow: hidden;
+    padding-inline: 100px;
+}
+
+#contact .title1 h2{
+    font-size: clamp(20px, 12vw, 80px);
+    overflow: hidden;
 }
 
 #offers{
@@ -2477,7 +2512,7 @@ form .submit-btn:hover{
     text-wrap: nowrap;
     white-space: nowrap;
     shape-outside: content-box;
-    gap: 5vw;
+    gap: 30px;
 }
 
 
@@ -2489,22 +2524,29 @@ form .submit-btn:hover{
     align-items: center;
     justify-content: center;
     gap: 10px;
-    min-width: 200px;
+    min-width: 130px;
     padding-block: 10px;
     padding-inline: 8px;
     border-radius: 2rem;
     font-size: 1.2rem;
     box-shadow: #0000008a 0 0 3px;
-    background-color: var(--express_blue);
     overflow: hidden;
+    color: var(--express_blue);
+    z-index: 5;
 }
 
 .contacts-btn a .content{
     position: relative;
     display: flex;
-    color: var(--main-bg-color);
-    mix-blend-mode: difference;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 10px;
     z-index: 10;
+}
+
+.contacts-btn a svg{
+    width: 20px;
+    height: 20px;
 }
 
 .contacts-btn a::after{
@@ -2513,7 +2555,7 @@ form .submit-btn:hover{
     display: block;
     width: 100%;
     height: 100%;
-    background-color: var(--white-cosmic);
+    background-color: var(--express_blue);
     z-index: 1;
     transform: translateX(-100%);
 }
@@ -2524,8 +2566,18 @@ form .submit-btn:hover{
 }
 
 .contacts-btn a:nth-child(2){
-    color: var(--large-title-text);
+    background-color: var(--express_blue);
+    color: var(--white-cosmic);
     font-weight: 700;
+}
+.contacts-btn a:hover:nth-child(1){
+    color: var(--white-cosmic);
+}
+.contacts-btn a:hover:nth-child(2){
+    color: var(--express_blue);
+}
+.contacts-btn a:hover:nth-child(2)::after{
+    background-color:var(--white-cosmic);
 }
 
 .contacts-btn a img{
@@ -2561,6 +2613,7 @@ form .submit-btn:hover{
 		z-index:100;
         width: 100%;
         max-width: 800px;
+        flex-flow: row nowrap;
 	}
 
 }
@@ -2756,6 +2809,7 @@ footer .right .icon-link:hover{
 #delivery_page .description .header .subtitle{
     width: 90%;
     max-width: fit-content;
+    overflow: hidden;
     margin-block: 20px;
 }
 #delivery_page .description .header .subtitle ul{
@@ -3298,29 +3352,48 @@ iframe {
     animation-delay: 1s;
     transition: all 0.5s ease-in-out;
 }
+@media screen and (min-width= 600px) {
+    #lang_link{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+    
+    #lang_link li{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: right;
+        z-index: 5;
+        width: fit-content;
+    }
+    
+    #lang_link .sublinks {
+        background-color: transparent;
+        left: unset;
+        right: 0px;
+        border:  unset;
+        justify-content: right;
+    }
+    
+    #lang_link .sublinks .mainlinks{
+        background-color: var(--transparent_white);
+    }
+}
 
-#lang_link{
+
+
+#mobile_lang_selector{
     display: flex;
-    flex-direction: row;
-    justify-content: left;
+    visibility: visible;
+    width: 100%;
+    flex-flow: row wrap;
+    gap: 10px;
+    justify-content: space-evenly;
+    max-width: 300px;
 }
-
-#lang_link li{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: right;
-    z-index: 5;
-    width: fit-content;
+#mobile_lang_selector.hidden{
+    visibility: hidden;
 }
-
-#lang_link .sublinks {
-    background-color: transparent;
-    left: unset;
-    right: 0px;
-    border:  unset;
-    justify-content: right;
-}
-
-#lang_link .sublinks .mainlinks{
-    background-color: var(--transparent_white);
+#mobile_lang_selector .hide{
+    display: none;
 }

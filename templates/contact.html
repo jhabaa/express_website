@@ -8,8 +8,10 @@
     <div class="description">
         <div class="title1">
             <h2> {{_('contact_title')}}<h2>
+
+        </div>
         <div class="header">
-            
+                
             <div class="subtitle">
                 <p> {{_('contact_sub')}}</p>
             </div>
@@ -17,15 +19,19 @@
             <div class="contacts-btn">
                 <a href="tel:+3224204130" class="btn">
                     <div class="content">
-                        <img src="/static/imagesweb/telephone-fill.svg" alt="" class="apple">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                        </svg>
                         <span> {{_('call_btn')}}</span>
                     </div>
-                   
+                
                 </a>
 
                 <a href="mailto:info@REMOVED" target="_blank">
                     <div class="content">
-                        <img src="/static/imagesweb/envelope-fill.svg" alt="" class="icon-link">
+                        <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                        </svg>
                         <span> {{_('email_btn')}}</span>
                     </div>
                     
@@ -33,23 +39,23 @@
             </div>
 
 
-        <!--Photos Wall -->
-        <div class="photowall">
-            <div class="scroller_in">
-                <img src="/static/imagesweb/team1.jpeg" alt="" class="photo">
-                <img src="/static/imagesweb/team2.jpeg" alt="" class="photo">
-                <img src="/static/imagesweb/team3.jpeg" alt="" class="photo">
-                <img src="/static/imagesweb/team4.jpeg" alt="" class="photo">
-                <img src="/static/imagesweb/team5.jpeg" alt="" class="photo">
-                <img src="/static/imagesweb/team6.jpeg" alt="" class="photo">
-                <img src="/static/imagesweb/team1.jpeg" alt="" class="photo">
-                <img src="/static/imagesweb/team2.jpeg" alt="" class="photo">
-                <img src="/static/imagesweb/team3.jpeg" alt="" class="photo">
-                <img src="/static/imagesweb/team4.jpeg" alt="" class="photo">
-                <img src="/static/imagesweb/team5.jpeg" alt="" class="photo">
-                <img src="/static/imagesweb/team6.jpeg" alt="" class="photo">
+            <!--Photos Wall -->
+            <div class="photowall">
+                <div class="scroller_in">
+                    <img src="/static/imagesweb/team1.jpeg" alt="" class="photo">
+                    <img src="/static/imagesweb/team2.jpeg" alt="" class="photo">
+                    <img src="/static/imagesweb/team3.jpeg" alt="" class="photo">
+                    <img src="/static/imagesweb/team4.jpeg" alt="" class="photo">
+                    <img src="/static/imagesweb/team5.jpeg" alt="" class="photo">
+                    <img src="/static/imagesweb/team6.jpeg" alt="" class="photo">
+                    <img src="/static/imagesweb/team1.jpeg" alt="" class="photo">
+                    <img src="/static/imagesweb/team2.jpeg" alt="" class="photo">
+                    <img src="/static/imagesweb/team3.jpeg" alt="" class="photo">
+                    <img src="/static/imagesweb/team4.jpeg" alt="" class="photo">
+                    <img src="/static/imagesweb/team5.jpeg" alt="" class="photo">
+                    <img src="/static/imagesweb/team6.jpeg" alt="" class="photo">
+                </div>
             </div>
-        </div>
         </div>
     </div>
 
@@ -91,30 +97,30 @@
                 <div class="entry">
                     <div class="block">
                         <span>{{_('firstname')}}</span>
-                        <input type="text" required name="first_name" id="first_name" placeholder="First name" class="input">
+                        <input type="text" required name="first_name" id="first_name" placeholder={{_('firstname')}} class="input">
                     </div>
                     <div class="block">
                         <span>{{_('lastname')}}</span>
-                        <input type="text" name="last_name" id="last_name" placeholder="Last name" class="input">
+                        <input type="text" name="last_name" id="last_name" placeholder={{_('lastname')}} class="input">
                     </div>
                 </div>
                 <div class="entry">
                     <div class="block">
                         <span>{{_('phone_number')}}</span>
-                        <input type="tel" required name="phone" id="phone" placeholder="Phone number" class="input">
+                        <input type="tel" required name="phone" id="phone" placeholder={{_('phone_number')}} class="input">
                     </div>
                 </div>
                 <div class="entry">
                     <div class="block">
                         <span>{{_('email')}}</span>
-                        <input type="email" required name="email" id="email" placeholder="Email" class="input">
+                        <input type="email" required name="email" id="email" placeholder={{_('email')}} class="input">
                     </div>
                 </div>
 
                 <div class="entry">
                     <div class="block">
                         <span>{{_('subject')}}</span>
-                        <textarea name="subject" required rows="5" id="subject" placeholder="Subject" class="input"></textarea>
+                        <textarea name="subject" required rows="6" id="subject" placeholder={{_('subject')}} class="input"></textarea>
                     </div>
                 </div>
                 {% if message %}

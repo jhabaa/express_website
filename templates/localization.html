@@ -74,7 +74,7 @@
                     {% for store in stores %}
                 <div class="location" data-aos = "fade-up" data-aos-delay = {{loop.index * 300}} data-aos-duration = 1000>
                     
-                    <span class="bigTitle">{{ _(store.name) }}</span>
+                    <a class="bigTitle" href="{{ url_for('localization', lang = lang, subpage = store.name )}}">{{ _(store.name) }}</a>
                     {% if store.name != "App" %}
                         <span class="smallTitle">{{ _(store.adress) }}</span>
                     {% endif %}

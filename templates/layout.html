@@ -156,7 +156,6 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
                     <li class="nav_link hidden">
                         <a href="#" id="active_lang">
                             <img src="/static/imagesweb/{{lang}}.svg" alt="">
-
                         </a>
                         <ul class="sublinks">
                             <div class="mainlinks tiny">
@@ -168,8 +167,24 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
                                 
                             </div>
                         </ul>
+                        <div id="mobile_lang_selector" class="hidden">
+                                    <a href="{{ url_for(current_page, lang='fr')}}" class="{% if lang == 'fr' %} hide {% endif %}">
+                                        <img src="/static/imagesweb/fr.svg" alt="">
+                                    </a>
+                                    <a href="{{ url_for(current_page, lang='en')}}" class="{% if lang == 'en' %} hide {% endif %}">
+                                        <img src="/static/imagesweb/en.svg" alt="">
+                                    </a>
+                                    <a href="{{ url_for(current_page, lang='nl')}}" class="{% if lang == 'nl' %} hide {% endif %}">
+                                        <img src="/static/imagesweb/nl.svg" alt="">
+                                    </a>
+                                    <a href="{{ url_for(current_page, lang='it')}}" class="{% if lang == 'it' %} hide {% endif %}">
+                                        <img src="/static/imagesweb/it.svg" alt="">
+                                    </a>   
+                        </div>
                     </li>
                 </ul>
+
+
             </nav>
     
         </div>

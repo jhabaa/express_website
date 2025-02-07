@@ -102,6 +102,16 @@ phonesPictures.forEach(function(phone){
     });
 });
 
+function getDeviceType(){
+    let user_agent = navigator.userAgent;
+    if (user_agent.match(/Android/i)){
+        return 'android';
+    }else if (user_agent.match(/iPhone|iPad|iPod/i)){
+        return 'ios';
+    }
+    return 'desktop'
+}
+
 //Init AOS
 AOS.init();
 
@@ -179,26 +189,36 @@ if (sublinks.length > 0) {
         });
     });
 }
-
-navigationBtns.forEach(function(btn) {
-    console.log(btn);
-    btn.addEventListener('mouseover', function() {
-        // Get the second child of the btn
-        // We'll remove it when we quit the header
-        btn.classList.remove('hidden');
-        // Blur the background
-        // Only if the node has more than one child
-        if (btn.childElementCount <= 1){return}
-        blur_overlay.classList.remove('hidden');
-    })
-    btn.addEventListener('mouseleave', function() {
-        // Get the second child of the btn
-        // We'll remove it when we quit the header
-        btn.classList.add('hidden');
-        // Blur the background
-        blur_overlay.classList.add('hidden');
+// When we are on mobile, we can skip the step 
+if (getDeviceType() == 'desktop' && window.visualViewport.width > 1000){
+    navigationBtns.forEach(function(btn) {
+        console.log(btn);
+        btn.addEventListener('mouseover', function() {
+            // Get the second child of the btn
+            // We'll remove it when we quit the header
+            btn.classList.remove('hidden');
+            // Blur the background
+            // Only if the node has more than one child
+            if (btn.childElementCount <= 1){return}
+            blur_overlay.classList.remove('hidden');
+        })
+        btn.addEventListener('mouseleave', function() {
+            // Get the second child of the btn
+            // We'll remove it when we quit the header
+            btn.classList.add('hidden');
+            // Blur the background
+            blur_overlay.classList.add('hidden');
+        });
     });
-});
+}else{
+    // Adapt the extended headbar
+    // When we click on the lang flag, we show the selector
+    let a = document.getElementById('mobile_lang_selector')
+    document.getElementById('active_lang').addEventListener('click', (e) => {
+        a.classList.toggle('hidden');
+    })
+}
+
 
 header.addEventListener('mouseleave', function() {
 
@@ -391,16 +411,7 @@ function unselectCat(selectedCat) {
 
 // Funtion to go to a location on maps or google maps 
 
-function getDeviceType(){
-    let user_agent = navigator.userAgent;
-    let device_type = 'desktop';
-    if (user_agent.match(/Android/i)){
-        device_type = 'android';
-    }else if (user_agent.match(/iPhone|iPad|iPod/i)){
-        device_type = 'ios';
-    }
-    console.log(device_type);
-}
+
 
 function goToLocation(lon, lat){
     let device  = getDeviceType();
@@ -415,4 +426,3 @@ function goToLocation(lon, lat){
     }
 }
 
-getDeviceType();

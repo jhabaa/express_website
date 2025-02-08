@@ -1216,7 +1216,7 @@ form .block input {
     border: var(--main-bg-color) 1px solid;
 }
 
-form .block input:required {
+form .block input:invalid{
     border: #ff0000 1px solid;
 }
 
@@ -1337,7 +1337,7 @@ form .submit-btn:hover {
     z-index: 2;
     position: relative;
     font-size: 1.5rem;
-    color: var(--transparent_white);
+    color: var(--express_blue);
 }
 
 .input ::after {
@@ -1353,7 +1353,7 @@ form .submit-btn:hover {
 .input:focus {
     box-shadow: none;
     outline: none;
-    color: var(--express_blue);
+    color: var(--header-text);
     border-bottom: 2px solid var(--express_blue);
 }
 
@@ -2429,11 +2429,11 @@ form .submit-btn:hover {
 }
 
 .contacts-btn a:hover:nth-child(2) {
-    color: var (--express_blue);
+    color: var(--express_blue);
 }
 
 .contacts-btn a:hover:nth-child(2)::after {
-    background-color: var(--white-cosmic);
+    background-color: var(--pure-white);
 }
 
 contacts-btn a img {
@@ -2607,14 +2607,14 @@ footer .right .icon-link:hover {
     height: 100vh;
     z-index: 200;
     background: transparent;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     display: block;
     transition: all 0.5s ease-in-out;
 }
 
 .blurOverlay.hidden {
-    top: -100%;
+    top: -120vh;
     transition: all 0.5s ease-in-out;
 }
 

@@ -123,7 +123,7 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
                         <a href="{{ url_for('localization', lang = lang)}}"> {{_('Localization')}} </a>
                         <ul class="sublinks">
                             <div class="mainlinks">
-                                <span class="links_title">{{_("Localization_title_1")}}</span>
+                                <span class="links_title">{{_("Our Locations")}}</span>
                                 {% for store in stores %}
                                 <li>
                                     <a href="{{ url_for('localization', lang = lang, subpage = store.name )}}">

@@ -171,7 +171,7 @@
             
             <div class="title1" data-aos="fade-up">{{_('engagements_title_2')}}</div>
             <div class="subtitle"data-aos="fade-down" data-aos-delay="200"> {{_('engagements_sub')}}</div>
-            <a href="#" class="button">{{_('engagements_btn1')}}</a>
+            <a href="{{url_for("pricing", lang=lang)}}" class="button">{{_('engagements_btn1')}}</a>
             <div class="values">
                 <div class="block">
                     <div class="empty-card-up"></div>
@@ -232,7 +232,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="button">{{_('engagements_btn2')}}</a>
+            <a href="{{url_for('localization', lang = lang )}}" class="button">{{_('engagements_btn2')}}</a>
         </div>
     </div>
 </section>

@@ -1270,3 +1270,30 @@ msgstr ""
 msgid "write_email"
 msgstr "E-mailadres"
 
+#, fuzzy
+msgid "test"
+msgstr "Een schone jas is beter"
+
+#, fuzzy
+msgid "test2"
+msgstr "Contacteer ons"
+
+msgid "goodbye"
+msgstr ""
+
+msgid "welcome"
+msgstr ""
+
+msgid "CategoryTest1"
+msgstr ""
+
+#, fuzzy
+msgid "Description CategoryTest1"
+msgstr ""
+"“Perfecte aanpassingen voor kleding die bij u past.”\n"
+"“Een zoom die opnieuw moet worden gedaan of een knoop die niet blijft "
+"zitten? Wij zijn hier om uw kleding nieuw leven in te blazen!”"
+
+msgid "Informations CategoryTest1"
+msgstr ""
+

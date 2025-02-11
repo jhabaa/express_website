@@ -9,6 +9,10 @@ import os
 
 #languages management
 from flask_babel import Babel, gettext, _
+#I use Polib to read babel files
+import polib
+# I need to update translations files after adding new words to pot 
+import subprocess
 
 from unicodedata import decimal
 #from urllib import request
@@ -229,10 +233,23 @@ def GetData(filetype:str  ,name: str, where = None, lang = None):
     else:
         return a
 
+
+# Function to avoid SQL Injection 
+def escape (value : str):
+    return MySQL.escape_string(value)
+
 # Function to aperate - Create:Done
 @app.route('/api/<model>', methods=['POST','DELETE','PUT'])
 def Operate(model:str):
     cursor = mysql.new_cursor(dictionary = True, buffered = True)
+    # Get primary Key
+    cursor.execute(f"SHOW KEYS FROM {app.config['MYSQL_DB']}.{model} WHERE Key_name = 'PRIMARY'")
+    primary_key = cursor.fetchone()['Column_name']
+    print(f"Primary key : {primary_key}")
+    if not primary_key:
+        return jsonify({"status": "error", "message": "No primary key found"}), 400
+    
+
     result = ""
     if request.method == "POST":
         cursor.execute(f"SELECT * FROM {app.config['MYSQL_DB']}.{model}")
@@ -253,7 +270,20 @@ def Operate(model:str):
         cursor.execute(f"DELETE FROM {app.config['MYSQL_DB']}.{model} WHERE id = {request.json[model_ID]}")
         mysql.connection.commit()
         return "True"
-    
+    if request.method == "PUT":
+        # SQL UPDATE REQUEST 
+        
+        if model == "params":
+            updates = ", ".join([f"{att} = {request.json[att]}" for att in request.json.keys() if att != primary_key])
+            query = f"UPDATE {app.config['MYSQL_DB']}.{model} SET {updates} WHERE {primary_key} = {request.json[primary_key]}"
+        else:
+            updates = ", ".join([f"{att} = {FormatTextToMysql(request.json[att],1)}" for att in request.json.keys() if att != primary_key])
+            query = f"UPDATE {app.config['MYSQL_DB']}.{model} SET {updates} WHERE {primary_key} = '{FormatTextToMysql(request.json[primary_key],2)}'"
+        cursor.execute(query)
+        mysql.connection.commit()
+        cursor.close()
+        return jsonify({"status": "success", "message": "Element updated"}), 200
+       
 
     return "True"
 
@@ -544,6 +574,36 @@ def chatwithus():
     #send mail to user to inform him that his message has been sent
     send_email(to_addr=data['email'], subject="Message envoyé", user_name=data['first_name'], email_type="contact_touser") 
     return redirect(url_for('contact', lang = session['lang'], message = "Message envoyé"))
+
+
+# function to update the flask babel dictionnary from the app
+@app.route('/api/updatebabelpot', methods=['POST'])
+def updateBabel():
+    new_translations = request.json["translations"] # get new translations
+
+    if not new_translations:
+        return jsonify({"status": "error", "message": "No translations found"})
+    # Update the pot file with the new translations
+    pot = polib.pofile(f'./messages.pot')
+    for word in new_translations:
+        #create a new entry
+        word_entry = polib.POEntry(msgid=word, msgstr="")
+        if word_entry not in pot:
+            pot.append(word_entry)
+
+    pot.save(f'./messages.pot')
+    # Update the translations files
+    updating_process = subprocess.Popen(["pybabel", "update", "-i", "messages.pot", "-d", "translations"])
+    print("Updating translations files")
+    updating_process.wait()
+    print("Translations updated")
+    return jsonify({"status": "success", "message": "Translations updated"})
+
+@app.route('/babel_test')
+def babel_test():
+    pot = polib.pofile(f'./messages.pot')
+    t = {entry.msgid: entry.msgstr for entry in pot}
+    return t
 
 @app.route('/getservices')
 def show_sewing():

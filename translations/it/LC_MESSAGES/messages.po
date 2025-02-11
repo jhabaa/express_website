@@ -1227,3 +1227,28 @@ msgstr ""
 msgid "write_email"
 msgstr "Indirizzo email"
 
+#, fuzzy
+msgid "test"
+msgstr "Una giacca pulita è meglio"
+
+#, fuzzy
+msgid "test2"
+msgstr "Testo 6-2"
+
+msgid "goodbye"
+msgstr ""
+
+msgid "welcome"
+msgstr ""
+
+msgid "CategoryTest1"
+msgstr ""
+
+#, fuzzy
+msgid "Description CategoryTest1"
+msgstr "Descrizione Cucito"
+
+#, fuzzy
+msgid "Informations CategoryTest1"
+msgstr "Informazioni Cucito"
+

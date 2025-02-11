@@ -1199,3 +1199,34 @@ msgstr ""
 msgid "write_email"
 msgstr "Email address"
 
+#, fuzzy
+msgid "test"
+msgstr "A clean jacket is better"
+
+#, fuzzy
+msgid "test2"
+msgstr "Contact us"
+
+msgid "goodbye"
+msgstr ""
+
+msgid "welcome"
+msgstr ""
+
+msgid "CategoryTest1"
+msgstr ""
+
+#, fuzzy
+msgid "Description CategoryTest1"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "Informations CategoryTest1"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+

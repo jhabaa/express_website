@@ -177,7 +177,8 @@ msgstr ""
 msgid "engagements_btn2"
 msgstr ""
 
-#: templates/contact.html:3 templates/layout.html:106 templates/layout.html:180
+#: templates/contact.html:3 templates/layout.html:106
+#: templates/layout.html:180
 msgid "Contact"
 msgstr ""
 
@@ -676,7 +677,9 @@ msgid "description_Tapis"
 msgstr ""
 
 msgid "Tenture / Rideaux"
-msgstr "Confection de vos tentures et rideaux. Tissus à fournir. Pris au mètre carré."
+msgstr ""
+"Confection de vos tentures et rideaux. Tissus à fournir. Pris au mètre "
+"carré."
 
 msgid "description_Tenture_Rideaux"
 msgstr ""
@@ -701,7 +704,6 @@ msgstr ""
 
 msgid "Zaventem"
 msgstr ""
-
 
 msgid "Description_Auderghem"
 msgstr ""
@@ -1039,8 +1041,11 @@ msgstr "Description du raccourcissement de pantalon avec bord original"
 msgid "Raccourcir pantalon à la main (type pantalon de costume et classique)"
 msgstr "Raccourcir pantalon à la main (type pantalon de costume et classique)"
 
-msgid "description_raccourcir_pantalon_a_la_main_type_pantalon_de_costume_et_classique"
-msgstr "Description du raccourcissement de pantalon à la main (type costume et classique)"
+msgid ""
+"description_raccourcir_pantalon_a_la_main_type_pantalon_de_costume_et_classique"
+msgstr ""
+"Description du raccourcissement de pantalon à la main (type costume et "
+"classique)"
 
 msgid "Raccourcir pantalon + talonnières"
 msgstr "Raccourcir pantalon + talonnières"
@@ -1051,7 +1056,8 @@ msgstr "Description du raccourcissement de pantalon avec talonnières"
 msgid "Transformation rideaux et tentures non doublés (par mètre courant)"
 msgstr "Transformation rideaux et tentures non doublés (par mètre courant)"
 
-msgid "description_transformation_rideaux_et_tentures_non_doublés_par_mètre_courant"
+msgid ""
+"description_transformation_rideaux_et_tentures_non_doublés_par_mètre_courant"
 msgstr "Description de la transformation de rideaux et tentures non doublés"
 
 msgid "Transformation tentures doublées (par mètre courant)"
@@ -1075,8 +1081,11 @@ msgstr "Description des tirettes/fermetures éclair pour jupes simples"
 msgid "Tirettes/fermetures éclair pour blousons/anoraks (jusqu’à 65cm)"
 msgstr "Tirettes/fermetures éclair pour blousons/anoraks (jusqu’à 65cm)"
 
-msgid "description_tirettes_fermetures_éclair_pour_blousons_anoraks_jusqu_a_65cm"
-msgstr "Description des tirettes/fermetures éclair pour blousons/anoraks jusqu'à 65cm"
+msgid ""
+"description_tirettes_fermetures_éclair_pour_blousons_anoraks_jusqu_a_65cm"
+msgstr ""
+"Description des tirettes/fermetures éclair pour blousons/anoraks jusqu'à "
+"65cm"
 
 msgid "Tirettes/fermetures éclair pour robes (jusqu’à 50 cm)"
 msgstr "Tirettes/fermetures éclair pour robes (jusqu’à 50 cm)"
@@ -1100,4 +1109,25 @@ msgid "carrier"
 msgstr ""
 
 msgid "write_email"
+msgstr ""
+
+msgid "test"
+msgstr ""
+
+msgid "test2"
+msgstr ""
+
+msgid "goodbye"
+msgstr ""
+
+msgid "welcome"
+msgstr ""
+
+msgid "CategoryTest1"
+msgstr ""
+
+msgid "Description CategoryTest1"
+msgstr ""
+
+msgid "Informations CategoryTest1"
 msgstr ""

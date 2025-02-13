@@ -1252,3 +1252,96 @@ msgstr "Descrizione Cucito"
 msgid "Informations CategoryTest1"
 msgstr "Informazioni Cucito"
 
+msgid "CategorieTest2"
+msgstr ""
+
+#, fuzzy
+msgid "Description CategorieTest2"
+msgstr "Descrizione Cucito"
+
+#, fuzzy
+msgid "Informations CategorieTest2"
+msgstr "Informazioni Cucito"
+
+#, fuzzy
+msgid "Test"
+msgstr "Una giacca pulita è meglio"
+
+#, fuzzy
+msgid "Description Test"
+msgstr "Descrizione Giacca"
+
+#, fuzzy
+msgid "Informations Test"
+msgstr "Informazioni Cucito"
+
+#, fuzzy
+msgid "Test category 1"
+msgstr "Descrizione Cucito"
+
+#, fuzzy
+msgid "Description Test category 1"
+msgstr "Descrizione Cucito"
+
+#, fuzzy
+msgid "Informations Test category 1"
+msgstr "Informazioni Cucito"
+
+#, fuzzy
+msgid "TestCqtegory"
+msgstr "Descrizione Cucito"
+
+#, fuzzy
+msgid "Description TestCqtegory"
+msgstr "Descrizione Cucito"
+
+#, fuzzy
+msgid "Informations TestCqtegory"
+msgstr "Informazioni Cucito"
+
+#, fuzzy
+msgid "Test encore"
+msgstr "Descrizione Cucito"
+
+#, fuzzy
+msgid "Description Test encore"
+msgstr "Descrizione Giacca"
+
+#, fuzzy
+msgid "Informations Test encore"
+msgstr "Informazioni Cucito"
+
+#, fuzzy
+msgid "Tat encore 2"
+msgstr "Descrizione Cucito"
+
+#, fuzzy
+msgid "Description Tat encore 2"
+msgstr "Descrizione Giacca"
+
+#, fuzzy
+msgid "Informations Tat encore 2"
+msgstr "Informazioni Cucito"
+
+msgid "Test cat zith img"
+msgstr ""
+
+#, fuzzy
+msgid "Description Test cat zith img"
+msgstr "Descrizione Cucito"
+
+#, fuzzy
+msgid "Informations Test cat zith img"
+msgstr "Informazioni Cucito"
+
+msgid "Test with image"
+msgstr ""
+
+#, fuzzy
+msgid "Description Test with image"
+msgstr "Descrizione Cucito"
+
+#, fuzzy
+msgid "Informations Test with image"
+msgstr "Informazioni Cucito"
+

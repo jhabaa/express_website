@@ -203,10 +203,12 @@ command_service = Enum('command_service',[
 #==================================
 
 def FormatTextToMysql(a,sep):
-    if sep == 1:
-        return f"`{a}`"
-    if sep == 2:
+    # if a is a number value, return it as it is
+    if type(a) == int or type(a) == float:
+        return a
+    else:
         return f"'{a}'"
+
 
 #====================================== Routes =====================================
 #Function to get datas. To fecth where, set where = attribute#value
@@ -258,7 +260,12 @@ def Operate(model:str):
         ### Execute command
         cursor.close()
         cursor = mysql.new_cursor(dictionary = True, buffered = True)
-        cursor.execute(f"INSERT INTO {app.config['MYSQL_DB']}.{model} ({','.join(list(FormatTextToMysql(att,1) for att in attributes))}) VALUES ({','.join(list(FormatTextToMysql(val,2) for val in values))})")
+        create = ", ".join([f"`{att}`" for att in request.json.keys()]) # Attributes here needs to be embeded in `` because they are reserved words in SQL
+        query = f"INSERT INTO {app.config['MYSQL_DB']}.{model} ({create}) VALUES ({', '.join([f'{FormatTextToMysql(request.json[att],1)}' for att in request.json.keys()])})"
+        #cursor.execute(f"INSERT INTO {app.config['MYSQL_DB']}.{model} ({','.join(list(FormatTextToMysql(att,1) for att in attributes))}) VALUES ({','.join(list(FormatTextToMysql(val,2) for val in values))})")
+        
+        print(query)
+        cursor.execute(query)
         mysql.connection.commit()
         return str(cursor.lastrowid)
     if request.method == "DELETE":
@@ -267,7 +274,7 @@ def Operate(model:str):
         model_ID = list(cursor.column_names)[-1]
         cursor.close()
         cursor = mysql.new_cursor(dictionary = True, buffered = True)
-        cursor.execute(f"DELETE FROM {app.config['MYSQL_DB']}.{model} WHERE id = {request.json[model_ID]}")
+        cursor.execute(f"DELETE FROM {app.config['MYSQL_DB']}.{model} WHERE {primary_key} = {FormatTextToMysql(request.json[primary_key], 1)}")
         mysql.connection.commit()
         return "True"
     if request.method == "PUT":
@@ -278,7 +285,10 @@ def Operate(model:str):
             query = f"UPDATE {app.config['MYSQL_DB']}.{model} SET {updates} WHERE {primary_key} = {request.json[primary_key]}"
         else:
             updates = ", ".join([f"{att} = {FormatTextToMysql(request.json[att],1)}" for att in request.json.keys() if att != primary_key])
-            query = f"UPDATE {app.config['MYSQL_DB']}.{model} SET {updates} WHERE {primary_key} = '{FormatTextToMysql(request.json[primary_key],2)}'"
+            query = f"UPDATE {app.config['MYSQL_DB']}.{model} SET {updates} WHERE {primary_key} = {FormatTextToMysql(request.json[primary_key],2)}"
+        print(updates)
+        print(query)
+        
         cursor.execute(query)
         mysql.connection.commit()
         cursor.close()

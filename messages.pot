@@ -1131,3 +1131,75 @@ msgstr ""
 
 msgid "Informations CategoryTest1"
 msgstr ""
+
+msgid "CategorieTest2"
+msgstr ""
+
+msgid "Description CategorieTest2"
+msgstr ""
+
+msgid "Informations CategorieTest2"
+msgstr ""
+
+msgid "Test"
+msgstr ""
+
+msgid "Description Test"
+msgstr ""
+
+msgid "Informations Test"
+msgstr ""
+
+msgid "Test category 1"
+msgstr ""
+
+msgid "Description Test category 1"
+msgstr ""
+
+msgid "Informations Test category 1"
+msgstr ""
+
+msgid "TestCqtegory"
+msgstr ""
+
+msgid "Description TestCqtegory"
+msgstr ""
+
+msgid "Informations TestCqtegory"
+msgstr ""
+
+msgid "Test encore"
+msgstr ""
+
+msgid "Description Test encore"
+msgstr ""
+
+msgid "Informations Test encore"
+msgstr ""
+
+msgid "Tat encore 2"
+msgstr ""
+
+msgid "Description Tat encore 2"
+msgstr ""
+
+msgid "Informations Tat encore 2"
+msgstr ""
+
+msgid "Test cat zith img"
+msgstr ""
+
+msgid "Description Test cat zith img"
+msgstr ""
+
+msgid "Informations Test cat zith img"
+msgstr ""
+
+msgid "Test with image"
+msgstr ""
+
+msgid "Description Test with image"
+msgstr ""
+
+msgid "Informations Test with image"
+msgstr ""

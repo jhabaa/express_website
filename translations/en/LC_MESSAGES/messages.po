@@ -1230,3 +1230,147 @@ msgstr ""
 "“A hem to redo or a button that won't stay on? We are here to bring your "
 "clothes back to life!”"
 
+msgid "CategorieTest2"
+msgstr ""
+
+#, fuzzy
+msgid "Description CategorieTest2"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "Informations CategorieTest2"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "Test"
+msgstr "A clean jacket is better"
+
+#, fuzzy
+msgid "Description Test"
+msgstr "Description Jacket"
+
+#, fuzzy
+msgid "Informations Test"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "Test category 1"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "Description Test category 1"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "Informations Test category 1"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "TestCqtegory"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "Description TestCqtegory"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "Informations TestCqtegory"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "Test encore"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "Description Test encore"
+msgstr "Description Jacket"
+
+#, fuzzy
+msgid "Informations Test encore"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "Tat encore 2"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "Description Tat encore 2"
+msgstr "Description Jacket"
+
+#, fuzzy
+msgid "Informations Tat encore 2"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+msgid "Test cat zith img"
+msgstr ""
+
+#, fuzzy
+msgid "Description Test cat zith img"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "Informations Test cat zith img"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+msgid "Test with image"
+msgstr ""
+
+#, fuzzy
+msgid "Description Test with image"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+
+#, fuzzy
+msgid "Informations Test with image"
+msgstr ""
+"“Perfect alterations for clothes that reflect you.”\n"
+"“A hem to redo or a button that won't stay on? We are here to bring your "
+"clothes back to life!”"
+

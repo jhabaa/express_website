@@ -1203,3 +1203,21 @@ msgstr ""
 
 msgid "Informations Test with image"
 msgstr ""
+
+msgid "Testwithimage3"
+msgstr ""
+
+msgid "Description Testwithimage3"
+msgstr ""
+
+msgid "Informations Testwithimage3"
+msgstr ""
+
+msgid "Testwithimage4"
+msgstr ""
+
+msgid "Description Testwithimage4"
+msgstr ""
+
+msgid "Informations Testwithimage4"
+msgstr ""

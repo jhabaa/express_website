@@ -51,7 +51,7 @@ app.config['MYSQL_HOST'] = 'REMOVED'
 app.config['MYSQL_USER'] = 'REMOVED'
 app.config['MYSQL_PASSWORD'] = 'REMOVED'
 app.config['MYSQL_DB'] = 'REMOVED'
-app.config['UPLOAD_FOLDER'] = '/var/www/express/static/images'
+app.config['UPLOAD_FOLDER'] = 'REMOVED'
 app.config['BABEL_DEFAULT_LOCALE'] = 'fr'
 app.secret_key = 'REMOVED'
 mysql = MySQL(app)
@@ -586,6 +586,35 @@ def chatwithus():
     return redirect(url_for('contact', lang = session['lang'], message = "Message envoyé"))
 
 
+# Function to get the dictionary of a language
+@app.route('/api/getdictionary', methods=['GET'])
+def GetDictionary():
+    lang = request.args.get('lang')
+    #Get the babel .po
+    po = polib.pofile(f'./translations/{lang}/LC_MESSAGES/messages.po')
+    dictionary  = { poEntry.msgid : poEntry.msgstr for poEntry in po }
+    return json.dumps(dictionary, indent=4)
+
+#Function to update a po file
+@app.route('/api/updatebabelpo', methods=['POST'])
+def updateBabelPo():
+    print("Updating po file")
+    print(request.json)
+    lang = request.json['lang']
+    translations = request.json['translations']
+    print(lang)
+    print(translations)
+    #Get the babel .po
+    po = polib.pofile(f'./translations/{lang}/LC_MESSAGES/messages.po')
+    for entry in po:
+        print(entry.msgid)
+        if entry.msgid in translations:
+            entry.fuzzy = False
+            entry.msgstr = translations[entry.msgid]
+    po.save(f'./translations/{lang}/LC_MESSAGES/messages.po')
+    return "True"
+
+
 # function to update the flask babel dictionnary from the app
 @app.route('/api/updatebabelpot', methods=['POST'])
 def updateBabel():
@@ -608,6 +637,13 @@ def updateBabel():
     updating_process.wait()
     print("Translations updated")
     return jsonify({"status": "success", "message": "Translations updated"})
+
+#Function to get all dictionnary words... the pot file
+@app.route('/api/getpot')
+def getPot():
+    pot = polib.pofile(f'./messages.pot')
+    t = {entry.msgid: entry.msgstr for entry in pot}
+    return jsonify(t)
 
 @app.route('/babel_test')
 def babel_test():
@@ -1047,6 +1083,7 @@ def unidecode(text):
 INSERT INTO `appexpress`.`client` (`ID_CLIENT`, `NAME_CLIENT`, `surname_CLIENT`, `EMAIL_CLIENT`, `ADDRESS_CLIENT`, `PHONE_CLIENT`, `PASSWORD_CLIENT`) VALUES ('hean_client20', 'REMOVED', 'client', 'REMOVED', 'Rue des Allies 93', '486650303', 'hean2000');
 """
 path = os.path.abspath('/var/www/express/static/images')
+path = os.path.relpath('REMOVED')
 #path = os.path.abspath('static/images/')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 

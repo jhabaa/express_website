@@ -51,7 +51,9 @@ app.config['MYSQL_HOST'] = 'REMOVED'
 app.config['MYSQL_USER'] = 'REMOVED'
 app.config['MYSQL_PASSWORD'] = 'REMOVED'
 app.config['MYSQL_DB'] = 'REMOVED'
-app.config['UPLOAD_FOLDER'] = 'REMOVED'
+app.config['PO_FILE'] = '/var/www/express/translations'
+app.config['UPLOAD_FOLDER'] = '/var/www/express/static/images'
+app.config['ROOT_FOLDER'] = '/var/www/express'
 app.config['BABEL_DEFAULT_LOCALE'] = 'fr'
 app.secret_key = 'REMOVED'
 mysql = MySQL(app)
@@ -591,7 +593,7 @@ def chatwithus():
 def GetDictionary():
     lang = request.args.get('lang')
     #Get the babel .po
-    po = polib.pofile(f'./translations/{lang}/LC_MESSAGES/messages.po')
+    po = polib.pofile(f'{app.config['PO_FILE']}/{lang}/LC_MESSAGES/messages.po')
     dictionary  = { poEntry.msgid : poEntry.msgstr for poEntry in po }
     return json.dumps(dictionary, indent=4)
 
@@ -605,13 +607,13 @@ def updateBabelPo():
     print(lang)
     print(translations)
     #Get the babel .po
-    po = polib.pofile(f'./translations/{lang}/LC_MESSAGES/messages.po')
+    po = polib.pofile(f'{app.config['PO_FILE']}/{lang}/LC_MESSAGES/messages.po')
     for entry in po:
         print(entry.msgid)
         if entry.msgid in translations:
             entry.fuzzy = False
             entry.msgstr = translations[entry.msgid]
-    po.save(f'./translations/{lang}/LC_MESSAGES/messages.po')
+    po.save(f'{app.config['PO_FILE']}/{lang}/LC_MESSAGES/messages.po')
     return "True"
 
 
@@ -623,14 +625,14 @@ def updateBabel():
     if not new_translations:
         return jsonify({"status": "error", "message": "No translations found"})
     # Update the pot file with the new translations
-    pot = polib.pofile(f'./messages.pot')
+    pot = polib.pofile(f'{app.config['ROOT_FOLDER']}/messages.pot')
     for word in new_translations:
         #create a new entry
         word_entry = polib.POEntry(msgid=word, msgstr="")
         if word_entry not in pot:
             pot.append(word_entry)
 
-    pot.save(f'./messages.pot')
+    pot.save(f'{app.config['ROOT_FOLDER']}/messages.pot')
     # Update the translations files
     updating_process = subprocess.Popen(["pybabel", "update", "-i", "messages.pot", "-d", "translations"])
     print("Updating translations files")
@@ -641,7 +643,7 @@ def updateBabel():
 #Function to get all dictionnary words... the pot file
 @app.route('/api/getpot')
 def getPot():
-    pot = polib.pofile(f'./messages.pot')
+    pot = polib.pofile(f'{app.config['ROOT_FOLDER']}/messages.pot')
     t = {entry.msgid: entry.msgstr for entry in pot}
     return jsonify(t)
 
@@ -1083,7 +1085,6 @@ def unidecode(text):
 INSERT INTO `appexpress`.`client` (`ID_CLIENT`, `NAME_CLIENT`, `surname_CLIENT`, `EMAIL_CLIENT`, `ADDRESS_CLIENT`, `PHONE_CLIENT`, `PASSWORD_CLIENT`) VALUES ('hean_client20', 'REMOVED', 'client', 'REMOVED', 'Rue des Allies 93', '486650303', 'hean2000');
 """
 path = os.path.abspath('/var/www/express/static/images')
-path = os.path.relpath('REMOVED')
 #path = os.path.abspath('static/images/')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 

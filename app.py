@@ -8,7 +8,11 @@ import datetime
 import os
 
 #languages management
+<<<<<<< HEAD
 from flask_babel import Babel, gettext,refresh, _
+=======
+from flask_babel import Babel, gettext, refresh, _
+>>>>>>> 925455c ([FIX]: "Update mo file after po file edit")
 #I use Polib to read babel files
 import polib
 # I need to update translations files after adding new words to pot 
@@ -614,6 +618,9 @@ def updateBabelPo():
             entry.fuzzy = False
             entry.msgstr = translations[entry.msgid]
     po.save(f"{app.config['PO_FILE']}/{lang}/LC_MESSAGES/messages.po")
+    #compile to mo
+    compiling_process = subprocess.Popen(["pybabel", "compile", "-d", f"{app.config['PO_FILE']}/{lang}/LC_MESSAGES"])
+    compiling_process.wait()
     return "True"
 
 
@@ -1406,3 +1413,4 @@ def add_header(response):
  """
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=7001)
+    refresh()

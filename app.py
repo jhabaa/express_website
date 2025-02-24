@@ -8,11 +8,8 @@ import datetime
 import os
 
 #languages management
-<<<<<<< HEAD
-from flask_babel import Babel, gettext,refresh, _
-=======
 from flask_babel import Babel, gettext, refresh, _
->>>>>>> 925455c ([FIX]: "Update mo file after po file edit")
+
 #I use Polib to read babel files
 import polib
 # I need to update translations files after adding new words to pot 

@@ -614,9 +614,7 @@ def updateBabelPo():
             entry.fuzzy = False
             entry.msgstr = translations[entry.msgid]
     po.save(f"{app.config['PO_FILE']}/{lang}/LC_MESSAGES/messages.po")
-    #compile to mo
-    compiling_process = subprocess.Popen(["pybabel", "compile", "-d", f"{app.config['PO_FILE']}/{lang}/LC_MESSAGES"])
-    compiling_process.wait()
+    refresh()
     return "True"
 
 

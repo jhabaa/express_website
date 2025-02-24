@@ -8,7 +8,7 @@ import datetime
 import os
 
 #languages management
-from flask_babel import Babel, gettext, refresh, _
+from flask_babel import Babel, gettext,refresh, _
 #I use Polib to read babel files
 import polib
 # I need to update translations files after adding new words to pot 
@@ -614,7 +614,6 @@ def updateBabelPo():
             entry.fuzzy = False
             entry.msgstr = translations[entry.msgid]
     po.save(f"{app.config['PO_FILE']}/{lang}/LC_MESSAGES/messages.po")
-    refresh()
     return "True"
 
 
@@ -1407,4 +1406,3 @@ def add_header(response):
  """
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=7001)
-    refresh()

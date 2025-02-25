@@ -1163,7 +1163,7 @@ msgid "Languages"
 msgstr ""
 
 msgid "collab"
-msgstr ""
+msgstr "Collaboration"
 
 msgid "carrier"
 msgstr ""

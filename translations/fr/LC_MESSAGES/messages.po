@@ -69,8 +69,7 @@ msgstr "Service rapide et flexible"
 msgid "strength1_sub"
 msgstr ""
 "Chez Ex-Press Dry Clean, nous nous engageons à offrir un service rapide sans jamais compromettre la qualité. Grâce à notre expertise et à nos équipements modernes, nous garantissons un soin impeccable pour vos vêtements, même dans les délais les plus courts.\n"
-"Notre flexibilité est au cœur de notre service : nous nous adaptons à votre emploi du temps, avec des options de ramassage et de livraison qui répondent à vos contraintes. Chaque article est inspecté minutieusement pour garantir un résultat parfait, que ce soit pour un nettoyage d’urgence ou une routine régulière.\n"
-"Avec Ex-Press Dry Clean, profitez d’un service rapide, fiable et de haute qualité, conçu pour simplifier votre quotidien."
+"Notre flexibilité est au cœur de notre service : nous nous adaptons à votre emploi du temps, avec des options de ramassage et de livraison qui répondent à vos contraintes. Chaque article est inspecté minutieusement pour garantir un résultat parfait, que ce soit pour un nettoyage d’urgence ou une routine régulière…"
 
 #: templates/about.html:80
 msgid "strength2_title"
@@ -459,7 +458,7 @@ msgstr "Tarifs"
 
 #: templates/layout.html:68
 msgid "3"
-msgstr ""
+msgstr "Essai 3"
 
 #: templates/layout.html:108 templates/localization.html:3
 msgid "Localization"
@@ -1539,7 +1538,7 @@ msgid "Languages"
 msgstr ""
 
 msgid "collab"
-msgstr "Collaboration"
+msgstr "Partenariat"
 
 msgid "carrier"
 msgstr "Carrières"

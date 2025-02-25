@@ -602,22 +602,27 @@ def GetDictionary():
 @app.route('/api/updatebabelpo', methods=['POST'])
 def updateBabelPo():
     print("Updating po file")
-    print(request.json)
     lang = request.json['lang']
     translations = request.json['translations']
-    print(lang)
-    print(translations)
     #Get the babel .po
     po = polib.pofile(f"{app.config['PO_FILE']}/{lang}/LC_MESSAGES/messages.po")
     for entry in po:
-        print(entry.msgid)
         if entry.msgid in translations:
             entry.fuzzy = False
             entry.msgstr = translations[entry.msgid]
     po.save(f"{app.config['PO_FILE']}/{lang}/LC_MESSAGES/messages.po")
-    #compile to mo
-    compiling_process = subprocess.Popen(["pybabel", "compile", "-d", f"{app.config['PO_FILE']}/{lang}/LC_MESSAGES/messages.mo"])
-    compiling_process.wait()
+    
+    return "True"
+
+#Function to update mo files. Usefull for words in the website
+@app.route('/api/updatewebsitedictionnary')
+def updatewebsitedictionnary():
+    # COmpile the .po into .mo 
+    print("Compiling translations")
+    subprocess.run(["pybabel", "compile", "-d", app.config['PO_FILE']], check=True)
+    print("Translation compiled")
+                 
+    refresh()
     return "True"
 
 

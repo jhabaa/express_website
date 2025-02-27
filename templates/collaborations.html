@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+
+{% block title %} {{_('collab') }}
+{% endblock %}
+
+{% block page %}
+
+<section id="collaboraitons" class="page1">
+    <img src="/static/imagesweb/collaborations.jpg" class="phone" alt="collaborations">
+
+    <div class="presentationBloc">
+        <h1 class="ExpressTitle">{{_('collaborations_title')}}</h1>
+        <p class="ExpressTitle">{{_('collaborations_sub')}}</p>
+    </div>
+
+</section>
+
+<section class="page2" id="collaborations_page">
+    <div class="about-content">
+    
+        <div class="engagements">
+            
+            <div class="title1" data-aos="fade-up">{{_('collaborations_title_2')}}</div>
+            <div class="subtitle"data-aos="fade-down" data-aos-delay="200"> {{_('collaborations_sub')}}</div>
+            <a href="{{url_for("pricing", lang=lang)}}" class="button">{{_('collaborations_btn1')}}</a>
+            <div class="empty-space"></div>
+            <div class="values">
+                <div class="block spacer">
+                    <div class="engagement dark" data-aos="fade-down">
+                        <img src="/static/images/pub3.jpg" alt="nettoyage haut de gamme" class="engagement-image">
+                        <span class="title">{{_('collaboration_bloc_1_title')}}</span>
+                        <span class="value">{{_('collaboration_bloc_1_sub')}}</span>
+                    </div>
+                    <div class="engagement dark" data-aos="fade-left">
+                        <img src="/static/imagesweb/transport.jpeg" alt="collecte" class="engagement-image">
+                        <span class="title">{{_('collaboration_bloc_2_title')}}</span>
+                        <span class="value">{{_('collaboration_bloc_2_sub')}}</span>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="engagement dark" data-aos="fade-up">
+                        <img src="/static/images/CintresLight.jpg" alt="nettoyage et soins" class="engagement-image">
+                        <span class="title">{{_('collaboration_bloc_3_title')}}</span>
+                        <span class="value">{{_('collaboration_bloc_3_sub')}}</span>
+                    </div>
+                    <div class="engagement dark" data-aos="fade-right">
+                        <img src="/static/imagesweb/share_img.jpeg" alt="retour de vetements" class="engagement-image">
+                        <span class="title">{{_('collaboration_bloc_4_title')}}</span>
+                        <span class="value">{{_('collaboration_bloc_4_sub')}}</span>
+                    </div>
+                </div>
+            </div>
+            <a href="{{url_for('localization', lang = lang )}}" class="button">{{_('collaborations_btn2')}}</a>
+        </div>
+    </div>
+
+    <div class="description">
+        <div class="header">
+            <div class="prices_list"  data-title="{{_('Pricing')}}">
+                
+                <div class="price-card tilt_card" data-aos="fade-up">
+                    <h2>{{_('collaboration_strength_1_head')}}</h2>
+                    <span class="value">
+                        {{_('collaboration_strength_1_sub')}}
+                    </span>
+                </div>
+                <div class="price-card tilt_card" data-aos="fade-left">
+                    
+                    <h2>{{_('collaboration_strength_2_head')}}</h2>
+                    <span class="value">
+                        {{ _('collaboration_strength_2_sub') }}€
+                    </span>
+                </div>
+                <div class="price-card tilt_card" data-aos="fade-right">
+                    <h2>{{_('collaboration_strength_3_sub')}}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="title1">
+            {{_('collaborations_contact_title')}}
+        </div>
+    
+        <form action="{{ url_for('submit_collaboration')}}" method="post" class="form">
+        
+            <div class="entry">
+                <div class="block">
+                    <span>{{ _('collab_company_name') }}</span>
+                    <input type="text" required name="company_name" id="company_name" placeholder="{{ _('collab_company_name') }}" class="input">
+                </div>
+                <div class="block">
+                    <span>{{ _('collab_industry') }}</span>
+                    <select id="industry" name="industry" required >
+                        <option value="Hôtellerie">{{ _('collab_industry_hotel') }}</option>
+                        <option value="Mode">{{ _('collab_industry_fashion') }}</option>
+                        <option value="Corporate">{{ _('collab_industry_corporate') }}</option>
+                        <option value="Événementiel">{{ _('collab_industry_event') }}</option>
+                        <option value="Autre">{{ _('collab_industry_other') }}</option>
+                    </select>
+                </div>
+            </div>
+        
+            <div class="entry">
+                <div class="block">
+                    <span>{{ _('collab_contact_name') }}</span>
+                    <input type="text" required name="contact_name" id="contact_name" placeholder="{{ _('collab_contact_name') }}" class="input">
+                </div>
+                <div class="block">
+                    <span>{{ _('collab_phone') }}</span>
+                    <input type="tel" required name="phone" id="phone" placeholder="{{ _('collab_phone') }}" class="input">
+                </div>
+            </div>
+        
+            <div class="entry">
+                <div class="block">
+                    <span>{{ _('collab_email') }}</span>
+                    <input type="email" required name="email" id="email" placeholder="{{ _('collab_email') }}" class="input">
+                </div>
+            </div>
+        
+            <div class="entry">
+                <div class="block">
+                    <span>{{ _('collab_services') }}</span>
+                    <div class="checklist">
+                        <div class="check">
+                            <input style="width: fit-content;" type="checkbox" id="all_services" name="all_services" value="all_services">
+                            <label for="all_services">{{ _('collab_all_services') }}</label>
+                        </div>
+                        {% for category in categories %}
+                            <div class="check">
+                                <input style="width: fit-content;" type="checkbox" id="{{category.name + '_service'}}" name="{{category.name + '_service'}}" value="{{category.name + '_service'}}">
+                                <label for="{{category.name}}_service">{{ _(category.name) }}</label>
+                            </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+                <div class="block">
+                    <span>{{ _('collab_frequency') }}</span>
+                    <select id="frequency" name="frequency" required class="input">
+                        <option value="Ponctuel">{{ _('collab_freq_one_time') }}</option>
+                        <option value="Hebdomadaire">{{ _('collab_freq_weekly') }}</option>
+                        <option value="Mensuel">{{ _('collab_freq_monthly') }}</option>
+                        <option value="Autre">{{ _('collab_freq_other') }}</option>
+                    </select>
+                </div>
+            </div>
+        
+            <div class="entry">
+                <div class="block">
+                    <span>{{ _('collab_volume') }}</span>
+                    <input type="number" id="volume" name="volume" min="1" placeholder="{{ _('collab_volume') }}" class="input">
+                </div>
+            </div>
+        
+            <div class="entry">
+                <div class="block">
+                    <span>{{ _('collab_address') }}</span>
+                    <textarea name="address" required rows="3" id="address" placeholder="{{ _('collab_address') }}" class="input"></textarea>
+                </div>
+            </div>
+        
+            <div class="entry">
+                <div class="block">
+                    <span>{{ _('collab_message') }}</span>
+                    <textarea name="message" required rows="6" id="message" placeholder="{{ _('collab_message') }}" class="input"></textarea>
+                </div>
+            </div>
+        
+            {% if message %}
+            <div class="alert" role="alert">
+                {{ _(message) }}
+            </div>
+            {% endif %}
+            
+            <input type="submit" value="{{ _('collab_submit') }}" class="submit-btn">
+        </form>
+    </div>
+</section>
+
+
+   
+
+{% endblock %}

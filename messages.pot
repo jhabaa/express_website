@@ -1093,131 +1093,206 @@ msgstr "Tirettes/fermetures éclair pour robes (jusqu’à 50 cm)"
 msgid "description_tirettes_fermetures_éclair_pour_robes_jusqu_a_50_cm"
 msgstr "Description des tirettes/fermetures éclair pour robes jusqu'à 50 cm"
 
-msgid "Localization_title_1"
+#: templates/career.html:5
+msgid "career"
 msgstr ""
 
-msgid "about_sub2"
+#: templates/career.html:10
+msgid "career_title"
 msgstr ""
 
-msgid "Languages"
+#: templates/career.html:11
+msgid "career_sub"
 msgstr ""
 
+#: templates/career.html:20
+msgid "collaborations_contact_title"
+msgstr ""
+
+#: templates/career.html:25
+msgid "cv_title"
+msgstr ""
+
+#: templates/career.html:30
+msgid "fullname"
+msgstr ""
+
+#: templates/career.html:35
+msgid "email"
+msgstr ""
+
+#: templates/career.html:40
+msgid "phone_number"
+msgstr ""
+
+#: templates/career.html:45
+msgid "message"
+msgstr ""
+
+#: templates/career.html:50
+msgid "cv_upload"
+msgstr ""
+
+#: templates/career.html:55
+msgid "cv_submit"
+msgstr ""
+
+#: templates/collaborations.html:5
 msgid "collab"
 msgstr ""
 
-msgid "carrier"
+#: templates/collaborations.html:10
+msgid "collaborations_title"
 msgstr ""
 
-msgid "write_email"
+#: templates/collaborations.html:11
+msgid "collaborations_sub"
 msgstr ""
 
-msgid "test"
+#: templates/collaborations.html:20
+msgid "collaborations_title_2"
 msgstr ""
 
-msgid "test2"
+#: templates/collaborations.html:25
+msgid "collaborations_btn1"
 msgstr ""
 
-msgid "goodbye"
+#: templates/collaborations.html:30
+msgid "collaboration_bloc_1_title"
 msgstr ""
 
-msgid "welcome"
+#: templates/collaborations.html:31
+msgid "collaboration_bloc_1_sub"
 msgstr ""
 
-msgid "CategoryTest1"
+#: templates/collaborations.html:35
+msgid "collaboration_bloc_2_title"
 msgstr ""
 
-msgid "Description CategoryTest1"
+#: templates/collaborations.html:36
+msgid "collaboration_bloc_2_sub"
 msgstr ""
 
-msgid "Informations CategoryTest1"
+#: templates/collaborations.html:40
+msgid "collaboration_bloc_3_title"
 msgstr ""
 
-msgid "CategorieTest2"
+#: templates/collaborations.html:41
+msgid "collaboration_bloc_3_sub"
 msgstr ""
 
-msgid "Description CategorieTest2"
+#: templates/collaborations.html:45
+msgid "collaboration_bloc_4_title"
 msgstr ""
 
-msgid "Informations CategorieTest2"
+#: templates/collaborations.html:46
+msgid "collaboration_bloc_4_sub"
 msgstr ""
 
-msgid "Test"
+#: templates/collaborations.html:50
+msgid "collaborations_btn2"
 msgstr ""
 
-msgid "Description Test"
+#: templates/collaborations.html:55
+msgid "collaboration_strength_1_head"
 msgstr ""
 
-msgid "Informations Test"
+#: templates/collaborations.html:56
+msgid "collaboration_strength_1_sub"
 msgstr ""
 
-msgid "Test category 1"
+#: templates/collaborations.html:60
+msgid "collaboration_strength_2_head"
 msgstr ""
 
-msgid "Description Test category 1"
+#: templates/collaborations.html:61
+msgid "collaboration_strength_2_sub"
 msgstr ""
 
-msgid "Informations Test category 1"
+#: templates/collaborations.html:65
+msgid "collaboration_strength_3_sub"
 msgstr ""
 
-msgid "TestCqtegory"
+#: templates/collaborations.html:70
+msgid "collab_company_name"
 msgstr ""
 
-msgid "Description TestCqtegory"
+#: templates/collaborations.html:75
+msgid "collab_industry"
 msgstr ""
 
-msgid "Informations TestCqtegory"
+#: templates/collaborations.html:80
+msgid "collab_industry_hotel"
 msgstr ""
 
-msgid "Test encore"
+#: templates/collaborations.html:81
+msgid "collab_industry_fashion"
 msgstr ""
 
-msgid "Description Test encore"
+#: templates/collaborations.html:82
+msgid "collab_industry_corporate"
 msgstr ""
 
-msgid "Informations Test encore"
+#: templates/collaborations.html:83
+msgid "collab_industry_event"
 msgstr ""
 
-msgid "Tat encore 2"
+#: templates/collaborations.html:84
+msgid "collab_industry_other"
 msgstr ""
 
-msgid "Description Tat encore 2"
+#: templates/collaborations.html:90
+msgid "collab_contact_name"
 msgstr ""
 
-msgid "Informations Tat encore 2"
+#: templates/collaborations.html:95
+msgid "collab_phone"
 msgstr ""
 
-msgid "Test cat zith img"
+#: templates/collaborations.html:100
+msgid "collab_email"
 msgstr ""
 
-msgid "Description Test cat zith img"
+#: templates/collaborations.html:105
+msgid "collab_services"
 msgstr ""
 
-msgid "Informations Test cat zith img"
+#: templates/collaborations.html:110
+msgid "collab_all_services"
 msgstr ""
 
-msgid "Test with image"
+#: templates/collaborations.html:115
+msgid "collab_frequency"
 msgstr ""
 
-msgid "Description Test with image"
+#: templates/collaborations.html:120
+msgid "collab_freq_one_time"
 msgstr ""
 
-msgid "Informations Test with image"
+#: templates/collaborations.html:121
+msgid "collab_freq_weekly"
 msgstr ""
 
-msgid "Testwithimage3"
+#: templates/collaborations.html:122
+msgid "collab_freq_monthly"
 msgstr ""
 
-msgid "Description Testwithimage3"
+#: templates/collaborations.html:123
+msgid "collab_freq_other"
 msgstr ""
 
-msgid "Informations Testwithimage3"
+#: templates/collaborations.html:130
+msgid "collab_volume"
 msgstr ""
 
-msgid "Testwithimage4"
+#: templates/collaborations.html:135
+msgid "collab_address"
 msgstr ""
 
-msgid "Description Testwithimage4"
+#: templates/collaborations.html:140
+msgid "collab_message"
 msgstr ""
 
-msgid "Informations Testwithimage4"
+#: templates/collaborations.html:145
+msgid "collab_submit"
 msgstr ""

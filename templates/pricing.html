@@ -12,11 +12,11 @@
         <h1>{{services}}</h1>
     </div>
  -->
+
   <div class="description">
     <!-- Header -->
     <div class="header">
       <div class="signature">
-        <img src="/static/imagesweb/No_image_horizontal.png" alt=""/>
         <div class="custom-signature" data-aos="flip-left"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000">
@@ -28,38 +28,41 @@
       <br><br>
 
       {% if services %}
+      <div id="active_service_background">
+        <img src="/static/images/{{ selected_category.image }}" alt="">
+      </div>
+        
         <div class="title1">{{ _('Our Services') }} {{_(selected_category.name)}}</div>
         <div class="divider_vertical"></div>
-        {% if not selected_store %}
-          <div class="subtitle">{{_('Auderghem')}} - {{_('Jourdan')}} - {{_('Saint-Josse')}} - {{_('Zaventem')}}</div>
-          {% else %}
+        {% if selected_store %}
           <div class="subtitle">{{_(selected_store.name )}}</div>
-        {% endif %}
-      <div class="services">
-        {% for service in services %} 
-          <div class="service" data-aos="fade-down">
-  
-            <div class="infos">
-              <h2>{{ _(service.name) }}</h2>
-              {% if '_' not in _(service.description) %}
-                <p>{{ _(service.description) | safe}}</p>
-              {% endif %}
-            </div>
-            <div class="costs">
-              <div class="price">
-                {% if selected_store == "Moortebeek" %}
-                <span class="value"> {{ service.price_2 }}€</span>
-                {% else %}
-                <span class="value"> {{ service.price_1 }}€</span>
-                {% endif %}
+          <div class="services">
+            {% for service in services %} 
+              <div class="service" data-aos="fade-down">
+      
+                <div class="infos">
+                  <h2>{{ _(service.name) }}</h2>
+                  {% if '_' not in _(service.description) %}
+                    <p>{{ _(service.description) | safe}}</p>
+                  {% endif %}
+                </div>
+                <div class="costs">
+                  <div class="price">
+                    {% if selected_store == "Moortebeek" %}
+                    <span class="value"> {{ service.price_2 }}€</span>
+                    {% else %}
+                    <span class="value"> {{ service.price_1 }}€</span>
+                    {% endif %}
+                  </div>
+                </div>
+                <span>{{service.price}}</span>
               </div>
+        
+      
+            {% endfor %}
             </div>
-            <span>{{service.price}}</span>
-          </div>
-    
-  
-        {% endfor %}
-      </div>
+        {% endif %}
+        
         {% if not selected_store %}
         <div class="divider horizontal"></div>
           <span class="title1">{{_('Select a Store')}}</span>
@@ -80,18 +83,24 @@
                   
               </div>
               </a>
-           {% endfor %}
+            {% endfor %}
           </div>
           
         {% endif %}
           <span class="subtitle"> {{ _(selected_category.informations) | safe}}</span>
 
       {% else %}
+      <div id="full_screen_background">
+        <img src="/static/images/familyREMOVED.png" data-index="500" />
+        {% for category in categories %}
+          <img src="/static/images/{{ category.image }}" alt="" class="hide" data-index="{{category.index}}"/>
+        {% endfor %}
+      </div>
       <span class="title1">{{_('Select a Store')}}</span>
       <div class="list">
 
         {% for cat in categories %}
-            <div class="service">
+            <div class="service" data-index = "{{cat.index}}">
                 <img src="/static/images/{{ cat.illustrations }}" alt="" class="cat_bg_img">
                 <div class="description1">
                     <h2>{{ _(cat.name) }}</h2>

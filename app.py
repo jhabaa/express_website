@@ -541,7 +541,39 @@ def about(lang = 'fr', subpage = None):
     categories = sorted(GetData('full','category'), key=lambda x: x['index'])# Get just the categories 
     return render_template('about.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'about', stores = stores, services = services, categories = categories)
 
+@app.route('/<lang>/collaborations/')
+@app.route('/<lang>/collaborations/<subpage>')
+def collaborations(lang = 'fr', subpage = None, message = None):
+    #set language
+    session['lang'] = lang
+    stores = GetData('full','store')
+    services = GetData('full','service')
+    categories = sorted(GetData('full','category'), key=lambda x: x['index'])
+    return render_template('collaborations.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'collaborations', stores = stores, services = services, categories = categories, message = message)
 
+@app.route('/submit_collaboration', methods=['POST'])
+def submit_collaboration():
+    data = request.form
+    #send mail to admin to inform him about the message
+    print(data)
+    return redirect(url_for('collaborations', lang = session['lang'], message = "Message envoyé"))
+
+@app.route('/<lang>/career/')
+@app.route('/<lang>/career/<subpage>')
+def career(lang = 'fr', subpage = None, message = None):
+    #set language
+    session['lang'] = lang
+    stores = GetData('full','store')
+    services = GetData('full','service')
+    categories = sorted(GetData('full','category'), key=lambda x: x['index'])
+    return render_template('career.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'career', stores = stores, services = services, categories = categories, message = message)
+
+@app.route('/submit_career', methods=['POST'])
+def submit_career():
+    data = request.form
+    print(data)
+    # Go back to the career page with a message
+    return redirect(url_for('career', lang = session['lang'], message = "Message envoyé"))
 
 @app.route('/<lang>/contact/')
 @app.route('/<lang>/contact/<subpage>')
@@ -1212,22 +1244,22 @@ dictionary = {'fr':{
         {
             'title': 'work1_title',
             'description':"work1_content",
-            'illustration':"no_image_vert_black.jpg"
+            'illustration':"strength1.jpg"
         },
         {
             'title': 'work2_title', 
             'description':"work2_content",
-            'illustration':"no_image_vert_black.jpg"
+            'illustration':"strength2.jpg"
         },
         {
             'title': 'work3_title',
             'description':"work3_content",
-            'illustration':"no_image_vert_black.jpg"
+            'illustration':"strength3.jpg"
         },
         {
             'title': "work4_title",
             'description':"work4_content",
-            'illustration':"no_image_vert_black.jpg"
+            'illustration':"strength4.jpg"
         }
     ]
 }, 'en':{
@@ -1269,22 +1301,22 @@ dictionary = {'fr':{
         {
             'title': 'Exceptional Quality Care',
             'description':"Our laundry company is dedicated to delivering exceptional quality care for every garment. We use state-of-the-art equipment and eco-friendly detergents that ensure your clothes are cleaned thoroughly while maintaining their original texture and color. Each item is inspected and treated by our skilled professionals to remove stains and protect delicate fabrics, providing you with perfectly clean and fresh-smelling laundry every time.",
-            'illustration':"no_image_vert_black.jpg"
+            'illustration':"strength1.jpg"
         },
         {
             'title': 'Convenient Pickup & Delivery Service',
             'description':"We understand that your time is valuable, which is why we offer a convenient pickup and delivery service. Simply schedule a pickup time that suits you, and our reliable team will collect your laundry from your doorstep. Once cleaned and carefully packaged, we will return it to you at a time of your choosing. This hassle-free service is designed to fit seamlessly into your busy lifestyle, making laundry day a thing of the past.",
-            'illustration':"no_image_vert_black.jpg"
+            'illustration':"strength2.jpg"
         },
         {
             'title': 'Customizable Laundry Plans',
             'description':"Our customizable laundry plans are tailored to meet your unique needs. Whether you require weekly, bi-weekly, or monthly services, we offer flexible scheduling options that can be adjusted to suit your requirements. Additionally, our specialized plans for different types of laundry, such as business attire, casual wear, and household items, ensure that every piece of fabric receives the specific care it needs.",
-            'illustration':"no_image_vert_black.jpg"
+            'illustration':"strength3.jpg"
         },
         {
             'title': 'Affordable Pricing',
             'description':"Quality laundry services don't have to come with a hefty price tag. Our competitive pricing structure is designed to offer exceptional value without compromising on quality. We provide clear and transparent pricing with no hidden fees, so you always know what to expect. Plus, we offer special discounts and loyalty programs to make our services even more affordable for our regular customers.",
-            'illustration':"no_image_vert_black.jpg"
+            'illustration':"strength4.jpg"
         }
     ]
 
@@ -1328,22 +1360,22 @@ dictionary = {'fr':{
         {
             'title': 'Uitzonderlijke kwaliteitszorg',
             'description':"Ons wasserijbedrijf is toegewijd aan het leveren van uitzonderlijke kwaliteitszorg voor elk kledingstuk. We gebruiken geavanceerde apparatuur en milieuvriendelijke wasmiddelen die ervoor zorgen dat uw kleding grondig wordt gereinigd terwijl de oorspronkelijke textuur en kleur behouden blijven. Elk item wordt geïnspecteerd en behandeld door onze bekwame professionals om vlekken te verwijderen en delicate stoffen te beschermen, waardoor u elke keer perfect schone en fris ruikende was krijgt.",
-            'illustration':"no_image_vertical.png"
+            'illustration':"strength1.jpg"
         },
         {
             'title': 'Handige ophaal- en bezorgservice',
             'description':"We begrijpen dat uw tijd kostbaar is, daarom bieden we een handige ophaal- en bezorgservice aan. Plan eenvoudig een ophaaltijd die bij u past, en ons betrouwbare team haalt uw wasgoed op bij uw voordeur. Zodra het is gereinigd en zorgvuldig verpakt, zullen we het op een door u gekozen tijdstip aan u teruggeven. Deze moeiteloze service is ontworpen om naadloos aan te sluiten bij uw drukke levensstijl, waardoor de wasdag tot het verleden behoort.",
-            'illustration':"no_image_vertical.png"
+            'illustration':"strength2.jpg"
         },
         {
             'title': 'Aanpasbare wasplannen',
             'description':"Onze aanpasbare wasplannen zijn ontworpen om aan uw unieke behoeften te voldoen. Of u nu wekelijkse, tweewekelijkse of maandelijkse diensten nodig heeft, wij bieden flexibele planningsopties die kunnen worden aangepast aan uw wensen. Bovendien zorgen onze gespecialiseerde plannen voor verschillende soorten was, zoals zakelijke kleding, vrijetijdskleding en huishoudelijke artikelen, ervoor dat elk stuk stof de specifieke zorg krijgt die het nodig heeft.",   
-            'illustration':"no_image_vertical.png"
+            'illustration':"strength3.jpg"
         },
         {
             'title': 'Betaalbare prijzen',
             'description':"Kwaliteitsvolle wasservices hoeven niet duur te zijn. Onze concurrerende prijsstructuur is ontworpen om uitzonderlijke waarde te bieden zonder in te boeten aan kwaliteit. We bieden duidelijke en transparante prijzen zonder verborgen kosten, zodat u altijd weet wat u kunt verwachten. Bovendien bieden we speciale kortingen en loyaliteitsprogramma's om onze diensten nog betaalbaarder te maken voor onze vaste klanten.",
-            'illustration':"no_image_vertical.png"
+            'illustration':"strength4.jpg"
         }
     ]
 
@@ -1386,22 +1418,22 @@ dictionary = {'fr':{
         {
             'title': 'Cura della qualità eccezionale',
             'description':"La nostra azienda di lavanderia si impegna a fornire una cura della qualità eccezionale per ogni capo. Utilizziamo attrezzature all'avanguardia e detergenti ecologici che garantiscono una pulizia profonda dei tuoi vestiti preservandone la texture e il colore originali. Ogni articolo viene ispezionato e trattato dai nostri professionisti qualificati per eliminare le macchie e proteggere i tessuti delicati, offrendoti così un bucato perfettamente pulito e fresco ogni volta.",
-            'illustration':"no_image_vertical.png"
+            'illustration':"strength1.jpg"
         },
         {
             'title': 'Servizio di ritiro e consegna comodo',
             'description':"Sappiamo che il tuo tempo è prezioso, ecco perché offriamo un servizio di ritiro e consegna comodo. Basta pianificare un orario di ritiro che ti convenga, e il nostro team affidabile verrà a ritirare il tuo bucato alla tua porta. Una volta pulito e accuratamente confezionato, te lo restituiremo all'ora che preferisci. Questo servizio senza stress è progettato per integrarsi perfettamente nel tuo stile di vita frenetico, facendo del giorno del bucato un lontano ricordo.",
-            'illustration':"no_image_vertical.png"
+            'illustration':"strength2.jpg"
         },
         {
             'title': 'Piani di lavanderia personalizzabili',
             'description':"I nostri piani di lavanderia personalizzabili sono progettati per soddisfare le tue esigenze specifiche. Che tu abbia bisogno di un servizio di pulizia regolare o occasionale, abbiamo una soluzione adatta al tuo programma e al tuo budget. I nostri pacchetti flessibili ti consentono di scegliere i servizi di cui hai bisogno, quando ne hai bisogno, offrendoti così una soluzione di lavanderia su misura che soddisfa le tue aspettative.",
-            'illustration':"no_image_vertical.png"
+            'illustration':"strength3.jpg"
         },
         {
             'title': 'Prezzi competitivi',
             'description':"Offriamo prezzi competitivi per i nostri servizi di lavanderia e lavaggio a secco. I nostri prezzi convenienti sono progettati per soddisfare le tue esigenze di pulizia senza compromettere il tuo budget. Offriamo pacchetti di lavanderia flessibili che ti consentono di scegliere i servizi di cui hai bisogno, quando ne hai bisogno, offrendoti così una soluzione di pulizia su misura che soddisfa le tue aspettative.",    
-            'illustration':"no_image_vertical.png"
+            'illustration':"strength4.jpg"
         }
     ]
 }}

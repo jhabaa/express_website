@@ -19,6 +19,8 @@ let navigationBtns = document.querySelectorAll('.nav_link');
 let header_bar_subBlocks = document.querySelector('#header_bar_subBlock');
 let blur_overlay = document.querySelector('.blurOverlay');
 
+let active_service_background = document.getElementById('active_service_background');
+
 let services = document.querySelectorAll('.service');
 let store_cards = document.querySelectorAll('.store_card');
 let sublinks = document.querySelectorAll('.sublink');
@@ -30,6 +32,7 @@ let titl_cards = document.querySelectorAll('.tilt_card');
 //Numbers 
 let exp_years = document.querySelector('#years_exp');
 let partners = document.querySelector('#partners');
+let pricing_background_images = document.querySelectorAll('#full_screen_background > img');
 var numbers_values = {years:0,
     partners:0,
 }
@@ -102,6 +105,17 @@ phonesPictures.forEach(function(phone){
     });
 });
 
+// Hide services images on, scroll 
+if (active_service_background){
+    window.addEventListener('scroll', function(){
+        if (window.scrollY > 10){
+            active_service_background.classList.add('hidden');
+        }else {
+            active_service_background.classList.remove('hidden');
+        }
+    });
+}
+
 function getDeviceType(){
     let user_agent = navigator.userAgent;
     if (user_agent.match(/Android/i)){
@@ -150,16 +164,34 @@ if (document.querySelector('.splide')){
     } ).mount();
 }
 
+// Function too activate an image background 
+function activeBackgroundImage(index){
+    pricing_background_images.forEach(e => {
+        console.error(e.getAttribute('data-index') + "Image to show index " + index);
+        console.log(e);
+        if (e.getAttribute('data-index') == index){
+            console.log('showing');
+            e.classList.remove('hide');
+        }else {
+            e.classList.add('hide');
+        }
+    })
+}
+
 // First, if we have services, activat the first one 
 if (services.length > 0) {
     services.item(1).classList.add('active');
     // Now set the query when we hover the rest 
     services.forEach(function(service) {
         service.addEventListener('mouseover', function() {
+            console.log(this);
+            selectedIndex = this.getAttribute('data-index');
+           
             services.forEach(function(service) {
                 service.classList.remove('active');
             });
             this.classList.add('active');
+            activeBackgroundImage(this.getAttribute('data-index'));
         });
     });
 }
@@ -172,6 +204,7 @@ if (store_cards.length > 0) {
             store_cards.forEach(function(card) {
                 card.classList.remove('active');
             });
+
             this.classList.add('active');
         });
     });

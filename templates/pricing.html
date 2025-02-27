@@ -69,7 +69,7 @@
           <div class="list">
             {% for store in stores %}
               <a href="{{url_for('pricing', lang = lang, subpage = selected_category.name, store = store.name)}}" class="service">
-              <img src="/static/images/{{ store.image }}" alt="" class="cat_bg_img">
+              <img src="/static/imagesweb/{{store.image}}" alt="" class="cat_bg_img">
               <div class="description1">
                   <h2>{{ _(store.name) }}</h2>
               </div>

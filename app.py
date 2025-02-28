@@ -646,6 +646,17 @@ def updateBabelPo():
     
     return "True"
 
+# Function to get server state (online or offline)
+@app.route('/api/getserverstate')
+def GetServerState():
+    return "Connected"
+
+# Function to restart the server
+@app.route('/api/restartserver')
+def RestartServer():
+    result = (subprocess.run(["systemctl", "restart", "appexpress"], check=True))
+    return jsonify({"status": "success", "message": "Server restarted", "result": result})
+
 #Function to update mo files. Usefull for words in the website
 @app.route('/api/updatewebsitedictionnary')
 def updatewebsitedictionnary():

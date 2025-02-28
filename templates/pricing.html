@@ -37,28 +37,29 @@
         {% if selected_store %}
           <div class="subtitle">{{_(selected_store.name )}}</div>
           <div class="services">
-            {% for service in services %} 
-              <div class="service" data-aos="fade-down">
+            {% for service in services %}
+              {% set price = service.price_2 if selected_store in ["Auderghem", "Moortebeek"] else service.price_1 %}
+              {% if price > 0 %}
+                <div class="service" data-aos="fade-down">
       
-                <div class="infos">
-                  <h2>{{ _(service.name) }}</h2>
-                  {% if '_' not in _(service.description) %}
-                    <p>{{ _(service.description) | safe}}</p>
-                  {% endif %}
-                </div>
-                <div class="costs">
-                  <div class="price">
-                    {% if selected_store == "Moortebeek" %}
-                    <span class="value"> {{ service.price_2 }}€</span>
-                    {% else %}
-                    <span class="value"> {{ service.price_1 }}€</span>
+                  <div class="infos">
+                    <h2>{{ _(service.name) }}</h2>
+                    {% if '_' not in _(service.description) %}
+                      <p>{{ _(service.description) | safe}}</p>
                     {% endif %}
                   </div>
+                  <div class="costs">
+                    <div class="price">
+                      {% if (selected_store == "Moortebeek") or selected_store == "Auderghem"  %}
+                      <span class="value"> {{ service.price_2 }}€</span>
+                      {% else %}
+                      <span class="value"> {{ service.price_1 }}€</span>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <span>{{service.price}}</span>
                 </div>
-                <span>{{service.price}}</span>
-              </div>
-        
-      
+              {% endif %}
             {% endfor %}
             </div>
         {% endif %}

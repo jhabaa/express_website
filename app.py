@@ -654,7 +654,7 @@ def GetServerState():
 # Function to restart the server
 @app.route('/hotrestartserver', methods=['GET'])
 def RestartServer():
-    result = subprocess.run(["systemctl", "restart", "expressdryclean.service"], check=True, capture_output=True, text=True)
+    result = subprocess.run(["sudo","systemctl", "restart", "expressdryclean.service"], check=True, capture_output=True, text=True)
     print(result)
     return jsonify({"status": "success", "message": "Server restarted", "stdout": result.stdout, "stderr": result.stderr})
 

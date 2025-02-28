@@ -651,12 +651,19 @@ def updateBabelPo():
 def GetServerState():
     return "Connected"
 
+import threading
+
 # Function to restart the server
 @app.route('/hotrestartserver', methods=['GET'])
 def RestartServer():
-    result = subprocess.run(["sudo","systemctl", "restart", "expressdryclean.service"], check=True, capture_output=True, text=True)
-    print(result)
-    return jsonify({"status": "success", "message": "Server restarted", "stdout": result.stdout, "stderr": result.stderr})
+    def restart():
+        result = subprocess.run(["sudo","systemctl", "restart", "expressdryclean.service"], check=True, capture_output=True, text=True)
+        print(result)
+    
+    thread = threading.Thread(target=restart)
+    thread.start()
+    
+    return jsonify({"status": "success", "message": "Server is restarting"})
 
 #Function to update mo files. Usefull for words in the website
 @app.route('/api/updatewebsitedictionnary')

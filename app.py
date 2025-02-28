@@ -647,12 +647,12 @@ def updateBabelPo():
     return "True"
 
 # Function to get server state (online or offline)
-@app.route('/api/getserverstate')
+@app.route('/getserverstate')
 def GetServerState():
     return "Connected"
 
 # Function to restart the server
-@app.route('/api/restartserver')
+@app.route('/hotrestartserver', methods=['GET'])
 def RestartServer():
     result = (subprocess.run(["systemctl", "restart", "expressdryclean.service"], check=True))
     return jsonify({"status": "success", "message": "Server restarted", "result": result})

@@ -4,3 +4,8 @@ __pycache__/
 *.mwb
 *.wsgi
 *.aep
+
+#Ignore translations files
+*.pot
+*.po
+translations/

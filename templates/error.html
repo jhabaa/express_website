@@ -58,7 +58,9 @@
 </head>
 <body>
     <section class="error" id="error_page">
-        <img src="/static/imagesweb/logo_vitrine_EXPRESS.svg" alt="">
+	<a href="{{ url_for('home', lang = lang) }}">
+		<img src="/static/imagesweb/logo_vitrine_EXPRESS.svg" alt="Logo link to home">
+	</a>
         <div class="error-content">
             <h1>{{ _('Error') }}</h1>
             <p>{{ _('Error_message') }}</p>

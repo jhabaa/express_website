@@ -1178,9 +1178,9 @@ header.extended .lang a {
 form {
     display: flex;
     flex-direction: column;
-    justify-content: baseline;
+    justify-content: center;
     flex-wrap: wrap;
-    align-items: start;
+    align-items: center;
     width: 100%;
     height: 100%;
     max-width: 700px;
@@ -1190,17 +1190,18 @@ form {
     gap: 20px;
     text-align: start;
     flex: 1;
-    padding: 20px;
+    padding-inline:20px;
+    padding-bottom:50px;
 }
 
 form .entry {
     align-self: first baseline;
     display: flex;
+    position: relative;
     flex-flow: row wrap;
     width: 100%;
-    gap: 30px;
     justify-content: space-between;
-    max-width: fit-content;
+    justify-items:center;
 }
 
 form .checklist{
@@ -1232,7 +1233,7 @@ form input {
     border-radius: 10px;
     font-size: 20px;
     padding: 10px;
-    max-width: 200px;
+    max-width: 300px;
     border: var(--main-bg-color) 1px solid;
 }
 
@@ -1264,9 +1265,12 @@ form .submit-btn {
     color: var(--header);
     font-size: 1.5rem;
     width: 100%;
+    min-width:200px;
     padding-block: 10px;
     border-radius: .2rem;
     border: none;
+    position:absolute;
+    bottom:10px;
 }
 
 form .submit-btn:hover {
@@ -2474,11 +2478,10 @@ footer {
     display: flex;
     flex-direction: column;
     width: 100vw;
+    overflow: hidden;
     margin: 0;
-    padding-block: 20px;
-    background-color: var(--footer-blue);
-    backdrop-filter: saturate(0.1) blur(10px);
-    -webkit-backdrop-filter: saturate(0.1) blur(10px);
+    position:relative;
+    padding:unset;
     color: #fff;
 }
 
@@ -2499,13 +2502,19 @@ footer::after {
     position: absolute;
     display: block;
     width: 100%;
-    background-color: #191919a6;
-    backdrop-filter: blur(2rem);
-    -webkit-backdrop-filter: blur(2rem);
-    margin-block: 10px;
-    z-index: 2;
+    height:100%;
+    background-color: var(--express_blue);
+    opacity:.6;
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    margin-block: unset;
+    z-index: 1;
 }
 
+footer .right , .left{
+	z-index:3;
+	padding-block: 40px;
+}
 footer .left {
     display: flex;
     justify-content: center;
@@ -2548,6 +2557,10 @@ footer .right .btns {
     border-radius: 10px;
     color: var(--header-text);
     box-shadow: #0000008a 0 0 10px;
+}
+footer .right .btns a:hover{
+	background-color: var(--express_blue);
+	transition: all .5ms ease-in-out;
 }
 
 footer .right .links {
@@ -2613,13 +2626,13 @@ footer .right .icon-link:hover {
     width: 100vw;
     height: 100vh;
     object-fit: fill;
-    z-index: -1;
+    z-index: 1;
     margin: 0;
-    padding: 0;
-    filter: blur(30px);
-    -webkit-filter: blur(30px);
+    padding: 0; 
     background-image: var(--background_image_vertical);
-    opacity: .1;
+    opacity: .7;
+    filter: blur(2rem);
+    -webkit-filter : blur(2rem);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

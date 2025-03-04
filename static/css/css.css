@@ -125,7 +125,7 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background: var(--header);
+    background: transparent;
     position: fixed;
     width: 100%;
     max-width: 100vw;
@@ -309,8 +309,6 @@ header .up nav ul li .sublinks {
     flex-wrap: nowrap;
     width: 100%;
     max-width: unset;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    background-color: var(--pure-white);
 }
 
 header .up nav ul li .sublinks .mainlinks {
@@ -341,7 +339,6 @@ header .up nav ul li .sublinks .mainlinks {
     font-size: 20px;
     font-weight: 100;
     color: var(--express_blue);
-    padding: 10px;
     opacity: .6;
 }
 
@@ -3298,23 +3295,21 @@ iframe {
         flex-flow: row nowrap;
         justify-content: right;
         z-index: 5;
+	padding-inline : 10px;
         width: fit-content;
     }
     #lang_link .sublinks {
-        background-color: var(--header);
-        top: 0px;
         left: unset;
-        right: 0px;
+        right: 15px;
         border: unset;
         justify-content: right;
         padding-bottom: 20px;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
         z-index: 1;
     }
     #lang_link .sublinks .mainlinks {
-        background-color: var(--transparent_white);
         gap: 10px;
+	text-align:start;
+	padding-inline:15px;
     }
     #burger {
         display: none;
@@ -3666,4 +3661,13 @@ iframe {
     object-fit: contain;
     transition: all 0.5s ease-in-out;
     display: block;
+}
+
+#header_background{
+	position:absolute;
+	top:0px;
+	margin:unset;
+	width:100%;
+	height:100px;
+	background-color:var(--header);
 }

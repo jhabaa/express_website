@@ -1,6 +1,7 @@
 
 let burger = document.querySelector('#burger');
 let header = document.querySelector('#header');
+let header_background = document.getElementById('header_background');
 let body = document.querySelector('#body');
 let ADS = document.querySelector('#ADS');
 let lang_btn = document.querySelector('#lang');
@@ -234,6 +235,11 @@ if (getDeviceType() == 'desktop' && window.visualViewport.width > 1000){
             // Only if the node has more than one child
             if (btn.childElementCount <= 1){return}
             blur_overlay.classList.remove('hidden');
+		    // Now extend the headbar height depending on the number of elements in sublinks > mainlinks
+            let number_of_children = btn.children[1].children[0].childElementCount;
+            let new_height = number_of_children * 80;   
+            header_background.style.height = new_height + 'px';
+
         })
         btn.addEventListener('mouseleave', function() {
             // Get the second child of the btn
@@ -241,6 +247,8 @@ if (getDeviceType() == 'desktop' && window.visualViewport.width > 1000){
             btn.classList.add('hidden');
             // Blur the background
             blur_overlay.classList.add('hidden');
+            // reset the header background height
+            header_background.style.height = '100px';
         });
     });
 }else{

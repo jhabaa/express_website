@@ -1493,7 +1493,6 @@ form .submit-btn:hover {
     color: var(--header-text);
     text-align: center;
     padding: 10px;
-    z-index: 1000;
 }
 
 #pricing .categories {

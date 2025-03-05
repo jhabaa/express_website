@@ -2,6 +2,9 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.header import Header
+from email.mime.base import MIMEBase
+from email import encoders
+
 from unidecode import unidecode
 from enum import Enum
 import datetime
@@ -17,7 +20,7 @@ import subprocess
 
 from unicodedata import decimal
 #from urllib import request
-from flask import Flask, jsonify, request_started, request_tearing_down, send_file, session
+from flask import Flask, jsonify, request_started, request_tearing_down, send_file, session, flash
 from flask import render_template, g
 from flask import request, url_for,redirect
 from flask_mysql_connector import MySQL
@@ -90,29 +93,25 @@ def defaultconverter(o):
 
 #====================================== Mail management =====================================
 #Function to send mail
-def send_email(to_addr, subject, user_name: str = "", email_type: str = "", command_recap: str = "", user_recap: str = ""):
-    user_name = user_name.replace("'","")
-    #Variables
-    html_text1 = ""
+def send_email(to_addr, subject, content:str, attachement_path : str = None):
     #Signature as image
     html_text3 = f'<p>Cordialement,</p><img src="http://express.REMOVED/getimage?name=signature" alt="" style="margin:0px; padding:0px; border-radius:0rem 0rem 2rem 2rem;"/>'
-    
-    if email_type == "contact_touser":
-        html_text1 = f'<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Montserrat:wght@200;300&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet"></head><body style="background:#dfe9f0;display: flex;align-items:center;justify-items:center;justify-content: center;align-content: center;font-family: Montserrat, sans-serif;"><section style="position: relative; min-height: 500px;background-color: aliceblue;border-radius: 2rem; display: flex; flex-direction: column; margin: 5px;"><h1>Bonjour {user_name},</h1><p>Nous avons bien reçu votre message. Nous vous recontacterons dans les plus brefs délais.</p>{html_text3}</section></body></html>'
-    if email_type == "contact_toadmin":
-        html_text1 = f'<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Montserrat:wght@200;300&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet"></head><body style="background:#dfe9f0;display: flex;align-items:center;justify-items:center;justify-content: center;align-content: center;font-family: Montserrat, sans-serif;"><section style="position: relative; min-height: 500px;background-color: aliceblue;border-radius: 2rem; display: flex; flex-direction: column; margin: 5px;"><h1>Bonjour,</h1><p>Vous avez reçu un message de {user_name}.</p><p>Voici le contenu du message : {command_recap}</p>{html_text3}</section></body></html>'
-    if email_type == "inscription":
-        html_text1 = f'<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Montserrat:wght@200;300&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet"></head><body style="background:#dfe9f0;display: flex;align-items:center;justify-items:center;justify-content: center;align-content: center;font-family: Montserrat, sans-serif;"><section style="position: relative; min-height: 500px;background-color: aliceblue;border-radius: 2rem; display: flex; flex-direction: column; margin: 5px;"><h1>Bonjour {user_name},</h1><p>Félicitations, vous venez de créer un nouveau compte sur notre application. Nous espérons que vous prendrez du plaisir dans son utilisation. Vous pouvez contacter le support concernant tout problème. </p>{html_text3}</section></body></html>'
-    if email_type == "command_validation":
-        html_text1 = f'<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Montserrat:wght@200;300&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet"></head><body style="background:#dfe9f0;display: flex;align-items:center;justify-items:center;justify-content: center;align-content: center;font-family: Montserrat, sans-serif;"><section style="position: relative; min-height: 500px;background-color: aliceblue;border-radius: 2rem; display: flex; flex-direction: column; margin: 5px;"><h1>Bonjour {user_name},</h1><p>Votre commande est à présent validée. Vous pouver consulter les détails dans votre profil sur notre application</p>{html_text3}</section></body></html>'
-    if email_type == "passwordReset":
-        html_text1 = f'<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Montserrat:wght@200;300&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet"></head><body style="background:#dfe9f0;display: flex;align-items:center;justify-items:center;justify-content: center;align-content: center;font-family: Montserrat, sans-serif;"><section style="position: relative; min-height: 500px;background-color: aliceblue;border-radius: 2rem; display: flex; flex-direction: column; margin: 5px;"><h1>Bonjour {user_name},</h1><p>Votre mot de passe est : {user_recap}</p>{html_text3}</section></body></html>'
-    header = MIMEText(html_text1, 'html', 'utf-8')
+
+    header = MIMEText(content, 'html', 'utf-8')
     msg = MIMEMultipart('alternative')
     msg['Subject'] = Header(subject, 'utf-8')
     msg['From'] = "noreply@REMOVED"
     msg['To'] = to_addr
     msg.attach(header)
+    # add attahement if exists
+    if attachement_path:
+        with open(attachement_path, 'rb') as f:
+            part = MIMEBase('application', 'octet-stream')
+            part.set_payload(f.read())
+        encoders.encode_base64(part)
+        part.add_header('Content-Disposition', f'attachment; filename={os.path.basename(attachement_path)}')
+        msg.attach(part)
+    #Send mail
     smtp_server = 'REMOVED'
     smtp_port = REMOVED
     smtp_user = 'REMOVED'
@@ -126,7 +125,7 @@ def send_email(to_addr, subject, user_name: str = "", email_type: str = "", comm
     #Add mail to CSV file
     with open(f'{settingPath}/mails.csv', 'a') as f:
         writer = csv.writer(f)
-        writer.writerow(["noreply@REMOVED", to_addr, subject, str(user_name.encode("utf-8")), email_type])
+        writer.writerow(["noreply@REMOVED", to_addr, subject, "username", content])
         f.close()
 
 """
@@ -457,7 +456,7 @@ def ResetPassword():
     cursor.execute(f"SELECT * FROM appexpress.user WHERE mail = '"+ mail +"'")
     response = cursor.fetchone()
     print("La réponse est" + str(response["name"] + str(response["password"])))
-    send_email(to_addr=mail, subject="Mot de passe Ex-press Dry Clean", user_name=(response["name"]), email_type="passwordReset", user_recap=response["password"])
+    #send_email(to_addr=mail, subject="Mot de passe Ex-press Dry Clean", user_name=(response["name"]), email_type="passwordReset", user_recap=response["password"])
     return "Mot de passe envoyé"
 
 
@@ -556,6 +555,7 @@ def submit_collaboration():
     data = request.form
     #send mail to admin to inform him about the message
     print(data)
+    send_email(to_addr="", subject="Message de "+data['first_name'] + data['last_name'], content=data['subject'])
     return redirect(url_for('collaborations', lang = session['lang'], message = "Message envoyé"))
 
 @app.route('/<lang>/career/')
@@ -572,8 +572,22 @@ def career(lang = 'fr', subpage = None, message = None):
 def submit_career():
     data = request.form
     print(data)
-    # Go back to the career page with a message
-    return redirect(url_for('career', lang = session['lang'], message = "Message envoyé"))
+    #Check the cv file and save it
+    if 'cv_file' not in request.files or request.files['cv_file'].filename == '':
+        return redirect(url_for('career', lang = session['lang'], message = "Veuillez joindre un fichier"))
+    
+    #Here we assume that the file is a pdf file
+    cv_file = request.files['cv_file']
+    if cv_file and allowed_file(cv_file.filename):
+        #Remove spaces 
+        filename = secure_filename(cv_file.filename)
+        cv_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        #send mail to admin to inform him about the message
+        send_email(to_addr="REMOVED", subject="Message de "+data['first_name'] + data['last_name'], content=data['subject'], attachement_path = os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        return redirect(url_for('career', lang = session['lang'], message = "CV envoyé"))
+    else:
+        return redirect(url_for('career', lang = session['lang'], message = "Fichier non autorisé"))
+
 
 @app.route('/<lang>/contact/')
 @app.route('/<lang>/contact/<subpage>')
@@ -615,9 +629,9 @@ def chatwithus():
     data = request.form
     print(data)
     #send mail to admin to inform him about the message
-    send_email(to_addr="nicola.REMOVED@REMOVED", subject="Message de "+data['first_name'] + data['last_name'], user_name=data['first_name'], email_type="contact_toadmin", command_recap=data['subject'])
+    send_email(to_addr="nicola.REMOVED@REMOVED", subject="Message de "+data['first_name'] + data['last_name'], content=data['subject'])
     #send mail to user to inform him that his message has been sent
-    send_email(to_addr=data['email'], subject="Message envoyé", user_name=data['first_name'], email_type="contact_touser") 
+    send_email(to_addr=data['email'], subject="Message envoyé", contact=f"Bonjour, {data['first_name']} Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.") 
     return redirect(url_for('contact', lang = session['lang'], message = "Message envoyé"))
 
 
@@ -900,7 +914,7 @@ def AddUser():
         #Create user recap in html array
         user_recap = f"<table><tr><td>Nom</td><td>{nameUser}</td></tr><tr><td>Adresse</td><td>{addressUser}</td></tr><tr><td>Mail</td><td>{email}</td></tr><tr><td>GSM</td><td>{phoneUser}</td></tr><tr><td>Mot de passe</td><td>{passwordUser}</td></tr></table> <i>Ceci est un mail factice pour tests alpha</i>"
         #Send mail to user
-        send_email(to_addr=email, subject="Inscription Ex-press Dry Clean", user_name=(nameUser), email_type="inscription", user_recap=user_recap)
+        #send_email(to_addr=email, subject="Inscription Ex-press Dry Clean", user_name=(nameUser), email_type="inscription", user_recap=user_recap)
         return json.dumps(id)
     
 #Get all commands
@@ -949,7 +963,7 @@ def AddCommand():
         #Write mail
         command_recap = f"<table><tr><td>Numéro de commande</td><td>{id}</td></tr><tr><td>Prix</td><td>{cost}€</td></tr><tr><td>Date de prise en charge</td><td>{enter_date}</td></tr><tr><td>Date de retour</td><td>{return_date}</td></tr><tr><td>Heure de prise en charge</td><td>{enter_time}h-{int(enter_time) +1 }h</td></tr><tr><td>Heure de retour</td><td>{return_time}h-{int(return_time) +1 }h</td></tr><tr><td>Sous-total</td><td>{sub_total}€</td></tr><tr><td>Livraison</td><td>{delivery}€</td></tr></table>"
         #Send mail to user
-        send_email(to_addr=a[0]["mail"], subject="Commande Ex-press Dry Clean", user_name=(a[0]["name"] +" "+ a[0]["surname"]), email_type="command_validation", command_recap=command_recap)
+        #send_email(to_addr=a[0]["mail"], subject="Commande Ex-press Dry Clean", user_name=(a[0]["name"] +" "+ a[0]["surname"]), email_type="command_validation", command_recap=command_recap)
 
 
     return json.dumps(id)
@@ -1067,7 +1081,7 @@ def DeleteUser():
         cursor.execute("DELETE FROM `appexpress`.`user` WHERE (`id` = '"+str(user)+"')")
         mysql.connection.commit()
         #send mail that we are sorry
-        send_email(to_addr=mail, subject="Au revoir", user_name=(a[0]["name"]), email_type="command_validation", command_recap=command_recap)
+        #send_email(to_addr=mail, subject="Au revoir", user_name=(a[0]["name"]), email_type="command_validation", command_recap=command_recap)
 
     return "True"
 
@@ -1146,7 +1160,7 @@ INSERT INTO `appexpress`.`client` (`ID_CLIENT`, `NAME_CLIENT`, `surname_CLIENT`,
 """
 path = os.path.abspath('/var/www/express/static/images')
 #path = os.path.abspath('static/images/')
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif','pdf','doc','docx'}
 
 
 def allowed_file(filename):

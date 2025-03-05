@@ -5,15 +5,6 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-41L8PMGFLT"></script>
-	<script>
-		  window.dataLayer = window.dataLayer || [];
-		    function gtag(){dataLayer.push(arguments);}
-		    gtag('js', new Date());
-
-		    gtag('config', 'G-41L8PMGFLT');
-	</script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>EX-PRESS Dry Clean | {% block title %}{% endblock %}</title>
@@ -188,17 +179,32 @@
         </div>
 
       
-                    <!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->
-<script type="text/javascript" src="/static/javascripts/cookie-consent.js" charset="UTF-8"></script>
+<!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->
+<script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js" charset="UTF-8"></script>
 <script type="text/javascript" charset="UTF-8">
 document.addEventListener('DOMContentLoaded', function () {
-cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","palette":"light","language":"fr","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"Ex-Press Dry Clean","website_privacy_policy_url":"http://express.REMOVED/fr/policy"});
+cookieconsent.run({"notice_banner_type":"headline","consent_type":"implied","palette":"light","language":"fr","page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"https://REMOVED"});
 });
 </script>
 
-<noscript>Free cookie consent management tool by <a href="https://www.termsfeed.com/">TermsFeed</a></noscript>
+<!-- Google Analytics -->
+<script type="text/plain" data-cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=G-41L8PMGFLT"></script>
+	<script type="text/plain" data-cookie-consent="tracking">
+		  window.dataLayer = window.dataLayer || [];
+		    function gtag(){dataLayer.push(arguments);}
+		    gtag('js', new Date());
+
+		    gtag('config', 'G-41L8PMGFLT');
+	</script>
+<!-- end of Google Analytics-->
+
+<noscript>Free cookie consent management tool by <a href="https://www.termsfeed.com/" rel="nofollow">TermsFeed</a></noscript>
 <!-- End Cookie Consent by TermsFeed https://www.TermsFeed.com -->
-        
+
+
+<!-- Below is the link that users can use to open Preferences Center to change their preferences. Do not modify the ID parameter. Place it where appropriate, style it as needed. -->
+
+
        
     </header>
     <main id="main" class="">
@@ -258,6 +264,7 @@ cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","pal
                 </a>
             </div>
             <div class="legal">
+		        <a href="#" id="open_preferences_center">{{_('Update cookies preferences')}}</a>
                 <a href="{{ url_for('policy', lang = lang)}}">{{_('Privacy policy')}}</a>
                 <a href="{{ url_for('terms', lang = lang)}}">{{_('General terms')}}</a>
             </div>

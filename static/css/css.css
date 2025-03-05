@@ -2106,8 +2106,7 @@ form .submit-btn:hover {
 }
 
 .engagement .title {
-    width: 100%;
-    font-size: clamp(1rem, 2vw, 2rem) ;
+    font-size: 24px ;
     font-weight: 700;
     color: var(--express_blue);
     padding: 10px;

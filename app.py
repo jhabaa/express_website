@@ -632,7 +632,7 @@ def chatwithus():
 def GetDictionary():
     lang = request.args.get('lang')
     #Get the babel .po
-    po = polib.pofile(f"{app.config['PO_FILE']}/{lang}/LC_MESSAGES/messages.po")
+    po = polib.pofile(f"{app.config['BABEL_PO_FILES_PATH']}/{lang}/LC_MESSAGES/messages.po")
     dictionary  = { poEntry.msgid : poEntry.msgstr for poEntry in po }
     return json.dumps(dictionary, indent=4)
 
@@ -643,12 +643,12 @@ def updateBabelPo():
     lang = request.json['lang']
     translations = request.json['translations']
     #Get the babel .po
-    po = polib.pofile(f"{app.config['PO_FILE']}/{lang}/LC_MESSAGES/messages.po")
+    po = polib.pofile(f"{app.config['BABEL_PO_FILES_PATH']}/{lang}/LC_MESSAGES/messages.po")
     for entry in po:
         if entry.msgid in translations:
             entry.fuzzy = False
             entry.msgstr = translations[entry.msgid]
-    po.save(f"{app.config['PO_FILE']}/{lang}/LC_MESSAGES/messages.po")
+    po.save(f"{app.config['BABEL_PO_FILES_PATH']}/{lang}/LC_MESSAGES/messages.po")
     
     return "True"
 
@@ -676,7 +676,7 @@ def RestartServer():
 def updatewebsitedictionnary():
     # COmpile the .po into .mo 
     print("Compiling translations")
-    subprocess.run(["pybabel", "compile", "-d", app.config['PO_FILE']], check=True)
+    subprocess.run(["pybabel", "compile", "-d", app.config['BABEL_PO_FILES_PATH']], check=True)
     print("Translation compiled")
                  
     refresh()

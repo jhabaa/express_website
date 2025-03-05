@@ -10,3 +10,4 @@ __pycache__/
 *.po
 translations/
 .env
+config.py

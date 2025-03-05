@@ -1175,15 +1175,15 @@ def upload_image():
 
 @app.route('/getimage')
 def get_image(name:str = ""):
-    result = f"{path}/default.png"
-    fullname = f"{path}/default.png"
+    result = f"{app.config['UPLOAD_FOLDER']}/default.png"
+    fullname = f"{app.config['UPLOAD_FOLDER']}/default.png"
     """ On recupère le nom de l'image """
     if name == "":
         reqname = request.args.get('name')
     else:
         reqname = name
     """On cherche son nom dans le repertoire des images"""
-    for root, directories, files in os.walk(path):
+    for root, directories, files in os.walk(app.config['UPLOAD_FOLDER']):
         for name in files:
             if name.__contains__(reqname):
                 fullname = os.path.join(root,name)
@@ -1195,12 +1195,12 @@ def get_image(name:str = ""):
 # Fonction qui permet de telecharger toutes les images d'un repertoire
 @app.route('/getallimages')
 def get_all_images():
-    result = f"{path}/default.png"
-    fullname = f"{path}/default.png"
+    result = f"{app.config['UPLOAD_FOLDER']}/default.png"
+    fullname = f"{app.config['UPLOAD_FOLDER']}/default.png"
     """ On recupère le nom de l'image """
     reqname = request.args.get('name')
     """On cherche son nom dans le repertoire des images"""
-    for root, directories, files in os.walk(path):
+    for root, directories, files in os.walk(app.config['UPLOAD_FOLDER']):
         for name in files:
             fullname = os.path.join(root,name)
             result = fullname

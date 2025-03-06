@@ -667,8 +667,6 @@ def RestartServer():
     
     thread = threading.Thread(target=restart, daemon=True)
     thread.start()
-    
-    return jsonify({"status": "success", "message": "Server is restarting"})
 
 #Function to update mo files. Usefull for words in the website
 @app.route('/api/updatewebsitedictionnary')

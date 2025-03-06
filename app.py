@@ -664,9 +664,8 @@ import threading
 def RestartServer():
     def restart():
         result = subprocess.run(["sudo","systemctl", "restart", f"{app.config['SERVICE_NAME']}"], check=True, capture_output=True, text=True)
-        print(result)
     
-    thread = threading.Thread(target=restart)
+    thread = threading.Thread(target=restart, daemon=True)
     thread.start()
     
     return jsonify({"status": "success", "message": "Server is restarting"})

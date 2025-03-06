@@ -663,7 +663,7 @@ import threading
 @app.route('/hotrestartserver', methods=['GET'])
 def RestartServer():
     def restart():
-        result = subprocess.run(["sudo","systemctl", "restart", "expressdryclean.service"], check=True, capture_output=True, text=True)
+        result = subprocess.run(["sudo","systemctl", "restart", f"{app.config['SERVICE_NAME']}"], check=True, capture_output=True, text=True)
         print(result)
     
     thread = threading.Thread(target=restart)

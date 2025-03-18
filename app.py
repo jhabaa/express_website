@@ -242,14 +242,14 @@ def defaultconverter(o):
 
 #====================================== Mail management =====================================
 #Function to send mail
-def send_email(to_addr, subject, content:str, attachement_path : str = None):
+def send_email(to_addr, subject, content:str, attachement_path : str = None, name:str = None):
     #Signature as image
     html_text3 = f'<p>Cordialement,</p><img src="http://express.REMOVED/getimage?name=signature" alt="" style="margin:0px; padding:0px; border-radius:0rem 0rem 2rem 2rem;"/>'
 
     header = MIMEText(content, 'html', 'utf-8')
     msg = MIMEMultipart('alternative')
     msg['Subject'] = Header(subject, 'utf-8')
-    msg['From'] = "noreply@REMOVED"
+    msg['From'] = app.config['NOREPLY_EMAIL']
     msg['To'] = to_addr
     msg.attach(header)
     # add attahement if exists
@@ -269,12 +269,12 @@ def send_email(to_addr, subject, content:str, attachement_path : str = None):
     server.ehlo()
     server.starttls()
     server.login(smtp_user, smtp_pass)
-    server.sendmail("noreply@REMOVED", to_addr, msg.as_string())
+    server.sendmail(app.config["NOREPLY_EMAIL"], to_addr, msg.as_string())
     server.quit()
     #Add mail to CSV file
     with open(f'{settingPath}/mails.csv', 'a') as f:
         writer = csv.writer(f)
-        writer.writerow(["noreply@REMOVED", to_addr, subject, "username", content])
+        writer.writerow([datetime.datetime.now().strftime("%d/%m/%Y - %H:%M:%S"), to_addr, subject, name, content])
         f.close()
 
 """
@@ -702,9 +702,69 @@ def collaborations(lang = 'fr', subpage = None, message = None):
 @app.route('/submit_collaboration', methods=['POST'])
 def submit_collaboration():
     data = request.form
+    categories = sorted(GetData('full','category'), key=lambda x: x['index'])
+    availablesCategoriesNames = [ x['name'] for x in categories]
     #send mail to admin to inform him about the message
     print(data)
-    send_email(to_addr="", subject="Message de "+data['first_name'] + data['last_name'], content=data['subject'])
+    company = data['company_name']
+    industry = data['industry']
+    contact_name = data["contact_name"]
+    phone = data['phone']
+    email = data['email']
+    try:
+        all_services_check = data['all_services']
+    except:
+        all_services_check = False
+
+
+    selected_services = [ x for x in data if x in  availablesCategoriesNames] if all_services_check == False else availablesCategoriesNames
+    #send mail to admin to inform him about the Collaboration
+    send_email(
+        to_addr=app.config["NOREPLY_EMAIL"],
+        subject=f"🤝 Nouvelle demande de collaboration de {company}",
+        content=f"""
+        <p><strong>Entreprise :</strong> {company}</p>
+        <p><strong>Secteur d’activité :</strong> {industry}</p>
+        <p><strong>Contact :</strong> {contact_name}</p>
+        <p><strong>Email :</strong> {email}</p>
+        <p><strong>Téléphone :</strong> {phone}</p>
+        
+        <p><strong>Services demandés :</strong></p>
+        <ul>
+            {"".join(f"<li>{service}</li>" for service in selected_services)}
+        </ul>
+        
+        <p>{'✅ Demande de tous les services' if all_services_check else '📌 Sélection partielle des services'}</p>
+
+        <p>📅 Cette demande a été envoyée via le formulaire de collaboration.</p>
+        """
+    )
+
+    # send mail to the user to confirm the message
+    send_email(
+        to_addr=email,
+        subject="📨 Confirmation de votre demande de collaboration",
+        content=f"""
+        <p>Bonjour {contact_name},</p>
+
+        <p>Nous avons bien reçu votre demande de collaboration et nous vous remercions pour votre intérêt envers Ex-Press Dry Clean.</p>
+
+        <p><strong>Entreprise :</strong> {company}</p>
+        <p><strong>Secteur d’activité :</strong> {industry}</p>
+        
+        <p><strong>Services demandés :</strong></p>
+        <ul>
+            {"".join(f"<li>{service}</li>" for service in selected_services)}
+        </ul>
+        
+        <p>{'✅ Vous avez demandé l’ensemble de nos services.' if all_services_check else '📌 Vous avez sélectionné certains services uniquement.'}</p>
+
+        <p>Notre équipe va analyser votre demande et reviendra vers vous dans les plus brefs délais.</p>
+
+        <p>Merci de votre confiance,</p>
+        <p><strong>L’équipe Ex-Press Dry Clean</strong></p>
+        """
+    )   
     return redirect(url_for('collaborations', lang = session['lang'], message = "Message envoyé"))
 
 @app.route('/<lang>/career/')
@@ -721,6 +781,10 @@ def career(lang = 'fr', subpage = None, message = None):
 def submit_career():
     data = request.form
     print(data)
+    name = data["full_name"]
+    email = data["email"]
+    phone = data["phone"]
+    message = data["message"]
     #Check the cv file and save it
     if 'cv_file' not in request.files or request.files['cv_file'].filename == '':
         return redirect(url_for('career', lang = session['lang'], message = "Veuillez joindre un fichier"))
@@ -732,7 +796,41 @@ def submit_career():
         filename = secure_filename(cv_file.filename)
         cv_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         #send mail to admin to inform him about the message
-        send_email(to_addr="REMOVED", subject="Message de "+data['first_name'] + data['last_name'], content=data['subject'], attachement_path = os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        send_email(
+            to_addr=app.config["NOREPLY_EMAIL"],
+            subject=f"📩 Nouvelle candidature reçue de {name}",
+            content=f"""
+            <p><strong>Nom :</strong> {name}</p>
+            <p><strong>Email :</strong> {email}</p>
+            <p><strong>Téléphone :</strong> {phone}</p>
+            <p><strong>Message du candidat :</strong></p>
+            <blockquote>{message}</blockquote>
+            <p>📎 <strong>CV en pièce jointe</strong></p>
+            <p>📅 Cette candidature a été envoyée depuis le formulaire en ligne.</p>
+            """,
+            attachment_path=os.path.join(app.config['UPLOAD_FOLDER'], filename),  # ✅ Ajoute le CV en pièce jointe
+            name=name
+        )
+        # send mail to the user to confirm reception
+        send_email(
+    to_addr=email,
+    subject="📨 Confirmation de réception de votre candidature",
+    content=f"""
+        <p>Bonjour {name},</p>
+
+        <p>Nous avons bien reçu votre candidature et nous vous remercions de l'intérêt que vous portez à Express Dry Clean.</p>
+
+        <p><strong>📩 Votre message :</strong></p>
+        <blockquote>{message}</blockquote>
+
+        <p>📎 <strong>Votre CV a bien été reçu.</strong></p>
+
+        <p>Notre équipe de recrutement analysera votre profil et vous contactera si votre candidature correspond à nos besoins.</p>
+
+        <p>Merci de votre confiance,</p>
+        <p><strong>L’équipe Express Dry Clean</strong></p>
+        """
+    )
         return redirect(url_for('career', lang = session['lang'], message = "CV envoyé"))
     else:
         return redirect(url_for('career', lang = session['lang'], message = "Fichier non autorisé"))
@@ -776,11 +874,39 @@ def localization(lang = 'fr', subpage = None ):
 @app.route('/chatwithus', methods=['POST'])
 def chatwithus():
     data = request.form
+    email = data['email']
+    name = data['first_name'] + " " + data['last_name']
+    phone = data['phone']
+    message = data['subject']
     print(data)
     #send mail to admin to inform him about the message
-    send_email(to_addr="nicola.REMOVED@REMOVED", subject="Message de "+data['first_name'] + data['last_name'], content=data['subject'])
+    send_email(
+    to_addr=app.config["NOREPLY_EMAIL"],    
+    subject=f"📩 Nouveau message de {name}",
+    content=f"""
+    <p><strong>Nom :</strong> {name}</p>
+    <p><strong>Email :</strong> {email}</p>
+    <p><strong>Téléphone :</strong> {phone}</p>
+    <p><strong>Message :</strong></p>
+    <blockquote>{message}</blockquote>
+    <p>📅 Ce message a été envoyé depuis le formulaire de contact.</p>
+    """
+)   
     #send mail to user to inform him that his message has been sent
-    send_email(to_addr=data['email'], subject="Message envoyé", contact=f"Bonjour, {data['first_name']} Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.") 
+    send_email(
+    to_addr=email,
+    subject="📨 Confirmation de réception de votre message",
+    content=f"""
+    <p>Bonjour {data['first_name']},</p>
+    <p>Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.</p>
+    <p>📩 <strong>Votre message :</strong></p>
+    <blockquote>{message}</blockquote>
+    <p>Notre équipe reviendra vers vous rapidement.</p>
+    <p>Merci de votre confiance,</p>
+    <p><strong>L’équipe Ex-Press Dry Clean</strong></p>
+    """,
+    name=name
+    )
     return redirect(url_for('contact', lang = session['lang'], message = "Message envoyé"))
 
 

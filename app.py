@@ -6,6 +6,7 @@ from typing import Dict
 from flask_cors import cross_origin
 from jose import jwt
 
+import requests
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -242,7 +243,7 @@ def defaultconverter(o):
 
 #====================================== Mail management =====================================
 #Function to send mail
-def send_email(to_addr, subject, content:str, attachement_path : str = None, name:str = None):
+def send_email(to_addr, subject, content:str, attachment_path : str = None, name:str = None):
     #Signature as image
     html_text3 = f'<p>Cordialement,</p><img src="http://express.REMOVED/getimage?name=signature" alt="" style="margin:0px; padding:0px; border-radius:0rem 0rem 2rem 2rem;"/>'
 
@@ -253,12 +254,12 @@ def send_email(to_addr, subject, content:str, attachement_path : str = None, nam
     msg['To'] = to_addr
     msg.attach(header)
     # add attahement if exists
-    if attachement_path:
-        with open(attachement_path, 'rb') as f:
+    if attachment_path:
+        with open(attachment_path, 'rb') as f:
             part = MIMEBase('application', 'octet-stream')
             part.set_payload(f.read())
         encoders.encode_base64(part)
-        part.add_header('Content-Disposition', f'attachment; filename={os.path.basename(attachement_path)}')
+        part.add_header('Content-Disposition', f'attachment; filename={os.path.basename(attachment_path)}')
         msg.attach(part)
     #Send mail
     smtp_server = app.config['MAIL_SERVER']
@@ -691,13 +692,13 @@ def about(lang = 'fr', subpage = None):
 
 @app.route('/<lang>/collaborations/')
 @app.route('/<lang>/collaborations/<subpage>')
-def collaborations(lang = 'fr', subpage = None, message = None):
+def collaborations(lang = 'fr', subpage = None):
     #set language
     session['lang'] = lang
     stores = GetData('full','store')
     services = GetData('full','service')
     categories = sorted(GetData('full','category'), key=lambda x: x['index'])
-    return render_template('collaborations.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'collaborations', stores = stores, services = services, categories = categories, message = message)
+    return render_template('collaborations.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'collaborations', stores = stores, services = services, categories = categories)
 
 @app.route('/submit_collaboration', methods=['POST'])
 def submit_collaboration():
@@ -705,22 +706,33 @@ def submit_collaboration():
     categories = sorted(GetData('full','category'), key=lambda x: x['index'])
     availablesCategoriesNames = [ x['name'] for x in categories]
     #send mail to admin to inform him about the message
-    print(data)
     company = data['company_name']
     industry = data['industry']
     contact_name = data["contact_name"]
     phone = data['phone']
     email = data['email']
+    message = data['message']
+    recaptcha = data['g-recaptcha-response']
+
+    recaptchaResponse = checkReCaptcha(token = recaptcha)
+
+    if (recaptchaResponse == False):
+        flash('Submission error', 'error')
+        return redirect(url_for('collaborations', lang = session['lang']))
+
+
     try:
         all_services_check = data['all_services']
     except:
         all_services_check = False
 
+    #Set a cool message cause form is okay
+    flash('Submission valid', 'success')
 
     selected_services = [ x for x in data if x in  availablesCategoriesNames] if all_services_check == False else availablesCategoriesNames
     #send mail to admin to inform him about the Collaboration
     send_email(
-        to_addr=app.config["NOREPLY_EMAIL"],
+        to_addr=app.config["ADMIN_EMAIL"],
         subject=f"🤝 Nouvelle demande de collaboration de {company}",
         content=f"""
         <p><strong>Entreprise :</strong> {company}</p>
@@ -735,7 +747,8 @@ def submit_collaboration():
         </ul>
         
         <p>{'✅ Demande de tous les services' if all_services_check else '📌 Sélection partielle des services'}</p>
-
+        <p><strong>Message :</strong></p>
+        <blockquote><p>{message}</p></blockquote>
         <p>📅 Cette demande a été envoyée via le formulaire de collaboration.</p>
         """
     )
@@ -765,7 +778,9 @@ def submit_collaboration():
         <p><strong>L’équipe Ex-Press Dry Clean</strong></p>
         """
     )   
-    return redirect(url_for('collaborations', lang = session['lang'], message = "Message envoyé"))
+    
+    return redirect(url_for('home', lang = 'fr'))
+
 
 @app.route('/<lang>/career/')
 @app.route('/<lang>/career/<subpage>')
@@ -785,6 +800,14 @@ def submit_career():
     email = data["email"]
     phone = data["phone"]
     message = data["message"]
+
+    recaptcha = data['g-recaptcha-response']
+    print(data, flush = True)
+    recaptchaResponse = checkReCaptcha(token = recaptcha)
+
+    if (recaptchaResponse == False):
+        return redirect(url_for('career', lang = session['lang'], message = "Captcha Error"))
+
     #Check the cv file and save it
     if 'cv_file' not in request.files or request.files['cv_file'].filename == '':
         return redirect(url_for('career', lang = session['lang'], message = "Veuillez joindre un fichier"))
@@ -797,7 +820,7 @@ def submit_career():
         cv_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         #send mail to admin to inform him about the message
         send_email(
-            to_addr=app.config["NOREPLY_EMAIL"],
+            to_addr=app.config["ADMIN_EMAIL"],
             subject=f"📩 Nouvelle candidature reçue de {name}",
             content=f"""
             <p><strong>Nom :</strong> {name}</p>
@@ -818,7 +841,7 @@ def submit_career():
     content=f"""
         <p>Bonjour {name},</p>
 
-        <p>Nous avons bien reçu votre candidature et nous vous remercions de l'intérêt que vous portez à Express Dry Clean.</p>
+        <p>Nous avons bien reçu votre candidature et nous vous remercions de l'intérêt que vous portez à Ex-Press Dry Clean.</p>
 
         <p><strong>📩 Votre message :</strong></p>
         <blockquote>{message}</blockquote>
@@ -828,7 +851,7 @@ def submit_career():
         <p>Notre équipe de recrutement analysera votre profil et vous contactera si votre candidature correspond à nos besoins.</p>
 
         <p>Merci de votre confiance,</p>
-        <p><strong>L’équipe Express Dry Clean</strong></p>
+        <p><strong>L’équipe Ex-Press Dry Clean</strong></p>
         """
     )
         return redirect(url_for('career', lang = session['lang'], message = "CV envoyé"))
@@ -871,6 +894,16 @@ def localization(lang = 'fr', subpage = None ):
     return render_template('localization.html', lang = session['lang'], dictionary = dictionary[lang], stores = stores, selected_store = available_store, current_page = 'localization', services = services, categories = categories)
 
 
+#Funtion to make a post to googleReCaptcha and return the response
+def checkReCaptcha(token:str , remoteip:str = None):
+    key = "REMOVED"
+    url = "https://www.google.com/recaptcha/api/siteverify"
+    obj = {"secret":key, "response":token}
+    x = requests.post(url, data = obj)
+    data = x.json()
+    print(data, flush = True)
+    return data['success']
+
 @app.route('/chatwithus', methods=['POST'])
 def chatwithus():
     data = request.form
@@ -878,10 +911,16 @@ def chatwithus():
     name = data['first_name'] + " " + data['last_name']
     phone = data['phone']
     message = data['subject']
-    print(data)
+    recaptcha = data['g-recaptcha-response']
+    print(data, flush = True)
+    recaptchaResponse = checkReCaptcha(token = recaptcha)
+
+    if (recaptchaResponse == False):
+        return redirect(url_for('contact', lang = session['lang'], message = "Captcha Error"))
+
     #send mail to admin to inform him about the message
     send_email(
-    to_addr=app.config["NOREPLY_EMAIL"],    
+    to_addr=app.config["ADMIN_EMAIL"],    
     subject=f"📩 Nouveau message de {name}",
     content=f"""
     <p><strong>Nom :</strong> {name}</p>

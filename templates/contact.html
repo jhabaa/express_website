@@ -93,7 +93,7 @@
             </div>
         </div>
         <div class="contact-form">
-            <form action="{{ url_for('chatwithus')}}" method="post" class="form">
+            <form action="{{ url_for('chatwithus')}}" method="post" class="form" id="contact_form">
                 <div class="entry">
                     <div class="block">
                         <span>{{_('firstname')}}</span>
@@ -128,7 +128,7 @@
                     {{ _(message) }}
                 </div>
                 {% endif %}
-                <input type="submit" value="Send message" class="submit-btn">
+		<input type="submit" value="Envoyer"   class="submit-btn g-recaptcha" data-sitekey="6Lfl2vwqAAAAAFODS-C_Vak8u9tYLq5Xel9Z_Ny5" data-callback="onSubmit_contact" data-action='submit'/>
             </form>
         </div>
     </div> 

@@ -24,6 +24,8 @@
     <meta name="web_author" content="J-Hubert ABA'A | REMOVEDlab">
     <meta name="geo.country" content="be">
     <meta name="version" content="0.1.0+1">
+    <!-- Google -->
+      <script src="https://www.google.com/recaptcha/api.js"></script>
     <!-- Favicon -->
 
     <link rel="apple-touch-icon" sizes="57x57" href="/static/favicons/apple-icon-57x57.png">
@@ -65,7 +67,19 @@
 </head>
 
 <body id="body">
-
+	
+	<!-- Notification -->
+	<div id="notification">
+	{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+		{{ messages }}
+			{% for category, message in messages %}
+				{{ category }}
+				{{ message }}
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	</div>
    <!--  <video id="ADS" autoplay muted loop playsinline preload="auto">
         <source src="/static/imagesweb/1.mp4" type="video/mp4" />
     </video> -->

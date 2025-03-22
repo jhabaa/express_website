@@ -59,7 +59,7 @@
             {{_('collaborations_contact_title')}}
         </div>
     
-        <form action="{{ url_for('submit_collaboration')}}" method="post" class="form">
+        <form action="{{ url_for('submit_collaboration')}}" method="post" class="form" id="collaboration_form">
         
             <div class="entry">
                 <div class="block">
@@ -101,12 +101,12 @@
                     <span>{{ _('collab_services') }}</span>
                     <div class="checklist">
                         <div class="check">
-                            <input style="width: fit-content;" type="checkbox" id="all_services" name="all_services" value="all_services">
+                            <input style="width: fit-content;" type="checkbox" id="all_services" name="all_services">
                             <label for="all_services">{{ _('collab_all_services') }}</label>
                         </div>
                         {% for category in categories %}
                             <div class="check">
-                                <input style="width: fit-content;" type="checkbox" id="{{category.name + '_service'}}" name="{{category.name + '_service'}}" value="{{category.name + '_service'}}">
+                                <input style="width: fit-content;" type="checkbox" id="{{category.name + '_service'}}" name="{{category.name}}">
                                 <label for="{{category.name}}_service">{{ _(category.name) }}</label>
                             </div>
                         {% endfor %}
@@ -145,13 +145,7 @@
                 </div>
             </div>
         
-            {% if message %}
-            <div class="alert" role="alert">
-                {{ _(message) }}
-            </div>
-            {% endif %}
-            
-            <input type="submit" value="{{ _('collab_submit') }}" class="submit-btn">
+                      <input type="submit" value="{{ _('collab_submit') }}" class="submit-btn g-recaptcha" data-sitekey="6Lfl2vwqAAAAAFODS-C_Vak8u9tYLq5Xel9Z_Ny5" data-callback="onSubmit_collaboration" data-action='submit'>
         </form>
     </div>
 </section>

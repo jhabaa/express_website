@@ -26,7 +26,7 @@
             {{_('career_contact_title')}}
         </div>
     
-        <form action="{{ url_for('submit_career') }}" method="post" enctype="multipart/form-data" class="form">
+        <form action="{{ url_for('submit_career') }}" method="post" enctype="multipart/form-data" class="form" id = "career_form">
     
             <h2>{{ _('cv_title') }}</h2>
         
@@ -62,13 +62,8 @@
                 </div>
             </div>
         
-            {% if message %}
-            <div class="alert" role="alert">
-                {{ _(message) }}
-            </div>
-            {% endif %}
-            
-            <input type="submit" value="{{ _('cv_submit') }}" class="submit-btn">
+           
+            <input type="submit" value="{{ _('cv_submit') }}" class="submit-btn g-recaptcha" data-sitekey="6Lfl2vwqAAAAAFODS-C_Vak8u9tYLq5Xel9Z_Ny5" data-callback="onSubmit_career" data-action='submit'>
         </form>
     </div>
 </section>

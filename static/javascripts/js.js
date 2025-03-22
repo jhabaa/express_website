@@ -56,6 +56,16 @@ if (titl_cards.length > 0) {
     });
 }
 
+// Submit token code
+function onSubmit_contact(token){
+	document.getElementById("contact_form").submit();
+}
+function onSubmit_collaboration(token){
+	document.getElementById("collaboration_form").submit();
+}
+function onSubmit_career(token){
+	document.getElementById("career_form").submit();
+}	
 //let animate this 
 var options = {
     root: null,

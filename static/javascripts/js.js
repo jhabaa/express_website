@@ -22,6 +22,8 @@ let blur_overlay = document.querySelector('.blurOverlay');
 
 let active_service_background = document.getElementById('active_service_background');
 
+let notification = document.getElementById("notification")
+
 let services = document.querySelectorAll('.service');
 let store_cards = document.querySelectorAll('.store_card');
 let sublinks = document.querySelectorAll('.sublink');
@@ -54,6 +56,18 @@ if (titl_cards.length > 0) {
         gyroscope: true,
         "max-glare": 0.5,
     });
+}
+
+// Notification animation 
+if (notification){
+    // enter animation 
+    let enter_animation = anime({
+        targets : notification,
+        translateY: "-200px",
+        scale:.5,
+        opacity:0,
+        delay: "5000ms"
+    })
 }
 
 // Submit token code

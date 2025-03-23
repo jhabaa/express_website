@@ -67,19 +67,18 @@
 </head>
 
 <body id="body">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% set message = messages[0] %}
+        <div id="notification">
+            <div class="wrapper {{message[0]}}">
+                <h2> {{ _(message[0]) }} </h2>
+                <h5> {{ _(message[1]) }}</h5>
+            </div>
+        </div>
+        {% endif %}
+    {% endwith %}
 	
-	<!-- Notification -->
-	<div id="notification">
-	{% with messages = get_flashed_messages(with_categories=true) %}
-		{% if messages %}
-		{{ messages }}
-			{% for category, message in messages %}
-				{{ category }}
-				{{ message }}
-			{% endfor %}
-		{% endif %}
-	{% endwith %}
-	</div>
    <!--  <video id="ADS" autoplay muted loop playsinline preload="auto">
         <source src="/static/imagesweb/1.mp4" type="video/mp4" />
     </video> -->

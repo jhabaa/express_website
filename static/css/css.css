@@ -3669,3 +3669,27 @@ iframe {
 	height:100px;
 	background-color:var(--header);
 }
+
+#notification{
+    position: fixed;
+    top: 50px;
+    z-index: 4000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    opacity: .8;
+}
+
+#notification .wrapper {
+    background-color: var(--express_blue);
+    padding-inline: 50px;
+    padding-block: 10px;
+    color: var(--background-gray);
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    border-radius: 2rem;
+}
+.wrapper.error{
+    background-color: red;
+}

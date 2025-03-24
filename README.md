@@ -24,7 +24,7 @@ Bienvenue sur le dépôt officiel de **Express Dry Clean**, une application web 
 - **I18n** : Flask-Babel (`.po`, `.mo`, `gettext`)
 - **DB** : MySQL (via `mysql-connector-python`)
 - **UI côté client** : HTML / Jinja2 / CSS / JS
-- **Sécurité** : ReCAPTCHA v2, upload filtré, nettoyage historique Git
+- **Sécurité** : ReCAPTCHA v3, upload filtré, nettoyage historique Git
 
 ---
 

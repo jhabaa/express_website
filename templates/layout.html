@@ -72,8 +72,8 @@
         {% set message = messages[0] %}
         <div id="notification">
             <div class="wrapper {{message[0]}}">
-                <h2> {{ _(message[0]) }} </h2>
-                <h5> {{ _(message[1]) }}</h5>
+                <h2> {{ message[0] }} </h2>
+                <h5> {{ message[1] }}</h5>
             </div>
         </div>
         {% endif %}

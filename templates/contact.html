@@ -123,11 +123,6 @@
                         <textarea name="subject" required rows="6" id="subject" placeholder={{_('subject')}} class="input"></textarea>
                     </div>
                 </div>
-                {% if message %}
-                <div class="alert" role="alert">
-                    {{ _(message) }}
-                </div>
-                {% endif %}
 		<input type="submit" value="Envoyer"   class="submit-btn g-recaptcha" data-sitekey="6Lfl2vwqAAAAAFODS-C_Vak8u9tYLq5Xel9Z_Ny5" data-callback="onSubmit_contact" data-action='submit'/>
             </form>
         </div>

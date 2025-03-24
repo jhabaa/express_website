@@ -3681,15 +3681,19 @@ iframe {
 }
 
 #notification .wrapper {
-    background-color: var(--express_blue);
+    background-color: var(--background-gray);
     padding-inline: 50px;
     padding-block: 10px;
-    color: var(--background-gray);
+    color: var(--header-text);
     display: flex;
     flex-flow: column nowrap;
     text-align: center;
     border-radius: 2rem;
+
+    -webkit-backdrop-filter: blur(2rem);
+    backdrop-filter: blur(2rem);
 }
 .wrapper.error{
-    background-color: red;
+    box-shadow: red;
+    border-color: red;
 }

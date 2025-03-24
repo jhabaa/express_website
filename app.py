@@ -62,6 +62,27 @@ app.config.from_object(Config)
 mysql = MySQL(app)
 babel = Babel(app, locale_selector=get_locale)
 
+#flash dictionary with errors and success messages
+from flask_babel import _
+
+flash_dict = {
+    1: _("✅ Le formulaire a bien été envoyé."),
+    2: _("❌ Une erreur est survenue lors de l’envoi du formulaire."),
+    3: _("⚠️ Veuillez remplir tous les champs obligatoires."),
+    4: _("✅ Votre CV a été envoyé avec succès."),
+    5: _("❌ Aucun fichier joint. Veuillez ajouter un CV."),
+    6: _("❌ Le fichier joint n’est pas autorisé (PDF uniquement)."),
+    7: _("✅ Votre demande de collaboration a bien été envoyée."),
+    8: _("❌ Impossible d’envoyer la demande de collaboration."),
+    9: _("⚠️ Le format de l’adresse email est invalide."),
+    10: _("✅ Merci pour votre message. Nous vous contacterons bientôt."),
+    11: _("❌ Ce service n’est pas disponible pour le moment."),
+    12: _("⚠️ Un champ contient une valeur incorrecte."),
+    13: _("✅ Les informations ont été enregistrées avec succès."),
+    14: _("❌ Impossible de traiter votre demande. Veuillez réessayer plus tard."),
+    15: _("⚠️ Session expirée. Veuillez rafraîchir la page.")
+}
+
 #AUTH0
 # This is the AUTH0 CODE
 
@@ -717,17 +738,15 @@ def submit_collaboration():
     recaptchaResponse = checkReCaptcha(token = recaptcha)
 
     if (recaptchaResponse == False):
-        flash('Submission error', 'error')
+        flash(flash_dict[2], 'error')
         return redirect(url_for('collaborations', lang = session['lang']))
-
-
     try:
         all_services_check = data['all_services']
     except:
         all_services_check = False
 
     #Set a cool message cause form is okay
-    flash('Submission valid', 'success')
+    flash(flash_dict[7], 'success')
 
     selected_services = [ x for x in data if x in  availablesCategoriesNames] if all_services_check == False else availablesCategoriesNames
     #send mail to admin to inform him about the Collaboration
@@ -784,13 +803,13 @@ def submit_collaboration():
 
 @app.route('/<lang>/career/')
 @app.route('/<lang>/career/<subpage>')
-def career(lang = 'fr', subpage = None, message = None):
+def career(lang = 'fr', subpage = None):
     #set language
     session['lang'] = lang
     stores = GetData('full','store')
     services = GetData('full','service')
     categories = sorted(GetData('full','category'), key=lambda x: x['index'])
-    return render_template('career.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'career', stores = stores, services = services, categories = categories, message = message)
+    return render_template('career.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'career', stores = stores, services = services, categories = categories)
 
 @app.route('/submit_career', methods=['POST'])
 def submit_career():
@@ -804,13 +823,15 @@ def submit_career():
     recaptcha = data['g-recaptcha-response']
     print(data, flush = True)
     recaptchaResponse = checkReCaptcha(token = recaptcha)
-
-    if (recaptchaResponse == False):
-        return redirect(url_for('career', lang = session['lang'], message = "Captcha Error"))
+    is_invalid = email == None or name == None # Check if some datas are present 
+    if (recaptchaResponse == False or is_invalid):
+        flash(flash_dict[2], 'error')
+        return redirect(url_for('career', lang = session['lang']))
 
     #Check the cv file and save it
     if 'cv_file' not in request.files or request.files['cv_file'].filename == '':
-        return redirect(url_for('career', lang = session['lang'], message = "Veuillez joindre un fichier"))
+        flash(flash_dict[5], 'error')
+        return redirect(url_for('career', lang = session['lang']))
     
     #Here we assume that the file is a pdf file
     cv_file = request.files['cv_file']
@@ -834,6 +855,7 @@ def submit_career():
             attachment_path=os.path.join(app.config['UPLOAD_FOLDER'], filename),  # ✅ Ajoute le CV en pièce jointe
             name=name
         )
+        flash(flash_dict[4], 'success')
         # send mail to the user to confirm reception
         send_email(
     to_addr=email,
@@ -854,26 +876,27 @@ def submit_career():
         <p><strong>L’équipe Ex-Press Dry Clean</strong></p>
         """
     )
-        return redirect(url_for('career', lang = session['lang'], message = "CV envoyé"))
+        return redirect(url_for('home', lang = session['lang']))
     else:
-        return redirect(url_for('career', lang = session['lang'], message = "Fichier non autorisé"))
+        flash(flash_dict[6], 'error')
+        return redirect(url_for('career', lang = session['lang']))
 
 
 @app.route('/<lang>/contact/')
 @app.route('/<lang>/contact/<subpage>')
-def contact(lang = 'fr', subpage = None, message = None):
+def contact(lang = 'fr', subpage = None):
     greatings = _("Bonjour")
     #set language
     session['lang'] = lang
     stores = GetData('full','store')
     services = GetData('full','service')
     categories = sorted(GetData('full','category'), key=lambda x: x['index'])# Get just the categories 
-    return render_template('contact.html', lang = session['lang'], dictionary = dictionary[lang], message = message, current_page = 'contact', stores = stores, services = services, categories = categories)
+    return render_template('contact.html', lang = session['lang'], dictionary = dictionary[lang], current_page = 'contact', stores = stores, services = services, categories = categories)
 
 
 @app.route('/<lang>/delivery/')
 @app.route('/<lang>/delivery/<subpage>')
-def delivery(lang = 'fr', subpage = None , message = None):
+def delivery(lang = 'fr', subpage = None ):
     session['lang'] = lang
     params = GetData('full','params')[-1]
     print(params)
@@ -916,8 +939,10 @@ def chatwithus():
     recaptchaResponse = checkReCaptcha(token = recaptcha)
 
     if (recaptchaResponse == False):
-        return redirect(url_for('contact', lang = session['lang'], message = "Captcha Error"))
+        flash(flash_dict[12], 'error')
+        return redirect(url_for('contact', lang = session['lang']))
 
+    flash(flash_dict[10], 'success')
     #send mail to admin to inform him about the message
     send_email(
     to_addr=app.config["ADMIN_EMAIL"],    
@@ -946,7 +971,7 @@ def chatwithus():
     """,
     name=name
     )
-    return redirect(url_for('contact', lang = session['lang'], message = "Message envoyé"))
+    return redirect(url_for('contact', lang = session['lang']))
 
 
 # Function to get the dictionary of a language

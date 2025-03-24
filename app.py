@@ -165,12 +165,12 @@ def requires_auth(func):
         except jwt.JWTError as jwt_error:
             raise AuthError({"code":"invalid_header", "description":
                              "Invalid Header."
-                             "Use an REMOVED signed JWT Access Token"}, 401) from jwt_error
+                             "Use an RS256 signed JWT Access Token"}, 401) from jwt_error
         
-        if unverified_header["alg"] != "REMOVED":
+        if unverified_header["alg"] != "RS256":
             raise AuthError({"code":"invalid_header", "description":
                              "Invalid Header."
-                             "Use an REMOVED signed JWT Access Token"}, 401)
+                             "Use an RS256 signed JWT Access Token"}, 401)
         
         rsa_key = {}
         for key in jwks["keys"]:
@@ -266,7 +266,7 @@ def defaultconverter(o):
 #Function to send mail
 def send_email(to_addr, subject, content:str, attachment_path : str = None, name:str = None):
     #Signature as image
-    html_text3 = f'<p>Cordialement,</p><img src="http://express.REMOVED/getimage?name=signature" alt="" style="margin:0px; padding:0px; border-radius:0rem 0rem 2rem 2rem;"/>'
+    html_text3 = f'<p>Cordialement,</p><img src="http://express.heanlab.com/getimage?name=signature" alt="" style="margin:0px; padding:0px; border-radius:0rem 0rem 2rem 2rem;"/>'
 
     header = MIMEText(content, 'html', 'utf-8')
     msg = MIMEMultipart('alternative')
@@ -919,7 +919,7 @@ def localization(lang = 'fr', subpage = None ):
 
 #Funtion to make a post to googleReCaptcha and return the response
 def checkReCaptcha(token:str , remoteip:str = None):
-    key = "REMOVED"
+    key = app.config["RECAPTCHA_SERVER_KEY"]
     url = "https://www.google.com/recaptcha/api/siteverify"
     obj = {"secret":key, "response":token}
     x = requests.post(url, data = obj)
@@ -1494,7 +1494,7 @@ def unidecode(text):
 "DELETE FROM `appexpress`.`service` WHERE (`id` = '5');"
 
 """ Client ADD 
-INSERT INTO `appexpress`.`client` (`ID_CLIENT`, `NAME_CLIENT`, `surname_CLIENT`, `EMAIL_CLIENT`, `ADDRESS_CLIENT`, `PHONE_CLIENT`, `PASSWORD_CLIENT`) VALUES ('hean_client20', 'REMOVED', 'client', 'REMOVED', 'Rue des Allies 93', '486650303', 'hean2000');
+INSERT INTO `appexpress`.`client` (`ID_CLIENT`, `NAME_CLIENT`, `surname_CLIENT`, `EMAIL_CLIENT`, `ADDRESS_CLIENT`, `PHONE_CLIENT`, `PASSWORD_CLIENT`) VALUES ('hean_client20', 'Hean', 'client', 'jhubertmillenium@gmail.com', 'Rue des Allies 93', '486650303', 'hean2000');
 """
 path = os.path.abspath('/var/www/express/static/images')
 #path = os.path.abspath('static/images/')
@@ -1559,18 +1559,18 @@ def get_all_images():
 def fill_database():
     cursor = mysql.new_cursor( dictionary = True)
     # get stores
-    cursor.execute("SELECT * FROM REMOVED.store")
+    cursor.execute("SELECT * FROM expressdc.store")
     stores = cursor.fetchall()
     cursor.reset()
     # get services
-    cursor.execute("SELECT * FROM REMOVED.service")
+    cursor.execute("SELECT * FROM expressdc.service")
     services = cursor.fetchall()
     #fill the store_has_service table
     for service in services:
         for store in stores:
             cursor.reset()
-            print((f"INSERT INTO `REMOVED`.`store_has_service` (`store_name`, `service_name`,`cost`) VALUES ('{store['name']}', '{service['name']}', '5.00');"))
-            cursor.execute(f"INSERT INTO `REMOVED`.`store_has_service` (`store_name`, `service_name`,`cost`) VALUES ('{store['name']}', '{service['name']}', '5.00');")
+            print((f"INSERT INTO `expressdc`.`store_has_service` (`store_name`, `service_name`,`cost`) VALUES ('{store['name']}', '{service['name']}', '5.00');"))
+            cursor.execute(f"INSERT INTO `expressdc`.`store_has_service` (`store_name`, `service_name`,`cost`) VALUES ('{store['name']}', '{service['name']}', '5.00');")
             mysql.connection.commit()
 
 # ------ Dictionaries ------
